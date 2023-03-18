@@ -1,0 +1,33 @@
+---
+layout: post
+title: Rust & Ocpp
+slug: rust-ocpp
+date: "2021-10-26"
+
+description: rust + ocpp - Vi open sourcar vårt lib skrivet i rust för ocpp standarden.
+
+tags: [bio]
+og_image: ./charging.jpg
+---
+
+Code Labs har ett stort intresse i elbilar - vi alla kör Tesla 🏎️
+
+Det betyder att vi också lider av problemen med laddning. Det fick oss att fundera på hur det egentligen
+fungerar med laddstationer och hur systemen är uppbydda.
+
+OCPP är en standard som är framtagen av ElaadNL och är den dominerande standarden i Europa.
+
+Tråkigt nog saknades det ett lib i [rust](https://rust-lang.org) 🦀 som vi är stora fans av. Så vi bestämde oss för att skriva
+ett själva och har nu släppt det som open source 🎉! Woho!
+
+Släppt som en crate här: [crates.io](https://crates.io/crates/rust-ocpp)
+
+Och källkoden finns tillgänglig här: [github](https://github.com/codelabsab/rust-ocpp)
+
+```bash
+➜ cargo build --release
+    ...
+    Finished release [optimized] target(s) in 15.72s
+```
+
+Whooohooo!

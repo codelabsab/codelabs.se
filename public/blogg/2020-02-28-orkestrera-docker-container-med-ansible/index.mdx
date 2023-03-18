@@ -1,0 +1,95 @@
+---
+layout: post
+title: Använda Ansible för orkestrering av Docker-container
+slug: orkestrera-docker-container-med-ansible
+date: "2020-02-28"
+description: I denna artikel kommer vi att titta närmare på ett sätt, att använda Ansible för att få ut eller orkestrera applikationer i Docker-containers.
+tags: ["ansible", "docker"]
+og_image: ./ansible-docker.png
+---
+
+_Det finns nästan lika många sätt att sätta upp sin applikation som det finns applikationer. I denna artikel kommer vi att titta närmare på ett sätt, att använda Ansible för att få ut eller orkestrera applikationer i Docker-containers. Code Labs Mattias Lundberg går igenom med oss._
+
+Ansible är en plattform för att hantera servrar och det som körs på servrar. I ansible använder man sig av så kallade playbooks för att göra ändringar på en eller flera servrar samtidigt. En playbook har inställningar för vilka servar den ska köras mot och vad den ska utföra, tasks. En task kan vara att installera ett paket eller se till att en container körs.
+
+Docker är ett system för att paketera och köra applikationer på ett konsekvent sätt oberoende av vilket programmeringsspråk den är skriven i. Docker bygger och kör containers vilket man kan se som små och lättviktiga virtuella maskiner.
+
+Orkestrering är automatiserad konfigurering och hantering av flera datorsystem och mjukvara. I denna artikel används det för att beskriva hur och var en viss applikation körs.
+
+För orkestrering av containers så finns det massor av olika sätt att hantera dem. Ett vanligt system är Kubernetes som gör orkestreringen enkel. En nackdel som Kubernetes för med sig, framförallt i mindre miljöer, är att det är relativt komplext att sätta upp och underhålla. För enklare applikationer är det ofta en för stor kostnad att köra Kubernetes eller andra liknande system.
+
+I ett projekt valde vi att använda Ansible för att styra och hantera containrar istället för att använda en mer fullfjädrad lösning som till exempel Kubernetes. Applikationen sattes upp i AWS och bestod av en liten webbapplikation som planeras att hållas liten och isolerad. Applikationen behövde en databas, lastbalanserare och flera applikationsservrar. Här fokuserar vi på applikations-servrarna.
+
+Applikationen bestod av en kodbas som kunde köras på samma sätt på flera servrar parallellt.
+
+För orkestrering valdes Ansible eftersom det användes på andra ställen i organisationen och teamet hade viss erfarenhet av det.
+
+Ett antal servrar sattes upp (tillsammans med stödtjänster) med hjälp av Terraform för att sedan använda Ansible för all hantering av servrarnas och applikationernas konfiguration. Efter att en server satts upp krävdes följande steg:
+
+1.  Kör en Ansible playbook för att installera grundsystemet
+
+2.  Kör en Ansible playbook för att driftsätta applikationen
+
+Det första steget för att installera grundsystemet skulle enkelt kunna tas bort genom att skapa egna images för nya servrar som redan har allt installerat. Andra steget är det som är mer intressant, detta är en förenklad variant av den playbook vi använde för att installera och starta applikationen:
+
+```yaml
+---
+- name: Prepare deployment
+  hosts: appplication_servers
+
+  tasks:
+    - name: Run database migrations
+      run_once: yes
+      docker_container:
+        name: app-migrations
+        pull: yes
+        image: "application:{{ version }}"
+        command: "db upgrade"
+
+- name: Deploy to one server at the time
+  hosts: application_servers
+  serial: 1
+
+  tasks:
+    - name: Remove from load balancer
+      delegate_to: localhost
+      elb_target:
+        state: absent
+
+    - name: Start new docker container
+      docker_container:
+        name: app
+        pull: yes
+        image: "application:{{ version }}"
+        ports:
+          - 8080:8080
+
+    - name: Add to load balancer
+      delegate_to: localhost
+      elb_target:
+        state: present
+```
+
+Playbooken kommer att gå igenom följande steg, först så kommer en migrering av databasens schema att köras (i detta fall med `flask-migrate`) därefter kommer följande steg att köras för varje server:
+
+1.  Ta bort servern från lastbalanseraren och vänta på att den inte längre hanterar några anrop
+
+2.  Starta om containern med den nya koden
+
+3.  Lägga tillbaka servern i lastbalanseraren och vänta på att den ska starta upp
+
+Detta görs på en server i taget föra att användarna inte ska märka något under driftsättningen. Driftsättningen triggas genom kommandot: `ansible-playbook –extra-vars version=<tag> deploy.yaml`. Triggern kan göras manuellt eller från en CI-server. Docker-images byggs för varje push till master av CI och sparas till ett Docker registry varifrån de sedan kan användas på applikationsservrarna.
+
+Under den period vi har haft denna uppsättning körande har vi inte haft några större problem utan har enkelt kunnat göra de förändringar som normalt görs under utveckling. Detta inkluderar att driftsätta ny kod, migrera databasscheman, lägga till nya servrar och ersätta servrar som inte fungerar som de ska. Trots att vi inte har sett några problem hittills så betyder det inte att lösningen inte har brister. Några av de nackdelar vi är medvetna om:
+
+- Det är svårt att lägga till nya tjänster/andra typer av containers
+
+- Det är svårt att köra periodiska jobb
+
+- Vi kan inte skala miljön automatiskt på något enkelt sätt
+
+- Applikationen kan inte automatiskt flytta containers från trasiga servrar
+
+För applikationens kommande utveckling i närtid är vår bedömning att dessa nackdelar inte kommer att ha någon betydande inverkan. Men när vi kommer till en punkt där det blir krångligt att hantera så kan vi relativt enkelt byta till att hantera detta i någon av de fullfjädrade orkestratorer som finns på marknaden.
+
+Ett nästan komplett exempel finns på Mattias GitHub, här!
