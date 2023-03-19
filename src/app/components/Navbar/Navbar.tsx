@@ -2,17 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "@/app/components/Navbar/MobileMenu";
-import {Montserrat, Poppins} from "next/font/google";
-
-const poppins = Poppins({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-});
-
-const montserrat = Montserrat({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-});
 
 const Navbar = () => {
     return (
@@ -27,7 +16,7 @@ const Navbar = () => {
                         <Link href="/">
                             <Image
                                 className="w-28"
-                                src="/logo/codelabs.svg"
+                                src="/assets/logo/codelabs.svg"
                                 width={640}
                                 height={640}
                                 priority={true}

@@ -52,7 +52,7 @@ const Footer = () => {
                       rel="noreferrer noopener"
                   >
                     <Image
-                        src="/social/linkedin.svg"
+                        src="/assets/social/linkedin.svg"
                         alt="LinkedIn"
                         width={20}
                         height={20}
@@ -68,7 +68,7 @@ const Footer = () => {
                       rel="noreferrer noopener"
                   >
                     <Image
-                        src="/social/instagram.svg"
+                        src="/assets/social/instagram.svg"
                         alt="Instagram"
                         width={20}
                         height={20}
@@ -84,7 +84,7 @@ const Footer = () => {
                       rel="noreferrer noopener"
                   >
                     <Image
-                        src="/social/github-2.svg"
+                        src="/assets/social/github-2.svg"
                         alt="Instagram"
                         width={20}
                         height={20}
@@ -150,7 +150,7 @@ const Footer = () => {
                     <Link href="/" >
                       <Image
                           className="w-28"
-                          src="/logo/codelabs.svg"
+                          src="/assets/logo/codelabs.svg"
                           alt="codelabs"
                           width={640}
                           height={480}

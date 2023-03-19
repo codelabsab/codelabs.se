@@ -1,11 +1,11 @@
-import Navbar from "@/app/components/Navbar/Navbar";
-import Footer from "@/app/components/Footer/Footer";
-
 export default function Career() {
     return (
         <main>
-            <Navbar />
-            <Footer />
+            <main>
+                <h1 className="font-poppins text-xl text-center">Karriär</h1>
+                <p className="font-poppins text-xl text-center">Karriärsida</p>
+                <p className="font-poppins text-center">Mer info kommer</p>
+            </main>
         </main>
     )
 }

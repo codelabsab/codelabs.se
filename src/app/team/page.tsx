@@ -1,11 +1,9 @@
-import Navbar from "@/app/components/Navbar/Navbar";
-import Footer from "@/app/components/Footer/Footer";
-
 export default function Team() {
     return (
         <main>
-            <Navbar />
-            <Footer />
+            <h1 className="font-poppins text-xl text-center">Team</h1>
+            <p className="font-poppins text-xl text-center">Teamsida</p>
+            <p className="font-poppins text-center">Mer info kommer</p>
         </main>
     )
 }

@@ -21,7 +21,7 @@ const MobileMenu = () => {
                     <Link href="/" >
                         <Image
                             className="w-28"
-                            src="/logo/codelabs.svg"
+                            src="/assets/logo/codelabs.svg"
                             alt="codelabs"
                             width={640}
                             height={480}
@@ -31,7 +31,7 @@ const MobileMenu = () => {
                 </div>
                 <span onClick={toggleDrawer}>
           <Image
-              src="/icons/hamburger.svg"
+              src="/assets/icons/hamburger.svg"
               alt="Menu"
               width={20}
               height={20}
@@ -52,7 +52,7 @@ const MobileMenu = () => {
                     <Link href="/" >
                         <Image
                             className="w-28"
-                            src="/logo/codelabs_white.svg"
+                            src="/assets/logo/codelabs_white.svg"
                             alt="codelabs"
                             width={640}
                             height={480}
@@ -95,7 +95,7 @@ const MobileMenu = () => {
                                 rel="noreferrer noopener"
                             >
                                 <Image
-                                     src="/social/linkedin.svg"
+                                     src="/assets/social/linkedin.svg"
                                      alt="LinkedIn"
                                      width={20}
                                      height={20}
@@ -111,7 +111,7 @@ const MobileMenu = () => {
                                 rel="noreferrer noopener"
                             >
                                 <Image
-                                    src="/social/instagram.svg"
+                                    src="/assets/social/instagram.svg"
                                     alt="Instagram"
                                     width={20}
                                     height={20}
@@ -127,7 +127,7 @@ const MobileMenu = () => {
                                 rel="noreferrer noopener"
                             >
                                 <Image
-                                    src="/social/github-2.svg"
+                                    src="/assets/social/github-2.svg"
                                     alt="Instagram"
                                     width={20}
                                     height={20}

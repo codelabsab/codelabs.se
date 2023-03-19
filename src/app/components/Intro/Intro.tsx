@@ -26,7 +26,7 @@ const OmOss = () => {
                         <div className="md:w-1/2">
                             <Image
                                 className="w-100"
-                                src="/ipad.svg"
+                                src="/assets/ipad.svg"
                                 width={1280}
                                 height={1280}
                                 priority={true}

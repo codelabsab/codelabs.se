@@ -4,7 +4,7 @@ const Hero = () => {
     return (
         <div className="bg-grey-light hero-video-container h-screen flex items-center lg:pb-12" style={{ position: "relative", zIndex: 0 }}>
             <video
-                // autoPlay
+                autoPlay
                 loop
                 muted
                 playsInline

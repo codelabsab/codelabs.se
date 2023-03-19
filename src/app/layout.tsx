@@ -1,6 +1,6 @@
 import './globals.css'
 import Navbar from "@/app/components/Navbar/Navbar";
-import Hero from "@/app/components/Hero/Hero";
+import Footer from "@/app/components/Footer/Footer";
 
 export const metadata = {
   title: 'Code Labs',
@@ -15,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+    <Navbar />
       {children}
+    <Footer />
       </body>
     </html>
   )
