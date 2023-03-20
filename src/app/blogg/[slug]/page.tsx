@@ -11,7 +11,7 @@ const PostPage = (props: any) => {
     const slug = props.params.slug;
     const content = getPostContent(slug);
     return (
-        <div>
+        <div className="prose prose-lg">
             <h1>{slug}</h1>
             <Markdown>{content}</Markdown>
         </div>
