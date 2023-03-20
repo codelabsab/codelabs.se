@@ -4,7 +4,6 @@ description: En kväll på Birka Bowling.
 date: "2023-01-26"
 og_image: /assets/blogg/2023-01-26-bowling/bowling.jpg
 ---
-
 Vi möttes upp för att tävla lite i bowling, äta middag och spela lite dart. Destinationen blev Birk Bowling!
 
 ![dart](/assets/blogg/2023-01-26-bowling/birka-bowling-dart.jpg)
