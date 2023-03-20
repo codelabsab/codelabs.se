@@ -7,12 +7,14 @@ const getPostContent = (slug: string) => {
     return content;
 }
 
+const capitalized = (word: string) => word.charAt(0).toUpperCase() + word.slice(1)
+
 const PostPage = (props: any) => {
     const slug = props.params.slug;
     const content = getPostContent(slug);
     return (
-        <div className="prose prose-lg">
-            <h1>{slug}</h1>
+        <div className="prose prose-slate prose-img:rounded prose-img:max-w-xl flex flex-col mx-auto px-4 justify-center items-center max-w-6xl">
+            <h1>{capitalized(slug)}</h1>
             <Markdown>{content}</Markdown>
         </div>
     )
