@@ -2,10 +2,8 @@
 title: Bowling & Dart
 description: En kväll på Birka Bowling.
 date: "2023-01-26"
-og_image: '/assets/blogg/2023-01-26-bowling/bowling.jpg'
+og_image: /assets/blogg/2023-01-26-bowling/bowling.jpg
 ---
-
-# Bowling & Dart
 
 Vi möttes upp för att tävla lite i bowling, äta middag och spela lite dart. Destinationen blev Birk Bowling!
 
@@ -30,4 +28,4 @@ Nästa gång blir det Limbo, då jäklar kommer vi bli imponerade om Pär vinner
 
 Vill du också vinna över Pär? Klicka [här](/karriar)
 
-Birk Bowling får 5 av 5 godkända pull requests, inte illa!
+Birka Bowling får 5 av 5 godkända pull requests, inte illa!

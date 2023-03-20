@@ -1,40 +1,20 @@
-import fs from 'fs';
-import Link from 'next/link';
-import matter from 'gray-matter';
-import {PostMetadata} from "@/app/components/Blogg/PostMetadata";
+import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
+import PostPreview from "@/app/components/Blogg/PostPreview";
 
-const getPostMetadata = (): PostMetadata[] => {
-    const folder = "src/_posts/";
-    const files = fs.readdirSync(folder);
-    const markdownPosts = files.filter((file) => file.endsWith(".md"));
-
-    // Get gray-matter data from each post
-    const posts  = markdownPosts.map((fileName) => {
-        const fileContents = fs.readFileSync(`${folder}/${fileName}`, 'utf-8');
-        const matterResult = matter(fileContents);
-        return {
-            title: matterResult.data.title,
-            description: matterResult.data.description,
-            date: matterResult.data.date,
-            og_image: matterResult.data.ogImage,
-            slug: fileName.replace(".md", ""),
-        };
-    });
-
-    return posts;
-};
-
-function Blogg () {
-    const postMetadata = getPostMetadata();
-    const postPreviews = postMetadata.map((post) => (
-        <Link href={`/blogg/${post.slug}`} key={`${post.slug}`}>
-        <div>
-            <h2>{post.title}</h2>
-            <p>{post.date}</p>
-        </div>
-        </Link>
+const Blogg = () => {
+    const PostMetadata = getPostMetadata();
+    const postPreviews = PostMetadata.map((post) => (
+        <PostPreview key={post.slug} {...post} />
     ));
-    return <div>{postPreviews}</div>
+    return (
+        <div className="w-full ">
+            <div className="max-w-6xl mx-auto py-28">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+                    {postPreviews}
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Blogg;
