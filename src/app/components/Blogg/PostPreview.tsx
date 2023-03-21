@@ -5,9 +5,9 @@ import {PostMetadata} from "@/app/components/Blogg/PostMetadata";
 
 const PostPreview = (props: PostMetadata) => {
     return (
-        <div className={"px-6 md:px-3 mb-44 z-10 h-96 md:h-702 transform transition-all hover:scale-105 relative"}>
+        <div className={"px-6 md:px-3 mb-44 z-10 h-96 transform transition-all hover:scale-105 relative"}>
             <Link href={`/blogg/${props.slug}`}>
-                <div className="md:max-w-392 bg-white  shadow-lg rounded-lg min-h-500">
+                <div className="md:max-w-392 bg-white shadow-lg rounded-lg">
                     <Image
                         src={props.og_image} alt={props.slug}
                         width={400}
