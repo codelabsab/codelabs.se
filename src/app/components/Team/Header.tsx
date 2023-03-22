@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div>
             <div className="w-full h-502 bg-gradient-to-b from-white via-white pt-12 to-codelabs-primary5">
-                <div className="flex flex-col md:flex-row justify-center md:justify-between max-w-5xl xl:pl-48 py-24">
+                <div className="flex flex-col md:flex-row justify-center md:justify-between max-w-5xl xl:pl-48 py-6">
                     <div className="col-8">
                         <div
                             className="px-10 md:block">
@@ -28,8 +28,6 @@ const Header = () => {
                                 Bli en av oss
                             </Link>
                         </div>
-                    </div>
-                    <div className="col-4 pt-12 mt-12 hidden lg:block z-40">
                     </div>
                 </div>
             </div>

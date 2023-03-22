@@ -1,7 +1,7 @@
 import Kami from "../../../../public/assets/team/kami.jpeg";
 import Mauricio from "../../../../public/assets/team/mauricio.jpeg";
 import Tommy from "../../../../public/assets/team/tommy.jpeg";
-import Pär from "../../../../public/assets/team/paer.jpeg";
+import Par from "../../../../public/assets/team/paer.jpeg";
 import Cf from "../../../../public/assets/team/cf.jpeg";
 export const teamData = [
   {
@@ -38,7 +38,7 @@ export const teamData = [
     designation: `DevOps Engineer`,
     description: `Python Kubernetes Docker Terraform Grafana Prometheus AWS GCP
     Nomad Consul Traefik CI/CD Jenkins Travis-CI`,
-    picture: Pär,
+    picture: Par,
     github_url: `https://github.com/parberge`
   }
 ];

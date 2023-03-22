@@ -4,14 +4,14 @@ import Image from "next/image";
 const CodeLabsTeam = () => {
   return (
     <div>
-      <div className="max-w-6xl mx-auto px-6 md:px-1 md:py-56 py-24 ">
-        <div className="flex w-full justify-center flex-wrap">
+      <div className="max-w-6xl mx-auto px-4 md:px-1 ">
+        <div className="w-full justify-center grid md:grid-cols-2 grid-cols-1">
           {teamData.map((items, index) => {
             return (
               <div className="md:px-5 mb-12 border mx-4 py-12 shadow-lg" key={index}>
-                <div className="flex px-7 w-80 flex-col items-center justify-center text-center  ">
+                <div className="w-80 mx-auto px-auto flex flex-col justify-center">
                     <Image
-                        className="w-36 rounded-full"
+                        className="w-36 rounded-full mx-auto"
                         src={items.picture}
                         alt="github"
                         width={640}
@@ -19,16 +19,16 @@ const CodeLabsTeam = () => {
                         priority={true}
                     />
 
-                  <h6 className="font-semibold text-base text-black-dark mb-1">
+                  <h6 className="font-semibold text-base text-black-dark mb-1 mx-auto">
                     {items.name}
                   </h6>
-                  <p className="font-normal text-sm mb-4 text-codelabs-primary1">
+                  <p className="font-normal text-sm mb-4 text-codelabs-primary1 mx-auto">
                     {items.designation}
                   </p>
-                  <p className="font-normal text-sm text-black-dark mb-4">
+                  <p className="font-normal text-sm text-black-dark mb-4 flex justify-center">
                     {items.description}
                   </p>
-                  <a href ={items.github_url} target="_blank" rel="noreferrer noopener">
+                  <a href ={items.github_url} target="_blank" rel="noreferrer noopener" className={"flex justify-center"}>
                       <Image
                           className="w-6"
                           src="/assets/social/github.svg"

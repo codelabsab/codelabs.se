@@ -1,11 +1,15 @@
+import Header from "@/app/components/Karriar/Header";
+import Karriar from "@/app/components/Karriar/Karriar";
+import Formaner from "@/app/components/Karriar/Formaner";
+import Tjanster from "@/app/components/Karriar/Tjanster";
+
 export default function Career() {
     return (
         <main>
-            <main>
-                <h1 className="font-poppins text-xl text-center">Karriär</h1>
-                <p className="font-poppins text-xl text-center">Karriärsida</p>
-                <p className="font-poppins text-center">Mer info kommer</p>
-            </main>
+            <Header/>
+            <Karriar/>
+            <Formaner/>
+            <Tjanster/>
         </main>
     )
 }

@@ -17,7 +17,7 @@ const OmOss = () => {
                             <div className="flex justify-center md:justify-start">
                                 <Link
                                     href="/team/"
-                                    className="bg-grey-light2 font-title text-base font-medium px-4 text-grey-bluish border border-black-gray w-36 pt-1 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-cl-primary hover:text-black hover:shadow-xl transform transition duration-100 hover:scale-110"
+                                    className="bg-grey-light2 font-title text-base font-medium px-4 text-grey-bluish border border-black-gray w-40 pt-1 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-cl-primary hover:text-black hover:shadow-xl transform transition duration-100 hover:scale-110"
                                 >
                                     Träffa teamet
                                 </Link>
