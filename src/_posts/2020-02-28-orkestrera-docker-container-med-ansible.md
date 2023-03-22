@@ -3,7 +3,7 @@ layout: post
 title: Använda Ansible för orkestrering av Docker-container
 slug: orkestrera-docker-container-med-ansible
 date: "2020-02-28"
-description: I denna artikel kommer vi att titta närmare på ett sätt, att använda Ansible för att få ut eller orkestrera applikationer i Docker-containers.
+description: Ansible deploy & orkestrering av applikationer med Docker.
 tags: ["ansible", "docker"]
 og_image: /assets/blogg/ansible-docker.png
 ---

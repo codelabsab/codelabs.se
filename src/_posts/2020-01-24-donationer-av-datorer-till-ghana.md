@@ -3,7 +3,7 @@ layout: post
 title: "Donationer av datorer till Ghana"
 slug: "donationer-av-datorer-till-ghana"
 date: "2020-01-24"
-description: "Code Labs har i samarbete med Avida Finans donerat 30 laptops och 10 datorskärmar till Tekniska Universitetet i Takoradi, Ghana."
+description: "Code Labs & Avida Finans donerar till Tekniska Universitetet i Takoradi, Ghana."
 tags: [donationer, ghana, takoradi, university]
 og_image: "/assets/blogg/takoradi-university.jpg"
 ---

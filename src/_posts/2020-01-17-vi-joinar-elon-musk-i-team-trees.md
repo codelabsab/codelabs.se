@@ -3,7 +3,7 @@ layout: post
 title: Vi joinar Elon Musk i TeamTrees.org
 slug: vi-joinar-elon-musk-i-team-trees
 date: "2020-01-17"
-description: I maj 2019 startade den amerikanska YouTubern Jimmy Donaldson under sitt online-alias en kampanj för att nå 20 miljoner följare på sin Youtube-kanal.
+description: Code Labs donerar till återplanterings-initiativet TeamTrees.org
 tags: ["miljö", "träd", "elon musk"]
 og_image: /assets/blogg/team-trees.png
 ---

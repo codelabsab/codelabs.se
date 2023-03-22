@@ -29,16 +29,17 @@ const Kunder = () => {
                     <div className="flex flex-wrap pt-24 flex justify-center">
                         {listOfCustomers.map((customer, index) => {
                             return (
-                                <>
-                                    <Image
-                                        className="mx-4 mb-7 md:w-18"
-                                        src={`/assets/customer/${customer}.svg`}
-                                        alt={customer}
-                                        width={64}
-                                        height={48}
-                                        priority={true}
-                                    />
-                                </>
+                                    <div key={customer}>
+                                        <Image
+                                            className="mx-4 mb-7 md:w-18"
+                                            src={`/assets/customer/${customer}.svg`}
+                                            alt={customer}
+                                            width={64}
+                                            height={48}
+                                            priority={true}
+                                            key={index}
+                                        />
+                                    </div>
                             );
                         })}
                     </div>
@@ -105,11 +106,12 @@ const Kunder = () => {
                             <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z"/>
                         </clipPath>
                     </defs>
-                    <rect x="0" y="0" width="500" height="80" fill="#F4E6FF" clip-path="url(#shape)"/>
+                    <rect x="0" y="0" width="500" height="80" fill="#F4E6FF" clipPath="url(#shape)"/>
                 </svg>
             </div>
         </>
     );
-};
+}
+    ;
 
-export default Kunder;
+    export default Kunder;
