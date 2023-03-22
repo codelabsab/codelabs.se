@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import {Arrow} from "../Icons/Arrow";
 import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
 import Image from "next/image";
 
@@ -24,9 +23,10 @@ const SenasteInlagg = () => {
                     {posts.map((post) => {
                         return (
                             <div className={"flex flex-nowrap"} key={post.slug}>
-                                <div className="mx-auto my-6 px-4 blog-cards">
-                                    <Link href={`/blogs/${post.slug}`}>
-                                        <div className="bg-white rounded-lg shadow-lg transition-all transform hover:scale-105 mx-6">
+                                <div className="mx-auto my-6 blog-cards">
+                                    <Link href={`/blogg/${post.slug}`}>
+                                        <div
+                                            className="bg-white rounded-lg shadow-lg transition-all transform hover:scale-105 mx-6">
                                             <div className="h-72 w-80">
                                                 <Image
                                                     src={post.og_image} alt={post.slug}
@@ -39,23 +39,12 @@ const SenasteInlagg = () => {
                                                 <p className="font-poppins font-light pt-2 pb-2 text-sm text-codelabs-primary1">
                                                     {post.date}
                                                 </p>
-                                                <h4 className="font-title pb-4 font-semibold text-2xl truncate text-grey-normal ">
+                                                <h4 className="font-title pb-8 font-semibold text-2xl truncate text-grey-normal ">
                                                     {post.title}
                                                 </h4>
                                                 <p className="font-title font-normal text-base pb-4 overflow-clip h-full">
                                                     {post.description}
                                                 </p>
-                                                <div className="flex justify-end place-items-end h-full">
-                                                    <Link href={`/blogs/${post.slug}`}>
-                                                        <div className="flex justify-end">
-                                                            <a
-                                                                href="/"
-                                                                className="sm:px-4 py-1.5 cursor-pointer hover:shadow-lg px-7 pt-1 pb-1 mb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5">
-                                                                <Arrow/>
-                                                            </a>
-                                                        </div>
-                                                    </Link>
-                                                </div>
                                             </div>
                                         </div>
                                     </Link>
@@ -67,8 +56,6 @@ const SenasteInlagg = () => {
             </div>
         </div>
     );
-}
-    ;
-
-    export default SenasteInlagg;
+};
+export default SenasteInlagg;
 
