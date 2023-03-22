@@ -99,7 +99,7 @@ const Kunder = () => {
                 </div>
             </div>
             <div className={"w-full"}>
-                <svg width="100%" height="100" viewBox="0 0 800 80" preserveAspectRatio="none">
+                <svg width="100%" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
                     <defs>
                         <clipPath id="shape">
                             <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z"/>

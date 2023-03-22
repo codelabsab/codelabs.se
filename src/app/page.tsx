@@ -11,7 +11,7 @@ export default function Home() {
             <Intro/>
             <Erbjudande/>
             <Kunder />
-            <SenasteInlagg />
+            {/*<SenasteInlagg />*/}
         </main>
     )
 }
