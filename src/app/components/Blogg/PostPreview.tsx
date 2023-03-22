@@ -5,7 +5,7 @@ import {PostMetadata} from "@/app/components/Blogg/PostMetadata";
 
 const PostPreview = (props: PostMetadata) => {
     return (
-        <div className={"px-6 md:px-3 mb-44 z-10 h-96 transform transition-all hover:scale-105 relative"}>
+        <div className={"px-6 md:px-3 mb-44 z-10 h-96 max-h-full transform transition-all hover:scale-105 relative"}>
             <Link href={`/blogg/${props.slug}`}>
                 <div className="md:max-w-392 bg-white shadow-lg rounded-lg">
                     <Image
@@ -17,7 +17,7 @@ const PostPreview = (props: PostMetadata) => {
                     <div className={"px-6 flex flex-col"}>
                         <p className={"font-poppins text-xs font-light pt-4 pb-3 text-codelabs-primary1"}>{props.date}</p>
                         <h4 className={"font-title pb-2 font-semibold text-2xl truncate text-grey-normal "}>{props.title}</h4>
-                        <p className={"font-title font-normal text-base pb-24 textTruncate"}>{props.description}</p>
+                        <p className={"font-title font-normal text-base textTruncate h-44"}>{props.description}</p>
                     </div>
                 </div>
             </Link>

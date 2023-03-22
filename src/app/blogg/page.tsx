@@ -9,7 +9,7 @@ const Blogg = () => {
     return (
         <div className="w-full ">
             <div className="max-w-6xl mx-auto py-28">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y gap-y-8 ">
                     {postPreviews}
                 </div>
             </div>
