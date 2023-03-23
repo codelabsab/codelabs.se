@@ -1,6 +1,7 @@
 import React from "react";
 import { teamData } from "./TeamData";
 import Image from "next/image";
+import Link from "next/link";
 const CodeLabsTeam = () => {
   return (
     <div>
@@ -8,8 +9,8 @@ const CodeLabsTeam = () => {
         <div className="w-full justify-center grid md:grid-cols-2 grid-cols-1">
           {teamData.map((items, index) => {
             return (
-              <div className="md:px-5 mb-12 border mx-4 py-12 shadow-lg" key={index}>
-                <div className="w-80 mx-auto px-auto flex flex-col justify-center">
+              <div className="md:px-5 mb-12 border mx-4 py-6 shadow-lg" key={index}>
+                <div className="w-80 mx-auto px-auto flex flex-col justify-center h-full">
                     <Image
                         className="w-36 rounded-full mx-auto"
                         src={items.picture}
@@ -28,7 +29,7 @@ const CodeLabsTeam = () => {
                   <p className="font-normal text-sm text-black-dark mb-4 flex justify-center">
                     {items.description}
                   </p>
-                  <a href ={items.github_url} target="_blank" rel="noreferrer noopener" className={"flex justify-center"}>
+                  <Link href ={items.github_url} target="_blank" rel="noreferrer noopener" className={"flex justify-center h-full items-end"}>
                       <Image
                           className="w-6"
                           src="/assets/social/github.svg"
@@ -37,7 +38,7 @@ const CodeLabsTeam = () => {
                           height={24}
                           priority={true}
                       />
-                  </a>
+                  </Link>
                 </div>
               </div>
             );
