@@ -7,7 +7,7 @@ export const teamData = [
   {
     name: "Carl-Fredrik Arvidson",
     designation: `Software Developer`,
-    description: `Javascript/Typescript React Node Python`,
+    description: `Javascript/Typescript React Node Python CI/CD`,
     picture: Cf,
     github_url: `https://github.com/cfarvidson`
   },
@@ -28,16 +28,14 @@ export const teamData = [
   {
     name: "Tommy Malmqvist",
     designation: `Software Engineer`,
-    description: `Python Rust Go Terraform Kubernetes Nomad Consul Grafana DataDog
-    Prometheus CI/CD AWS GCP AZURE GKE`,
+    description: `Python Terraform Kubernetes CI/CD ArgoCD AWS GCP GKE Azure`,
     picture: Tommy,
     github_url: `https://github.com/tommymalmqvist`
   },
   {
     name: "Pär Berge",
     designation: `DevOps Engineer`,
-    description: `Python Kubernetes Docker Terraform Grafana Prometheus AWS GCP
-    Nomad Consul Traefik CI/CD Jenkins Travis-CI`,
+    description: `Python Kubernetes Docker Terraform Grafana Prometheus AWS GCP Azure CI/CD ArgoCD`,
     picture: Par,
     github_url: `https://github.com/parberge`
   }

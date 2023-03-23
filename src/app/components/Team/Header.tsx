@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import {Wave} from "@/app/components/Team/Divider";
 
 const Header = () => {
     return (
@@ -31,7 +30,6 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <Wave />
         </div>
     );
 };
