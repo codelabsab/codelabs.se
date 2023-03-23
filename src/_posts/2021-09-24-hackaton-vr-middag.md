@@ -15,11 +15,11 @@ Vi sågs på kontoret på KG10 där Tommy och Joatin gick igenom vårt interna p
 
 Projektet är hemligt just nu men är en produkt som vi hoppas ska hjälpa världen bli mer miljövänligare på ett enklare sätt.
 
-![Hackaton](hackaton.webp)
+![Hackaton](/assets/blogg/hackaton.webp)
 
 Efter detta gick vi och åt lunch och tog sedan taxi ut till Bromma för att köra Virtual Reality och spela Shuffleboard på VR Center.
 
-![VR](vr.jpeg)
+![VR](/assets/blogg/vr.jpeg)
 
 Virtual Reality va extremt roligt! Hårdvaran var Oculus Rift headsets som var kopplat till en HP dator man bar som en ryggsäck.
 
@@ -30,10 +30,10 @@ andra tillverkares lösningar.
 
 Vi passade även på att spela lite shuffle board medan vi väntade där vi delade upp oss i två team.
 
-![shuffleboard](shuffleboard.webp)
+![shuffleboard](/assets/blogg/shuffleboard.webp)
 
 Sen var det dags att ta sig ut till resturang Ekstedt för en 7 rätters middag med tillhörande vinpaket.
 
 Det blev en bra kväll med mycket skratt, teknik snack och god mat!
 
-![ekstedt](ekstedt.webp)
+![ekstedt](/assets/blogg/ekstedt.webp)
