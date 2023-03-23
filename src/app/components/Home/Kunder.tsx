@@ -1,17 +1,17 @@
 'use client';
 import React from "react";
-import ica from "../../../../public/assets/customer/ica.svg";
-import klarna from "../../../../public/assets/customer/klarna.svg";
-import pricer from "../../../../public/assets/customer/pricer.svg";
-import dice from "../../../../public/assets/customer/dice.svg";
-import hm from "../../../../public/assets/customer/hm.svg";
-import kindred from "../../../../public/assets/customer/kindred.svg";
-import pricerunner from "../../../../public/assets/customer/pricerunner.svg";
-import netent from "../../../../public/assets/customer/netent.svg";
-import zebware from "../../../../public/assets/customer/zebware.svg";
-import tui from "../../../../public/assets/customer/tui.svg";
-import jonas from "../../../../public/assets/customer/jonas-lindstrom.jpeg";
-import maja from "../../../../public/assets/customer/maja-wedfelt.jpeg";
+import ica from "../../../../public/assets/customer/logo/ica.svg";
+import klarna from "../../../../public/assets/customer/logo/klarna.svg";
+import pricer from "../../../../public/assets/customer/logo/pricer.svg";
+import dice from "../../../../public/assets/customer/logo/dice.svg";
+import hm from "../../../../public/assets/customer/logo/hm.svg";
+import kindred from "../../../../public/assets/customer/logo/kindred.svg";
+import pricerunner from "../../../../public/assets/customer/logo/pricerunner.svg";
+import netent from "../../../../public/assets/customer/logo/netent.svg";
+import zebware from "../../../../public/assets/customer/logo/zebware.svg";
+import tui from "../../../../public/assets/customer/logo/tui.svg";
+import jonas from "../../../../public/assets/customer/testimonials/jonas-lindstrom.jpeg";
+import maja from "../../../../public/assets/customer/testimonials/maja-wedfelt.jpeg";
 import Image from "next/image";
 
 const CustomerLogos = () => {
@@ -29,7 +29,7 @@ const CustomerLogos = () => {
                         return (
                                 <Image
                                     className="mx-4 my-4 h-4 w-auto"
-                                    src={`/assets/customer/${customer}.svg`}
+                                    src={`/assets/customer/logo/${customer}.svg`}
                                     alt={customer}
                                     width={48}
                                     height={48}
@@ -67,7 +67,7 @@ export function Testimonials() {
                     <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
                         <Image
                             className="h-12 w-32 self-start"
-                            src="/assets/customer/tui.svg"
+                            src="/assets/customer/logo/tui.svg"
                             alt="tui"
                             width={64}
                             height={48}
@@ -103,7 +103,7 @@ export function Testimonials() {
                         className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8 xl:pl-20">
                         <Image
                             className="h-12 w-32 self-start"
-                            src="/assets/customer/dice.svg"
+                            src="/assets/customer/logo/dice.svg"
                             alt="dice"
                             width={64}
                             height={48}
