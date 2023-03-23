@@ -12,7 +12,7 @@ const CodeLabsTeam = () => {
               <div className="md:px-5 mb-12 border mx-4 py-6 shadow-lg" key={index}>
                 <div className="w-80 mx-auto px-auto flex flex-col justify-center h-full">
                     <Image
-                        className="w-36 rounded-full mx-auto"
+                        className="w-36 h-auto rounded-full mx-auto"
                         src={items.picture}
                         alt="github"
                         width={640}
@@ -31,11 +31,11 @@ const CodeLabsTeam = () => {
                   </p>
                   <Link href ={items.github_url} target="_blank" rel="noreferrer noopener" className={"flex justify-center h-full items-end"}>
                       <Image
-                          className="w-6"
+                          className="w-6 h-auto"
                           src="/assets/social/github.svg"
                           alt="github"
-                          width={32}
-                          height={24}
+                          width={98}
+                          height={96}
                           priority={true}
                       />
                   </Link>
