@@ -30,7 +30,7 @@ const Testimonials = () => {
                         <Image
                             src={Paer}
                             alt={"Pär"}
-                            className="object-cover w-full"
+                            className="object-cover h-full md:rounded-t-3xl "
                             width={1200}
                             height={1217}
                             priority={true}
@@ -42,7 +42,7 @@ const Testimonials = () => {
                         <Image
                             src={Mauricio}
                             alt={"Mauricio"}
-                            className="object-cover w-full"
+                            className="object-cover h-full md:rounded-b-3xl"
                             width={1200}
                             height={1217}
                             priority={true}
