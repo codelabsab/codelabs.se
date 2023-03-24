@@ -19,8 +19,8 @@ const CustomerLogos = () => {
     return (
         <div className="bg-gradient-to-b from-white via-codelabs-tertiary5 to-codelabs-primary5">
             <div className="flex items-end justify-center pt-12">
-                <h2 className="font-title font-bold text-black-gray text-center text-3xl md:text-5xl items-center justify-end">
-                    Kunder som <span className="text-codelabs-primary1">litar på oss</span>
+                <h2 className="font-title font-bold text-slate-600 text-center text-3xl md:text-5xl items-center justify-end">
+                    Kunder som <span className="text-codelabs-primary2">litar på oss</span>
                 </h2>
             </div>
             <div className="max-w-7xl pt-24 mx-auto">

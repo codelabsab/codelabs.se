@@ -1,14 +1,14 @@
 import Header from "@/app/components/Team/Header";
-import CodeLabsTeam from "@/app/components/Team/CodeLabsTeam";
-import {Divider} from "@/app/components/Team/Divider";
 import React from "react";
+import Team from "@/app/components/Team/Team";
+import Testimonials from "@/app/components/Team/Testimonials";
 
-export default function Team() {
+export default function TeamPage() {
     return (
         <main>
             <Header />
-            <Divider />
-            <CodeLabsTeam />
+            <Testimonials />
+            <Team />
         </main>
     )
 }

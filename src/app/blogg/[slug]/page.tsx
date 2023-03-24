@@ -1,18 +1,16 @@
 import Markdown from 'markdown-to-jsx';
-
-let capitalize = require('capitalize')
-import {PostMetadata} from "@/app/components/Blogg/PostMetadata";
 import fs from "fs";
 import matter from "gray-matter";
 import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
+
+require('capitalize');
 
 
 const getPostContent = (slug: string) => {
     const folder = "src/_posts";
     const file = `${folder}/${slug}.md`;
     const content = fs.readFileSync(file, 'utf-8');
-    const matterResult = matter(content);
-    return matterResult
+    return matter(content)
 }
 
 export async function generateStaticParams() {
@@ -20,7 +18,7 @@ export async function generateStaticParams() {
     return posts.map((post) => ({
         slug: post.slug,
     }));
-};
+}
 
 const PostPage = (props: any) => {
     const slug = props.params.slug;
@@ -40,15 +38,15 @@ const PostPage = (props: any) => {
                     <div className={"bg-transparent"}></div>
                     <div
                         className={"bg-white h-60 items-center text-center my-32"}>
-                            <h4 className="font-bold text-4xl my-24 text-center justify-center">
-                                {post.data.title}
-                            </h4>
+                        <h4 className="font-bold text-4xl my-24 text-center justify-center">
+                            {post.data.title}
+                        </h4>
                     </div>
                     <div className={"bg-transparent"}></div>
                 </div>
             </div>
             <div className="max-w-3xl px-9 mx-auto md:pt-24 sm:pt-10">
-                <article className={"prose lg:prose-xl"}>
+                <article className={"prose lg:prose-xl prose-code:before:hidden prose-code:after:hidden"}>
                     <Markdown>{post.content}</Markdown>
                 </article>
             </div>

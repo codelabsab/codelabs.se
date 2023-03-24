@@ -1,5 +1,5 @@
 import React from "react";
-import { KarriarData } from "./KarriarData";
+import { KarriarData } from "../Data/KarriarData";
 
 const Tjanster = () => {
     return (
