@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Pär skaffar en Tesla
 slug: paer-skaffar-tesla
 date: "2021-09-03"
 description: Idag blev vi på Code Labs åttio procent fossilfria när vår kollega skaffade sig en Tesla.
-tags: [fossilfri, tesla, modelY]
 og_image: /assets/blogg/paer-model-y.jpeg
+author: Kami Gerami
 ---
 
 Idag blev vår kollega Pär också fossilfri!

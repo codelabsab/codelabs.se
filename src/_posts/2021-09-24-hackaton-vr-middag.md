@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Hackaton, Virtual Reality & Middag
 slug: hackaton-vr-middag
 date: "2021-09-24"
 description: Code Labs körde heldag med hackaton, Virtual Reality och middag på Ekstedt.
-tags: [hackaton, virtual-reality, shuffleboard, ekstedt]
 og_image: /assets/blogg/hackaton.webp
+author: Tommy Malmqvist
 ---
 
 Det var dags för vår höst kick-off efter en lång tid av att arbeta hemifrån, vaccin som inte var tillgänglig för alla

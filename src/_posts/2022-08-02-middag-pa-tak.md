@@ -1,13 +1,10 @@
 ---
-layout: post
 title: Middag på Tak
 slug: tak
 date: "2022-08-02"
-
 description: Reunion efter semester.
-
-tags: [middag, konsulter, tak]
 og_image: /assets/blogg/middag.jpg
+author: Tommy Malmqvist
 ---
 
 Semestern närmar sig sitt slut och vi kände att det är dags att ses på lite middag.

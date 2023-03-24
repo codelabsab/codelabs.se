@@ -1,11 +1,11 @@
 ---
-layout: post
 title: Att lägga till realtidsstöd i en webapp
 slug: elixir-lagga-till-stod-i-app
 date: "2020-10-12"
 description: Genomgång av hur man på ett enkelt sätt kan använda Elixir i en befintlig app
 tags: [elixir, webapp, realtidsstöd]
 og_image: /assets/blogg/phoenix-elixir.webp
+author: Mattias Lundberg
 ---
 
 I ett [tidigare inlägg](https/assets/blogg//codelabs.s/assets/blogg/elixir-och-varfor-du-ska-anvanda-det) introducerade jag Elixir, vad det är och hur man kan använda det. Ett av de ställen där jag personligen sett stort värde i Elixir och dess styrkor är att använda det till att lägga till realtidsstöd i en befintlig webapp. Då antingen som ersättning för tidigare lösningar baserat på periodisk pollning av ett API eller lösningar med websockets från andra ramverk.

@@ -1,13 +1,10 @@
 ---
-layout: post
 title: AW på Fjäderholmarna
 slug: fjaderholmarna
 date: "2022-08-30"
-
 description: Aw på Fjäderholmarna.
-
-tags: [middag, konsulter, fjaderholmarna]
 og_image: /assets/blogg/fjaderholmarna.jpeg
+author: Mauricio Saez
 ---
 
 Slutet av Augusti och vi är alla tillbaka hos våra kunder och det är dags för höstens första AW.

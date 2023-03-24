@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Vi joinar Elon Musk i TeamTrees.org
 slug: vi-joinar-elon-musk-i-team-trees
 date: "2020-01-17"
 description: Code Labs donerar till återplanterings-initiativet TeamTrees.org
-tags: ["miljö", "träd", "elon musk"]
 og_image: /assets/blogg/team-trees.png
+author: Tommy Malmqvist
 ---
 
 I maj 2019 startade den amerikanska YouTubern Jimmy Donaldson under sitt online-alias en kampanj för att nå 20 miljoner följare på sin Youtube-kanal. Kampanjen mynnade snart ut i att MrBeast startade initiativet TeamTrees.org(#teamtrees) där han uttalade målet att per 1 januari 2020 ha nått 20 miljoner amerikanska dollar i finansiering för att plantera 20 miljoner träd, som ett led i att bekämpa klimatförändringarna.

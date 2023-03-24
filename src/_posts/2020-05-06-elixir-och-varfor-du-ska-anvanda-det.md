@@ -1,11 +1,11 @@
 ---
-layout: post
 title: Vad Elixir är och varför du ska använda det
 slug: elixir-och-varfor-du-ska-anvanda-det
 date: "2020-05-06"
 description: Elixir är ett relativt nytt programmeringsspråk skapat av José Valim och lanserades 2011.
 tags: [elixir, webapp, realtidsstöd]
 og_image: /assets/blogg/elixir-featuredImage.jpg
+author: Mattias Lundberg
 ---
 
 **[Elixir](https/assets/blogg//elixir-lang.or/assets/blogg/) är ett relativt nytt programmeringsspråk skapat av José Valim och lanserades 2011. Det har snabbt blivit populärt av flera anledningar bland annat för dess enkelhet att utveckla i och att den körs på BEAM, Erlangs virtuella maskin, vilket ger en hög [driftsäkerhet.](https/assets/blogg//www.erlang-solutions.co/assets/blogg/blo/assets/blogg/which-companies-are-using-erlang-and-why-mytopdogstatus.html)**
