@@ -3,6 +3,7 @@ import {people} from "@/app/components/Data/TeamData";
 
 
 import Image from "next/image";
+import Link from "next/link";
 
 const stats = [
     {label: 'Timmar hos fantastiska kunder', value: '5000+'},
@@ -287,6 +288,21 @@ export default function Tjanster() {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className=" pt-20 flex flex-col justify-center px-4">
+                    <div className="mb-6">
+                        <p className="text-lg leading-8 text-gray-600 text-center">
+                            Vill du lära känna teamet?
+                        </p>
+                        <p className="font-title text-sm text-center md:text-center font-poppins">Se vilka som jobbar hos oss</p>
+                    </div>
+                    <div className="px-6 py-2 flex justify-center">
+                        <Link href="/team"
+                              className="mx-auto"
+                        >
+                            <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Träffa teamet</button>
+                        </Link>
+                    </div>
                 </div>
             </main>
         </div>
