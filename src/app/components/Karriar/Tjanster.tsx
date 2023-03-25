@@ -145,40 +145,52 @@ export default function Tjanster() {
                                                 className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
                                         </div>
                                         <div className="relative">
-                                            <Image
+                                            <video
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                                src={"/assets/torch.gif"}
-                                                alt={""}
-                                                width={224}
-                                                height={224}
-                                                priority={true}
-                                            />
+                                            >
+                                                <source
+                                                    src="/assets/grill.mp4"
+                                                    type="video/mp4"
+                                                />
+                                            </video>
                                             <div
                                                 className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
                                         </div>
                                     </div>
                                     <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                                         <div className="relative">
-                                            <Image
+                                            <video
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                                src={"/assets/waterfall.gif"}
-                                                alt={""}
-                                                width={224}
-                                                height={224}
-                                                priority={true}
-                                            />
+                                            >
+                                                <source
+                                                    src="/assets/waterfall.mp4"
+                                                    type="video/mp4"
+                                                />
+                                            </video>
                                             <div
                                                 className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
                                         </div>
                                         <div className="relative">
-                                            <Image
+                                            <video
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                                src={"/assets/rally.gif"}
-                                                alt={""}
-                                                width={224}
-                                                height={224}
-                                                priority={true}
+                                            >
+                                                <source
+                                                src="/assets/rally.mp4"
+                                                type="video/mp4"
                                             />
+                                            </video>
                                             <div
                                                 className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
                                         </div>
