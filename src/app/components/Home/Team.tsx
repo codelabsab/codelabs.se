@@ -13,12 +13,12 @@ export default function TeamHome() {
           </div>
           <ul
               role="list"
-              className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+              className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             {people.map((person) => (
                 <li key={person.name}>
                   <Image
-                      className="mx-auto h-56 w-56 rounded-full"
+                      className="mx-auto sm:h-56 sm:w-56 w-32 h-32 rounded-full"
                       src={`/${person.imageUrl}`}
                       alt={person.name}
                       width={224}
