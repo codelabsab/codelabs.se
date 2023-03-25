@@ -6,8 +6,8 @@ export default function TeamHome() {
       <div className="bg-white py-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-600 sm:text-4xl">Teamet</h2>
-            <p className="mt-4 text-lg leading-8 text-slate-500">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Teamet</h2>
+              <p className="mt-2 text-lg leading-8 text-gray-600">
                 En sammansvetsad grupp som gillar att ha kul tillsammans
             </p>
           </div>

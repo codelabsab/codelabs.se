@@ -4,22 +4,21 @@ import Image from "next/image";
 const OmOss = () => {
     return (
         <div>
-            <div className="bg-white to-white">
+            <div className="bg-gradient-to-t from-white via-white to-codelabs-primary5">
                 <div>
                     <div className="flex md:flex-row flex-col mx-auto py-24 px-0 justify-center items-center max-w-7xl">
                         <div className="px-4 md:w-2/4">
-                            <h2 className="font-title font-poppins font-bold text-slate-600 text-3xl md:text-5xl text-center md:text-left mb-2">
+                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                                 Ännu ett konsultbolag?
-                            </h2>
-                            <p className="font-title font-poppins font-normal text-slate-500 text-center md:text-left mb-8">
+                            </h1>
+                            <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                                 Nej! Vi är ett <b>team</b> där kreativitet, samarbete och glädje är i fokus. Vi har en avslappnad företagskultur som uppmuntrar till öppen kommunikation och kreativt tänkande. Vi tror att en glad och motiverad personal är nyckeln till att leverera resultat för våra kunder.
                             </p>
-                            <div className="flex justify-center md:justify-start">
+                            <div className="flex justify-center md:justify-start py-12">
                                 <Link
                                     href="/team/"
-                                    className="bg-grey-light2 font-title text-base font-medium px-4 text-grey-bluish border border-black-gray w-40 pt-1 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-cl-primary hover:text-black hover:shadow-xl transform transition duration-100 hover:scale-110"
                                 >
-                                    Träffa teamet
+                                    <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">Träffa Teamet</button>
                                 </Link>
                             </div>
                         </div>

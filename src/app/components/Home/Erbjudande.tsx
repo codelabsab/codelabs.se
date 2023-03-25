@@ -6,7 +6,7 @@ const Erbjudande = () => {
     <div className="bg-white">
       <div className="max-w-5xl mx-auto flex lg:pb-60 pb-20 justify-center items-center flex-col">
         <div className="mb-16  mt-28">
-          <h2 className="font-title font-poppins font-bold text-slate-600 text-3xl md:text-5xl text-center md:text-left mb-2">Code Labs erbjuder</h2>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Code Labs erbjuder</h1>
         </div>
         <div className="flex text-center flex-wrap">
           <div className="px-12 pb-5 lg:w-1/3 md:w-2/4 w-full flex flex-col items-center">
@@ -54,16 +54,15 @@ const Erbjudande = () => {
         </div>
         <div className=" pt-20 flex flex-col md:flex-row justify-between px-4 ">
           <div className="lg:w-3/4 w-full mb-6 flex justify-center flex-col">
-            <p className="font-poppins font-semibold text-center md:text-left text-base">
+            <p className="text-lg leading-8 text-gray-600">
               Vill du bli en del av teamet?
             </p>
             <p className="font-title text-sm text-center md:text-left font-poppins">Se tjänster vi söker.</p>
           </div>
           <div className=" lg:w-3/12 px-6  w-full">
             <Link href="/karriar"
-              className="bg-grey-light2 font-title text-base font-medium px-4 text-grey-bluish border border-black-gray w-40 pt-1 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-white hover:text-black hover:shadow-xl transform transition duration-100 hover:scale-110"
             >
-              Lediga tjänster
+              <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">Lediga tjänster</button>
             </Link>
           </div>
         </div>
