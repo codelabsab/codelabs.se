@@ -5,7 +5,7 @@ import Testimonials from "@/app/components/Team/Testimonials";
 
 export default function TeamPage() {
     return (
-        <main>
+        <main className="bg-white dark:bg-slate-900">
             <Header />
             <Testimonials />
             <Team />

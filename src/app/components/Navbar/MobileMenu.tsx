@@ -16,16 +16,24 @@ const MobileMenu = () => {
     };
     return (
         <div>
-            <div className="bg-white flex justify-between py-5 px-4 shadow-lg">
+            <div className="bg-white flex justify-between py-5 px-4 shadow-lg dark:bg-slate-900">
                 <div className="flex self-center">
                     <Link href="/" >
                         <Image
-                            className="w-28"
+                            className="w-28 dark:hidden"
                             src="/assets/logo/codelabs.svg"
-                            alt="codelabs"
                             width={640}
-                            height={480}
+                            height={640}
                             priority={true}
+                            alt="Code Labs Logo"
+                        />
+                        <Image
+                            className="w-28 dark:block hidden"
+                            src="/assets/logo/codelabs_white.svg"
+                            width={640}
+                            height={640}
+                            priority={true}
+                            alt="Code Labs Logo"
                         />
                     </Link>
                 </div>
@@ -36,7 +44,15 @@ const MobileMenu = () => {
               width={20}
               height={20}
               priority={true}
-              className="w-8 h-8 cursor-pointer"
+              className="w-8 h-8 cursor-pointer dark:hidden text-white"
+          />
+          <Image
+              src="/assets/icons/hamburger_white.svg"
+              alt="Menu"
+              width={20}
+              height={20}
+              priority={true}
+              className="w-8 h-8 cursor-pointer dark:block hidden"
           />
         </span>
             </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
     return (
-        <div className="bg-white">
+        <div>
             <main className="isolate">
                 <div className="relative isolate -z-10">
                     <div
@@ -35,7 +35,7 @@ const Header = () => {
                             <div className="col-8">
                                 <div
                                     className="px-10 md:block">
-                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4">
+                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 dark:text-slate-400">
                                         Träffa teamet.
                                     </h1>
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
@@ -49,7 +49,7 @@ const Header = () => {
                                     <Link
                                         href="/karriar/"
                                     >
-                                        <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">Bli en av oss</button>
+                                        <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 dark:bg-slate-700">Bli en av oss</button>
                                     </Link>
                                 </div>
                             </div>

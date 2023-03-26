@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 const Erbjudande = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-900">
       <div className="max-w-5xl mx-auto flex lg:pb-60 pb-20 justify-center items-center flex-col">
         <div className="mb-16  mt-28">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Code Labs erbjuder</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-slate-400">Code Labs erbjuder</h1>
         </div>
         <div className="flex text-center flex-wrap">
           <div className="px-12 pb-5 lg:w-1/3 md:w-2/4 w-full flex flex-col items-center">
@@ -18,8 +18,8 @@ const Erbjudande = () => {
                 height={48}
                 priority={true}
             />
-            <h5 className="font-poppins font-semibold text-2xl mb-2">Team</h5>
-            <p className="text-center font-poppins font-light md:text-left px-4">
+            <h5 className="font-poppins font-semibold text-2xl mb-2 dark:text-slate-400">Team</h5>
+            <p className="text-center font-poppins font-light md:text-left px-4 dark:text-slate-500">
               Arbeta med ett tight team med stor gemenskap, hög kompetens och som älskar att umgås och hitta på saker tillsammans.
             </p>
           </div>
@@ -32,8 +32,8 @@ const Erbjudande = () => {
                 height={48}
                 priority={true}
             />
-            <h5 className="font-poppins font-semibold text-2xl mb-2">Äventyr</h5>
-            <p className="text-center font-poppins font-light md:text-left px-4">
+            <h5 className="font-poppins font-semibold text-2xl mb-2 dark:text-slate-400">Äventyr</h5>
+            <p className="text-center font-poppins font-light md:text-left px-4 dark:text-slate-500">
               Livet på Code Labs är mer än bara jobb. Vi har många aktiviteter tillsammans, både på jobbet och utanför.
             </p>
           </div>
@@ -46,23 +46,23 @@ const Erbjudande = () => {
                 height={48}
                 priority={true}
             />
-            <h5 className="font-title font-semibold text-2xl mb-2">Utveckling</h5>
-            <p className="text-center font-poppins font-light md:text-left px-4">
+            <h5 className="font-title font-semibold text-2xl mb-2 dark:text-slate-400">Utveckling</h5>
+            <p className="text-center font-poppins font-light md:text-left px-4 dark:text-slate-500">
               Tillsammans utvecklas vi och våra kunder. Vi har en stark kultur av att lära av varandra och dela med sig av kunskap.
             </p>
           </div>
         </div>
         <div className=" pt-20 flex flex-col md:flex-row justify-between px-4 ">
           <div className="lg:w-3/4 w-full mb-6 flex justify-center flex-col">
-            <p className="text-lg leading-8 text-gray-600">
+            <p className="text-lg leading-8 text-gray-600 dark:text-slate-400">
               Vill du bli en del av teamet?
             </p>
-            <p className="font-title text-sm text-center md:text-left font-poppins">Se tjänster vi söker.</p>
+            <p className="font-title text-sm text-center md:text-left font-poppins dark:text-slate-500">Se tjänster vi söker.</p>
           </div>
           <div className=" lg:w-3/12 px-6  w-full">
             <Link href="/karriar"
             >
-              <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">Lediga tjänster</button>
+              <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 dark:bg-slate-700">Lediga tjänster</button>
             </Link>
           </div>
         </div>

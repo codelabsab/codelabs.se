@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
     return (
-        <div className="bg-white hero-video-container h-screen flex items-center" style={{ position: "relative", zIndex: 0 }}>
+        <div className="bg-white hero-video-container h-screen flex items-center dark:bg-slate-900" style={{ position: "relative", zIndex: 0 }}>
             <video
                 autoPlay
                 loop

@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function TeamHome() {
   return (
-      <div className="bg-white py-32">
+      <div className="bg-white dark:bg-slate-800 py-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Teamet</h2>
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-slate-400">Teamet</h2>
               <p className="mt-2 text-lg leading-8 text-gray-600">
                 En sammansvetsad grupp som gillar att ha kul tillsammans
             </p>

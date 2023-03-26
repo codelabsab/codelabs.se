@@ -17,8 +17,8 @@ import Image from "next/image";
 const CustomerLogos = () => {
     const listOfCustomers = ["ica", "klarna", "pricer", "dice", "hm", "kindred", "pricerunner", "netent", "zebware", "tui"];
     return (
-        <div className="bg-gradient-to-b from-white via-codelabs-tertiary5 to-codelabs-primary5">
-            <div className="flex items-end justify-center pt-12">
+        <div className="bg-gradient-to-b from-white via-codelabs-tertiary5 to-codelabs-primary5 dark:bg-gradient-to-b dark:from-slate-800 dark:to-slate-800">
+        <div className="flex items-end justify-center pt-12">
                 <h2 className="font-title font-bold text-slate-600 text-center text-3xl md:text-5xl items-center justify-end">
                     Kunder som <span className="text-codelabs-primary2">litar på oss</span>
                 </h2>
@@ -46,7 +46,7 @@ const CustomerLogos = () => {
 
 const Divider = () => {
     return (
-        <div className={"w-full"}>
+        <div className={"w-full dark:hidden"}>
             <svg width="100%" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
                 <defs>
                     <clipPath id="shape">
@@ -61,7 +61,7 @@ const Divider = () => {
 
 export function Testimonials() {
     return (
-        <section className="bg-codelabs-primary5 py-24 sm:py-32">
+        <section className="bg-codelabs-primary5 py-24 sm:py-32 dark:bg-slate-900">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
@@ -74,7 +74,7 @@ export function Testimonials() {
                             priority={true}
                         />
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
-                            <blockquote className="text-lg leading-8 text-gray-900">
+                            <blockquote className="text-lg leading-8 text-gray-900 dark:text-slate-500">
                                 <p>
                                     “Code Labs konsult varit en tillgång vad gäller att
                                     driva det tekniska arbetet framåt och få nya idéer kring
@@ -93,8 +93,8 @@ export function Testimonials() {
                                     priority={true}
                                 />
                                 <div className="text-base">
-                                    <div className="font-semibold text-gray-900">Maja Wedfelt</div>
-                                    <div className="mt-1 text-gray-500">TUI - Delivery Lead</div>
+                                    <div className="font-semibold text-gray-900 dark:text-slate-400">Maja Wedfelt</div>
+                                    <div className="mt-1 text-gray-500 dark:text-slate-500">TUI - Delivery Lead</div>
                                 </div>
                             </figcaption>
                         </figure>
@@ -110,7 +110,7 @@ export function Testimonials() {
                             priority={true}
                         />
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
-                            <blockquote className="text-lg leading-8 text-gray-900">
+                            <blockquote className="text-lg leading-8 text-gray-900 dark:text-slate-500">
                                 <p>
                                     “Code Labs konsult visade prov på anpassningsförmåga,
                                     stresstålighet och en förmåga att ha många bollar i luften
@@ -129,8 +129,8 @@ export function Testimonials() {
                                     priority={true}
                                 />
                                 <div className="text-base">
-                                    <div className="font-semibold text-gray-900">Jonas Lindström</div>
-                                    <div className="mt-1 text-gray-500">DICE - DevOps Operations Manager</div>
+                                    <div className="font-semibold text-gray-900 dark:text-slate-400">Jonas Lindström</div>
+                                    <div className="mt-1 text-gray-500 dark:text-slate-500">DICE - DevOps Operations Manager</div>
                                 </div>
                             </figcaption>
                         </figure>
@@ -147,7 +147,7 @@ const Kunder = () => {
         <>
             <CustomerLogos/>
             <Testimonials/>
-            <Divider/>
+            <Divider />
         </>
     )
 }

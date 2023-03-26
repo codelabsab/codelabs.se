@@ -4,10 +4,10 @@ import React from "react";
 
 export default function Example() {
     return (
-        <div className="bg-white py-32">
+        <div className="bg-white py-32 dark:bg-slate-900">
             <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
                 <div className="mx-auto max-w-2xl">
-                    <h2 className="text-3xl font-bold tracking-tight text-slate-600 sm:text-4xl">Teamet</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-slate-600 dark:text-slate-400 sm:text-4xl">Teamet</h2>
                     <p className="mt-4 text-lg leading-8 text-slate-500">
                         En sammansvetsad grupp som brinner för att skapa en bättre värld genom teknik
                     </p>
@@ -26,8 +26,8 @@ export default function Example() {
                                 height={224}
                                 priority={true}
                             />
-                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-slate-600">{person.name}</h3>
-                            <p className="text-sm leading-6 text-codelabs-primary1">{person.role}</p>
+                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-slate-600 dark:text-slate-300">{person.name}</h3>
+                            <p className="text-sm leading-6 text-codelabs-primary1 dark:text-slate-600">{person.role}</p>
                             <p className="text-sm text-gray-400">{person.bio}</p>
                             <ul role="list" className="mt-6 flex justify-center gap-x-6 h-full">
                                 <li>
