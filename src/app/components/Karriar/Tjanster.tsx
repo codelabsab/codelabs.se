@@ -45,7 +45,7 @@ const values = [
 
 export default function Tjanster() {
     return (
-        <div className="bg-white">
+        <div className="bg-white dark:bg-slate-900">
             {/* Header */}
             <main className="isolate">
                 {/* Hero section */}
@@ -66,7 +66,7 @@ export default function Tjanster() {
                                 <path d="M.5 200V.5H200" fill="none"/>
                             </pattern>
                         </defs>
-                        <svg x="50%" y={-1} className="overflow-visible fill-codelabs-primary5">
+                        <svg x="50%" y={-1} className="overflow-visible fill-codelabs-primary5 dark:hidden">
                             <path
                                 d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                                 strokeWidth={0}
@@ -102,7 +102,7 @@ export default function Tjanster() {
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-slate-400">
                                         Innovation och kreativitet.
                                     </h1>
                                     <Image
@@ -113,7 +113,7 @@ export default function Tjanster() {
                                         height={224}
                                         priority={true}
                                     />
-                                    <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                                    <p className="relative mt-6 text-lg leading-8 text-gray-600 dark:text-slate-400 sm:max-w-md lg:max-w-none">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
                                         kontinuerlig förbättring. Genom att locka till oss de mest kreativa och
@@ -213,10 +213,10 @@ export default function Tjanster() {
                 <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                         <div className="flex items-center">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission &
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-400">Mission &
                                 Vision</h2>
                             <Image
-                                className="h-52"
+                                className="h-52 dark:hidden"
                                 src={"/assets/misc-2.svg"}
                                 alt={""}
                                 width={224}
@@ -226,14 +226,14 @@ export default function Tjanster() {
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                                <p className="text-xl leading-8 text-gray-600">
+                                <p className="text-xl leading-8 text-gray-600 dark:text-slate-500">
                                     Vår mission och vision är att skapa en arbetsplats som stödjer och främjar
                                     nytänkande och kreativitet, både internt och för våra kunder. Genom att ha en kultur
                                     som värdesätter innovation och kreativitet och genom att erbjuda utbildning och
                                     resurser för att utveckla våra medarbetares förmågor, kan vi erbjuda högkvalitativa
                                     lösningar som hjälper våra kunder att uppnå sina affärsmål.
                                 </p>
-                                <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                                <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 dark:text-slate-500">
                                     <p>
                                         Att vara en innovativ och kreativ partner som hjälper våra kunder att lösa sina
                                         mest utmanande problem. Genom att främja en kultur av nytänkande och kreativitet
@@ -242,7 +242,7 @@ export default function Tjanster() {
                                         rolig och inspirerande arbetsmiljö, med regelbundna events, hjälper oss
                                         att stimulera vår kreativitet och skapa nya lösningar.
                                     </p>
-                                    <p className="mt-10">
+                                    <p className="mt-10 dark:text-slate-500">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
                                         kontinuerlig förbättring. Genom att locka till oss de mest kreativa och
@@ -259,8 +259,8 @@ export default function Tjanster() {
                                 <dl className="w-64 space-y-8 xl:w-80">
                                     {stats.map((stat) => (
                                         <div key={stat.label} className="flex flex-col-reverse gap-y-4">
-                                            <dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
-                                            <dd className="text-5xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
+                                            <dt className="text-base leading-7 text-gray-600 dark:text-slate-400">{stat.label}</dt>
+                                            <dd className="text-5xl font-semibold tracking-tight text-gray-900 dark:text-slate-500">{stat.value}</dd>
                                         </div>
                                     ))}
                                 </dl>
@@ -293,7 +293,7 @@ export default function Tjanster() {
                 <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <div className="flex items-center">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Våra
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-400">Våra
                                 kärnvärden</h2>
                             <Image
                                 className="h-32"
@@ -304,7 +304,7 @@ export default function Tjanster() {
                                 priority={true}
                             />
                         </div>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-slate-500">
                             Att skapa en inkluderande, balanserad, kreativ, socialt ansvarstagande och
                             utvecklingsorienterad arbetsplats är viktiga kärnvärden för ett konsultbolag som vill locka
                             till sig och behålla de bästa talangerna.
@@ -313,7 +313,7 @@ export default function Tjanster() {
                     <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {values.map((value) => (
                             <div key={value.name}>
-                                <dt className="font-semibold text-gray-900">{value.name}</dt>
+                                <dt className="font-semibold text-gray-900 dark:text-slate-500">{value.name}</dt>
                                 <dd className="mt-1 text-gray-600">{value.description}</dd>
                             </div>
                         ))}

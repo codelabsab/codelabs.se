@@ -3,33 +3,33 @@ import Link from "next/link";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="bg-codelabs-primary5 pb-8">
+    <div className="bg-codelabs-primary5 pb-8 dark:bg-slate-800">
       <div className="max-w-7xl mx-auto my-auto">
         <div className="pb-12"></div>
         <div className="flex flex-col md:flex-row justify-center md:justify-between pl-24 pr-24">
           {/* snabblänkar */}
           <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-3">
             <div className="col-12">
-                <h2 className="text-l font-poppins font-medium pb-4">
+                <h2 className="text-l font-poppins font-medium pb-4 dark:text-slate-400">
                   Snabblänkar
                 </h2>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/karriar/"
               >Karriär</a>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/team/"
               >Team</a>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/kunder/"
               >Kundcase</a>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/blogs/"
               >Blogg</a>
@@ -39,7 +39,7 @@ const Footer = () => {
           {/* följ oss */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
-              <h2 className="font-poppins font-medium pb-4">
+              <h2 className="font-poppins font-medium pb-4 dark:text-slate-400">
                 Följ oss på
               </h2>
             </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-5 h-5"
+                        className="w-5 h-5 dark:text-slate-500"
                     />
                   </a>
                 </li>
@@ -73,7 +73,7 @@ const Footer = () => {
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-5 h-5"
+                        className="w-5 h-5 dark:text-slate-500"
                     />
                   </a>
                 </li>
@@ -89,7 +89,7 @@ const Footer = () => {
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-5 h-5"
+                        className="w-5 h-5 dark:text-slate-500"
                     />
                   </a>
                 </li>
@@ -100,11 +100,11 @@ const Footer = () => {
           {/* kontakta oss */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
-              <h2 className="text-l font-poppins font-medium pb-4">
+              <h2 className="text-l font-poppins font-medium pb-4 dark:text-slate-400">
                 Kontakta oss
               </h2>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm">
+            <div className="col-12 font-poppins font-normal text-sm dark:text-slate-500">
               Tel: 08 - 128 164 00
             </div>
           </div>
@@ -113,17 +113,17 @@ const Footer = () => {
           {/* jobba hos oss */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
-              <h2 className="text-l font-poppins font-medium pb-4">
+              <h2 className="text-l font-poppins font-medium pb-4 dark:text-slate-400">
                 Jobba hos oss
               </h2>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/karriar/"
                   rel="noreferrer noopener"
               >Karriär</a>
             </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold">
+            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold dark:text-slate-500">
               <a
                   href="https://codelabs.se/karriar/"
                   rel="noreferrer noopener"
@@ -137,13 +137,13 @@ const Footer = () => {
             {/*left*/}
             <div className="col-4"></div>
             {/* mid */}
-            <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-4 divide-y divide-purple-400">
+            <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-4 divide-y divide-purple-400 dark:divide-slate-400">
               <div className="col-4"></div>
               <div className="col-8 pt-4">
                 <div className="flex flex-col justify-center">
                   <div className="col-12 text-center pb-4">
-                    <p className="font-poppins font-light text-sm">Code Labs AB</p>
-                    <p className="font-poppins font-light text-sm">Org.nr: 559064-2442</p>
+                    <p className="font-poppins font-light text-sm dark:text-slate-500">Code Labs AB</p>
+                    <p className="font-poppins font-light text-sm dark:text-slate-500">Org.nr: 559064-2442</p>
                     {/*<p className="font-poppins font-light">Integritetspolicy</p>*/}
                   </div>
                   <div className="mx-auto">
