@@ -113,6 +113,14 @@ export default function Tjanster() {
                                         utveckla våra medarbetares kreativa förmågor, kommer vi att fortsätta att vara
                                         en pålitlig partner för våra kunder och en ledande röst inom konsultbranschen.
                                     </p>
+                                    <Image
+                                        className=""
+                                        src={"/assets/misc-5.svg"}
+                                        alt={""}
+                                        width={224}
+                                        height={224}
+                                        priority={true}
+                                    />
                                 </div>
                                 <div
                                     className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -187,9 +195,9 @@ export default function Tjanster() {
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
-                                                src="/assets/rally.mp4"
-                                                type="video/mp4"
-                                            />
+                                                    src="/assets/rally.mp4"
+                                                    type="video/mp4"
+                                                />
                                             </video>
                                             <div
                                                 className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
@@ -204,8 +212,18 @@ export default function Tjanster() {
                 {/* Content section */}
                 <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission &
-                            Vision</h2>
+                        <div className="flex items-center">
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission &
+                                Vision</h2>
+                            <Image
+                                className="h-52"
+                                src={"/assets/misc-2.svg"}
+                                alt={""}
+                                width={224}
+                                height={224}
+                                priority={true}
+                            />
+                        </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                                 <p className="text-xl leading-8 text-gray-600">
@@ -263,7 +281,18 @@ export default function Tjanster() {
                 {/* Values section */}
                 <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Våra kärnvärden</h2>
+                        <div className="flex items-center">
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Våra
+                                kärnvärden</h2>
+                            <Image
+                                className="h-32"
+                                src={"/assets/arrow-12.svg"}
+                                alt={""}
+                                width={224}
+                                height={224}
+                                priority={true}
+                            />
+                        </div>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
                             Att skapa en inkluderande, balanserad, kreativ, socialt ansvarstagande och
                             utvecklingsorienterad arbetsplats är viktiga kärnvärden för ett konsultbolag som vill locka
@@ -306,13 +335,17 @@ export default function Tjanster() {
                         <p className="text-lg leading-8 text-gray-600 text-center">
                             Vill du lära känna teamet?
                         </p>
-                        <p className="font-title text-sm text-center md:text-center font-poppins">Se vilka som jobbar hos oss</p>
+                        <p className="font-title text-sm text-center md:text-center font-poppins">Se vilka som jobbar
+                            hos oss</p>
                     </div>
                     <div className="px-6 py-2 flex justify-center">
                         <Link href="/team"
                               className="mx-auto"
                         >
-                            <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Träffa teamet</button>
+                            <button
+                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Träffa
+                                teamet
+                            </button>
                         </Link>
                     </div>
                 </div>
