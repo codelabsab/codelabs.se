@@ -105,6 +105,14 @@ export default function Tjanster() {
                                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                                         Innovation och kreativitet.
                                     </h1>
+                                    <Image
+                                        className="h-10 mt-4"
+                                        src={"/assets/arrow-15.svg"}
+                                        alt={""}
+                                        width={224}
+                                        height={224}
+                                        priority={true}
+                                    />
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
@@ -113,14 +121,6 @@ export default function Tjanster() {
                                         utveckla våra medarbetares kreativa förmågor, kommer vi att fortsätta att vara
                                         en pålitlig partner för våra kunder och en ledande röst inom konsultbranschen.
                                     </p>
-                                    <Image
-                                        className=""
-                                        src={"/assets/misc-5.svg"}
-                                        alt={""}
-                                        width={224}
-                                        height={224}
-                                        priority={true}
-                                    />
                                 </div>
                                 <div
                                     className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -267,6 +267,17 @@ export default function Tjanster() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="flex justify-center max-w-5xl">
+                <Image
+                    className="h-28 mt-20"
+                    src={"/assets/misc-5.svg"}
+                    alt={""}
+                    width={224}
+                    height={224}
+                    priority={true}
+                />
+
                 </div>
 
                 {/* Image section */}
