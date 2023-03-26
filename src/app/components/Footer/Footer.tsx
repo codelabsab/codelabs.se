@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
             <div className="col-12">
               <ul className="flex">
-                <li className="pr-3">
+                <li>
                   <a
                       href="https://www.linkedin.com/company/code-labs-ab/"
                       target="_blank"
@@ -57,7 +57,7 @@ const Footer = () => {
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-4 h-4 text-white"
+                        className="w-5 h-5"
                     />
                   </a>
                 </li>
@@ -73,23 +73,23 @@ const Footer = () => {
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-4 h-4 text-white"
+                        className="w-5 h-5"
                     />
                   </a>
                 </li>
-                <li className="px-3">
+                <li>
                   <a
                       href="https://github.com/codelabsab/"
                       target="_blank"
                       rel="noreferrer noopener"
                   >
                     <Image
-                        src="/assets/social/github-2.svg"
+                        src="/assets/social/github.svg"
                         alt="Instagram"
                         width={20}
                         height={20}
                         priority={true}
-                        className="w-4 h-4 text-white"
+                        className="w-5 h-5"
                     />
                   </a>
                 </li>
