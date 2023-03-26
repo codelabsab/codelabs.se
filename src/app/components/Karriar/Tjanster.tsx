@@ -307,10 +307,18 @@ export default function Tjanster() {
                             </div>
                         ))}
                     </dl>
+                <Image
+                    className="mx-auto w-full h-16 mt-24"
+                    src={"/assets/line-4.svg"}
+                    alt={""}
+                    width={224}
+                    height={224}
+                    priority={true}
+                />
                 </div>
 
                 {/* Team section */}
-                <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
+                <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-24 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Teamet</h2>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
