@@ -1,5 +1,4 @@
 import React from "react";
-import {people} from "@/app/components/Data/TeamData";
 
 
 import Image from "next/image";
@@ -296,7 +295,7 @@ export default function Tjanster() {
                         <div className="flex items-center">
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">Våra
                                 kärnvärden</h2>
-                            <img
+                            <Image
                                 className="h-32 text-codelabs-primary1"
                                 src={"/assets/arrow-12.svg"}
                                 alt={"arrow"}
@@ -327,43 +326,17 @@ export default function Tjanster() {
                         priority={true}
                     />
                 </div>
-
-                {/* Team section */}
-                <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-24 lg:px-8">
-                    <div className="mx-auto max-w-2xl lg:mx-0">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Teamet</h2>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
-                            Våra stjärnor som brinner för att hjälpa dig att nå dina mål.
-                        </p>
-                    </div>
-                    <ul
-                        role="list"
-                        className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-y-16 gap-x-8 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
-                    >
-                        {people.map((person) => (
-                            <li key={person.name}>
-                                <img className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt=""/>
-                                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
-                                <p className="text-sm leading-6 text-gray-600">{person.role}</p>
-                            </li>
-                        ))}
-                    </ul>
+                <div className={"flex justify-center py-24"}>
+                    <h1 className="md:text-7xl text-5xl font-extrabold">Redo att ansöka?</h1>
                 </div>
-                <div className=" pt-20 flex flex-col justify-center px-4">
-                    <div className="mb-6">
-                        <p className="text-lg leading-8 text-gray-600 text-center">
-                            Vill du lära känna teamet?
-                        </p>
-                        <p className="font-title text-sm text-center md:text-center font-poppins">Se vilka som jobbar
-                            hos oss</p>
-                    </div>
-                    <div className="px-6 py-2 flex justify-center">
-                        <Link href="/team"
-                              className="mx-auto"
+                <div className={"flex justify-center py-4"}>
+                    <div className="flex justify-center md:justify-start py-12">
+                        <Link
+                            href="mailto:contact@codelabs.se"
                         >
                             <button
-                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Träffa
-                                teamet
+                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
+                                Maila oss
                             </button>
                         </Link>
                     </div>
