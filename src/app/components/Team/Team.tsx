@@ -26,7 +26,7 @@ export default function Example() {
                                 height={224}
                                 priority={true}
                             />
-                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-slate-600 ">{person.name}</h3>
+                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-slate-600 ">{person.name.split(" ").slice(0, 1)}</h3>
                             <p className="text-sm leading-6 text-codelabs-primary1 ">{person.role}</p>
                             <p className="text-sm text-gray-400">{person.bio}</p>
                             <ul role="list" className="mt-6 flex justify-center gap-x-6 h-full">

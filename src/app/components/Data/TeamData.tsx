@@ -46,7 +46,7 @@ export const people = [
   {
     name: "Mauricio Saez",
     role: `DevOps Engineer`,
-    bio: `Chuey a.k.a Fully kitted`,
+    bio: `Chuey`,
     skills: ` python ansible puppet docker openshift ci/cd`,
     imageUrl: "assets/team/mauricio.jpeg",
     github_url: `https://github.com/marresgit`,
