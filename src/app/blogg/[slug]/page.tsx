@@ -36,6 +36,8 @@ const PostPage = (props: any) => {
                 }}>
             </div>
             <div className="max-w-4xl px-4 py-4 mx-auto md:pt-4 sm:pt-10 items-center">
+                <h1 className="text-7xl font-extrabold py-12">{post.data.title}</h1>
+                <p className="text-lg font-light italic">{post.data.description}</p>
                 <article className={"prose lg:prose-xl prose-code:before:hidden prose-code:after:hidden py-4"}>
                     <Markdown>{post.content}</Markdown>
                 </article>
