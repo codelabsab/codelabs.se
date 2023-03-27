@@ -34,19 +34,9 @@ const PostPage = (props: any) => {
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat"
                 }}>
-                <div className={"grid md:grid-cols-3"}>
-                    <div className={"bg-transparent"}></div>
-                    <div
-                        className={"bg-white h-60 items-center text-center my-32"}>
-                        <h4 className="font-bold text-4xl my-24 text-center justify-center">
-                            {post.data.title}
-                        </h4>
-                    </div>
-                    <div className={"bg-transparent"}></div>
-                </div>
             </div>
-            <div className="max-w-3xl px-9 mx-auto md:pt-24 sm:pt-10">
-                <article className={"prose lg:prose-xl prose-code:before:hidden prose-code:after:hidden"}>
+            <div className="max-w-4xl px-4 py-4 mx-auto md:pt-4 sm:pt-10 items-center">
+                <article className={"prose lg:prose-xl prose-code:before:hidden prose-code:after:hidden py-4"}>
                     <Markdown>{post.content}</Markdown>
                 </article>
             </div>
