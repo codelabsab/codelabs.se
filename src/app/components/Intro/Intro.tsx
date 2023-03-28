@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {Splash4} from "@/app/components/Graphics/Splash";
 
 const OmOss = () => {
     return (
@@ -30,9 +29,6 @@ const OmOss = () => {
                                     </button>
                                 </Link>
                             </div>
-                        </div>
-                        <div className={"absolute h-[1800px] w-[1800px] top-0"}>
-                            <Splash4/>
                         </div>
                         <div className="md:w-1/2 z-20">
                             <Image

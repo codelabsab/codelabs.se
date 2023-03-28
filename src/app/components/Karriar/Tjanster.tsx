@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {Splash1, Splash2} from "@/app/components/Graphics/Splash";
+import {Splash1, Splash4} from "@/app/components/Graphics/Splash";
 
 const stats = [
     {label: 'Timmar hos fantastiska kunder', value: '5000+'},
@@ -99,13 +99,13 @@ export default function Tjanster() {
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                                <div className="h-full w-full absolute -z-10 h-full">
+                                    <Splash1/>
+                                </div>
                                 <div className="mx-auto">
                                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
                                         Innovation och kreativitet.
                                     </h1>
-                                    <div className="h-full w-full absolute -z-10">
-                                        <Splash1/>
-                                    </div>
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
@@ -218,8 +218,8 @@ export default function Tjanster() {
                                 priority={true}
                             />
                         </div>
-                        <div className="absolute -z-10">
-                            <Splash2/>
+                        <div className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 ">
+                            <Splash4/>
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
