@@ -103,7 +103,7 @@ export default function Tjanster() {
                                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
                                         Innovation och kreativitet.
                                     </h1>
-                                    <div className="hidden md:block h-56 relative">
+                                    <div className="h-52 w-40 relative ">
                                         <Splash1/>
                                     </div>
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
