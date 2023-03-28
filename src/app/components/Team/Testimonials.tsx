@@ -8,12 +8,12 @@ const Testimonials = () => {
     return (
         <div>
             <main className="isolate relative">
+                <div className="absolute -z-10 w-full">
+                    <Splash3/>
+                </div>
                 <div
                     className="max-w-6xl mx-auto flex pt-24 lg:pb-28 pb-8 justify-center items-center flex-col mb-4 mt-4">
                     <div className="grid md:grid-cols-2 sm:grid-cols-1 text-center">
-                        <div className="absolute -z-10 w-full">
-                            <Splash3/>
-                        </div>
                         <div className={"px-4"}>
                             <div
                                 className="pt-4 left-full text-left text-7xl font-serif leading-none text-codelabs-primary3"
