@@ -7,12 +7,11 @@ import {Splash3} from "@/app/components/Graphics/Splash";
 const Testimonials = () => {
     return (
         <div>
-            <main className="isolate">
+            <main className="isolate relative">
                 <div
                     className="max-w-6xl mx-auto flex pt-24 lg:pb-28 pb-8 justify-center items-center flex-col mb-4 mt-4">
                     <div className="grid md:grid-cols-2 sm:grid-cols-1 text-center">
-                        <div className="absolute inset-x-0 top-40 -z-10 w-full stroke-codelabs-primary5"
-                             aria-hidden="true">
+                        <div className="absolute -z-10">
                             <Splash3/>
                         </div>
                         <div className={"px-4"}>
