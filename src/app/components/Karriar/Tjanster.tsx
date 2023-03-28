@@ -1,8 +1,7 @@
 import React from "react";
-
-
 import Image from "next/image";
 import Link from "next/link";
+import {Splash1, Splash2} from "@/app/components/Graphics/Splash";
 
 const stats = [
     {label: 'Timmar hos fantastiska kunder', value: '5000+'},
@@ -100,18 +99,13 @@ export default function Tjanster() {
                     <div className="overflow-hidden">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                                <div className="mx-auto">
                                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
                                         Innovation och kreativitet.
                                     </h1>
-                                    <Image
-                                        className="h-10 mt-4"
-                                        src={"/assets/arrow-15.svg"}
-                                        alt={""}
-                                        width={224}
-                                        height={224}
-                                        priority={true}
-                                    />
+                                    <div className="hidden md:block h-56 relative">
+                                        <Splash1/>
+                                    </div>
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
@@ -217,12 +211,15 @@ export default function Tjanster() {
                                 Vision</h2>
                             <Image
                                 className="h-52 "
-                                src={"/assets/misc-2.svg"}
+                                src={"/assets/paint/misc-2.svg"}
                                 alt={""}
                                 width={224}
                                 height={224}
                                 priority={true}
                             />
+                        </div>
+                        <div className="h-20">
+                            <Splash2/>
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
@@ -271,7 +268,7 @@ export default function Tjanster() {
                 <div className="flex justify-center max-w-5xl">
                     <Image
                         className="h-28 mt-20"
-                        src={"/assets/misc-5.svg"}
+                        src={"/assets/paint/misc-5.svg"}
                         alt={""}
                         width={224}
                         height={224}
@@ -297,7 +294,7 @@ export default function Tjanster() {
                                 kärnvärden</h2>
                             <Image
                                 className="h-32 text-codelabs-primary1"
-                                src={"/assets/arrow-12.svg"}
+                                src={"/assets/paint/arrow-12.svg"}
                                 alt={"arrow"}
                                 width={224}
                                 height={224}
@@ -319,7 +316,7 @@ export default function Tjanster() {
                     </dl>
                     <Image
                         className="mx-auto w-full h-16 mt-24"
-                        src={"/assets/line-4.svg"}
+                        src={"/assets/paint/line-4.svg"}
                         alt={""}
                         width={224}
                         height={224}
