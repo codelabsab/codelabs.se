@@ -96,12 +96,12 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
+                                <div className="h-full w-full absolute -z-10">
+                                    <Splash1/>
+                                </div>
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                                <div className="h-full w-full absolute -z-10 h-full">
-                                    <Splash1/>
-                                </div>
                                 <div className="mx-auto">
                                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
                                         Innovation och kreativitet.
