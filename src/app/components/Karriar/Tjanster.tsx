@@ -96,7 +96,7 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                                <div className="h-full w-full absolute -z-10">
+                                <div className="w-full absolute -z-10 overflow-hidden">
                                     <Splash1/>
                                 </div>
                     <div className="overflow-hidden relative">
@@ -209,16 +209,16 @@ export default function Tjanster() {
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">Mission
                                 &
                                 Vision</h2>
-                            <Image
-                                className="h-52 "
-                                src={"/assets/paint/misc-2.svg"}
-                                alt={""}
-                                width={224}
-                                height={224}
-                                priority={true}
-                            />
+                            {/*<Image*/}
+                            {/*    className="h-52 "*/}
+                            {/*    src={"/assets/paint/misc-2.svg"}*/}
+                            {/*    alt={""}*/}
+                            {/*    width={224}*/}
+                            {/*    height={224}*/}
+                            {/*    priority={true}*/}
+                            {/*/>*/}
                         </div>
-                        <div className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 ">
+                        <div className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden">
                             <Splash4/>
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
