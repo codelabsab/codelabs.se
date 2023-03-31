@@ -1,6 +1,7 @@
 import {people} from "@/app/components/Data/TeamData";
 import React from "react";
-import {Inter, Montserrat, Poppins, Roboto} from "next/font/google";
+import {Roboto} from "next/font/google";
+import Image from "next/image";
 
 const roboto = Roboto({
     weight: ['100','300','400', '500', '700', '900'],
@@ -24,7 +25,12 @@ export default function TeamTestimonials() {
                 >
                     {people.map((person) => (
                         <li key={person.name} className="flex flex-col gap-6 xl:flex-row">
-                            <img className="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src={person.imageUrl}
+                            <Image
+                                src={person.imageUrl}
+                                width={400}
+                                height={400}
+                                priority={true}
+                                className="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
                                  alt=""/>
                             <div className="flex-auto">
                                 <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
