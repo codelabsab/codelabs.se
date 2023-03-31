@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import {Inter, Montserrat, Poppins, Roboto} from 'next/font/google'
+import {Inter, Montserrat, Roboto} from 'next/font/google'
 
 const montserrat = Montserrat({
     weight: ['100','200','300','400', '500', '600', '700'],
