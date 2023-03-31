@@ -161,7 +161,7 @@ export default function Tjanster() {
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
-                                                    src="/assets/grill.mp4"
+                                                    src="/assets/video/grill.mp4"
                                                     type="video/mp4"
                                                 />
                                             </video>
@@ -179,7 +179,7 @@ export default function Tjanster() {
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
-                                                    src="/assets/waterfall.mp4"
+                                                    src="/assets/video/waterfall.mp4"
                                                     type="video/mp4"
                                                 />
                                             </video>
@@ -195,7 +195,7 @@ export default function Tjanster() {
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
-                                                    src="/assets/rally.mp4"
+                                                    src="/assets/video/rally.mp4"
                                                     type="video/mp4"
                                                 />
                                             </video>
