@@ -32,13 +32,11 @@ const OmOss = () => {
                         className="flex md:flex-row flex-col mx-auto py-24 px-4 justify-center items-center max-w-7xl relative">
                         <div className="px-4 z-10">
                             <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
-                                What a team
+                                What a teeaam
                             </h1>
                             <p className={`mt-6 text-4xl ${roboto.className} font-extralight text-gray-600`}>
                                 Vi är ett <b className={`${inter.className} font-extrabold`}>team</b> där <i>kreativitet</i>, <i>samarbete</i> och <i>glädje</i> är i fokus. Vi har en
                                 avslappnad företagskultur som uppmuntrar till öppen kommunikation och kreativt tänkande.
-                                Vi tror att en glad och motiverad personal är nyckeln till att leverera resultat för
-                                våra kunder.
                             </p>
                             <div className="flex justify-start py-12 z-10">
                                 <Link

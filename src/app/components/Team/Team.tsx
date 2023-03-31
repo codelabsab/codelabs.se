@@ -1,14 +1,19 @@
 import {people} from "@/app/components/Data/TeamData";
-import Image from "next/image";
 import React from "react";
+import {Inter, Montserrat, Poppins, Roboto} from "next/font/google";
+
+const roboto = Roboto({
+    weight: ['100','300','400', '500', '700', '900'],
+    subsets: ['latin']
+})
 
 export default function TeamTestimonials() {
     return (
-        <div className="bg-white py-24 sm:py-32">
+        <div className="bg-codelabs-tertiary5 py-16 sm:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl sm:text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">Vi som jobbar på Code Labs.</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
+                <div className="mx-auto max-w-7xl sm:text-center">
+                    <h1 className={`text-5xl sm:text-8xl font-bold tracking-tight text-black ${roboto.className}`}>Vi som jobbar på Code Labs.</h1>
+                    <p className={`mt-6 text-3xl ${roboto.className} font-extralight text-gray-600`}>
                         Ett härligt team av individer som alla har olika bakgrunder och kompetenser. Med vår
                         sammansvetsade teamkänsla så skapar vi magic.
                     </p>

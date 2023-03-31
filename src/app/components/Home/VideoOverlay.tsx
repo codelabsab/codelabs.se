@@ -6,9 +6,9 @@ const monsterrat = Montserrat({ subsets: ['latin'] })
 const VideoWithOverlay = () => {
     return (
         <div className={`hero-video-wrapper max-h-screen mx-auto my-auto ${monsterrat.className}`}>
-            <video autoPlay playsInline muted loop poster="/assets/iceland.png" className="max-h-screen max-w-7xl mx-auto my-auto">
+            <video autoPlay playsInline muted loop className="max-h-screen max-w-7xl mx-auto my-auto">
                 <source
-                    src="https://www.dropbox.com/s/oqidr2ka3ogstak/iceland-stabilized.mov?raw=1"
+                    src="/assets/video/iceland.mp4"
                 />
             </video>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 80" preserveAspectRatio="xMidYMid slice">

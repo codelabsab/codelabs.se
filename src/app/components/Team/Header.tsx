@@ -1,5 +1,26 @@
 import React from "react";
 import Link from "next/link";
+import {Inter, Montserrat, Poppins, Roboto} from "next/font/google";
+
+const monsterrat = Montserrat({
+    weight: ['100','200','300','400', '500', '600', '700'],
+    subsets: ['latin']
+})
+
+const inter = Inter({
+    weight: ['100','200','300','400', '500', '600', '700'],
+    subsets: ['latin']
+})
+
+const roboto = Roboto({
+    weight: ['100','300','400', '500', '700', '900'],
+    subsets: ['latin']
+})
+
+const poppins = Poppins({
+    weight: ['100','200','300','400', '500', '600', '700'],
+    subsets: ['latin']
+})
 
 const Header = () => {
     return (
@@ -35,21 +56,20 @@ const Header = () => {
                             <div className="col-8">
                                 <div
                                     className="px-10 md:block">
-                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 ">
+                                    <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 ">
                                         Träffa teamet.
                                     </h1>
-                                    <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none z-30">
+                                    <p className={`my-8 text-4xl font-extralight text-gray-600 ${roboto.className} `}>
                                         Träffa våra superstjärnor. Vi är ett gäng engagerade kollegor
-                                        och vänner som älskar att skriva kod och snacka tech. Oroa dig
-                                        inte för vi älskar att kavla upp ärmen och få jobb gjort också!
-                                    </p>
-                                    <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none pb-4 z-30">
-                                        Intresserad av att joina vårt team?
+                                        och vänner som älskar att skriva kod.
                                     </p>
                                     <Link
                                         href="/karriar/"
                                     >
-                                        <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 z-30">Bli en av oss</button>
+                                        <button
+                                            className={`bg-codelabs-primary2 font-bold px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${monsterrat.className}`}>
+                                            Bli en av oss
+                                        </button>
                                     </Link>
                                 </div>
                             </div>

@@ -10,7 +10,6 @@ export default function TeamPage() {
             <Header />
             <Testimonials />
             <Team />
-            <WhatWeDo />
         </main>
     )
 }
