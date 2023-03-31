@@ -5,7 +5,7 @@ slug: måltidsplanering-med-chatgpt
 date: "2023-03-31"
 description: Skapa en Måltidsplaneringsapp med React, TypeScript och ChatGPT
 og_image: /assets/blogg/chatgpt.png
-author: ChatGPT
+author: Kami Gerami
 ---
 
 # Skapa en Måltidsplaneringsapp med React, TypeScript och ChatGPT
