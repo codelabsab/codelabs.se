@@ -1,15 +1,5 @@
 'use client';
 import React from "react";
-import ica from "../../../../public/assets/customer/logo/ica.svg";
-import klarna from "../../../../public/assets/customer/logo/klarna.svg";
-import pricer from "../../../../public/assets/customer/logo/pricer.svg";
-import dice from "../../../../public/assets/customer/logo/dice.svg";
-import hm from "../../../../public/assets/customer/logo/hm.svg";
-import kindred from "../../../../public/assets/customer/logo/kindred.svg";
-import pricerunner from "../../../../public/assets/customer/logo/pricerunner.svg";
-import netent from "../../../../public/assets/customer/logo/netent.svg";
-import zebware from "../../../../public/assets/customer/logo/zebware.svg";
-import tui from "../../../../public/assets/customer/logo/tui.svg";
 import jonas from "../../../../public/assets/customer/testimonials/jonas-lindstrom.jpeg";
 import maja from "../../../../public/assets/customer/testimonials/maja-wedfelt.jpeg";
 import Image from "next/image";
