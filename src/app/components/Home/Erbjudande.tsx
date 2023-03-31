@@ -62,7 +62,7 @@ const Erbjudande = () => {
           <div className=" lg:w-3/12 px-6  w-full">
             <Link href="/karriar"
             >
-              <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Lediga tjänster</button>
+              <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ">Lediga tjänster</button>
             </Link>
           </div>
         </div>

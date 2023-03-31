@@ -96,16 +96,23 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                                <div className="w-full absolute -z-10 overflow-hidden">
-                                    <Splash1/>
-                                </div>
+                    <div className="w-full absolute -z-10 overflow-hidden">
+                        <Splash1/>
+                    </div>
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="mx-auto">
-                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
-                                        Innovation och kreativitet.
+                                    <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl ">
+                                        Innovation & kreativitet.
                                     </h1>
+                                    <Image
+                                        className="h-12 text-codelabs-primary1"
+                                        src={"/assets/paint/arrow-15.svg"}
+                                        alt={"arrow"}
+                                        width={224}
+                                        height={224}
+                                    />
                                     <p className="relative mt-6 text-lg leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
                                         marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
@@ -206,19 +213,20 @@ export default function Tjanster() {
                 <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                         <div className="flex items-center">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">Mission
+                            <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl ">Mission
                                 &
-                                Vision</h2>
-                            {/*<Image*/}
-                            {/*    className="h-52 "*/}
-                            {/*    src={"/assets/paint/misc-2.svg"}*/}
-                            {/*    alt={""}*/}
-                            {/*    width={224}*/}
-                            {/*    height={224}*/}
-                            {/*    priority={true}*/}
-                            {/*/>*/}
+                                Vision</h1>
+                            <Image
+                                className="h-32 "
+                                src={"/assets/paint/misc-2.svg"}
+                                alt={""}
+                                width={224}
+                                height={224}
+                                priority={true}
+                            />
                         </div>
-                        <div className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden">
+                        <div
+                            className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden">
                             <Splash4/>
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
@@ -290,8 +298,9 @@ export default function Tjanster() {
                 <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <div className="flex items-center">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">Våra
-                                kärnvärden</h2>
+                            <h2 className="text-6xl font-bold tracking-tight text-gray-900 sm:text-8xl ">
+                                Kärnvärden
+                            </h2>
                             <Image
                                 className="h-32 text-codelabs-primary1"
                                 src={"/assets/paint/arrow-12.svg"}
@@ -332,8 +341,8 @@ export default function Tjanster() {
                             href="mailto:contact@codelabs.se"
                         >
                             <button
-                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
-                                Maila oss
+                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
+                                Yes, jag är redo!
                             </button>
                         </Link>
                     </div>

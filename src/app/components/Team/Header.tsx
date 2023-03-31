@@ -49,7 +49,7 @@ const Header = () => {
                                     <Link
                                         href="/karriar/"
                                     >
-                                        <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 z-30">Bli en av oss</button>
+                                        <button className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-36 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 z-30">Bli en av oss</button>
                                     </Link>
                                 </div>
                             </div>
