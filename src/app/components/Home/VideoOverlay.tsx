@@ -16,7 +16,7 @@ const VideoWithOverlay = () => {
                     <mask id="mask" x="0" y="0" width="100%" height="100%" >
                         <rect x="0" y="0" width="100%" height="100%" />
                         <text x="75" y="35">code</text>
-                        <text x="107" y="70">labs</text>
+                        <text x="109" y="70">labs</text>
                     </mask>
                 </defs>
                 <rect x="0" y="0" width="100%" height="100%" />
