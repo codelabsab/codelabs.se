@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import {Inter, Montserrat, Poppins, Roboto} from 'next/font/google'
+import {Splash1} from "@/app/components/Graphics/Splash";
 
 const monsterrat = Montserrat({
     weight: ['100','200','300','400', '500', '600', '700'],
@@ -26,7 +27,7 @@ const poppins = Poppins({
 const OmOss = () => {
     return (
         <div>
-            <div className="bg-codelabs-primary5">
+            <div className="bg-codelabs-primary4">
                 <div>
                     <div
                         className="flex md:flex-row flex-col mx-auto py-24 px-4 justify-center items-center max-w-7xl relative">
@@ -34,7 +35,7 @@ const OmOss = () => {
                             <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
                                 What a teeaam
                             </h1>
-                            <p className={`mt-6 text-4xl ${roboto.className} font-extralight text-gray-600`}>
+                            <p className={`mt-6 text-4xl ${roboto.className} font-light text-black`}>
                                 Vi är ett <b className={`${inter.className} font-extrabold`}>team</b> där <i>kreativitet</i>, <i>samarbete</i> och <i>glädje</i> är i fokus. Vi har en
                                 avslappnad företagskultur som uppmuntrar till öppen kommunikation och kreativt tänkande.
                             </p>
