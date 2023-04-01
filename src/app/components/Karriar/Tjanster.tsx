@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Splash1, Splash4} from "@/app/components/Graphics/Splash";
+import Jobb from "@/app/components/Karriar/Jobb";
 
 const stats = [
     {label: 'Timmar hos fantastiska kunder', value: '5000+'},
@@ -288,7 +289,7 @@ export default function Tjanster() {
                 {/* Image section */}
                 <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
                     <Image
-                        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+                        src="/assets/entourage.jpeg"
                         width={2832}
                         height={1880}
                         priority={true}
@@ -338,14 +339,17 @@ export default function Tjanster() {
                 <div className={"flex justify-center py-24"}>
                     <h1 className="md:text-7xl text-5xl font-extrabold">Redo att ansöka?</h1>
                 </div>
+                <div className={"max-w-5xl mx-auto py-12 w-full"}>
+                    <Jobb/>
+                </div>
                 <div className={"flex justify-center py-4"}>
                     <div className="flex justify-center md:justify-start py-12">
                         <Link
-                            href="mailto:contact@codelabs.se"
+                            href="mailto:application@codelabs.se"
                         >
                             <button
                                 className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
-                                Yes, jag är redo!
+                                Hittar inte min roll!
                             </button>
                         </Link>
                     </div>
