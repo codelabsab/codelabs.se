@@ -2,62 +2,22 @@ import React from "react";
 import Link from "next/link";
 import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
 import Image from "next/image";
+import {Inter, Montserrat, Roboto} from "next/font/google";
 
-// const SenasteInlagg = () => {
-//
-//     const posts = getPostMetadata();
-//
-//     return (
-//         <div className="w-full bg-gradient-to-b from-white via-white to-codelabs-primary5 w-full">
-//             <div className="max-w-7xl mx-auto  pt-10 pb-10">
-//                 <div className="w-full flex items-center justify-center mb-10">
-//                     <h1
-//                         className="font-title font-poppins font-bold text-black-gray text-3xl md:text-5xl text-center md:text-left mb-4 pb-10"
-//                     >
-//                         Senaste inlägg från bloggen
-//                     </h1>
-//                 </div>
-//                 <div
-//                     className="flex overflow-x-scroll pb-10 hide-scroll-bar"
-//                 >
-//                     {posts.map((post) => {
-//                         return (
-//                             <div className={"flex flex-nowrap"} key={post.slug}>
-//                                 <div className="mx-auto my-6 blog-cards">
-//                                     <Link href={`/blogg/${post.slug}`}>
-//                                         <div
-//                                             className="bg-white rounded-lg shadow-lg transition-all transform hover:scale-105 mx-6">
-//                                             <div className="h-72 w-80">
-//                                                 <Image
-//                                                     src={post.og_image} alt={post.slug}
-//                                                     width={640}
-//                                                     height={320}
-//                                                     className={"rounded-t-lg w-full object-cover h-72"}
-//                                                 />
-//                                             </div>
-//                                             <div className="px-6 flex flex-col h-52 w-80">
-//                                                 <p className="font-poppins font-light pt-2 pb-2 text-sm text-codelabs-primary1">
-//                                                     {post.date}
-//                                                 </p>
-//                                                 <h4 className="font-title pb-8 font-semibold text-2xl truncate text-grey-normal ">
-//                                                     {post.title}
-//                                                 </h4>
-//                                                 <p className="font-title font-normal text-base pb-4 overflow-clip h-full">
-//                                                     {post.description}
-//                                                 </p>
-//                                             </div>
-//                                         </div>
-//                                     </Link>
-//                                 </div>
-//                             </div>
-//                         );
-//                     })}
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-// export default SenasteInlagg;
+const montserrat = Montserrat({
+    weight: ['100','200','300','400', '500', '600', '700'],
+    subsets: ['latin']
+})
+
+const inter = Inter({
+    weight: ['100','200','300','400', '500', '600', '700'],
+    subsets: ['latin']
+})
+
+const roboto = Roboto({
+    weight: ['100','300','400', '500', '700', '900'],
+    subsets: ['latin']
+})
 
 export function BlogInlagg() {
     const posts = getPostMetadata().slice(0, 3);
@@ -65,10 +25,7 @@ export function BlogInlagg() {
         <div className="bg-white py-24 sm:py-32 ">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="text-3xl md:text-7xl font-bold tracking-tight text-black sm:text-4xl">Senaste inlägg från bloggen</h2>
-                    <p className="mt-6 text-2xl font-light text-gray-600">
-                        Följ Code Labs äventyr på och utanför arbetsplatsen.
-                    </p>
+                    <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>Läs mer om vad vi gör</h1>
                 </div>
                 <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {posts.map((post) => (
