@@ -28,7 +28,7 @@ const OmOss = () => {
                         className="flex md:flex-row flex-col mx-auto py-24 px-4 justify-center items-center max-w-7xl relative">
                         <div className="px-4 z-10">
                             <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
-                                What a teeaam
+                                Vad vi är
                             </h1>
                             <p className={`mt-6 text-4xl ${roboto.className} font-light text-black`}>
                                 Vi är ett <b className={`${inter.className} font-extrabold`}>team</b> där <i>kreativitet</i>, <i>samarbete</i> och <i>glädje</i> är i fokus. Vi har en
@@ -39,8 +39,8 @@ const OmOss = () => {
                                     href="/team/"
                                 >
                                     <button
-                                        className={`bg-codelabs-primary2 font-bold px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${montserrat.className}`}>
-                                        Jag vill veta mer!
+                                        className={`bg-codelabs-primary2 font-bold px-4 text-white w-80 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${montserrat.className}`}>
+                                        Jag vill höra mer om teamet!
                                     </button>
                                 </Link>
                             </div>
