@@ -3,22 +3,28 @@ import React from "react";
 import jonas from "../../../../public/assets/customer/testimonials/jonas-lindstrom.jpeg";
 import maja from "../../../../public/assets/customer/testimonials/maja-wedfelt.jpeg";
 import Image from "next/image";
+import {Roboto} from "next/font/google";
+
+const roboto = Roboto({
+    weight: ['100','300','400', '500', '700', '900'],
+    subsets: ['latin']
+})
 
 const CustomerLogos = () => {
-    const listOfCustomers = ["ica", "klarna", "pricer", "dice", "hm", "kindred", "pricerunner", "netent", "zebware", "tui"];
+    const listOfCustomers = ["klarna", "pricer", "dice", "pricerunner", "zebware", "tui"];
     return (
-        <div className="bg-gradient-to-b from-white via-codelabs-tertiary5 to-codelabs-primary5 ">
+        <div className="bg-codelabs-primary5 ">
         <div className="flex items-end justify-center pt-12">
-                <h2 className="font-title font-bold text-black text-center text-3xl md:text-7xl items-center justify-end">
-                    Kunder som <span className="text-codelabs-primary2">litar på oss</span>
+                <h2 className="font-title font-bold text-black text-center text-7xl md:text-8xl items-center justify-end">
+                    Kunder som <span className="text-codelabs-primary3">litar på oss</span>
                 </h2>
             </div>
-            <div className="max-w-7xl pt-24 mx-auto">
+            <div className="max-w-8xl pt-24 mx-auto">
                 <div className="flex justify-center flex-wrap">
                     {listOfCustomers.map((customer, index) => {
                         return (
                                 <Image
-                                    className="mx-4 my-4 h-4 w-auto"
+                                    className="mx-4 my-4 xl:h-8 md:h-6 h-4 w-auto"
                                     src={`/assets/customer/logo/${customer}.svg`}
                                     alt={customer}
                                     width={48}
@@ -36,7 +42,7 @@ const CustomerLogos = () => {
 
 const Divider = () => {
     return (
-        <div className={"w-full"}>
+        <div className={"w-full bg-white"}>
             <svg width="100%" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
                 <defs>
                     <clipPath id="shape">
@@ -65,8 +71,8 @@ export function Testimonials() {
                         />
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
                             <blockquote className="text-lg leading-8 text-gray-900 ">
-                                <p>
-                                    “Code Labs konsult varit en tillgång vad gäller att
+                                <p className={`mt-6 text-2xl ${roboto.className} font-light text-black`}>
+                                “Code Labs konsult varit en tillgång vad gäller att
                                     driva det tekniska arbetet framåt och få nya idéer kring
                                     förbättringar. Konsulten har varit lika duktig på att sätta
                                     sig in i befintliga lösningar, utveckla dem som att starta
@@ -101,7 +107,7 @@ export function Testimonials() {
                         />
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
                             <blockquote className="text-lg leading-8 text-gray-900 ">
-                                <p>
+                                <p className={`mt-6 text-2xl ${roboto.className} font-light text-black`}>
                                     “Code Labs konsult visade prov på anpassningsförmåga,
                                     stresstålighet och en förmåga att ha många bollar i luften
                                     då de involverades i flera projekt samtidigt.
