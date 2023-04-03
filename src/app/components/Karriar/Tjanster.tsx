@@ -97,14 +97,14 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                    <div className="w-full absolute -z-10 overflow-hidden">
+                    <div className="w-full absolute -z-10 overflow-hidden blur-sm">
                         <Splash1/>
                     </div>
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="mx-auto">
-                                    <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl ">
+                                    <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl">
                                         Innovation & kreativitet.
                                     </h1>
                                     <Image
@@ -339,17 +339,17 @@ export default function Tjanster() {
                 <div className={"flex justify-center py-24"}>
                     <h1 className="md:text-7xl text-5xl font-extrabold">Redo att ansöka?</h1>
                 </div>
-                <div className={"max-w-5xl mx-auto py-12 w-full"}>
-                    <Jobb/>
-                </div>
-                <div className={"flex justify-center py-4"}>
+                {/*<div className={"max-w-5xl mx-auto py-12 w-full"}>*/}
+                {/*    <Jobb/>*/}
+                {/*</div>*/}
+                <div className={"flex justify-center py-4 mx-auto"}>
                     <div className="flex justify-center md:justify-start py-12">
                         <Link
                             href="mailto:application@codelabs.se"
                         >
                             <button
                                 className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
-                                Hittar inte min roll!
+                                Yes, jag är redo!
                             </button>
                         </Link>
                     </div>

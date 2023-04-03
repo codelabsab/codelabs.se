@@ -4,6 +4,7 @@ import {BlogInlagg} from "@/app/components/Home/SenasteInlagg";
 import Script from "next/script";
 import VideoWithOverlay from "@/app/components/Home/VideoOverlay";
 import WhatWeDo from "@/app/components/Team/WhatWeDo";
+import Tjanster from "@/app/components/Karriar/Tjanster";
 
 export default function Home() {
     return (

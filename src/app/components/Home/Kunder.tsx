@@ -6,7 +6,7 @@ import Image from "next/image";
 import {Roboto} from "next/font/google";
 
 const roboto = Roboto({
-    weight: ['100','300','400', '500', '700', '900'],
+    weight: ['100', '300', '400', '500', '700', '900'],
     subsets: ['latin']
 })
 
@@ -14,24 +14,25 @@ const CustomerLogos = () => {
     const listOfCustomers = ["klarna", "pricer", "dice", "pricerunner", "zebware", "tui"];
     return (
         <div className="bg-codelabs-primary5 ">
-        <div className="flex items-end justify-center pt-12">
-                <h2 className="font-title font-bold text-black text-center text-7xl md:text-8xl items-center justify-end">
-                    Kunder som <span className="text-codelabs-primary3">litar på oss</span>
+            <div className="flex items-end justify-center py-12 pt-24">
+                <h2 className="font-title font-bold text-black text-center text-5xl md:text-7xl items-center justify-end">
+                    Våra kunder.
                 </h2>
+
             </div>
-            <div className="max-w-8xl pt-24 mx-auto">
+            <div className="max-w-8xl py-4 mx-auto">
                 <div className="flex justify-center flex-wrap">
                     {listOfCustomers.map((customer, index) => {
                         return (
-                                <Image
-                                    className="mx-4 my-4 xl:h-8 md:h-6 h-4 w-auto"
-                                    src={`/assets/customer/logo/${customer}.svg`}
-                                    alt={customer}
-                                    width={48}
-                                    height={48}
-                                    priority={true}
-                                    key={index}
-                                />
+                            <Image
+                                className="mx-4 my-4 xl:h-8 md:h-6 h-4 w-auto"
+                                src={`/assets/customer/logo/${customer}.svg`}
+                                alt={customer}
+                                width={48}
+                                height={48}
+                                priority={true}
+                                key={index}
+                            />
                         );
                     })}
                 </div>
@@ -57,7 +58,7 @@ const Divider = () => {
 
 export function Testimonials() {
     return (
-        <section className="bg-codelabs-primary5 py-24 sm:py-32">
+        <section className="bg-codelabs-primary5 pt-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
@@ -72,7 +73,7 @@ export function Testimonials() {
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
                             <blockquote className="text-lg leading-8 text-gray-900 ">
                                 <p className={`mt-6 text-2xl ${roboto.className} font-light text-black`}>
-                                “Code Labs konsult varit en tillgång vad gäller att
+                                    “Code Labs konsult varit en tillgång vad gäller att
                                     driva det tekniska arbetet framåt och få nya idéer kring
                                     förbättringar. Konsulten har varit lika duktig på att sätta
                                     sig in i befintliga lösningar, utveckla dem som att starta
@@ -133,6 +134,14 @@ export function Testimonials() {
                     </div>
                 </div>
             </div>
+            <Image
+                src={`/assets/cl-6.svg`}
+                alt={`cl-logo`}
+                width={240}
+                height={240}
+                priority={true}
+                className={`mx-auto mt-24`}
+            />
         </section>
     )
 }
@@ -143,7 +152,7 @@ const Kunder = () => {
         <>
             <CustomerLogos/>
             <Testimonials/>
-            <Divider />
+            <Divider/>
         </>
     )
 }
