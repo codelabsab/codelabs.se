@@ -1,8 +1,6 @@
 import React from "react";
 import {Montserrat, Roboto} from 'next/font/google'
-import {Splash1} from "@/app/components/Graphics/Splash";
 import Image from "next/image";
-import Link from "next/link";
 
 const monsterrat = Montserrat({subsets: ['latin']})
 
