@@ -97,7 +97,7 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                    <div className="w-full absolute -z-10 overflow-hidden blur-sm">
+                    <div className="w-full absolute -z-10 overflow-hidden">
                         <Splash1/>
                     </div>
                     <div className="overflow-hidden relative">
