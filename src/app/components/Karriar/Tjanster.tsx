@@ -302,11 +302,11 @@ export default function Tjanster() {
                 <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <div className="flex items-center">
-                            <h2 className="text-6xl font-bold tracking-tight text-gray-900 sm:text-8xl ">
+                            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-8xl ">
                                 Kärnvärden
                             </h2>
                             <Image
-                                className="h-32 text-codelabs-primary1"
+                                className="text-codelabs-primary1 h-32"
                                 src={"/assets/paint/arrow-12.svg"}
                                 alt={"arrow"}
                                 width={224}
@@ -337,7 +337,7 @@ export default function Tjanster() {
                     />
                 </div>
                 <div className={"flex justify-center py-24"}>
-                    <h1 className="md:text-7xl text-5xl font-extrabold">Redo att ansöka?</h1>
+                    <h1 className="md:text-7xl text-4xl font-extrabold">Redo att ansöka?</h1>
                 </div>
                 {/*<div className={"max-w-5xl mx-auto py-12 w-full"}>*/}
                 {/*    <Jobb/>*/}
