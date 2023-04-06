@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Splash1, Splash4} from "@/app/components/Graphics/Splash";
-import Jobb from "@/app/components/Karriar/Jobb";
 
 const stats = [
     {label: 'Timmar hos fantastiska kunder', value: '5000+'},
@@ -304,16 +303,15 @@ export default function Tjanster() {
                                 height={224}
                             />
                         </div>
-                        <p className="mt-6 text-lg leading-8 text-gray-600 ">
-                            Att skapa en inkluderande, balanserad, kreativ, socialt ansvarstagande och
-                            utvecklingsorienterad arbetsplats är viktiga kärnvärden för ett konsultbolag som vill locka
-                            till sig och behålla de bästa talangerna.
+                        <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                            Att skapa en plats som känns som mer än bara ett jobb. En plats där vi kan utvecklas
+                            tillsammans och där vi kan vara oss själva.
                         </p>
                     </div>
                     <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {values.map((value) => (
-                            <div key={value.name}>
-                                <dt className="font-semibold text-gray-900 ">{value.name}</dt>
+                            <div key={value.name} className={``}>
+                                <dt className="font-bold text-gray-900 ">{value.name}</dt>
                                 <dd className="mt-1 text-gray-600">{value.description}</dd>
                             </div>
                         ))}
@@ -330,9 +328,6 @@ export default function Tjanster() {
                 <div className={"flex justify-center py-24"}>
                     <h1 className="md:text-7xl text-4xl font-extrabold">Redo att ansöka?</h1>
                 </div>
-                {/*<div className={"max-w-5xl mx-auto py-12 w-full"}>*/}
-                {/*    <Jobb/>*/}
-                {/*</div>*/}
                 <div className={"flex justify-center py-4 mx-auto"}>
                     <div className="flex justify-center md:justify-start py-12">
                         <Link
