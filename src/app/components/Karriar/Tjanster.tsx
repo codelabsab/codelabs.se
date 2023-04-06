@@ -238,34 +238,19 @@ export default function Tjanster() {
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                                <p className="text-xl leading-8 text-gray-600 ">
-                                    Vår mission och vision är att skapa en arbetsplats som stödjer och främjar
-                                    nytänkande och kreativitet, både internt och för våra kunder. Genom att ha en kultur
-                                    som värdesätter innovation och kreativitet och genom att erbjuda utbildning och
-                                    resurser för att utveckla våra medarbetares förmågor, kan vi erbjuda högkvalitativa
-                                    lösningar som hjälper våra kunder att uppnå sina affärsmål.
+                                <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                                    Vår mission och vision är att skapa en miljö där vi utmanar och uppmanar
+                                    varandra till nytänkande och kreativitet, både internt och för våra kunder.
+                                    Genom att ha en kultur som värdesätter innovation och kreativitet och genom att
+                                    erbjuda utbildning, resurser och genom att inspirera varandra att utvecklas, kan
+                                    vi erbjuda högkvalitativa lösningar som hjälper våra kunder att uppnå sina
+                                    affärsmål.
                                 </p>
-                                <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 ">
-                                    <p>
-                                        Att vara en innovativ och kreativ partner som hjälper våra kunder att lösa sina
-                                        mest utmanande problem. Genom att främja en kultur av nytänkande och kreativitet
-                                        i allt vi gör, levererar vi högkvalitativa lösningar som hjälper våra kunder att
-                                        uppnå sina affärsmål och förbli konkurrenskraftiga på marknaden. Vi tror att en
-                                        rolig och inspirerande arbetsmiljö, med regelbundna events, hjälper oss
-                                        att stimulera vår kreativitet och skapa nya lösningar.
-                                    </p>
-                                    <p className="mt-10 ">
-                                        Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
-                                        marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
-                                        kontinuerlig förbättring. Genom att locka till oss de mest kreativa och
-                                        innovativa talangerna och genom att erbjuda utbildning och resurser för att
-                                        utveckla våra medarbetares kreativa förmågor, kommer vi att fortsätta att vara
-                                        en pålitlig partner för våra kunder och en ledande röst inom konsultbranschen.
-                                        Vi tror att genom att ha en rolig och inspirerande arbetsmiljö, med regelbundna
-                                        spontana events, kan vi stimulera vår kreativitet och skapa nya lösningar för
-                                        våra kunder.
-                                    </p>
-                                </div>
+                                <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                                    Vi har även ett stort fokus på att utveckla produkter och tjänster som vi tror kan
+                                    vara användbara för alla. Vi har en stark tro på att vi kan skapa innovativa
+                                    lösningar genom att kombinera våra olika kompetenser och erfarenheter.
+                                </p>
                             </div>
                             <div className="lg:flex lg:flex-auto lg:justify-center">
                                 <dl className="w-64 space-y-8 xl:w-80">
