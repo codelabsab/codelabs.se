@@ -97,7 +97,7 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                    <div className="w-full absolute -z-10 overflow-hidden">
+                    <div className="w-full absolute -z-10 overflow-hidden blur-sm">
                         <Splash1/>
                     </div>
                     <div className="overflow-hidden relative">
@@ -105,22 +105,28 @@ export default function Tjanster() {
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="mx-auto">
                                     <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl">
-                                        Innovation & kreativitet.
+                                        Mer än ett jobb.
                                     </h1>
                                     <Image
-                                        className="h-12 text-codelabs-primary1"
+                                        className="h-16"
                                         src={"/assets/paint/arrow-15.svg"}
                                         alt={"arrow"}
                                         width={224}
                                         height={224}
                                     />
-                                    <p className="relative mt-6 text-lg leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Vi strävar efter att vara det mest innovativa och kreativa konsultbolaget på
-                                        marknaden, med en arbetsmiljö som uppmuntrar till idéutbyte, nytänkande och
-                                        kontinuerlig förbättring. Genom att locka till oss de mest kreativa och
-                                        innovativa talangerna och genom att erbjuda utbildning och resurser för att
-                                        utveckla våra medarbetares kreativa förmågor, kommer vi att fortsätta att vara
-                                        en pålitlig partner för våra kunder och en ledande röst inom konsultbranschen.
+                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                                        En plats där du kan utvecklas, utmanas och träffa
+                                        vänner för livet.
+                                    </p>
+                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                                        Som en del av vårt team kommer du att att ta få intressanta och
+                                        utmanande projekt som hjälper dig att växa både personligt och professionellt.
+                                    </p>
+                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
+                                        Samtidigt som du arbetar med att nå dina mål, kommer du
+                                        att njuta av roliga upplevelser med vårt team – allt från
+                                        teambuilding-aktiviteter till gemensamma luncher och after-work-events och
+                                        resor.
                                     </p>
                                 </div>
                                 <div
@@ -227,7 +233,7 @@ export default function Tjanster() {
                             />
                         </div>
                         <div
-                            className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden">
+                            className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden blur-sm">
                             <Splash4/>
                         </div>
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
