@@ -134,14 +134,6 @@ export function Testimonials() {
                     </div>
                 </div>
             </div>
-            <Image
-                src={`/assets/cl-6.svg`}
-                alt={`cl-logo`}
-                width={240}
-                height={240}
-                priority={true}
-                className={`mx-auto mt-24`}
-            />
         </section>
     )
 }

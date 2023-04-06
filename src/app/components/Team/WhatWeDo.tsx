@@ -16,26 +16,16 @@ export default function WhatWeDo() {
     return (
         <div className="mt-32 overflow-hidden sm:mt-40 py-12 pb-40 bg-white">
             <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
+                <div
+                    className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
                     <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
                         <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
                             Vad vi gör.
                         </h1>
-                        <p className={`mt-6 text-4xl ${roboto.className} font-light text-black`}>
-                            Förutom att leverera fantastisk kod till våra kunder så har vi även ett
-                            stort social behov. Vi gillar att synka, ses och umgås. Att hitta på saker tillsammans
-                            är en stor del av vår kultur. Livet ska vara roligt tycker vi, ett äventyr!
+                        <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
+                            Löser intressanta utmaningar med hjälp av
+                            kreativa lösningar för våra kunder.
                         </p>
-                    </div>
-                    <div className="w-full flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                        <Image
-                            src="/assets/bg-career.jpeg"
-                            alt=""
-                            width={800}
-                            height={600}
-                            priority={true}
-                            className="aspect-[7/5] w-[37rem] max-w-screen rounded-2xl bg-gray-50 object-cover"
-                        />
                     </div>
                     <div className="w-full flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                         <Image
@@ -57,16 +47,13 @@ export default function WhatWeDo() {
                             className="aspect-[7/5] w-[37rem] max-w-screen flex-none rounded-2xl bg-gray-50 object-cover"
                         />
                     </div>
+                    <div className="lg:w-full lg:max-w-lg lg:pb-8">
+                        <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
+                            Vi hjälper varandra att utvecklas samtidigt som vi firar våra framgångar, som ett <b>team</b>.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <Image
-                src={`/assets/cl-3.svg`}
-                alt={`cl-logo`}
-                width={240}
-                height={240}
-                priority={true}
-                className={`mx-auto mt-24`}
-            />
         </div>
     )
 }
