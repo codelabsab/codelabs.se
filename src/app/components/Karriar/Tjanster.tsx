@@ -104,7 +104,7 @@ export default function Tjanster() {
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="mx-auto">
                                     <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl">
-                                        Mer än ett jobb.
+                                        Inte bara ett jobb.
                                     </h1>
                                     <Image
                                         className="h-16"
@@ -118,12 +118,12 @@ export default function Tjanster() {
                                         vänner för livet.
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Som en del av vårt team kommer du att att ta få intressanta och
+                                        Som en del av vårt team kommer du att att få intressanta och
                                         utmanande projekt som hjälper dig att växa både personligt och professionellt.
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Samtidigt som du arbetar med att nå dina mål, kommer du
-                                        att njuta av roliga upplevelser med vårt team – allt från
+                                        att njuta av roliga upplevelser dina kollegor – allt från
                                         teambuilding-aktiviteter till gemensamma luncher och after-work-events och
                                         resor.
                                     </p>

@@ -8,7 +8,7 @@ const Testimonials = () => {
     return (
         <div>
             <main className="isolate relative">
-                <div className="absolute -z-10 w-full">
+                <div className="absolute -z-10 w-full blur-sm">
                     <Splash3/>
                 </div>
                 <div

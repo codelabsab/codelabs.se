@@ -31,8 +31,7 @@ const OmOss = () => {
                                 Vad vi är.
                             </h1>
                             <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                                Vi är ett <b
-                                className={`${inter.className} font-extrabold`}>team</b> där <i>kreativitet</i>, <i>gemenskap</i> och <i>glädje</i> är
+                                Vi är ett team där <i>kreativitet</i>, <i>gemenskap</i> och <i>glädje</i> är
                                 i fokus.
                             </p>
                             <div className="flex justify-start py-12 z-10">

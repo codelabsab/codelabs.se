@@ -30,7 +30,7 @@ export default function TeamTestimonials() {
                                 width={400}
                                 height={400}
                                 priority={true}
-                                className="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+                                className="w-52 flex-none rounded-2xl object-cover"
                                  alt=""/>
                             <div className="flex-auto">
                                 <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>

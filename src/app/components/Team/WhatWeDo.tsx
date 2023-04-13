@@ -23,8 +23,8 @@ export default function WhatWeDo() {
                             Vad vi gör.
                         </h1>
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Löser intressanta utmaningar med hjälp av
-                            kreativa lösningar för våra kunder.
+                            Hjälper kunder att lösa utmaningar med hjälp av
+                            kreativa lösningar.
                         </p>
                     </div>
                     <div className="w-full flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
@@ -49,7 +49,7 @@ export default function WhatWeDo() {
                     </div>
                     <div className="lg:w-full lg:max-w-lg lg:pb-8">
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Vi hjälper varandra att utvecklas samtidigt som vi firar våra framgångar, som ett <b>team</b>.
+                            Och ser till att ha massa roliga äventyr, resor och upplevelser på vägen.
                         </p>
                     </div>
                 </div>

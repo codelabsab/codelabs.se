@@ -11,14 +11,14 @@ export const people = [
     name: "Pär Berge",
     role: `DevOps Engineer`,
     skills: `python terraform argo k8s cloud`,
-    bio: `Mr One shot, one kill. En legendarisk Devops-ingenjör som levererar resultat. Pär är en av våra mest erfarna konsulter och har en stor passion för att utveckla och automatisera. Han gillar även att åka mountain-bike nedför väldigt branta backar.`,
+    bio: `Pär är en legendarisk Devops-ingenjör. En konsult i absolut toppklass. Pär är en av våra mest erfarna konsulter och har en stor passion för att utveckla och automatisera. Han gillar även att åka mountain-bike nedför väldigt branta backar.`,
     imageUrl: "/assets/team/paer.jpeg",
     github_url: `https://github.com/parberge`,
   },
   {
     name: "Kami Gerami",
     role: `Software Engineer`,
-    bio: `El Rancho, drogbaronen från Mexiko som för närvarande gömmer sig i Sverige och lever under identiteten Kami, en av grundarna till detta fantastiska bolag.`,
+    bio: `Kami är en av grundarna till detta fantastiska bolag, en visionär och AI-fanatiker av rang. Från Devops-engineering till fullstack-utvecklare. Kami har koll på det mesta.`,
     skills: `python node js terraform k8s argocd cloud`,
     imageUrl: "/assets/team/kami.jpeg",
     github_url: `https://github.com/kamigerami`,
@@ -26,7 +26,7 @@ export const people = [
   {
     name: "Tommy Malmqvist",
     role: `Software Engineer`,
-    bio: `Förvirrad pappa på vift som gillar tech, skapa saker och att hänga med teamet. Chief nerd på bolaget och en av grundarna.`,
+    bio: `En av grundarna till bolaget. Devops-engineer, utvecklare. Älskar ny tech, skapa saker och att hänga med teamet. Träning, matlagning, musik, foto och familj.`,
     skills: `python terraform kubernetes ci/cd argocd aws gcp azure`,
     imageUrl: "/assets/team/tommy.jpeg",
     github_url: `https://github.com/tommymalmqvist`,
@@ -34,7 +34,7 @@ export const people = [
   {
     name: "Carl-Fredrik Arvidson",
     role: `Software Developer`,
-    bio: `Utvecklaren som alltid levererar. Smart, analytisk och en riktig team player. Man kan alltid lita på att Carl-Fredrik levererar.`,
+    bio: `En riktig stjärna! fullstack-utvecklare som alltid levererar. Smart, analytisk och metodisk. Man kan alltid lita på att Carl-Fredrik levererar kvalitet.`,
     skills: `js/ts react node python ci/cd`,
     imageUrl: "/assets/team/carl-fredrik.jpeg",
     github_url: `https://github.com/cfarvidson`,
@@ -42,7 +42,7 @@ export const people = [
   {
     name: "Mauricio Saez",
     role: `DevOps Engineer`,
-    bio: `Mannen som har fler timmar på youtube än vad han har sovit. En av våra mest erfarna youtubers som levererar memes till resten av bolaget.`,
+    bio: `Mannen, myten, legenden. Mauricio är en devops-ingenjör som är en riktig lagspelare. Alltid en positiv attityd och bidrar till en bra stämning och delning av kunskap. Han är även en vass fotbollsspelare och musiker.`,
     skills: ` python ansible puppet docker openshift ci/cd`,
     imageUrl: "/assets/team/mauricio.jpeg",
     github_url: `https://github.com/marresgit`,
