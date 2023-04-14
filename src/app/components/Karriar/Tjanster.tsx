@@ -4,9 +4,8 @@ import Link from "next/link";
 import {Splash1, Splash4} from "@/app/components/Graphics/Splash";
 
 const stats = [
-    {label: 'Timmar hos fantastiska kunder', value: '5000+'},
-    {label: 'Besparing till våra kunder', value: '190 milj SEK'},
-    {label: 'Nya Tesla bilar', value: '5'},
+    {label: 'Start', value: '2016'},
+    {label: 'Antal anställda', value: '7'},
 ]
 const values = [
     {
