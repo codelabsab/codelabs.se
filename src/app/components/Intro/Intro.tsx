@@ -1,14 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import {Inter, Montserrat, Roboto} from 'next/font/google'
-import Image from "next/image";
+import {Montserrat, Roboto} from 'next/font/google'
 
 const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-    subsets: ['latin']
-})
-
-const inter = Inter({
     weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
@@ -28,7 +22,7 @@ const OmOss = () => {
                         className="flex md:flex-row flex-col mx-auto py-24 px-4 justify-center items-center max-w-7xl relative">
                         <div className="px-4 z-10">
                             <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
-                                Vad vi är.
+                                Vilka vi är.
                             </h1>
                             <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
                                 Vi är ett team där <i>kreativitet</i>, <i>gemenskap</i> och <i>glädje</i> är

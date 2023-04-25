@@ -1,11 +1,6 @@
-import {Inter, Montserrat, Poppins, Roboto} from "next/font/google";
+import {Roboto} from "next/font/google";
 import React from "react";
 import Image from "next/image";
-
-const poppins = Poppins({
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-    subsets: ['latin']
-})
 
 const roboto = Roboto({
     weight: ['100', '300', '400', '500', '700', '900'],
@@ -23,7 +18,7 @@ export default function WhatWeDo() {
                             Vad vi gör.
                         </h1>
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Hjälper kunder att lösa utmaningar med hjälp av
+                            Vi hjälper våra kunder att lösa utmaningar med hjälp av
                             kreativa lösningar.
                         </p>
                     </div>
@@ -49,7 +44,7 @@ export default function WhatWeDo() {
                     </div>
                     <div className="lg:w-full lg:max-w-lg lg:pb-8">
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Och ser till att ha massa roliga äventyr, resor och upplevelser på vägen.
+                            Och självklart ser vi till att ha massor av roliga äventyr, resor och upplevelser på vägen.
                         </p>
                     </div>
                 </div>

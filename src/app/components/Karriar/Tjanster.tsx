@@ -11,7 +11,7 @@ const values = [
     {
         name: 'Inställning',
         description:
-            'Med en positiv inställning till livet och till varandra skapar vi en bra arbetsmiljö. Vi är ödmjuka och lyhörda för att kunna utvecklas tillsammans.',
+            'Med en positiv inställning skapar vi en bra arbetsmiljö. Vi är ödmjuka och lyhörda för att kunna utvecklas tillsammans.',
     },
     {
         name: 'Gemenskap',
@@ -21,7 +21,7 @@ const values = [
     {
         name: 'Innovation och kreativitet',
         description:
-            'Vi är nyfikna och vill alltid lära oss mer. Vi uppmuntrar varandras kreativitet och nytänkande i arbetet.',
+            'Vi är nyfikna och vill lära oss mer. Vi uppmuntrar varandras kreativitet och nytänkande i arbetet.',
     },
     {
         name: 'Var stöttande',
@@ -36,7 +36,7 @@ const values = [
     {
         name: 'Återhämtning',
         description:
-            'Vi tar oss tid för återhämtning och tar hand om oss själva.',
+            'Vi tar oss tid för återhämtning och ser till att ta hand om oss själva.',
     },
 ]
 
