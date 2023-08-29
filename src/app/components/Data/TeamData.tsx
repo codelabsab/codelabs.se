@@ -1,11 +1,11 @@
 export const people = [
   {
-    name: 'Honey Helensdotter',
-    role: 'Organization Developer',
-    imageUrl: "/assets/team/honey.jpeg",
-    bio: 'Honey tar oss till nya höjder. En stjärna på branding, rekrytering och att se till alla vi rör oss åt rätt håll.',
-    skills: 'business development strategy sales recruitment',
-    github_url: `#`
+    name: 'Love Kempe Lundin',
+    role: 'Fullstack Developer',
+    imageUrl: "",
+    bio: 'Love är inte bara ordet kärlek på engelska, utan ett ord för hans passion för kod och utveckling.',
+    skills: 'fullstack development react js typescript nextjs',
+    github_url: `https://github.com/kempe-codelabs`
   },
   {
     name: "Pär Berge",
