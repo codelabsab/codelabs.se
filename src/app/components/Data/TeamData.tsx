@@ -1,11 +1,11 @@
 export const people = [
   {
-    name: 'Love Kempe Lundin',
-    role: 'Fullstack Developer',
-    imageUrl: "",
-    bio: 'Love är inte bara ordet kärlek på engelska, utan ett ord för hans passion för kod och utveckling.',
-    skills: 'fullstack development react js typescript nextjs',
-    github_url: `https://github.com/kempe-codelabs`
+    name: "Love Kempe Lundin",
+    role: "Fullstack Developer",
+    imageUrl: "/assets/team/love.jpeg",
+    bio: "Love är inte bara ordet kärlek på engelska, utan det genomsyrar hans passion för kod och utveckling.",
+    skills: "fullstack development react js typescript nextjs",
+    github_url: `https://github.com/kempe-codelabs`,
   },
   {
     name: "Pär Berge",
@@ -46,5 +46,5 @@ export const people = [
     skills: ` python ansible puppet docker openshift ci/cd`,
     imageUrl: "/assets/team/mauricio.jpeg",
     github_url: `https://github.com/marresgit`,
-  }
-]
+  },
+];
