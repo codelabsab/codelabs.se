@@ -35,3 +35,15 @@ Den inkluderar:
 4.  Öppen Källkod och Anpassningsbarhet
 
 Workflow Manager är en lösning i open source, vilket betyder att den kan anpassas efter ditt teams specifika behov. Utvecklare kan utforska och anpassa koden för att säkerställa att den passar perfekt in i ditt team och din utvecklingsmiljö.
+
+
+## Bidra
+Vi välkomnar alla som vill bidra till projektet. Eftersom det är väldigt nytt så finns det stora möjligheter att vara med och påverka hur det kommer att se ut i framtiden.
+Hoppa in i vårt projekt på Github och läs mer om hur du kan bidra [här](https://github.com/codelabsab/workflow-manager#readme)
+
+Tveka inte att höra av er om ni har frågor!
+
+Mvh,  
+Carl-Fredrik  
+Maurizio  
+Pär  
