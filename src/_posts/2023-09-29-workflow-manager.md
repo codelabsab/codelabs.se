@@ -8,7 +8,7 @@ description: En lösning för effektiva schemalagda arbetsflöden i Github
 author: Pär Berge
 ---
 
-Workflow Manager är resultatet av en innovationsvecka, eller hackweek som vi på Codelabs kallar det.
+[Workflow Manager](https://github.com/codelabsab/workflow-manager) är resultatet av en innovationsvecka, eller hackweek som vi på Codelabs kallar det.
 Det är en lösning för att schemalägga arbetsflöden (a.k.a [workflows](https://docs.github.com/en/actions/using-workflows)) i Github.
 
 Till skillnad från Githubs inbyggda lösning för att schemalägga arbetsflöden så är Workflow Manager mer flexibel och kan schemalägga arbetsflöden på ett mer avancerat sätt.
