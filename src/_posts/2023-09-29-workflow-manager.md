@@ -14,7 +14,7 @@ Det är en lösning för att schemalägga arbetsflöden (a.k.a [workflows](https
 Till skillnad från Githubs inbyggda lösning för att schemalägga arbetsflöden så är Workflow Manager mer flexibel och kan schemalägga arbetsflöden på ett mer avancerat sätt.
 
 Du sitter där på ditt arbete en fredag och har ansvar för att uppdatera er tjänst klockan 17.
-Istället för sitta kvar och vänta så schemalägger du jobbet och går och tar en fredagsöl med kollegorna 🍻.
+Istället för sitta kvar och vänta så schemalägger du jobbet och går och tar en fredagsöl med kollegorna.
 
 ## Funktioner
 
