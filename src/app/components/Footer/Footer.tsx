@@ -26,11 +26,6 @@ const Footer = () => {
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/kunder/"
-              >Kundcase</a>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
-              <a
                   href="https://codelabs.se/blogs/"
               >Blogg</a>
             </div>
