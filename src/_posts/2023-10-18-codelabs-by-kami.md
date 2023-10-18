@@ -1,10 +1,11 @@
 ---
+layout: post
 title: Code Labs av - Kami: En kväll med Bodyflight & Utsökt Middag
 slug: code-labs-av-kami
 date: "2023-10-18"
-description: En spännande kväll planerad av Kami med Bodyflight och en utsökt middag på Restaurang Farang.
 og_image: /assets/blogg/bodyflight.jpeg
-author: [Kami]
+description: En spännande kväll planerad av Kami med Bodyflight och en utsökt middag på Restaurang Farang.
+author: Kami Gerami
 ---
 
 Vi samlades alla med en känsla av mysterium och spänning, utan att veta vad Kami hade planerat för oss. Den stora avslöjningen? En hisnande upplevelse på Bodyflight följt av en utsökt middag på Restaurang Farang.
