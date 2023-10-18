@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Code Labs av - Kami: En kväll med Bodyflight & Utsökt Middag
+title: "Code Labs av - Kami: En kväll med Bodyflight & Utsökt Middag"
 slug: code-labs-av-kami
 date: "2023-10-18"
 og_image: /assets/blogg/bodyflight.jpeg
