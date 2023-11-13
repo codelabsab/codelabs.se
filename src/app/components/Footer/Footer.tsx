@@ -10,23 +10,23 @@ const Footer = () => {
           {/* snabblänkar */}
           <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-3">
             <div className="col-12">
-                <h2 className="text-l font-poppins font-medium pb-4">
-                  Snabblänkar
-                </h2>
+              <h2 className="text-l font-poppins font-medium pb-4">
+                Snabblänkar
+              </h2>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/karriar/"
+                href="https://codelabs.se/karriar/"
               >Karriär</a>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/team/"
+                href="https://codelabs.se/team/"
               >Team</a>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/blogs/"
+                href="https://codelabs.se/blogg/"
               >Blogg</a>
             </div>
           </div>
@@ -42,49 +42,49 @@ const Footer = () => {
               <ul className="flex">
                 <li>
                   <a
-                      href="https://www.linkedin.com/company/code-labs-ab/"
-                      target="_blank"
-                      rel="noreferrer noopener"
+                    href="https://www.linkedin.com/company/code-labs-ab/"
+                    target="_blank"
+                    rel="noreferrer noopener"
                   >
                     <Image
-                        src="/assets/social/linkedin.svg"
-                        alt="LinkedIn"
-                        width={20}
-                        height={20}
-                        priority={true}
-                        className="w-5 h-5 "
+                      src="/assets/social/linkedin.svg"
+                      alt="LinkedIn"
+                      width={20}
+                      height={20}
+                      priority={true}
+                      className="w-5 h-5 "
                     />
                   </a>
                 </li>
                 <li className="px-3">
                   <a
-                      href="https://www.instagram.com/codelabsab/"
-                      target="_blank"
-                      rel="noreferrer noopener"
+                    href="https://www.instagram.com/codelabsab/"
+                    target="_blank"
+                    rel="noreferrer noopener"
                   >
                     <Image
-                        src="/assets/social/instagram.svg"
-                        alt="Instagram"
-                        width={20}
-                        height={20}
-                        priority={true}
-                        className="w-5 h-5 "
+                      src="/assets/social/instagram.svg"
+                      alt="Instagram"
+                      width={20}
+                      height={20}
+                      priority={true}
+                      className="w-5 h-5 "
                     />
                   </a>
                 </li>
                 <li>
                   <a
-                      href="https://github.com/codelabsab/"
-                      target="_blank"
-                      rel="noreferrer noopener"
+                    href="https://github.com/codelabsab/"
+                    target="_blank"
+                    rel="noreferrer noopener"
                   >
                     <Image
-                        src="/assets/social/github.svg"
-                        alt="Instagram"
-                        width={20}
-                        height={20}
-                        priority={true}
-                        className="w-5 h-5 "
+                      src="/assets/social/github.svg"
+                      alt="Instagram"
+                      width={20}
+                      height={20}
+                      priority={true}
+                      className="w-5 h-5 "
                     />
                   </a>
                 </li>
@@ -114,14 +114,14 @@ const Footer = () => {
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/karriar/"
-                  rel="noreferrer noopener"
+                href="https://codelabs.se/karriar/"
+                rel="noreferrer noopener"
               >Karriär</a>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                  href="https://codelabs.se/karriar/"
-                  rel="noreferrer noopener"
+                href="https://codelabs.se/karriar/"
+                rel="noreferrer noopener"
               >Lediga tjänster</a>
             </div>
           </div>
@@ -144,12 +144,12 @@ const Footer = () => {
                   <div className="mx-auto">
                     <Link href="/" >
                       <Image
-                          className="w-28"
-                          src="/assets/logo/codelabs.svg"
-                          alt="codelabs"
-                          width={640}
-                          height={480}
-                          priority={true}
+                        className="w-28"
+                        src="/assets/logo/codelabs.svg"
+                        alt="codelabs"
+                        width={640}
+                        height={480}
+                        priority={true}
                       />
                     </Link>
                   </div>
