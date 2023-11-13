@@ -28,7 +28,7 @@ Resultat:
 2. Delad mellan Kami och Tommy 🥈
 3. Love 🥉
 
-## Andra grenen: Shuffle board
+## Andra grenen: Shuffleboard
 ![shuffleboard](/assets/blogg/bb_shuffle.jpg)
 Nu var det dags för shuffleboard. Det var en jämn kamp där alla hade chans att vinna.
 
