@@ -11,7 +11,6 @@ author: Pär Berge
 Vi i codelabs gillar att tävla. Så jag tänkte att vad kan vara bättre med en 3-kamp?
 Efter kampen så gick vi till en restaurang och åt en god middag.
 
-
 ## 3-kampen: En kamp om ära och berömmelse
 
 Stor ära och berömmelse stod på spel när vi tävlade i 3-kamp. Vi skulle utmanas i tre grenar: 
