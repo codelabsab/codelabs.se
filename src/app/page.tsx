@@ -26,6 +26,7 @@ export default function Home() {
             <WhatWeDo/>
             <Kunder/>
             <BlogInlagg/>
+            
         </main>
     );
 }
