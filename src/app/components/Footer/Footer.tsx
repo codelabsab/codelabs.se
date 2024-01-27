@@ -1,6 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {Open_Sans} from "next/font/google";
+
+const open_sans = Open_Sans({
+  weight: ['300', '400', '500', '700', '800'],
+  subsets: ['latin']
+})
+
 const Footer = () => {
   return (
     <div className="bg-codelabs-primary5 pb-8">
@@ -95,7 +102,7 @@ const Footer = () => {
           {/* kontakta oss */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
-              <h2 className="text-l font-poppins font-medium pb-4 ">
+              <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
                 Kontakta oss
               </h2>
             </div>
@@ -108,7 +115,7 @@ const Footer = () => {
           {/* jobba hos oss */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
-              <h2 className="text-l font-poppins font-medium pb-4 ">
+              <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
                 Jobba hos oss
               </h2>
             </div>

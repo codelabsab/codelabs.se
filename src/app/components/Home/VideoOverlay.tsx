@@ -1,20 +1,15 @@
 import React from "react";
-import {Montserrat, Roboto} from 'next/font/google'
-import Image from "next/image";
+import {Montserrat} from 'next/font/google'
 
-const monsterrat = Montserrat({subsets: ['latin']})
+const montserrat = Montserrat({subsets: ['latin']})
 
-const roboto = Roboto({
-    weight: ['100', '300', '400', '500', '700', '900'],
-    subsets: ['latin']
-})
 
 const VideoWithOverlay = () => {
     return (
-        <main className={`isolate ${monsterrat.className}`}>
-            <div className="-z-10 relative">
-                <div className={`hero-video-wrapper max-h-screen mx-auto my-auto isolate relative -z-10`}>
-                    <video autoPlay playsInline muted loop className="max-h-screen max-w-7xl mx-auto my-auto">
+        <main className={`isolate ${montserrat.className}`}>
+            <div className="relative">
+                <div className={`hero-video-wrapper max-w-7xl isolate relative -z-20`}>
+                    <video autoPlay playsInline muted loop>
                         <source
                             src="/assets/video/iceland.mp4"
                         />

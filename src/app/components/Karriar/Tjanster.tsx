@@ -1,22 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {Splash1, Splash4} from "@/app/components/Graphics/Splash";
 
 const stats = [
     {label: 'Start', value: '2016'},
-    {label: 'Antal anställda', value: '7'},
+    {label: 'Antal anställda', value: '6'},
 ]
 const values = [
     {
         name: 'Inställning',
         description:
-            'Med en positiv inställning skapar vi en bra arbetsmiljö. Vi är ödmjuka och lyhörda för att kunna utvecklas tillsammans.',
+            'Med en positiv inställning skapar vi en bra arbetsmiljö. Vi är ödmjuka och lyhörda.',
     },
     {
         name: 'Gemenskap',
         description:
-            'Vi delar med oss av våra kunskaper och erfarenheter för att utvecklas tillsammans. Både på och utanför jobbet.',
+            'Det ska kännas naturligt att dela med oss av våra kunskaper och erfarenheter.',
     },
     {
         name: 'Innovation och kreativitet',
@@ -24,14 +23,14 @@ const values = [
             'Vi är nyfikna och vill lära oss mer. Vi uppmuntrar varandras kreativitet och nytänkande i arbetet.',
     },
     {
-        name: 'Var stöttande',
+        name: 'Upplyftande',
         description:
-            'Vi stöttar varandra och i vardagen, på uppdragen, med lärande och utveckling.',
+            'Vi stöttar varandra med lärande, utveckling och nyfikenhet.',
     },
     {
-        name: 'Ta ansvar',
+        name: 'Öppen kommunikation',
         description:
-            'Vi tar ansvar för våra egna val och för våra egna resultat.',
+            'Vi har lågt i tak och strävar efter att ha rak kommunikation med våra kollegor.',
     },
     {
         name: 'Återhämtning',
@@ -95,15 +94,15 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                    <div className="w-full absolute -z-10 overflow-hidden blur-sm">
-                        <Splash1/>
-                    </div>
+                    {/*<div className="w-full absolute -z-10 overflow-hidden blur-sm">*/}
+                        {/*<Splash1/>*/}
+                    {/*</div>*/}
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="mx-auto">
                                     <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl">
-                                        Inte bara ett jobb.
+                                        What a teeeaaam
                                     </h1>
                                     <Image
                                         className="h-16"
@@ -113,8 +112,8 @@ export default function Tjanster() {
                                         height={224}
                                     />
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        En plats där du kan utvecklas, utmanas och träffa
-                                        vänner för livet.
+                                        Code Labs är plats där du kan utvecklas, utmanas och arbeta med ett team av duktiga
+                                        människor.
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Som en del av vårt team kommer du att att få intressanta och
@@ -122,8 +121,9 @@ export default function Tjanster() {
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                         Samtidigt som du arbetar med att nå dina mål, kommer du
-                                        att njuta av roliga upplevelser dina kollegor – allt från
-                                        teambuilding-aktiviteter till gemensamma luncher och after-work-events och
+                                        att njuta av roliga upplevelser dina kollegor – allt från att jobba tillsammans
+                                        på vårt kontor och
+                                        teambuilding-aktiviteter till gemensamma luncher och Code Labs by-events och
                                         resor.
                                     </p>
                                 </div>
@@ -230,24 +230,24 @@ export default function Tjanster() {
                                 priority={true}
                             />
                         </div>
-                        <div
-                            className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden blur-sm">
-                            <Splash4/>
-                        </div>
+                        {/*<div*/}
+                        {/*    className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden blur-sm">*/}
+                        {/*    <Splash4/>*/}
+                        {/*</div>*/}
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                                 <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
                                     Vår mission och vision är att skapa en miljö där vi utmanar och uppmanar
-                                    varandra till nytänkande och kreativitet, både internt och för våra kunder.
+                                    varandra till nytänkande och kreativitet.
                                     Genom att ha en kultur som värdesätter innovation och kreativitet och genom att
-                                    erbjuda utbildning, resurser och genom att inspirera varandra att utvecklas, kan
-                                    vi erbjuda högkvalitativa lösningar som hjälper våra kunder att uppnå sina
-                                    affärsmål.
+                                    erbjuda utbildning, resurser och genom att inspirera varandra att utvecklas så är vi
+                                    övertygade om att vi skapar en bra kultur.
                                 </p>
                                 <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                    Vi har även ett stort fokus på att utveckla produkter och tjänster som vi tror kan
-                                    vara användbara för alla. Vi har en stark tro på att vi kan skapa innovativa
-                                    lösningar genom att kombinera våra olika kompetenser och erfarenheter.
+                                    Vi har ett fokus på att utveckla egna produkter och tjänster som vi tror kan
+                                    vara användbara för både oss själva och våra kunder. Vi har en stark tro på att vi
+                                    kan skapa innovativa lösningar genom att kombinera våra olika kompetenser och
+                                    erfarenheter och det är väldigt kul att jobba ihop med så många duktiga människor.
                                 </p>
                             </div>
                             <div className="lg:flex lg:flex-auto lg:justify-center">
@@ -303,8 +303,7 @@ export default function Tjanster() {
                             />
                         </div>
                         <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                            Att skapa en plats som känns som mer än bara ett jobb. En plats där vi kan utvecklas
-                            tillsammans och där vi kan vara oss själva.
+                            Att skapa en plats där vi kan utvecklas tillsammans och där vi kan vara oss själva.
                         </p>
                     </div>
                     <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">

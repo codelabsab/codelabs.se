@@ -6,7 +6,7 @@ import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
 require('capitalize');
 
 
-const getPostContent = (slug: string) => {
+const getPostContent = (slug: string) => { // src/_posts/2021-10-26-rust-ocpp.md
     const folder = "src/_posts";
     const file = `${folder}/${slug}.md`;
     const content = fs.readFileSync(file, 'utf-8');
