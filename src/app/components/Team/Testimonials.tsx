@@ -2,14 +2,13 @@ import React from "react";
 import Paer from "../../../../public/assets/team/paer2.jpeg";
 import Mauricio from "../../../../public/assets/team/mauricio.jpeg";
 import Image from "next/image";
-import {Splash3} from "@/app/components/Graphics/Splash";
 
 const Testimonials = () => {
     return (
         <div>
             <main className="isolate relative">
                 <div className="absolute -z-10 w-full blur-sm">
-                    <Splash3/>
+                    {/*<Splash3/>*/}
                 </div>
                 <div
                     className="max-w-6xl mx-auto flex pt-24 lg:pb-28 pb-8 justify-center items-center flex-col mb-4 mt-4">

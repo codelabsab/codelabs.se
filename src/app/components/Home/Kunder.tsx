@@ -16,7 +16,7 @@ const CustomerLogos = () => {
         <div className="bg-codelabs-primary5 ">
             <div className="flex items-end justify-center py-12 pt-24">
                 <h2 className="font-title font-bold text-black text-center text-5xl md:text-7xl items-center justify-end">
-                    Våra kunder.
+                    Våra fantastiska kunder
                 </h2>
 
             </div>

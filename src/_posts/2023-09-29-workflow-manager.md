@@ -52,7 +52,4 @@ Hoppa in i vårt projekt på Github och läs mer om hur du kan bidra [https://gi
 
 Tveka inte att höra av er om ni har frågor!
 
-Mvh,  
-Carl-Fredrik\
-Mauricio\
-Pär
+Carl-Fredrik, Mauricio, Pär

@@ -1,4 +1,4 @@
-import {Roboto} from "next/font/google";
+import {Montserrat, Roboto} from "next/font/google";
 import React from "react";
 import Image from "next/image";
 
@@ -7,6 +7,8 @@ const roboto = Roboto({
     subsets: ['latin']
 })
 
+const monsterrat = Montserrat({subsets: ['latin']})
+
 export default function WhatWeDo() {
     return (
         <div className="mt-32 overflow-hidden sm:mt-40 py-12 pb-40 bg-white">
@@ -14,12 +16,11 @@ export default function WhatWeDo() {
                 <div
                     className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
                     <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                        <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
-                            Vad vi gör.
+                        <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${monsterrat.className}`}>
+                            codelabs
                         </h1>
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Vi hjälper våra kunder att lösa utmaningar med hjälp av
-                            kreativa lösningar.
+                            Utveckling, devops och cloud är det våra kunder främst kommer till oss för.
                         </p>
                     </div>
                     <div className="w-full flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
@@ -44,7 +45,7 @@ export default function WhatWeDo() {
                     </div>
                     <div className="lg:w-full lg:max-w-lg lg:pb-8">
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Och självklart ser vi till att ha massor av roliga äventyr, resor och upplevelser på vägen.
+                            Gemensamma resor, upplevelser och äventyr är det våra kollegor stannar för.
                         </p>
                     </div>
                 </div>
