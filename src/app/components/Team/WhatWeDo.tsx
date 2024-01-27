@@ -45,7 +45,7 @@ export default function WhatWeDo() {
                     </div>
                     <div className="lg:w-full lg:max-w-lg lg:pb-8">
                         <p className={`mt-6 text-6xl ${roboto.className} font-light text-black`}>
-                            Gemensamma resor, upplevelser och äventyr är det våra kollegor stannar för.
+                            Gemenskap, team, upplevelser och äventyr är det våra kollegor stannar för.
                         </p>
                     </div>
                 </div>
