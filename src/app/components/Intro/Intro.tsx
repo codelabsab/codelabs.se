@@ -33,7 +33,7 @@ const OmOss = () => {
                                     href={`/team`}
                                 >
                                     <button
-                                        className={`bg-codelabs-primary2 font-bold text-2xl px-4 text-white w-64 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${montserrat.className}`}>
+                                        className={`bg-codelabs-primary2 font-bold text-2xl px-4 text-white w-64 h-20 pt-2 pb-2 justify-center rounded-full flex items-center hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${montserrat.className}`}>
                                         Mer om teamet!
                                     </button>
                                 </Link>

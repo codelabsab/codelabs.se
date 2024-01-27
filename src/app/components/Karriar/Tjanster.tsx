@@ -332,7 +332,7 @@ export default function Tjanster() {
                             href="mailto:application@codelabs.se"
                         >
                             <button
-                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
+                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
                                 Yes, jag är redo!
                             </button>
                         </Link>
