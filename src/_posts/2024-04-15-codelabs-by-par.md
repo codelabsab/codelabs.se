@@ -8,7 +8,6 @@ description: En kul kväll med bowling och god middag 🎳🍽️
 author: Pär Berge
 ---
 
-
 ## Bowling
 
 Vi träffades på [Birka bowling](https://birkabowling.se/), ett toppenställe där vi varit tidigare.
