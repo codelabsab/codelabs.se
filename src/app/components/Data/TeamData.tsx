@@ -32,14 +32,6 @@ export const people = [
     github_url: `https://github.com/tommymalmqvist`,
   },
   {
-    name: "Carl-Fredrik Arvidson",
-    role: `Software Developer`,
-    bio: `En riktig stjärna! fullstack-utvecklare som alltid levererar. Smart, analytisk och metodisk. Man kan alltid lita på att Carl-Fredrik levererar kvalitet.`,
-    skills: `js/ts react node python ci/cd`,
-    imageUrl: "/assets/team/carl-fredrik.jpeg",
-    github_url: `https://github.com/cfarvidson`,
-  },
-  {
     name: "Mauricio Saez",
     role: `DevOps Engineer`,
     bio: `Mannen, myten, legenden. Mauricio är en devops-ingenjör som är en riktig lagspelare. Alltid en positiv attityd och bidrar till en bra stämning och delning av kunskap. Han är även en vass fotbollsspelare och musiker.`,

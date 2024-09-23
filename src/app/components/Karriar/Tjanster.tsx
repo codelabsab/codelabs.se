@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const stats = [
     {label: 'Start', value: '2016'},
-    {label: 'Antal anställda', value: '6'},
+    {label: 'Antal anställda', value: '5'},
 ]
 const values = [
     {
