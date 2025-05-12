@@ -34,7 +34,7 @@ export function BlogInlagg() {
                                 height={224}
                                 priority={true}
                             />
-                            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"/>
+                            <div className="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"/>
                             <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"/>
 
                             <div
