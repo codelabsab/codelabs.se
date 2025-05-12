@@ -36,7 +36,7 @@ export default function Header() {
             <svg
                 viewBox="0 0 1097 845"
                 aria-hidden="true"
-                className="hidden transform-gpu blur-3xl sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:w-[68.5625rem]"
+                className="hidden transform-gpu blur-3xl sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:w-274.25"
             >
                 <path
                     fill="url(#7c63f5ae-130c-4c0f-963f-50ac7fe8d2e1)"
@@ -60,7 +60,7 @@ export default function Header() {
             <svg
                 viewBox="0 0 1097 845"
                 aria-hidden="true"
-                className="absolute left-1/2 -top-52 -z-10 w-[68.5625rem] -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+                className="absolute left-1/2 -top-52 -z-10 w-274.25 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
             >
                 <path
                     fill="url(#49c00522-612e-41d3-bb32-ce7d1fa28850)"

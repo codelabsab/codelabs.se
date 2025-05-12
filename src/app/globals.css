@@ -1,7 +1,77 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-montserrat: var(--font-montserrat);
+  --font-poppins: var(--font-poppins);
+
+  --color-cl-primary: #f4f6f0;
+  --color-cl-secondary: #f4f6f0;
+  --color-cl-tertiary: #f6f2f0;
+
+  --color-black-dark: #202020;
+  --color-black-darkest: #151515;
+  --color-black-gray: #333333;
+
+  --color-grey-normal: #565656;
+  --color-grey-dark: #18191f;
+  --color-grey-lightest: #e4e4e4;
+  --color-grey-light: #f6f5f0;
+  --color-grey-light2: #f0f1f6;
+  --color-grey-light3: #e3e0d0;
+  --color-grey-blue: #00a6fb;
+  --color-grey-bluish: #1c2c40;
+
+  --color-codelabs-primary1: #8b00ff;
+  --color-codelabs-primary2: #ae4dff;
+  --color-codelabs-primary3: #c680ff;
+  --color-codelabs-primary4: #ddb3ff;
+  --color-codelabs-primary5: #f4e6ff;
+  --color-codelabs-secondary1: #f6ff81;
+  --color-codelabs-secondary2: #f9ffa7;
+  --color-codelabs-secondary3: #fbffc0;
+  --color-codelabs-secondary4: #fdffda;
+  --color-codelabs-secondary5: #fffff3;
+  --color-codelabs-tertiary1: #fe9dc5;
+  --color-codelabs-tertiary2: #ffbbd7;
+  --color-codelabs-tertiary3: #ffcee2;
+  --color-codelabs-tertiary4: #ffe2ee;
+  --color-codelabs-tertiary5: #fff6fa;
+  --color-codelabs-quaternary1: #fc9360;
+  --color-codelabs-quaternary2: #fdb490;
+  --color-codelabs-quaternary3: #fec9b0;
+  --color-codelabs-quaternary4: #ffdfd0;
+  --color-codelabs-quaternary5: #fff5f0;
+  --color-codelabs-grey1: #4c4b4c;
+  --color-codelabs-grey2: #828283;
+  --color-codelabs-grey3: #a6a6a6;
+  --color-codelabs-grey4: #cacaca;
+  --color-codelabs-grey5: #f0eef3;
+
+  --color-codelabs-text-light-primary: #262628;
+  --color-codelabs-text-light-secondary: #4c4b4c;
+
+  --color-blue-lightest: #f0faff;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 .border_1 {
     border: 1px solid #e4e4e4;

@@ -47,7 +47,7 @@ export default function Tjanster() {
                 {/* Hero section */}
                 <div className="relative isolate -z-10">
                     <svg
-                        className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+                        className="absolute inset-x-0 top-0 -z-10 h-256 w-full stroke-codelabs-primary5 mask-[radial-gradient(32rem_32rem_at_center,white,transparent)]"
                         aria-hidden="true"
                     >
                         <defs>
@@ -73,7 +73,7 @@ export default function Tjanster() {
                     </svg>
                     <div
                         className="absolute top-0 left-1/2 right-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
-                        <svg viewBox="0 0 801 1036" aria-hidden="true" className="w-[50.0625rem]">
+                        <svg viewBox="0 0 801 1036" aria-hidden="true" className="w-200.25">
                             <path
                                 fill="url(#70656b7e-db44-4b9b-b7d2-1f06791bed52)"
                                 fillOpacity=".3"
@@ -94,7 +94,7 @@ export default function Tjanster() {
                             </defs>
                         </svg>
                     </div>
-                    {/*<div className="w-full absolute -z-10 overflow-hidden blur-sm">*/}
+                    {/*<div className="w-full absolute -z-10 overflow-hidden blur-xs">*/}
                         {/*<Splash1/>*/}
                     {/*</div>*/}
                     <div className="overflow-hidden relative">
@@ -133,7 +133,7 @@ export default function Tjanster() {
                                         className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                                         <div className="relative">
                                             <Image
-                                                className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                                 src={"/assets/team/paer.jpeg"}
                                                 alt={""}
                                                 width={224}
@@ -147,7 +147,7 @@ export default function Tjanster() {
                                     <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                                         <div className="relative">
                                             <Image
-                                                className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                                 src={"/assets/bg-career.jpeg"}
                                                 alt={""}
                                                 width={224}
@@ -163,7 +163,7 @@ export default function Tjanster() {
                                                 loop
                                                 muted
                                                 playsInline
-                                                className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
                                                     src="/assets/video/grill.mp4"
@@ -181,7 +181,7 @@ export default function Tjanster() {
                                                 loop
                                                 muted
                                                 playsInline
-                                                className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
                                                     src="/assets/video/waterfall.mp4"
@@ -197,7 +197,7 @@ export default function Tjanster() {
                                                 loop
                                                 muted
                                                 playsInline
-                                                className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             >
                                                 <source
                                                     src="/assets/video/rally.mp4"
@@ -231,7 +231,7 @@ export default function Tjanster() {
                             />
                         </div>
                         {/*<div*/}
-                        {/*    className="absolute inset-x-0 -z-10 h-[64rem] w-full stroke-codelabs-primary5 overflow-hidden blur-sm">*/}
+                        {/*    className="absolute inset-x-0 -z-10 h-256 w-full stroke-codelabs-primary5 overflow-hidden blur-xs">*/}
                         {/*    <Splash4/>*/}
                         {/*</div>*/}
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
@@ -283,7 +283,7 @@ export default function Tjanster() {
                         height={1880}
                         priority={true}
                         alt=""
-                        className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
+                        className="aspect-5/2 w-full object-cover xl:rounded-3xl"
                     />
                 </div>
 

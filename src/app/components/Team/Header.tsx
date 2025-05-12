@@ -1,24 +1,24 @@
 import React from "react";
 import Link from "next/link";
-import {Inter, Montserrat, Poppins, Roboto} from "next/font/google";
+import { Inter, Montserrat, Poppins, Roboto } from "next/font/google";
 
 const monsterrat = Montserrat({
-    weight: ['100','200','300','400', '500', '600', '700'],
+    weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
 const inter = Inter({
-    weight: ['100','200','300','400', '500', '600', '700'],
+    weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
 const roboto = Roboto({
-    weight: ['100','300','400', '500', '700', '900'],
+    weight: ['100', '300', '400', '500', '700', '900'],
     subsets: ['latin']
 })
 
 const poppins = Poppins({
-    weight: ['100','200','300','400', '500', '600', '700'],
+    weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
@@ -29,7 +29,7 @@ const Header = () => {
                 <div className="relative isolate -z-10">
                     <div
                         className="absolute top-0 left-1/2 right-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
-                        <svg viewBox="0 0 801 1036" aria-hidden="true" className="w-[50.0625rem]">
+                        <svg viewBox="0 0 801 1036" aria-hidden="true" className="w-200.25">
                             <path
                                 fill="url(#70656b7e-db44-4b9b-b7d2-1f06791bed52)"
                                 fillOpacity=".3"
@@ -44,13 +44,13 @@ const Header = () => {
                                     y2="1091.63"
                                     gradientUnits="userSpaceOnUse"
                                 >
-                                    <stop stopColor="#9089FC"/>
-                                    <stop offset={1} stopColor="#8B00FF"/>
+                                    <stop stopColor="#9089FC" />
+                                    <stop offset={1} stopColor="#8B00FF" />
                                 </linearGradient>
                             </defs>
                         </svg>
                     </div>
-                    <div className="w-full h-502 bg-transparent pt-24">
+                    <div className="w-full h-1/2 bg-transparent pt-24">
                         <div
                             className="flex flex-col md:flex-row justify-center md:justify-between max-w-5xl xl:pl-48 py-6">
                             <div className="col-8">

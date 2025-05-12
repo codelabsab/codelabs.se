@@ -30,7 +30,7 @@ export default function WhatWeDo() {
                             height={600}
                             priority={true}
                             alt=""
-                            className="aspect-[7/5] w-[37rem] max-w-screen flex-none rounded-2xl bg-gray-50 object-cover"
+                            className="aspect-7/5 w-148 max-w-screen flex-none rounded-2xl bg-gray-50 object-cover"
                         />
                     </div>
                     <div className="w-full flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
@@ -40,7 +40,7 @@ export default function WhatWeDo() {
                             height={600}
                             priority={true}
                             alt=""
-                            className="aspect-[7/5] w-[37rem] max-w-screen flex-none rounded-2xl bg-gray-50 object-cover"
+                            className="aspect-7/5 w-148 max-w-screen flex-none rounded-2xl bg-gray-50 object-cover"
                         />
                     </div>
                     <div className="lg:w-full lg:max-w-lg lg:pb-8">
