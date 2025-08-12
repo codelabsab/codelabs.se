@@ -1,4 +1,4 @@
-import React from "react";
+
 import Paer from "../../../../public/assets/team/paer2.jpeg";
 import Mauricio from "../../../../public/assets/team/mauricio.jpeg";
 import Image from "next/image";
@@ -20,8 +20,8 @@ const Testimonials = () => {
                             </div>
                             <blockquote
                                 className="font-poppins text-5xl italic font-extrabold text-center text-grey-normal">
-                                Pär är en uppskattad kollega som varit med sedan start. Han gillar bland annat tech,
-                                skriva kod och cykla nedför branta backar.
+                                Pär is a valued colleague who has been with us since the start. He likes tech,
+                                writing code and biking down steep hills.
                             </blockquote>
                             <p className="pt-4">
                                 <cite className="text-left font-poppins text-2xl text-grey-normal">Pär Berge</cite>
@@ -60,10 +60,8 @@ const Testimonials = () => {
                             </div>
                             <blockquote
                                 className="font-poppins text-5xl italic font-extrabold text-center text-grey-normal">
-                                Code Labs har en familjär känsla och ett stort driv som inspirerar mig till att
-                                utvecklas.
-                                Detta
-                                är den perfekta kombon för mig.
+                                Code Labs has a great team vibe and a great drive that inspires.
+                                This is the perfect combination for me.
                             </blockquote>
                             <p className="pt-4">
                                 <cite className="text-left font-poppins text-2xl text-grey-normal">Mauricio Saez</cite>

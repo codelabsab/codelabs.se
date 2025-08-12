@@ -1,38 +1,47 @@
 ---
-title: Hackaton, Virtual Reality & Middag
+title: Hackathon, Virtual Reality & Dinner
 slug: hackaton-vr-middag
 date: "2021-09-24"
-description: Code Labs körde heldag med hackaton, Virtual Reality och middag på Ekstedt.
+description: Code Labs had a full day with hackathon, Virtual Reality and dinner at Ekstedt.
 og_image: /assets/blogg/hackaton.webp
 author: Tommy Malmqvist
 ---
 
-Det var dags för vår höst kick-off efter en lång tid av att arbeta hemifrån, vaccin som inte var tillgänglig för alla
-samt restriktioner. Äntligen kunde vi ses och umgås fysiskt istället för våra digitala A.W som vi haft under pandemin.
+It was time for our autumn kick-off after a long time of working from home,
+vaccines that weren't available to everyone and restrictions. Finally we could
+meet and socialize physically instead of our digital after works that we had
+during the pandemic.
 
-Vi sågs på kontoret på KG10 där Tommy och Joatin gick igenom vårt interna projekt som de jobbat med sista tiden.
+We met at the office at KG10 where Tommy and Joatin went through our internal
+project that they had been working on lately.
 
-Projektet är hemligt just nu men är en produkt som vi hoppas ska hjälpa världen bli mer miljövänligare på ett enklare sätt.
+The project is secret right now but is a product that we hope will help the
+world become more environmentally friendly in an easier way.
 
 ![Hackaton](/assets/blogg/hackaton.webp)
 
-Efter detta gick vi och åt lunch och tog sedan taxi ut till Bromma för att köra Virtual Reality och spela Shuffleboard på VR Center.
+After this we went and had lunch and then took a taxi out to Bromma to do
+Virtual Reality and play Shuffleboard at VR Center.
 
 ![VR](/assets/blogg/vr.jpeg)
 
-Virtual Reality va extremt roligt! Hårdvaran var Oculus Rift headsets som var kopplat till en HP dator man bar som en ryggsäck.
+Virtual Reality was extremely fun! The hardware was Oculus Rift headsets
+connected to an HP computer that you wore like a backpack.
 
-Man gick runt i en stor lokal där alla var i samma VR värld tillsammans och gjorde utmaningar ihop.
+You walked around in a large room where everyone was in the same VR world
+together and did challenges together.
 
-Flera av oss har även Oculus Quest headsets som vi använder för utveckling och det var kul att uppleva
-andra tillverkares lösningar.
+Several of us also have Oculus Quest headsets that we use for development and it
+was fun to experience other manufacturers' solutions.
 
-Vi passade även på att spela lite shuffle board medan vi väntade där vi delade upp oss i två team.
+We also took the opportunity to play some shuffleboard while we waited where we
+divided into two teams.
 
 ![shuffleboard](/assets/blogg/shuffleboard.webp)
 
-Sen var det dags att ta sig ut till resturang Ekstedt för en 7 rätters middag med tillhörande vinpaket.
+Then it was time to head out to restaurant Ekstedt for a 7-course dinner with
+accompanying wine package.
 
-Det blev en bra kväll med mycket skratt, teknik snack och god mat!
+It was a great evening with lots of laughter, tech talk and good food!
 
 ![ekstedt](/assets/blogg/ekstedt.webp)

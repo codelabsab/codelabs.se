@@ -1,5 +1,5 @@
 import {people} from "@/app/components/Data/TeamData";
-import React from "react";
+
 import {Roboto} from "next/font/google";
 import Image from "next/image";
 
@@ -13,14 +13,13 @@ export default function TeamTestimonials() {
         <div className="bg-codelabs-tertiary5 py-16 sm:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-7xl sm:text-center">
-                    <h1 className={`text-5xl sm:text-8xl font-bold tracking-tight text-black ${roboto.className}`}>Vi som jobbar på Code Labs.</h1>
+                    <h1 className={`text-5xl sm:text-8xl font-bold tracking-tight text-black ${roboto.className}`}>We who work at Code Labs.</h1>
                     <p className={`mt-6 text-3xl ${roboto.className} font-extralight text-gray-600`}>
-                        Ett härligt team av individer som alla har olika bakgrunder och kompetenser. Med vår
-                        sammansvetsade teamkänsla så skapar vi magic.
+                        A wonderful team of individuals who all have different backgrounds and skills. With our
+                        cohesive team spirit, we create magic.
                     </p>
                 </div>
                 <ul
-                    role="list"
                     className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
                 >
                     {people.map((person) => (
@@ -31,7 +30,7 @@ export default function TeamTestimonials() {
                                 height={400}
                                 priority={true}
                                 className="w-52 flex-none rounded-2xl object-cover"
-                                 alt=""/>
+                                 alt={person.name}/>
                             <div className="flex-auto">
                                 <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
                                 <p className="text-base leading-7 text-gray-400">{person.role}</p>

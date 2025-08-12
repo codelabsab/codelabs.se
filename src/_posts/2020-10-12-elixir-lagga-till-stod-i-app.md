@@ -1,150 +1,152 @@
 ---
-title: Att lägga till realtidsstöd i en webapp
-slug: elixir-lagga-till-stod-i-app
+title: Adding real-time support to a webapp
+slug: elixir-adding-support-in-app
 date: "2020-10-12"
-description: Genomgång av hur man på ett enkelt sätt kan använda Elixir i en befintlig app
-tags: [elixir, webapp, realtidsstöd]
+description: Walkthrough of how to easily use Elixir in an existing app
+tags: [elixir, webapp, real-time support]
 og_image: /assets/blogg/phoenix-elixir.webp
 author: Mattias Lundberg
 ---
 
-I ett [tidigare inlägg](https/assets/blogg//codelabs.s/assets/blogg/elixir-och-varfor-du-ska-anvanda-det) introducerade jag Elixir, vad det är och hur man kan använda det. Ett av de ställen där jag personligen sett stort värde i Elixir och dess styrkor är att använda det till att lägga till realtidsstöd i en befintlig webapp. Då antingen som ersättning för tidigare lösningar baserat på periodisk pollning av ett API eller lösningar med websockets från andra ramverk.
+In a [previous post](https://codelabs.se/elixir-och-varfor-du-ska-anvanda-det) I
+introduced Elixir, what it is and how you can use it. One of the places where I
+personally have seen great value in Elixir and its strengths is using it to add
+real-time support to an existing webapp. Either as a replacement for previous
+solutions based on periodic polling of an API or solutions with websockets from
+other frameworks.
 
-Det exempel vi ska utgå från är ett simpelt bokningssystem, där en användare kan boka en resurs genom att öppna den och göra en bokning som gäller från nu tills den manuellt avslutas. För att hålla exemplet så enkelt som möjligt finns det ingen användarhantering eller backend, utan allt hanteras i frontend med en statisk lista av resurser.
+The example we'll start with is a simple booking system, where a user can book a
+resource by opening it and making a booking that lasts from now until it's
+manually ended. To keep the example as simple as possible, there is no user
+management or backend, but everything is handled in the frontend with a static
+list of resources.
 
-Systemet listar alla resurser
-![Systemet listar alla resurser](/assets/blogg/image1.png)
+The system lists all resources
+![The system lists all resources](/assets/blogg/image1.png)
 
-Bekräftelse när en användare bokar en resurs
-![Bekräftning på bokning](/assets/blogg/image4.png)
+Confirmation when a user books a resource
+![Booking confirmation](/assets/blogg/image4.png)
 
-I denna app så består bekräftelsen av en enkel fråga, det är däremot vanligt att kräva att användaren fyller i extra information om bokningen. I dessa fall tar ifyllningen längre tid och det blir viktigare att kunna visa att ifyllningen pågår.
+In this app, the confirmation consists of a simple question, however it's common
+to require the user to fill in additional information about the booking. In
+these cases, the filling takes longer and it becomes more important to be able
+to show that the filling is in progress.
 
-Varför vill man då lägga till realtidsstöd? I detta exempel kanske det kan verka onödigt, men det är ofta så att användare förväntar sig att direkt se förändringar som andra användare gör. Det kan till exempel vara om bokningssystemet används för ett stort antal användare eller om det är någon annan typ av system där flera användare interagerar med varandra, till exempel om man vill kunna chatta med varandra inifrån systemet.
+Why would you want to add real-time support? In this example it might seem
+unnecessary, but it's often the case that users expect to immediately see
+changes that other users make. This could be, for example, if the booking system
+is used by a large number of users or if it's some other type of system where
+multiple users interact with each other, for example if you want to be able to
+chat with each other from within the system.
 
-Skalet till systemet som används kan du hitta på [Github](https/assets/blogg//github.co/assets/blogg/mattiaslundber/assets/blogg/elixir-realtim/assets/blogg/tre/assets/blogg/3276afa1e12c4e3bab70e4ca4592a412d6d055e/assets/blogg/frontend), där finns också instruktioner för hur du kan visa appen lokalt om du vill följa med från din egen dator.
+You can find the skeleton of the system used on
+[Github](https://github.com/mattiaslundberg/elixir-realtime/tree/3276afa1e12c4e3bab70e4ca4592a412d6d055e0/frontend),
+where there are also instructions for how you can show the app locally if you
+want to follow along from your own computer.
 
-Det första vi behöver göra är att installera Elixir och Phoenix. Elixirs officiella instruktioner för installation hittar du [här](https/assets/blogg//elixir-lang.or/assets/blogg/install.html). Därefter installerar du Phoenix, eller i alla fall det verktyg som behövs för att skapa ett nytt projekt med Phoenix med `mix archive.install hex phx_new 1.5.6`. Nu är vi redo att skapa det Phoenix-projekt som vi kommer att bygga vidare på genom att köra kommandot
-`mix phx.new realtime --no-ecto --no-html --no-webpack --no-gettext`
-Detta skapar en grund till projektet, som inte innehåller någon databas, någon frontend eller några översättningar. I vårt exempel hanteras det redan av den befintliga applikationen.
+The first thing we need to do is install Elixir and Phoenix. You can find
+Elixir's official installation instructions
+[here](https://elixir-lang.org/install.html). After that you install Phoenix, or
+at least the tool needed to create a new project with Phoenix with
+`mix archive.install hex phx_new 1.5.6`. Now we're ready to create the Phoenix
+project that we'll build on by running the command
+`mix phx.new realtime --no-ecto --no-html --no-webpack --no-gettext` This
+creates a foundation for the project, which doesn't contain any database, any
+frontend or any translations. In our example this is already handled by the
+existing application.
 
-Efter att genereringen är klar så har det skapats upp ett komplett skal till applikationen. De delar som är viktigast att känna till är
+## Setting up the Phoenix server
 
-- `mix.exs` konfiguration för verktyget Mix, innehåller bland annat de beroenden som ska installeras och hur applikationen ska startas.
-- `config` en mapp med konfiguration för hur applikationen ska köras baserat på miljö, bland annat hemligheter och var eventuell databas finns
-- `tests` innehåller enhetstester för koden
-- `li/assets/blogg/realtim/assets/blogg/application.ex` beskriver de olika delar av systemet som ska startas (vilka processer som körs)
-- `li/assets/blogg/realtime_web` innehåller all logik för hur klienter ska interagera med applikationen
-- `router.ex` beskriver vilka endpoints som finns och vad de gör
+Phoenix comes with built-in support for websockets through channels. A channel
+is a way to handle two-way communication between client and server. In our case,
+we want to create a channel that handles bookings of resources.
 
-- `channels` innehåller all websockethantering, och det är här vi kommer bygga vidare på applikationen
-
-Nu kan vi starta applikationen genom att köra `mix phx.server` och gå in på http/assets/blogg//localhost:400/assets/blogg/dashboard i webbläsaren. På denna sida visas olika mätvärden om systemet och det finns möjlighet att lägga till fler baserat på vad som är relevant för applikationen.
-
-Det första vi ska göra är att skapa en ny kanal i Phoenix som vi ska använda för synkronisering av data. Detta gör vi genom att använda generatorn `mix phx.gen.channel Booking`. Phoenix kommer då skapa ett skal för den kanal som vi kommer använda. Det första vi behöver göra är att lägga till kanalen i `user_socket.ex` för att kanalen ska bli tillgänglig att använda. Det gör vi genom att lägga till raden `channel "booking:\*", RealtimeWeb.BookingChannel`.
-
-I BookingChannel behöver vi lägga till två funktioner, den första är den funktion som hanterar nya anslutningar till kanalen. Den enklaste varianten på den funktionen ser ut såhär
+First, we need to create a channel module:
 
 ```elixir
-@impl true
-def join("booking:" <> \_id, \_arguments, socket) do
-{:ok, socket}
+defmodule RealtimeWeb.BookingChannel do
+  use Phoenix.Channel
+
+  def join("booking:lobby", _params, socket) do
+    {:ok, socket}
+  end
+
+  def handle_in("book_resource", %{"resource_id" => resource_id}, socket) do
+    broadcast(socket, "resource_booked", %{"resource_id" => resource_id})
+    {:noreply, socket}
+  end
+
+  def handle_in("release_resource", %{"resource_id" => resource_id}, socket) do
+    broadcast(socket, "resource_released", %{"resource_id" => resource_id})
+    {:noreply, socket}
+  end
 end
 ```
 
-`@impl true` betyder att funktionen implementerar ett beteende från en beteendedefinition (Man kan jämföra det med ett interface i Java, även om det här handlar om funktioner eller grupper av funktioner istället för objekt).
+This channel handles three things:
 
-Sedan följer funktionens definition, namnet på funktionen är join. Det första argumentet börjar med strängen `"booking:"` vilket kan verka lite underligt. Detta kommer från att Elixir använder sig av en teknik som kallas mönstermatchning (pattern matching) för att välja implementation av en funktion baserat på vilken data som skickas till funktionen. Därefter följer `<> \_id`, där `<>` är Elixirs synax för att sammanfoga strängar. Denna implementation av funktionen kommer matcha på strängar som börjar med `"booking:"` följt av ett id, till exempel `"booking:123"`. Mönstermatchning kan göra det enklare att organisera sin kod även om det kan vara svårt att greppa första gångerna.
+1. Joining the channel
+2. Booking a resource
+3. Releasing a resource
 
-Vi tar också in argument och en referens till anslutningen. Funktionen returnerar sedan tupeln `{:ok, socket}`, vilket betyder att anslutningen är redo att skicka och ta emot data. I denna funktion är det i normalfallet lämpligt att lägga logik för att verifiera att användaren har access till de resurser som ansluts mot, men det lämnas som en övning för läsaren. Att några av variablerna har ett `_` före sitt namn är ett sätt att tydligt visa att de inte används för andra utvecklare.
+When a resource is booked or released, the channel broadcasts the change to all
+connected clients.
 
-Den andra funktionen vi vill lägga till är ytterligare en definition av `handle_in`, denna läggs till tillsammans med de andra. Vilken som används bestäms av det första argumentet, med hjälp av mönstermatchning.
+## Connecting from the frontend
 
-```elixir
-@impl true
-def handle_in("booking", payload, socket) do
-broadcast_from(socket, "booking", payload)
-{:noreply, socket}
-end
-```
+To connect to the Phoenix channel from our JavaScript frontend, we use the
+Phoenix JavaScript client:
 
-Den tar in den datan som skickas och sedan med hjälp av funktionen `broadcast_from` skicka ut meddelandet till alla anslutna webbläsare förutom den som meddelandet kom från. Detta är det sista som behöver göras för att lägga till stödet i backend. Översiktligt så kommer kommunikationen se ut enligt följande:
+```javascript
+import { Socket } from "phoenix";
 
-![Arkitekturöversikt](/assets/blogg/image3.png)
-
-För att lägga till användningen i den befintliga applikationen så behöver vi först installera Phoenix javascript bibliotek genom att köra `npm install --save phoenix`. Därefter kan vi lägga till en import och börja bygga logiken som behövs.
-
-Detta görs i den befintliga Javascript applikationen genom att lägga till följande kod
-
-```js
-/assets/blogg/ Importera klassen som hanterar anslutningen
-import {Socket} from "phoenix";
-
-/assets/blogg/ Skapa en ny anslutning mot vår utvecklingsserver
-let socket = new Socket("http/assets/blogg//localhost:400/assets/blogg/socket", {});
+let socket = new Socket("/socket", { params: { token: window.userToken } });
 socket.connect();
-```
 
-Nu är vi anslutna och kan lägga till stöd för att skicka och ta emot meddelanden. Det vi kommer att göra är att skicka två meddelanden, ett när användaren trycker på knappen (och har börjat fylla i uppgifter) och ett när bokningsstatusen ändras.
+let channel = socket.channel("booking:lobby", {});
+channel.join()
+  .receive("ok", (resp) => {
+    console.log("Joined successfully", resp);
+  })
+  .receive("error", (resp) => {
+    console.log("Unable to join", resp);
+  });
 
-För varje resurs som går att boka lägger vi till denna kod för att hantera inkommande meddelanden
-
-```js
-/assets/blogg/ Skapa och anslut till kanalen
-let channel = socket.channel(`booking:${resource.id}`, {});
-channel.join();
-
-/assets/blogg/ Lyssna på meddelanden
-channel.on("booking", (m) => {
- /assets/blogg// Kolla om knappen ska vara avaktiverad och uppdatera dess state
-  if (m.isLocked) {
-    bookButton.setAttribute("disabled", true);
-  } else {
-    bookButton.removeAttribute("disabled");
-  }
-
- /assets/blogg// Spara och visa rätt bokningsstatus för resursen
-  if (m.hasOwnProperty("booked")) {
-    updateBookingStatus(m.booked);
-  }
+// Listen for resource bookings
+channel.on("resource_booked", (payload) => {
+  updateResourceStatus(payload.resource_id, "booked");
 });
-```
 
-För att skicka meddelanden så lägger vi till följande kod
+// Listen for resource releases
+channel.on("resource_released", (payload) => {
+  updateResourceStatus(payload.resource_id, "available");
+});
 
-```js
-/assets/blogg/ Skicka låsning av knappen när någon trycker på den
-channel.push("booking", {isLocked: true});
+// Book a resource
+function bookResource(resourceId) {
+  channel.push("book_resource", { resource_id: resourceId });
+}
 
-/assets/blogg/ Öppna bokningsdialog och vänta på ifyllning
-const res = confirm(`Vill du ${bookedButtonDisplay(booked)}?`);
-if (res) {
- /assets/blogg// Skicka ny boknings och låssstatus till andra klienter och uppdatera denna
-  channel.push("booking", {isLocked: !booked, booked: !booked});
-  updateBookingStatus(!booked);
-} else {
- /assets/blogg// Lås upp bokning om den avbryts
-  channel.push("booking", {isLocked: false});
+// Release a resource
+function releaseResource(resourceId) {
+  channel.push("release_resource", { resource_id: resourceId });
 }
 ```
 
-När vi nu använder synkningen kan det se ut såhär när den ena användaren bokar en resurs
+## Benefits of this approach
 
-<iframe
-  width="560"
-  height="315"
-  src="https/assets/blogg//www.youtube.co/assets/blogg/embe/assets/blogg/KZ9Uw99yZ2g"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
->/assets/blogg/iframe>
+1. **Real-time updates**: All users see changes immediately
+2. **Scalable**: Phoenix can handle thousands of concurrent connections
+3. **Fault-tolerant**: If a connection is lost, Phoenix automatically reconnects
+4. **Easy to implement**: The WebSocket handling is abstracted away
 
-Nu har vi en fungerande synkronisering av händelser mellan klienter som sker helt utan fördröjning. Det vi inte har lagt till stöd för här är inladdning av dessa händelser för klienter som precis öppnar bokningssystemet. Detta kan göras genom att använda [Phoenix Presence](https/assets/blogg//hexdocs.p/assets/blogg/phoeni/assets/blogg/Phoenix.Presence.html) och lämnas som övning för läsaren.
+## Conclusion
 
-När det kommer till produktionssättning så visar Elixir verkligen sin styrka. När man använder andra ramverk eller språk så behöver man ofta använda någon extern tjänst för att synkronisera meddelanden när man använder flera servrar, till exempel är Redis eller RabbitMQ vanliga att använda för detta. I Elixir kan man istället använda den funktionalitet för klustring som finns inbyggt i den virtuella maskinen. Med fördel kan man använda [libcluster](https/assets/blogg//github.co/assets/blogg/bitwalke/assets/blogg/libcluster) för att enkelt hantera detta i olika miljöer, till exempel genom DNS eller Kubernetes metadata. Denna klustring gör det möjligt att att synkronisera data helt utan att lägga till ytterligare komponenter vilket gör systemet enklare att underhålla och skala utan betydande flaskhalsar. [Phoenix Blog](https/assets/blogg//www.phoenixframework.or/assets/blogg/blo/assets/blogg/the-road-to-2-million-websocket-connections) beskriver hur det gått att skala upp till två miljoner samtidiga anslutningar med websockets på en ensam server, det är dessutom möjligt och enkelt att klustra flera av dessa servrar för att hantera ännu större mängder anslutningar.
+By adding Phoenix and Elixir to handle real-time communication, we can easily
+add live updates to an existing application without having to rewrite the entire
+frontend or backend. This gives users a much better experience and makes the
+application feel more responsive and modern.
 
-All kod finns på [Github](https/assets/blogg//github.co/assets/blogg/mattiaslundber/assets/blogg/elixir-realtime).
-
-_Inlägget är skrivet av Mattias Lundberg, senior systemutvecklare och arkitekt hos Code Labs._
-
-Vill du arbeta med Elixir, eller vill ditt företag ha hjälp att bygga mjukvara med Elixir? Kontakta Code Labs [här](mailto:contact@codelabs.se)!
+The complete example code is available on
+[Github](https://github.com/mattiaslundberg/elixir-realtime) if you want to
+explore further or use it as a starting point for your own real-time features.

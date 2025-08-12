@@ -1,4 +1,4 @@
-import React from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "@/app/components/Navbar/MobileMenu";
@@ -28,10 +28,10 @@ const Navbar = () => {
                         <ul className="flex ">
                             <li className=" px-6">
                                 <Link
-                                    href="/karriar/"
+                                    href="/careers/"
                                     className="font-normal font-poppins text-base hover:font-medium "
                                 >
-                                    Karriär
+                                    Careers
                                 </Link>
                             </li>
                             <li className="px-6">
@@ -44,10 +44,10 @@ const Navbar = () => {
                             </li>
                             <li className="px-6">
                                 <Link
-                                    href="/blogg"
+                                    href="/blog"
                                     className="font-normal font-poppins text-base hover:font-medium "
                                 >
-                                    Blogg
+                                    Blog
                                 </Link>
                             </li>
                         </ul>
