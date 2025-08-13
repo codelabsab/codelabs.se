@@ -16,6 +16,7 @@
     "@jridgewell/trace-mapping" "^0.3.24"
 
 "@emnapi/core@^1.4.3":
+
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.4.5.tgz#bfbb0cbbbb9f96ec4e2c4fd917b7bbe5495ceccb"
   integrity sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==
@@ -89,6 +90,7 @@
   version "9.26.0"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.26.0.tgz#1e13126b67a3db15111d2dcc61f69a2acff70bd5"
   integrity sha512-I9XlJawFdSMvWjDt6wksMCrgns5ggLNfFwFvnShsleWruvXM514Qxk8V246efTw+eo9JABvVz+u3q2RiAowKxQ==
+
 
 "@eslint/object-schema@^2.1.6":
   version "2.1.6"
@@ -361,6 +363,7 @@
     cors "^2.8.5"
     cross-spawn "^7.0.5"
     eventsource "^3.0.2"
+
     eventsource-parser "^3.0.0"
     express "^5.0.1"
     express-rate-limit "^7.5.0"
@@ -563,6 +566,7 @@
     lightningcss "1.30.1"
     magic-string "^0.30.17"
     source-map-js "^1.2.1"
+
     tailwindcss "4.1.11"
 
 "@tailwindcss/oxide-android-arm64@4.1.11":
@@ -748,6 +752,7 @@
     ignore "^7.0.0"
     natural-compare "^1.4.0"
     ts-api-utils "^2.1.0"
+
 
 "@typescript-eslint/parser@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0":
   version "8.39.1"
@@ -1049,9 +1054,9 @@ body-parser@^2.2.0:
     type-is "^2.0.0"
 
 brace-expansion@^1.1.7:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
-  integrity sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.12.tgz#ab9b454466e5a8cc3a187beaad580412a9c5b843"
+  integrity sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
@@ -1654,6 +1659,7 @@ eslint-import-resolver-typescript@^3.5.2:
     is-glob "^4.0.3"
     synckit "^0.8.4"
 
+
 eslint-module-utils@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.12.1.tgz#f76d3220bfb83c057651359295ab5854eaad75ff"
@@ -1839,6 +1845,7 @@ etag@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
+
 
 eventsource-parser@^3.0.0, eventsource-parser@^3.0.1:
   version "3.0.3"
@@ -2427,6 +2434,7 @@ is-core-module@^2.13.0:
   integrity sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==
   dependencies:
     has "^1.0.3"
+
 
 is-core-module@^2.16.0, is-core-module@^2.16.1:
   version "2.16.1"
@@ -3097,6 +3105,7 @@ object.values@^1.1.6:
     call-bind "^1.0.2"
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
+
 
 object.values@^1.2.1:
   version "1.2.1"
