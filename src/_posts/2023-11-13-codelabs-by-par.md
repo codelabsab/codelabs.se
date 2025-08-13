@@ -1,69 +1,81 @@
 ---
 layout: post
-title: "Code Labs av - Pär: En kväll med tävling och grill"
-slug: code-labs-av-pär
+title: "Code Labs by - Pär: An evening with competition and grill"
+slug: code-labs-by-pär
 date: "2023-11-13"
 og_image: /assets/blogg/bb_racing.jpg
-description: En härlig kväll med tävling och god middag.
+description: A wonderful evening with competition and good dinner.
 author: Pär Berge
 ---
 
-Vi i codelabs gillar att tävla. Så jag tänkte att vad kan vara bättre med en 3-kamp?
-Efter kampen så gick vi till en restaurang och åt en god middag.
+We at Code Labs love to compete. So I thought, what could be better than a
+triathlon? After the battle, we went to a restaurant and had a good dinner.
 
-## 3-kampen: En kamp om ära och berömmelse
+## The Triathlon: A battle for honor and glory
 
-Stor ära och berömmelse stod på spel när vi tävlade i 3-kamp. Vi skulle utmanas i tre grenar: 
-* Racing
-* shuffleboard
-* golf
+Great honor and glory was at stake when we competed in a triathlon. We would be
+challenged in three disciplines:
 
-## Första grenen: Racing
-![racing](/assets/blogg/bb_racing_2.jpg)
-Vi fick köra racing i en simulator. Det var en utmaning att hålla sig på banan och att inte krocka med de andra bilarna. 
+- Racing
+- Shuffleboard
+- Golf
 
-Resultat:
+## First discipline: Racing
+
+![racing](/assets/blogg/bb_racing_2.jpg) We got to do racing in a simulator. It
+was a challenge to stay on track and not crash into the other cars.
+
+Results:
+
 1. Pär 🥇
-2. Delad mellan Kami och Tommy 🥈
+2. Tied between Kami and Tommy 🥈
 3. Love 🥉
 
-## Andra grenen: Shuffleboard
-![shuffleboard](/assets/blogg/bb_shuffle.jpg)
-Nu var det dags för shuffleboard. Det var en jämn kamp där alla hade chans att vinna.
+## Second discipline: Shuffleboard
 
-Tommy, Kami och Love låg alla på samma poäng efter de var klara. Med nöd och näppe lyckades jag vinna med 1 poäng.
+![shuffleboard](/assets/blogg/bb_shuffle.jpg) Now it was time for shuffleboard.
+It was an even battle where everyone had a chance to win.
 
-Resultat:
+Tommy, Kami and Love were all on the same points after they were done. By the
+skin of my teeth, I managed to win by 1 point.
+
+Results:
+
 1. Pär 🥇
-2. Delad mellan Kami, Tommy och Love 🥈
+2. Tied between Kami, Tommy and Love 🥈
 
-## Tredje grenen: Golf
+## Third discipline: Golf
+
 ![golf](/assets/blogg/bb_golf.jpg)
 
-Nu var det dags för sista grenen. Vi skulle spela golf. Tävlingen var att slå så långt som möjligt.
-3 slag per omgång där bästa slaget räknades. Vi körde 2 omgångar.
+Now it was time for the last discipline. We were going to play golf. The
+competition was to hit as far as possible. 3 shots per round where the best shot
+counted. We played 2 rounds.
 
-Resultat:
-1. Pär (398 meter) 🥇
-2. Tommy (352 meter)🥈
-3. Kami (323 meter) 🥉🥓
-4. Love ( 307 meter)
+Results:
 
-## Prisutdelning
+1. Pär (398 meters) 🥇
+2. Tommy (352 meters) 🥈
+3. Kami (323 meters) 🥉🥓
+4. Love (307 meters)
 
-Efter all blod, svett och tårar hade vi nått följande resultat:
+## Prize ceremony
+
+After all the blood, sweat and tears, we had reached the following result:
+
 1. Pär 🥇
 2. Tommy 🥈
 3. Kami 🥉
 4. Love
 
-## Restaurang Björk: Bar och Grill
+## Restaurant Björk: Bar and Grill
 
-Efter tävlingen och en snabb 🍺 skyndade vi raskt vidare till restaurangen [Björk Bar & Grill](https://bjorkbarochgrill.se/).
+After the competition and a quick 🍺 we hurried on to the restaurant
+[Björk Bar & Grill](https://bjorkbarochgrill.se/).
 
-Lite cocktail 🍹 och en god entrecote 🥩 stod för höjdpunkten där.
+A little cocktail 🍹 and a good entrecote 🥩 was the highlight there.
 
 ![björk](/assets/blogg/bjork_dessert.jpg)
 
-
-Jag ger kvällen 4 av 5 godkända pull requests. Det var en härlig kväll med tävling och god middag.
+I give the evening 4 out of 5 approved pull requests. It was a wonderful evening
+with competition and good dinner.

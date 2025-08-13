@@ -1,7 +1,6 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {Open_Sans} from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
 const open_sans = Open_Sans({
   weight: ['300', '400', '500', '700', '800'],
@@ -14,17 +13,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto my-auto">
         <div className="pb-12"></div>
         <div className="flex flex-col md:flex-row justify-center md:justify-between pl-24 pr-24">
-          {/* snabblänkar */}
+          {/* quick links */}
           <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-3">
             <div className="col-12">
               <h2 className="text-l font-poppins font-medium pb-4">
-                Snabblänkar
+                Quick Links
               </h2>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                href="https://codelabs.se/karriar/"
-              >Karriär</a>
+                href="https://codelabs.se/careers/"
+              >Careers</a>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
@@ -33,16 +32,16 @@ const Footer = () => {
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                href="https://codelabs.se/blogg/"
-              >Blogg</a>
+                href="https://codelabs.se/blog/"
+              >Blog</a>
             </div>
           </div>
 
-          {/* följ oss */}
+          {/* follow us */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
               <h2 className="font-poppins font-medium pb-4 ">
-                Följ oss på
+                Follow us
               </h2>
             </div>
             <div className="col-12">
@@ -87,7 +86,7 @@ const Footer = () => {
                   >
                     <Image
                       src="/assets/social/github.svg"
-                      alt="Instagram"
+                      alt="GitHub"
                       width={20}
                       height={20}
                       priority={true}
@@ -99,11 +98,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* kontakta oss */}
+          {/* contact us */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
               <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
-                Kontakta oss
+                Contact us
               </h2>
             </div>
             <div className="col-12 font-poppins font-normal text-sm ">
@@ -112,24 +111,24 @@ const Footer = () => {
           </div>
 
 
-          {/* jobba hos oss */}
+          {/* work with us */}
           <div className="flex flex-col px-3 py-3 col-3">
             <div className="col-12">
               <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
-                Jobba hos oss
+                Work with us
               </h2>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                href="https://codelabs.se/karriar/"
+                href="https://codelabs.se/careers/"
                 rel="noreferrer noopener"
-              >Karriär</a>
+              >Careers</a>
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                href="https://codelabs.se/karriar/"
+                href="https://codelabs.se/careers/"
                 rel="noreferrer noopener"
-              >Lediga tjänster</a>
+              >Open Positions</a>
             </div>
           </div>
         </div>

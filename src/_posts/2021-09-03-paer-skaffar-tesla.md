@@ -1,18 +1,18 @@
 ---
-title: Pär skaffar en Tesla
-slug: paer-skaffar-tesla
+title: Pär gets a Tesla
+slug: paer-gets-tesla
 date: "2021-09-03"
-description: Idag blev vi på Code Labs åttio procent fossilfria när vår kollega skaffade sig en Tesla.
+description: Today we at Code Labs became eighty percent fossil-free when our colleague got a Tesla.
 og_image: /assets/blogg/paer-model-y.jpeg
 author: Kami Gerami
 ---
 
-Idag blev vår kollega Pär också fossilfri!
+Today our colleague Pär also became fossil-free!
 
-[!paer-model-y](paer-model-y.jpeg)
+![paer-model-y](/assets/blogg/paer-model-y.jpeg)
 
-Nu kör 80% av alla på Code Labs tesla för en grönare framtid!
+Now 80% of everyone at Code Labs drives Tesla for a greener future!
 
-Gillar du kod, teknologi och Tesla som vi gör?
+Do you like code, technology and Tesla like we do?
 
-Joina teamet!
+Join the team!

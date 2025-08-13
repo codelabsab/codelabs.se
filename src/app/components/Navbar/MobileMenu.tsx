@@ -63,10 +63,10 @@ const MobileMenu = () => {
                 <ul className="flex flex-col justify-center pb-10">
                     <li className=" py-2 flex justify-center ">
                         <Link
-                            href="/karriar/"
+                            href="/careers/"
                             className="font-normal text-xl text-center text-white hover:text-white hover:font-bold"
                         >
-                            Karriär
+                            Careers
                         </Link>
                     </li>
                     <li className="py-2 flex justify-center">
@@ -79,10 +79,10 @@ const MobileMenu = () => {
                     </li>
                     <li className="py-2 flex justify-center">
                         <Link
-                            href="/blogg"
+                            href="/blog"
                             className="font-normal text-xl text-center text-white hover:text-white hover:font-bold"
                         >
-                            Blogg
+                            Blog
                         </Link>
                     </li>
                 </ul>

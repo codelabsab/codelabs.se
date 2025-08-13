@@ -1,7 +1,7 @@
-import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 
 export default function BlogInlagg() {
     const posts = getPostMetadata();
@@ -9,9 +9,9 @@ export default function BlogInlagg() {
         <div className="bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4">Senaste inlägg från bloggen</h1>
+                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4">Latest posts from the blog</h1>
                     <p className="relative mt-6 text-lg leading-8 text-gray-600 lg:max-w-none">
-                        Följ Code Labs äventyr på och utanför arbetsplatsen.
+                        Follow Code Labs adventures at and outside the workplace.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -36,7 +36,7 @@ export default function BlogInlagg() {
                                     {post.date}
                                 </time>
                                 <div className="-ml-4 flex items-center gap-x-4">
-                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50" aria-hidden="true">
                                         <circle cx={1} cy={1} r={1} />
                                     </svg>
                                     <div className="flex gap-x-2.5">
@@ -45,14 +45,14 @@ export default function BlogInlagg() {
                                             width={24}
                                             height={24}
                                             priority={true}
-                                            alt=""
+                                            alt={`${post.author} profile photo`}
                                             className="h-6 w-6 flex-none rounded-full bg-white/10" />
                                         {post.author}
                                     </div>
                                 </div>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                                <Link href={`/blogg/${post.slug}`}>
+                                <Link href={`/blog/${post.slug}`}>
                                     <span className="absolute inset-0" />
                                     {post.title}
                                 </Link>

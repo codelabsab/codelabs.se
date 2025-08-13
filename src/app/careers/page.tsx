@@ -1,4 +1,4 @@
-import Tjanster from "@/app/components/Karriar/Tjanster";
+import Tjanster from "@/app/components/Careers/Tjanster";
 import {BlogInlagg} from "@/app/components/Home/SenasteInlagg";
 
 export default function Career() {

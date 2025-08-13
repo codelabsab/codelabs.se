@@ -1,41 +1,40 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
-    {label: 'Start', value: '2016'},
-    {label: 'Antal anställda', value: '5'},
+    { label: 'Founded', value: '2016' },
+    { label: 'Employees', value: '5' },
 ]
 const values = [
     {
-        name: 'Inställning',
+        name: 'Attitude',
         description:
-            'Med en positiv inställning skapar vi en bra arbetsmiljö. Vi är ödmjuka och lyhörda.',
+            'With a positive attitude, we create a good work environment. We are humble and responsive.',
     },
     {
-        name: 'Gemenskap',
+        name: 'Community',
         description:
-            'Det ska kännas naturligt att dela med oss av våra kunskaper och erfarenheter.',
+            'It should feel natural to share our knowledge and experiences.',
     },
     {
-        name: 'Innovation och kreativitet',
+        name: 'Innovation and creativity',
         description:
-            'Vi är nyfikna och vill lära oss mer. Vi uppmuntrar varandras kreativitet och nytänkande i arbetet.',
+            'We are curious and want to learn more. We encourage each other\'s creativity and innovative thinking at work.',
     },
     {
-        name: 'Upplyftande',
+        name: 'Uplifting',
         description:
-            'Vi stöttar varandra med lärande, utveckling och nyfikenhet.',
+            'We support each other with learning, development and curiosity.',
     },
     {
-        name: 'Öppen kommunikation',
+        name: 'Open communication',
         description:
-            'Vi har lågt i tak och strävar efter att ha rak kommunikation med våra kollegor.',
+            'We have a low threshold and strive for straightforward communication with our colleagues.',
     },
     {
-        name: 'Återhämtning',
+        name: 'Recovery',
         description:
-            'Vi tar oss tid för återhämtning och ser till att ta hand om oss själva.',
+            'We take time for recovery and make sure to take care of ourselves.',
     },
 ]
 
@@ -59,17 +58,17 @@ export default function Tjanster() {
                                 y={-1}
                                 patternUnits="userSpaceOnUse"
                             >
-                                <path d="M.5 200V.5H200" fill="none"/>
+                                <path d="M.5 200V.5H200" fill="none" />
                             </pattern>
                         </defs>
-                        <svg x="50%" y={-1} className="overflow-visible fill-codelabs-primary5 ">
+                        <svg x="50%" y={-1} className="overflow-visible fill-codelabs-primary5 " aria-hidden="true">
                             <path
                                 d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                                 strokeWidth={0}
                             />
                         </svg>
                         <rect width="100%" height="100%" strokeWidth={0}
-                              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"/>
+                            fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
                     </svg>
                     <div
                         className="absolute top-0 left-1/2 right-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
@@ -88,14 +87,14 @@ export default function Tjanster() {
                                     y2="1091.63"
                                     gradientUnits="userSpaceOnUse"
                                 >
-                                    <stop stopColor="#9089FC"/>
-                                    <stop offset={1} stopColor="#8B00FF"/>
+                                    <stop stopColor="#9089FC" />
+                                    <stop offset={1} stopColor="#8B00FF" />
                                 </linearGradient>
                             </defs>
                         </svg>
                     </div>
                     {/*<div className="w-full absolute -z-10 overflow-hidden blur-xs">*/}
-                        {/*<Splash1/>*/}
+                    {/*<Splash1/>*/}
                     {/*</div>*/}
                     <div className="overflow-hidden relative">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
@@ -105,26 +104,26 @@ export default function Tjanster() {
                                         What a teeeaaam
                                     </h1>
                                     <Image
-                                        className="h-16"
+                                        className="h-16 w-auto"
                                         src={"/assets/paint/arrow-15.svg"}
                                         alt={"arrow"}
                                         width={224}
                                         height={224}
                                     />
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Code Labs är plats där du kan utvecklas, utmanas och arbeta med ett team av duktiga
-                                        människor.
+                                        Code Labs is a place where you can develop, be challenged and work with a team of skilled
+                                        people.
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Som en del av vårt team kommer du att att få intressanta och
-                                        utmanande projekt som hjälper dig att växa både personligt och professionellt.
+                                        As part of our team, you will get interesting and
+                                        challenging projects that help you grow both personally and professionally.
                                     </p>
                                     <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Samtidigt som du arbetar med att nå dina mål, kommer du
-                                        att njuta av roliga upplevelser dina kollegor – allt från att jobba tillsammans
-                                        på vårt kontor och
-                                        teambuilding-aktiviteter till gemensamma luncher och Code Labs by-events och
-                                        resor.
+                                        While working to achieve your goals, you will
+                                        enjoy fun experiences with your colleagues – everything from working together
+                                        at our office and
+                                        team-building activities to shared lunches and Code Labs by-events and
+                                        trips.
                                     </p>
                                 </div>
                                 <div
@@ -135,13 +134,13 @@ export default function Tjanster() {
                                             <Image
                                                 className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                                 src={"/assets/team/paer.jpeg"}
-                                                alt={""}
+                                                alt={"Team member Pär"}
                                                 width={224}
                                                 height={224}
                                                 priority={true}
                                             />
                                             <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
+                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                                         </div>
                                     </div>
                                     <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
@@ -149,13 +148,13 @@ export default function Tjanster() {
                                             <Image
                                                 className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                                 src={"/assets/bg-career.jpeg"}
-                                                alt={""}
+                                                alt={"Decorative image"}
                                                 width={224}
                                                 height={224}
                                                 priority={true}
                                             />
                                             <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
+                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                                         </div>
                                         <div className="relative">
                                             <video
@@ -171,7 +170,7 @@ export default function Tjanster() {
                                                 />
                                             </video>
                                             <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
+                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                                         </div>
                                     </div>
                                     <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
@@ -189,7 +188,7 @@ export default function Tjanster() {
                                                 />
                                             </video>
                                             <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
+                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                                         </div>
                                         <div className="relative">
                                             <video
@@ -205,7 +204,7 @@ export default function Tjanster() {
                                                 />
                                             </video>
                                             <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"/>
+                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                                         </div>
                                     </div>
                                 </div>
@@ -222,9 +221,9 @@ export default function Tjanster() {
                                 &
                                 Vision</h1>
                             <Image
-                                className="h-32 "
+                                className="h-32 w-auto"
                                 src={"/assets/paint/misc-2.svg"}
-                                alt={""}
+                                alt={"Decorative image"}
                                 width={224}
                                 height={224}
                                 priority={true}
@@ -237,17 +236,17 @@ export default function Tjanster() {
                         <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
                             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                                 <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                    Vår mission och vision är att skapa en miljö där vi utmanar och uppmanar
-                                    varandra till nytänkande och kreativitet.
-                                    Genom att ha en kultur som värdesätter innovation och kreativitet och genom att
-                                    erbjuda utbildning, resurser och genom att inspirera varandra att utvecklas så är vi
-                                    övertygade om att vi skapar en bra kultur.
+                                    Our mission and vision is to create an environment where we challenge and encourage
+                                    each other to think creatively and innovatively.
+                                    By having a culture that values innovation and creativity and by
+                                    offering education, resources and by inspiring each other to develop, we are
+                                    convinced that we create a good culture.
                                 </p>
                                 <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                    Vi har ett fokus på att utveckla egna produkter och tjänster som vi tror kan
-                                    vara användbara för både oss själva och våra kunder. Vi har en stark tro på att vi
-                                    kan skapa innovativa lösningar genom att kombinera våra olika kompetenser och
-                                    erfarenheter och det är väldigt kul att jobba ihop med så många duktiga människor.
+                                    We have a focus on developing our own products and services that we believe can
+                                    be useful for both ourselves and our customers. We have a strong belief that we
+                                    can create innovative solutions by combining our different competencies and
+                                    experiences and it’s very fun to work together with so many skilled people.
                                 </p>
                             </div>
                             <div className="lg:flex lg:flex-auto lg:justify-center">
@@ -265,9 +264,9 @@ export default function Tjanster() {
                 </div>
                 <div className="flex justify-center max-w-5xl">
                     <Image
-                        className="h-28 mt-20"
+                        className="h-28 w-auto mt-20"
                         src={"/assets/paint/misc-5.svg"}
-                        alt={""}
+                        alt={"Decorative image"}
                         width={224}
                         height={224}
                         priority={true}
@@ -282,7 +281,7 @@ export default function Tjanster() {
                         width={2832}
                         height={1880}
                         priority={true}
-                        alt=""
+                        alt="Team photo"
                         className="aspect-5/2 w-full object-cover xl:rounded-3xl"
                     />
                 </div>
@@ -292,10 +291,10 @@ export default function Tjanster() {
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <div className="flex items-center">
                             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-8xl ">
-                                Kärnvärden
+                                Core Values
                             </h2>
                             <Image
-                                className="text-codelabs-primary1 h-32"
+                                className="text-codelabs-primary1 h-32 w-auto"
                                 src={"/assets/paint/arrow-12.svg"}
                                 alt={"arrow"}
                                 width={224}
@@ -303,7 +302,7 @@ export default function Tjanster() {
                             />
                         </div>
                         <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                            Att skapa en plats där vi kan utvecklas tillsammans och där vi kan vara oss själva.
+                            Creating a place where we can develop together and where we can be ourselves.
                         </p>
                     </div>
                     <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -317,14 +316,14 @@ export default function Tjanster() {
                     <Image
                         className="mx-auto w-full h-16 mt-24"
                         src={"/assets/paint/line-4.svg"}
-                        alt={""}
+                        alt={"Decorative image"}
                         width={224}
                         height={224}
                         priority={true}
                     />
                 </div>
                 <div className={"flex justify-center py-24"}>
-                    <h1 className="md:text-7xl text-4xl font-extrabold">Redo att ansöka?</h1>
+                    <h1 className="md:text-7xl text-4xl font-extrabold">Ready to apply?</h1>
                 </div>
                 <div className={"flex justify-center py-4 mx-auto"}>
                     <div className="flex justify-center md:justify-start py-12">
@@ -332,8 +331,9 @@ export default function Tjanster() {
                             href="mailto:application@codelabs.se"
                         >
                             <button
+                                type="button"
                                 className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
-                                Yes, jag är redo!
+                                Yes, I'm ready!
                             </button>
                         </Link>
                     </div>

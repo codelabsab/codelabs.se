@@ -1,7 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import fs from "fs";
 import matter from "gray-matter";
-import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 
 require('capitalize');
 
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
     }));
 }
 
-const PostPage = (props: any) => {
+const PostPage = (props: { params: { slug: string } }) => {
     const slug = props.params.slug;
     const post = getPostContent(slug);
     return (

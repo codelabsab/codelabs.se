@@ -1,22 +1,20 @@
-import React from "react";
-
 import { LifebuoyIcon, NewspaperIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import Image from "next/image";
 
 const cards = [
     {
-        name: 'Samtal',
-        description: 'Ta ett samtal med vår fantastiska rekryterare, Honey, och få svar på alla dina frågor.',
+        name: 'Interview',
+        description: 'Have a conversation with our fantastic recruiter, Honey, and get answers to all your questions.',
         icon: PhoneIcon,
     },
     {
-        name: 'Teknisk intervju',
-        description: 'Visa dina kunskaper och få en chans att ställa frågor till oss.',
+        name: 'Technical Interview',
+        description: 'Show your skills and get a chance to ask us questions.',
         icon: LifebuoyIcon,
     },
     {
-        name: 'Erbjudande',
-        description: 'Woohoo! Du har fått ett erbjudande från oss. Nu kör vi!',
+        name: 'Offer',
+        description: 'Woohoo! You got an offer from us. Let\'s go!',
         icon: NewspaperIcon,
     },
 ]
@@ -83,9 +81,9 @@ export default function Header() {
             </svg>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Karriär</h2>
+                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Careers</h2>
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Din karriär hos Code Labs
+                        Your career at Code Labs
                     </p>
                 </div>
                 <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">

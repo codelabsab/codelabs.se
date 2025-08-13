@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
-import React from "react";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 
 
 export function PostPreview() {
@@ -10,10 +9,9 @@ export function PostPreview() {
         <div className="bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Senaste inlägg från
-                        bloggen</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Latest posts from the blog</h2>
                     <p className="mt-2 text-lg leading-8 text-gray-600">
-                        Följ Code Labs äventyr på och utanför arbetsplatsen.
+                        Follow Code Labs adventures at and outside the workplace.
                     </p>
                 </div>
                 <div
@@ -40,7 +38,7 @@ export function PostPreview() {
                                     {post.date}
                                 </time>
                                 <div className="-ml-4 flex items-center gap-x-4">
-                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50" aria-hidden="true">
                                         <circle cx={1} cy={1} r={1}/>
                                     </svg>
                                     <div className="flex gap-x-2.5">
@@ -49,14 +47,14 @@ export function PostPreview() {
                                             width={24}
                                             height={24}
                                             priority={true}
-                                            alt=""
+                                            alt={`${post.author} profile photo`}
                                             className="h-6 w-6 flex-none rounded-full bg-white/10"/>
                                         {post.author}
                                     </div>
                                 </div>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                                <Link href={`/blogg/${post.slug}`}>
+                                <Link href={`/blog/${post.slug}`}>
                                     <span className="absolute inset-0"/>
                                     {post.title}
                                 </Link>

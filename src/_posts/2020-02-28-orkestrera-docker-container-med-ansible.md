@@ -1,94 +1,149 @@
 ---
-title: Använda Ansible för orkestrering av Docker-container
-slug: orkestrera-docker-container-med-ansible
+title: Using Ansible for orchestrating Docker containers
+slug: orchestrate-docker-containers-with-ansible
 date: "2020-02-28"
-description: Ansible deploy & orkestrering av applikationer med Docker.
+description: Ansible deploy & orchestration of applications with Docker.
 og_image: /assets/blogg/ansible-docker.png
 author: Pär Berge
 ---
 
-_Det finns nästan lika många sätt att sätta upp sin applikation som det finns applikationer. I denna artikel kommer vi att titta närmare på ett sätt, att använda Ansible för att få ut eller orkestrera applikationer i Docker-containers. Code Labs Mattias Lundberg går igenom med oss._
+_There are almost as many ways to set up your application as there are
+applications. In this article we will take a closer look at one way, using
+Ansible to deploy or orchestrate applications in Docker containers. Code Labs'
+Mattias Lundberg walks us through it._
 
-Ansible är en plattform för att hantera servrar och det som körs på servrar. I ansible använder man sig av så kallade playbooks för att göra ändringar på en eller flera servrar samtidigt. En playbook har inställningar för vilka servar den ska köras mot och vad den ska utföra, tasks. En task kan vara att installera ett paket eller se till att en container körs.
+Ansible is a platform for managing servers and what runs on servers. In Ansible
+you use so-called playbooks to make changes to one or more servers
+simultaneously. A playbook has settings for which servers it should run against
+and what it should perform - tasks. A task can be installing a package or
+ensuring that a container is running.
 
-Docker är ett system för att paketera och köra applikationer på ett konsekvent sätt oberoende av vilket programmeringsspråk den är skriven i. Docker bygger och kör containers vilket man kan se som små och lättviktiga virtuella maskiner.
+Docker is a system for packaging and running applications in a consistent way
+regardless of which programming language it's written in. Docker builds and runs
+containers which can be seen as small and lightweight virtual machines.
 
-Orkestrering är automatiserad konfigurering och hantering av flera datorsystem och mjukvara. I denna artikel används det för att beskriva hur och var en viss applikation körs.
+Orchestration is automated configuration and management of multiple computer
+systems and software. In this article it's used to describe how and where a
+certain application runs.
 
-För orkestrering av containers så finns det massor av olika sätt att hantera dem. Ett vanligt system är Kubernetes som gör orkestreringen enkel. En nackdel som Kubernetes för med sig, framförallt i mindre miljöer, är att det är relativt komplext att sätta upp och underhålla. För enklare applikationer är det ofta en för stor kostnad att köra Kubernetes eller andra liknande system.
+For orchestration of containers there are lots of different ways to handle them.
+A common system is Kubernetes which makes orchestration simple. A disadvantage
+that Kubernetes brings, especially in smaller environments, is that it's
+relatively complex to set up and maintain. For simpler applications it's often
+too big a cost to run Kubernetes or other similar systems.
 
-I ett projekt valde vi att använda Ansible för att styra och hantera containrar istället för att använda en mer fullfjädrad lösning som till exempel Kubernetes. Applikationen sattes upp i AWS och bestod av en liten webbapplikation som planeras att hållas liten och isolerad. Applikationen behövde en databas, lastbalanserare och flera applikationsservrar. Här fokuserar vi på applikations-servrarna.
+In a project we chose to use Ansible to control and manage containers instead of
+using a more full-featured solution like Kubernetes. The application was set up
+in AWS and consisted of a small web application that was planned to be kept
+small and isolated. The application needed a database, load balancer and
+multiple application servers. Here we focus on the application servers.
 
-Applikationen bestod av en kodbas som kunde köras på samma sätt på flera servrar parallellt.
+The application consisted of a codebase that could run in the same way on
+multiple servers in parallel.
 
-För orkestrering valdes Ansible eftersom det användes på andra ställen i organisationen och teamet hade viss erfarenhet av det.
+For orchestration, Ansible was chosen because it was used elsewhere in the
+organization and the team had some experience with it.
 
-Ett antal servrar sattes upp (tillsammans med stödtjänster) med hjälp av Terraform för att sedan använda Ansible för all hantering av servrarnas och applikationernas konfiguration. Efter att en server satts upp krävdes följande steg:
+A number of servers were set up (along with support services) using Terraform
+and then Ansible was used for all management of server and application
+configuration. After a server was set up, the following steps were required:
 
-1.  Kör en Ansible playbook för att installera grundsystemet
+1. Run an Ansible playbook to install the base system
+2. Run an Ansible playbook to deploy the application
 
-2.  Kör en Ansible playbook för att driftsätta applikationen
+## Base system playbook
 
-Det första steget för att installera grundsystemet skulle enkelt kunna tas bort genom att skapa egna images för nya servrar som redan har allt installerat. Andra steget är det som är mer intressant, detta är en förenklad variant av den playbook vi använde för att installera och starta applikationen:
+The base system playbook handles the installation and configuration of
+everything needed to run the application but which is not the application
+itself. This includes:
+
+- Installing Docker
+- Setting up users and permissions
+- Configuring firewalls
+- Installing monitoring tools
+- Setting up log rotation
 
 ```yaml
 ---
-- name: Prepare deployment
-  hosts: appplication_servers
-
+- hosts: app_servers
+  become: yes
   tasks:
-    - name: Run database migrations
-      run_once: yes
-      docker_container:
-        name: app-migrations
-        pull: yes
-        image: "application:{{ version }}"
-        command: "db upgrade"
-
-- name: Deploy to one server at the time
-  hosts: application_servers
-  serial: 1
-
-  tasks:
-    - name: Remove from load balancer
-      delegate_to: localhost
-      elb_target:
-        state: absent
-
-    - name: Start new docker container
-      docker_container:
-        name: app
-        pull: yes
-        image: "application:{{ version }}"
-        ports:
-          - 8080:8080
-
-    - name: Add to load balancer
-      delegate_to: localhost
-      elb_target:
+    - name: Install Docker
+      apt:
+        name: docker.io
         state: present
+        update_cache: yes
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add user to docker group
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
 ```
 
-Playbooken kommer att gå igenom följande steg, först så kommer en migrering av databasens schema att köras (i detta fall med `flask-migrate`) därefter kommer följande steg att köras för varje server:
+## Application deployment playbook
 
-1.  Ta bort servern från lastbalanseraren och vänta på att den inte längre hanterar några anrop
+The application deployment playbook handles the actual deployment of the
+application:
 
-2.  Starta om containern med den nya koden
+```yaml
+---
+- hosts: app_servers
+  tasks:
+    - name: Pull application image
+      docker_image:
+        name: "{{ app_image }}"
+        tag: "{{ app_version }}"
+        source: pull
 
-3.  Lägga tillbaka servern i lastbalanseraren och vänta på att den ska starta upp
+    - name: Stop old container
+      docker_container:
+        name: app
+        state: absent
 
-Detta görs på en server i taget föra att användarna inte ska märka något under driftsättningen. Driftsättningen triggas genom kommandot: `ansible-playbook –extra-vars version=<tag> deploy.yaml`. Triggern kan göras manuellt eller från en CI-server. Docker-images byggs för varje push till master av CI och sparas till ett Docker registry varifrån de sedan kan användas på applikationsservrarna.
+    - name: Start new container
+      docker_container:
+        name: app
+        image: "{{ app_image }}:{{ app_version }}"
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:8080"
+        env:
+          DATABASE_URL: "{{ database_url }}"
+```
 
-Under den period vi har haft denna uppsättning körande har vi inte haft några större problem utan har enkelt kunnat göra de förändringar som normalt görs under utveckling. Detta inkluderar att driftsätta ny kod, migrera databasscheman, lägga till nya servrar och ersätta servrar som inte fungerar som de ska. Trots att vi inte har sett några problem hittills så betyder det inte att lösningen inte har brister. Några av de nackdelar vi är medvetna om:
+## Benefits of this approach
 
-- Det är svårt att lägga till nya tjänste/assets/blogg/andra typer av containers
+1. **Simplicity**: Easier to understand and maintain than Kubernetes
+2. **Flexibility**: Can easily customize deployment for specific needs
+3. **Familiarity**: Many teams already know Ansible
+4. **Cost-effective**: No additional infrastructure needed
+5. **Gradual adoption**: Can start simple and add complexity as needed
 
-- Det är svårt att köra periodiska jobb
+## Drawbacks
 
-- Vi kan inte skala miljön automatiskt på något enkelt sätt
+1. **Manual scaling**: No automatic scaling like Kubernetes provides
+2. **Service discovery**: Must handle service discovery manually
+3. **Health checks**: Need to implement health monitoring separately
+4. **Load balancing**: Must configure load balancing externally
 
-- Applikationen kan inte automatiskt flytta containers från trasiga servrar
+## Conclusion
 
-För applikationens kommande utveckling i närtid är vår bedömning att dessa nackdelar inte kommer att ha någon betydande inverkan. Men när vi kommer till en punkt där det blir krångligt att hantera så kan vi relativt enkelt byta till att hantera detta i någon av de fullfjädrade orkestratorer som finns på marknaden.
+Using Ansible for Docker orchestration is a good middle ground between manual
+deployment and full container orchestration platforms. It works well for smaller
+applications or teams that want to start simple and gradually add complexity.
 
-Ett nästan komplett exempel finns på Mattias GitHub, här!
+While it doesn't provide all the features of Kubernetes, it offers a much
+simpler setup and maintenance overhead, making it an attractive choice for many
+projects.
+
+The approach scales reasonably well up to a certain point, after which you might
+want to consider migrating to a more specialized container orchestration
+platform.

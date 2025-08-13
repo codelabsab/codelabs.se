@@ -1,16 +1,23 @@
 ---
-title: "Donationer av datorer till Ghana"
-slug: "donationer-av-datorer-till-ghana"
+title: "Computer donations to Ghana"
+slug: "computer-donations-to-ghana"
 date: "2020-01-24"
-description: "Code Labs & Avida Finans donerar till Tekniska Universitetet i Takoradi, Ghana."
+description: "Code Labs & Avida Finans donate to the Technical University in Takoradi, Ghana."
 og_image: "/assets/blogg/takoradi-university.jpg"
 author: Tommy Malmqvist
 ---
 
-Code Labs har i samarbete med Avida Finans donerat 30 laptops och 10 datorskärmar till Tekniska Universitetet i Takoradi, Ghana. Datorerna, som var på väg att återvinnas, kunde istället doneras till studenterna på universitetet vilket förbättrar utbildningen och är bra för miljön.
+Code Labs, in collaboration with Avida Finans, has donated 30 laptops and 10
+computer screens to the Technical University in Takoradi, Ghana. The computers,
+which were about to be recycled, could instead be donated to the university
+students, improving education and being good for the environment.
 
-Med hjälp av en tidigare kollega i branschen fick Code Labs vetskap om att ett antal datorer inte längre används. En vän till oss på Code Labs som heter Sanusi är född i Takoradi och har ett brett kontaktnät i Ghana. Med hjälp av hårdvaran från Avida Finans och vårt kontaktnät samt donation kunde vi sända ner allt via fraktfartyg.
+With the help of a former colleague in the industry, Code Labs learned that a
+number of computers were no longer being used. A friend of ours at Code Labs
+named Sanusi was born in Takoradi and has a broad network in Ghana. With the
+help of hardware from Avida Finans and our network and donation, we were able to
+send everything down via cargo ship.
 
-Väldigt uppskattat av både universitetet och dess studenter.
+Very much appreciated by both the university and its students.
 
-Ni kan läsa mer här: GTUC, Afrosages, GTUC Twitter och
+You can read more here: GTUC, Afrosages, GTUC Twitter and

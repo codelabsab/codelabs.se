@@ -113,7 +113,7 @@
     height: 272px;
 }
 
-.blogg-title {
+.blog-title {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: bg-animation 30s cubic-bezier(0.3, 0, 0.7, 1) infinite;
