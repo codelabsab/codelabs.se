@@ -4,7 +4,7 @@ const positions = [
     {
         id: 1,
         title: 'Backend Developer',
-        type: 'Heltid',
+        type: 'Full-time',
         location: 'Hybrid',
         department: 'Engineering',
         closeDate: '2023-04-01',
@@ -13,7 +13,7 @@ const positions = [
     {
         id: 2,
         title: 'Fullstack Developer',
-        type: 'Heltid',
+        type: 'Full-time',
         location: 'Hybrid',
         department: 'Engineering',
         closeDate: '2023-04-01',
@@ -22,7 +22,7 @@ const positions = [
     {
         id: 3,
         title: 'Devops Engineer',
-        type: 'Heltid',
+        type: 'Full-time',
         location: 'Hybrid',
         department: 'Design',
         closeDate: '2023-04-01',

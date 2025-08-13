@@ -1,24 +1,13 @@
-import React from "react";
 import Link from "next/link";
-import { Inter, Montserrat, Poppins, Roboto } from "next/font/google";
+import { Montserrat, Roboto } from "next/font/google";
 
 const monsterrat = Montserrat({
     weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
-const inter = Inter({
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-    subsets: ['latin']
-})
-
 const roboto = Roboto({
     weight: ['100', '300', '400', '500', '700', '900'],
-    subsets: ['latin']
-})
-
-const poppins = Poppins({
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
@@ -57,18 +46,19 @@ const Header = () => {
                                 <div
                                     className="px-10 md:block">
                                     <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 ">
-                                        Träffa teamet.
+                                        Meet the team.
                                     </h1>
                                     <p className={`my-8 text-4xl font-extralight text-gray-600 ${roboto.className} `}>
-                                        Träffa våra superstjärnor. Vi är ett gäng engagerade kollegor
-                                        och vänner som älskar att skriva kod.
+                                        Meet our superstars. We are a bunch of engaged colleagues
+                                        and friends who love to deliver value.
                                     </p>
                                     <Link
-                                        href="/karriar/"
+                                        href="/careers/"
                                     >
                                         <button
+                                            type="button"
                                             className={`bg-codelabs-primary2 font-bold px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center transition-all hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110 ${monsterrat.className}`}>
-                                            Bli en av oss
+                                            Join our team
                                         </button>
                                     </Link>
                                 </div>

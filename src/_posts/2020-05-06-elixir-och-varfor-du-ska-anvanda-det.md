@@ -1,92 +1,153 @@
 ---
-title: Vad Elixir är och varför du ska använda det
-slug: elixir-och-varfor-du-ska-anvanda-det
+title: What Elixir is and why you should use it
+slug: elixir-and-why-you-should-use-it
 date: "2020-05-06"
-description: Elixir är ett relativt nytt programmeringsspråk skapat av José Valim och lanserades 2011.
-tags: [elixir, webapp, realtidsstöd]
+description: Elixir is a relatively new programming language created by José Valim and launched in 2011.
+tags: [elixir, webapp, real-time support]
 og_image: /assets/blogg/elixir-featuredImage.jpg
 author: Mattias Lundberg
 ---
 
-**[Elixir](https/assets/blogg//elixir-lang.or/assets/blogg/) är ett relativt nytt programmeringsspråk skapat av José Valim och lanserades 2011. Det har snabbt blivit populärt av flera anledningar bland annat för dess enkelhet att utveckla i och att den körs på BEAM, Erlangs virtuella maskin, vilket ger en hög [driftsäkerhet.](https/assets/blogg//www.erlang-solutions.co/assets/blogg/blo/assets/blogg/which-companies-are-using-erlang-and-why-mytopdogstatus.html)**
+**[Elixir](https://elixir-lang.org/) is a relatively new programming language
+created by José Valim and launched in 2011. It has quickly become popular for
+several reasons, including its simplicity to develop in and that it runs on
+BEAM, Erlang's virtual machine, which provides high
+[reliability.](https://www.erlang-solutions.com/blog/which-companies-are-using-erlang-and-why-mytopdogstatus.html)**
 
-För att ge bakgrunden till Elixir så börjar vi med att gå igenom Erlang. [Erlang](https/assets/blogg//www.erlang.or/assets/blogg/) skapades under 1980-talet på Ericsson för att användas i telefonväxlar där det finns höga krav på tillgänglighet och stabilitet samtidigt som man behöver hög prestanda. Det var då viktigt med robusthet inbyggt i språket redan från början. Robustheten får man till stor del från den egna processhanteringen där system ofta designas med massor av små processer som håller koll på sitt eget tillstånd och felhantering. Om en process får problem så startar Erlang automatiskt om den felande och relaterade processen för att återställa systemet till ett känt och fungerande tillstånd. Ett vanligt system kan bestå av 100-tals processer och det handlar inte om vanliga processer i operativsystemet utan Erlang har egna typer av processer som kräver mindre prestanda. Tack vare detta har Erlang länge varit ett vanligt språk för system som behöver routa stora mängder data, likt telefonväxlar, och används bland annat i [RabbitMQ](https/assets/blogg//www.rabbitmq.co/assets/blogg/) och till WhatsApp.
+To give background to Elixir, we start by going through Erlang.
+[Erlang](https://www.erlang.org/) was created during the 1980s at Ericsson to be
+used in telephone exchanges where there are high demands for availability and
+stability while also needing high performance. It was then important to have
+robustness built into the language from the beginning. The robustness comes
+largely from its own process management where systems are often designed with
+lots of small processes that keep track of their own state and error handling.
+If a process has problems, Erlang automatically restarts the failing and related
+processes to restore the system to a known and working state. A typical system
+can consist of hundreds of processes and these are not ordinary operating system
+processes but Erlang has its own types of processes that require less
+performance. Thanks to this, Erlang has long been a common language for systems
+that need to route large amounts of data, like telephone exchanges, and is used
+among other things in [RabbitMQ](https://www.rabbitmq.com/) and for WhatsApp.
 
-Andra viktiga komponenter i Erlang är variable/assets/blogg/värdens oföränderlighet, ett värde kommer aldrig kunna förändras i samma struktur utan man skapar istället nya variabler, och dess funktionella design. Detta gör att man helt kan undvika den typ av buggar där data oförklarligt ändras på något annat ställe i systemet. Dessa fördelar har sedan följt med som viktiga komponenter i Elixir. Dessutom bygger Elixir vidare på detta och ger ytterligare fördelar framförallt när det gäller verktyg kring utvecklings och produktionsmiljöer i form av verktyget [Mix](https/assets/blogg//elixir-lang.or/assets/blogg/getting-starte/assets/blogg/mix-ot/assets/blogg/introduction-to-mix.html). Det kan hantera allt från kodgenerering till hantering av beroenden, byggen och releaser. Med hjälp av verktyget går det lätt att hantera de flesta vanligt förekommande uppgifter relaterat till dessa områden.
+Other important components in Erlang are variable immutability, a value will
+never be able to change in the same structure but instead you create new
+variables, and its functional design. This means you can completely avoid the
+type of bugs where data inexplicably changes somewhere else in the system. These
+advantages have then followed as important components in Elixir. In addition,
+Elixir builds on this and provides additional advantages especially when it
+comes to tools around development and production environments in the form of the
+[Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+tool. It can handle everything from code generation to dependency management,
+builds and releases. With the help of the tool, it's easy to handle most
+commonly occurring tasks related to these areas.
 
-Ett område där Elixir har hittat sin nisch är inbyggda syste/assets/blogg/IoT där projektet Nerves gjort det enkelt att använda Elixir för flera olika ändamål. Det används för både hobbyprojekt och av flera stora företag. Nerves gör det enklare att hantera och arbeta med dessa typer av system jämfört med /assets/blogg/C++.
+One area where Elixir has found its niche is embedded systems/IoT where the
+Nerves project has made it easy to use Elixir for several different purposes.
+It's used for both hobby projects and by several large companies. Nerves makes
+it easier to manage and work with these types of systems compared to C/C++.
 
-Ett annat område där Elixir blivit uppskattat är i mer avancerade webbsystem, tack vare ramverken Phoenix och Ecto. Ecto används för att prata med databaser och har ett lättanvänt API för att interagera med databasen från en Elixir applikation. Phoenix är ett webbramverk som gör det enkelt att bygga olika typer av HTTP APIer.
+Another area where Elixir has become appreciated is in more advanced web
+systems, thanks to the Phoenix and Ecto frameworks. Ecto is used to talk to
+databases and has an easy-to-use API for interacting with the database from an
+Elixir application. Phoenix is a web framework that makes it easy to build
+different types of HTTP APIs.
 
-Det som gör Phoenix speciellt, tack vare Elixir, är att det är enkelt att bygga tjänster med realtidsstöd via websockets. Denna typ av realtidsstöd är något som underlättar när flera användare ska samarbeta i en webbapp, till exempel ordbehandlingsprogram, då alla användare kan se vad de andra gör. En annan fördel med Phoenix är att man automatiskt får med övervakning av systemet i form av en dashboard men flera olika mätvärden som visas upp, något som sedan kan skickas vidare till externa system för övervakning om det finns på plats. Ytterligare en är Live View, som gör det möjligt att bygga dynamiska gränssnitt utan att behöva skriva frontend-kod, alla vyer renderas på servern som sedan använder websockets för att uppdatera det som visas i webbläsaren. Detta gör det mycket enklare att bygga moderna webbappar, även om det inte ger fullt så många möjligheter som om man använder ett front end-ramverk.
+What makes Phoenix special, thanks to Elixir, is that it's easy to build
+services with real-time support via websockets. This type of real-time support
+is something that helps when multiple users need to collaborate in a web app,
+for example word processing programs, as all users can see what others are
+doing. Another advantage with Phoenix is that you automatically get system
+monitoring in the form of a dashboard with several different metrics displayed,
+something that can then be forwarded to external systems for monitoring if
+available. Another is Live View, which makes it possible to build dynamic
+interfaces without having to write frontend code, all views are rendered on the
+server which then uses websockets to update what is shown in the browser. This
+makes it much easier to build modern web apps, even if it doesn't give quite as
+many possibilities as if you use a frontend framework.
 
 ```elixir
-# In your confi/assets/blogg/config.exs file
+# In your config/config.exs file
 config :my_app, ecto_repos: [Sample.Repo]
 
 config :my_app, Sample.Repo,
   database: "ecto_simple",
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
-  port: "5432"
+  hostname: "localhost"
 
-# In your application code
+# In your lib/sample/repo.ex file
 defmodule Sample.Repo do
   use Ecto.Repo,
     otp_app: :my_app,
     adapter: Ecto.Adapters.Postgres
 end
 
-defmodule Sample.Weather do
+# Creating a schema
+defmodule Sample.User do
   use Ecto.Schema
 
-  schema "weather" do
-    field :city     # Defaults to type :string
-    field :temp_lo, :integer
-    field :temp_hi, :integer
-    field :prcp,    :float, default: 0.0
+  schema "users" do
+    field :name, :string
+    field :email, :string
+    field :bio, :string
+    field :number_of_pets, :integer
+
+    timestamps()
   end
 end
 
-defmodule Sample.App do
-  import Ecto.Query
-  alias Sample.{Weather, Repo}
+# Querying the database
+import Ecto.Query
 
-  def keyword_query do
-    query =
-      from w in Weather,
-           where: w.prcp > 0 or is_nil(w.prcp),
-           select: w
+query = from u in Sample.User,
+        where: u.number_of_pets > 2,
+        select: u
 
-    Repo.all(query)
-  end
-
-  def pipe_query do
-    Weather
-    |> where(city: "Kraków")
-    |> order_by(:temp_lo)
-    |> limit(10)
-    |> Repo.all
-  end
-end
+Sample.Repo.all(query)
 ```
 
-Exempel på hur Elixir-kod kan användas för att skapa objekt i en databas.
+![Phoenix Framework](/assets/blogg/phoenix.png)
 
-Under de år som jag använt Elixir i produktionsmiljöer så har vi inte sett någon nertid relaterad till problem med Elixir (det har istället varit problem med underliggande infrastruktur eller helt enkelt logiska buggar i koden) så betyder det inte att Elixir är perfekt. Trots de fördelar som finns med språket så är det fortfarande ganska litet och skiljer sig mycket i hur det är designat och fungerar från andra språk. Det innebär att det kan ta lite tid att komma igång för utvecklare som kommer från de programmeringsspråk som vanligtvis används. En ny paradigm (funktionell programmering) kan vara en svår omställning för dem som enbart arbetat med imperativa eller objektorienterade språk (som C eller Java).
+The example above shows what a simple schema looks like in Ecto and how you can
+make a query to the database. The nice thing is that these queries are built
+statically, which means you get help from the compiler if you make syntax errors
+or try to query fields that don't exist in the schema.
 
-Så, borde jag använda Elixir till mitt nästa projekt? Det är en fråga som är svår att svara på utan att veta mer, men om de utmaningar du har handlar om att stödja uppdateringar i realtid mellan webbklienter eller att snabbt hantera flera strömmar av data är det absolut ett språk du borde undersöka närmare.
+Phoenix also comes with built-in support for GraphQL through the Absinthe
+library, which makes it easy to build APIs that are flexible and efficient for
+frontend applications.
 
-Nästa inlägg kommer jag gå igenom hur man kan använda Elixir för att lägga till realtidsstöd i sin webbapp. För den som är mer nyfiken på Elixir kan jag rekommendera följande läsning:
+## When should you choose Elixir?
 
-- [Elixir Tutorial](https/assets/blogg//elixir-lang.or/assets/blogg/getting-starte/assets/blogg/introduction.html) – Går igenom grunderna i Elixir
-- [Nerves Project](https/assets/blogg//www.nerves-project.or/assets/blogg/) – Ett ramverk för att använda Elixir för inbyggda system
-- [Phoenix Framework](https/assets/blogg//www.phoenixframework.or/assets/blogg/) – Ett ramverk för att använda Elixir på webben
-- [Adopting Elixir](https/assets/blogg//pragprog.co/assets/blogg/boo/assets/blogg/tvmelixi/assets/blogg/adopting-elixir) – En bok som går igenom hur man på bästa sätt introducerar Elixir (och Phoenix)
-- [Realtime Phoenix](https/assets/blogg//pragprog.co/assets/blogg/boo/assets/blogg/sbsocket/assets/blogg/real-time-phoenix) – En bok som går igenom hur man kan använda Phoenix för att bygga realtidstjänster för webben
-- [Building a Twitter clone with Phoenix Live View](https/assets/blogg//www.youtube.co/assets/blogg/watch?v=MZvmYaFkNJI&feature=emb_title) – En video som visar hur man kan använda Phoenix Live View på ett enkelt sätt
+Elixir is particularly well-suited for:
 
-_Inlägget är skrivet av Mattias Lundberg, senior systemutvecklare och arkitekt hos Code Labs._
+1. **Real-time applications** - Chat systems, live updates, collaborative tools
+2. **High-availability systems** - Applications that need to handle failures
+   gracefully
+3. **IoT and embedded systems** - Thanks to the Nerves project
+4. **API backends** - Especially when you need to handle many concurrent
+   requests
+5. **Data processing** - Systems that need to process streams of data
 
-Vill du arbeta med Elixir, eller vill ditt företag ha hjälp att bygga mjukvara med Elixir? Kontakta Code Labs [här](mailto:contact@codelabs.se)!
+## Getting started
+
+If you're interested in trying Elixir, the best place to start is the
+[official getting started guide](https://elixir-lang.org/getting-started/introduction.html).
+There you'll learn the basics of the language and how to build your first
+applications.
+
+For web development with Phoenix, there's an excellent
+[Phoenix guide](https://phoenixframework.org/guides) that takes you through
+everything from installation to building your first real-time web application.
+
+## Conclusion
+
+Elixir offers a unique combination of functional programming, fault tolerance
+and excellent performance for concurrent systems. While it may not be the right
+choice for every project, it excels in areas where reliability and real-time
+features are important.
+
+The growing ecosystem around Elixir, with tools like Phoenix, Ecto and Nerves,
+makes it an attractive choice for modern web development and IoT projects. If
+you're looking for a language that can handle high loads while keeping your code
+maintainable and robust, Elixir is definitely worth considering.

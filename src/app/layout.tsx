@@ -4,7 +4,7 @@ import Footer from "@/app/components/Footer/Footer";
 
 export const metadata = {
   title: 'Code Labs',
-  description: 'Vi är Code Labs',
+  description: 'We are Code Labs',
 }
 
 export default function RootLayout({

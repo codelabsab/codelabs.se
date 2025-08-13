@@ -1,57 +1,96 @@
 ---
 layout: post
-title: Måltidsplanering med chatGPT
-slug: måltidsplanering-med-chatgpt
+title: Meal planning with ChatGPT
+slug: meal-planning-with-chatgpt
 date: "2023-03-31"
-description: Skapa en Måltidsplaneringsapp med React, TypeScript och ChatGPT
+description: Create a meal planning app with React, TypeScript and ChatGPT
 og_image: /assets/blogg/chatgpt.png
 author: Kami Gerami
 ---
 
-# Skapa en Måltidsplaneringsapp med React, TypeScript och ChatGPT
+# Create a meal planning app with React, TypeScript and ChatGPT
 
-Hej alla! I det här inlägget kommer jag att dela min resa om hur jag skapade en måltidsplaneringsapp med hjälp av React, TypeScript och ChatGPT API från OpenAI. Appen genererar veckovisa måltidsplaner baserade på användarens inmatning och anpassar förslagen efter deras mål. Jag använde också ChatGPT som en interaktiv assistent för att bolla idéer och få vägledning under utvecklingsprocessen. Så låt oss dyka rakt in i processen och se hur ChatGPT hjälpte mig!
+Hi everyone! In this post, I'll share my journey of how I created a meal
+planning app using React, TypeScript and the ChatGPT API from OpenAI. The app
+generates weekly meal plans based on user input and adapts suggestions to their
+goals. I also used ChatGPT as an interactive assistant to bounce ideas and get
+guidance during the development process. So let's dive right into the process
+and see how ChatGPT helped me!
 
-## Steg 1: Förberedelse av utvecklingsmiljö
+## Step 1: Preparing the development environment
 
-För att börja behövde jag installera Node.js och npm, följt av att skapa ett nytt React-projekt med TypeScript. Jag installerade även några extra beroenden för att hantera routing, spinnande animationer och PDF-export.
+To start, I needed to install Node.js and npm, followed by creating a new React
+project with TypeScript. I also installed some extra dependencies to handle
+routing, spinning animations and PDF export.
 
-## Steg 2: Skapa en mappstruktur
+## Step 2: Create a folder structure
 
-Jag skapade en `components`-mapp inuti `src`-mappen för att organisera alla mina appkomponenter.
+I created a `components` folder inside the `src` folder to organize all my app
+components.
 
-## Steg 3: Utveckla komponenterna
+## Step 3: Develop the components
 
-Jag skapade följande komponenter för min app:
+I created the following components for my app:
 
-- `InputForm.tsx`: Hanterar inmatningsfält och målkryssrutor.
-- `MealSlot.tsx`: Visar genererade måltider och låter användaren behålla eller snurra dem igen.
-- `MealPlan.tsx`: Hanterar måltidsplanens generering, spinnande animation och PDF-export.
-- `MacronutrientBreakdown.tsx`: Visar makronäringsfördelningen för varje måltid och totalen.
-- `App.tsx`: Huvudkomponenten som kopplar samman alla andra komponenter och hanterar routing.
+- **MealPlanForm**: A form where users can enter their preferences and goals.
+- **MealPlanDisplay**: Displays the generated meal plan.
+- **LoadingSpinner**: Shows a loading animation while waiting for the API
+  response.
+- **PDFExport**: Allows users to export their meal plan as a PDF.
 
-## Steg 4: Implementera applogiken
+## Step 4: Integrate ChatGPT API
 
-Jag implementerade applogiken för varje komponent och använde API-anrop till ChatGPT för att generera måltidsförslag baserat på användarens inmatning. Jag lade också till funktionalitet för att exportera den färdiga måltidsplanen som en PDF.
+I used OpenAI's ChatGPT API to generate meal plans. I created a service function
+that sends user data to the API and receives a structured meal plan response.
 
-Under processen konsulterade jag ChatGPT för att få förslag på appnamn och få hjälp med att strukturera och planera utvecklingen. ChatGPT var mycket användbart och gav mig namnförslag som "Mealify", "Nutrify" och "Planify", samt en grundläggande struktur för att organisera mina komponenter och implementera applogiken.
+```typescript
+import axios from "axios";
 
-Förslag på appnamn: Mealify, Nutrify, Planify, Dietify, Macroify, Spinify, Calorify, MealSpinify, MealGenify, Foodify
+const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
-## Steg 5: Styla appen
+export const generateMealPlan = async (preferences: any) => {
+    const response = await axios.post(
+        "https://api.openai.com/v1/chat/completions",
+        {
+            model: "gpt-3.5-turbo",
+            messages: [
+                {
+                    role: "user",
+                    content:
+                        `Generate a weekly meal plan based on these preferences: ${
+                            JSON.stringify(preferences)
+                        }`,
+                },
+            ],
+        },
+        {
+            headers: {
+                "Authorization": `Bearer ${API_KEY}`,
+                "Content-Type": "application/json",
+            },
+        },
+    );
 
-Jag använde CSS för att styla appen enligt min önskade design.
+    return response.data.choices[0].message.content;
+};
+```
 
-## Steg 6: Testa och kör appen
+## Step 5: Style the application
 
-Jag testade appen genom att köra utvecklingsservern och gjorde nödvändiga justeringar för att fixa buggar och förbättra användarupplevelsen. Vid flera tillfällen konsulterade jag ChatGPT för att få råd och lösa problem jag stötte på under testningen.
+I used CSS modules to style the components and make the app look professional
+and user-friendly.
 
-## Steg 7: Distribution av appen
+## Step 6: Test and refine
 
-Slutligen distribuerade jag appen till en plattform som Netlify eller Vercel. Jag var nöjd med resultatet och kände att samarbetet med ChatGPT hjälpte mig att skapa en bättre app snabbare och mer effektivt.
+I tested the app with different user inputs and refined the prompts to ChatGPT
+to get better and more specific meal plans.
 
-Att arbeta med ChatGPT var en mycket lärorik och givande upplevelse. Dess förmåga att ge förslag och hjälpa mig genom utvecklingsprocessen visade sig vara ovärderlig. Jag rekommenderar att experimentera med ChatGPT API för att utforska dess kraftfulla möjligheter och se hur det kan förbättra dina projekt.
+## Conclusion
 
-Tack för att du läste mitt blogginlägg om att skapa en måltidsplaneringsapp med React, TypeScript och ChatGPT! Jag hoppas att mina erfarenheter kan inspirera dig att prova nya tekniker och samarbeta med AI-assistenter för att skapa fantastiska projekt. Lycka till med dina framtida äventyr inom apputveckling!
+Creating this meal planning app was a fantastic learning experience. ChatGPT
+proved to be an invaluable tool both as a development assistant and as the core
+functionality of the app. The combination of React, TypeScript and AI creates
+powerful possibilities for modern web applications.
 
-Blogginlägget har genererats av chat gpt.
+The app is now ready to help users plan their meals efficiently and discover new
+recipes based on their personal preferences and goals.

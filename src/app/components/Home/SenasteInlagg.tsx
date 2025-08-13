@@ -1,6 +1,6 @@
-import React from "react";
+
 import Link from "next/link";
-import getPostMetadata from "@/app/components/Blogg/getPostMetadata";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 import Image from "next/image";
 import {Roboto} from "next/font/google";
 
@@ -16,7 +16,7 @@ export function BlogInlagg() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
                     <h1 className={`text-6xl sm:text-7xl font-bold tracking-tight text-black ${roboto.className}`}>
-                        Vår blogg.
+                        Our blog.
                     </h1>
                 </div>
                 <div
@@ -43,7 +43,7 @@ export function BlogInlagg() {
                                     {post.date}
                                 </time>
                                 <div className="-ml-4 flex items-center gap-x-4">
-                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+                                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50" aria-hidden="true">
                                         <circle cx={1} cy={1} r={1}/>
                                     </svg>
                                     <div className="flex gap-x-2.5">
@@ -52,14 +52,14 @@ export function BlogInlagg() {
                                             width={24}
                                             height={24}
                                             priority={true}
-                                            alt=""
+                                            alt={`${post.author} profile photo`}
                                             className="h-6 w-6 flex-none rounded-full bg-white/10"/>
                                         {post.author}
                                     </div>
                                 </div>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                                <Link href={`/blogg/${post.slug}`}>
+                                <Link href={`/blog/${post.slug}`}>
                                     <span className="absolute inset-0"/>
                                     {post.title}
                                 </Link>

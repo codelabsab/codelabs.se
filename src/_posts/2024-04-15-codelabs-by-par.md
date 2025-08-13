@@ -1,31 +1,33 @@
 ---
 layout: post
-title: "Code Labs av - Pär: En kväll med bowling och god mat"
-slug: code-labs-av-pär-2
+title: "Code Labs by - Pär: An evening with bowling and good food"
+slug: code-labs-by-pär-2
 date: "2024-04-15"
 og_image: /assets/blogg/bowling_3.jpg
-description: En kul kväll med bowling och god middag 🎳🍽️
+description: A fun evening with bowling and good dinner 🎳🍽️
 author: Pär Berge
 ---
 
 ## Bowling
 
-Vi träffades på [Birka bowling](https://birkabowling.se/), ett toppenställe där vi varit tidigare.
-![bowling](/assets/blogg/bowling_1.jpg)
+We met at [Birka bowling](https://birkabowling.se/), a great place where we've
+been before. ![bowling](/assets/blogg/bowling_1.jpg)
 
-Det var riktigt kul! Vi spelade två serier och det var en jämn kamp om segern.
+It was really fun! We played two series and it was a close fight for victory.
 
 ![bowling2](/assets/blogg/bowling_4.jpg)
 
-Tommy var starkast och hade efter två spelade serier mest poäng av oss alla!
+Tommy was the strongest and had the most points of all of us after two played
+series!
 
-## Middag
+## Dinner
 
-Efter bowlingen gick vi till restaurang [Portal](https://www.portalrestaurant.se/) där vi hade bokat bord.
+After bowling, we went to restaurant [Portal](https://www.portalrestaurant.se/)
+where we had booked a table.
 
 ![middag](/assets/blogg/portal_mat_1.jpg)
 ![middag2](/assets/blogg/portal_mat_2.jpg)
 
-Vi var alla väldigt nöjda med maten, riktigt gott!
+We were all very satisfied with the food, really good!
 
-Som vanligt var det en trevlig kväll med Code Labs-gänget! 🙏
+As usual, it was a nice evening with the Code Labs gang! 🙏

@@ -1,21 +1,19 @@
 ---
-title: Vi joinar Elon Musk i TeamTrees.org
-slug: vi-joinar-elon-musk-i-team-trees
+title: "We join Elon Musk in Team Trees"
+slug: "we-join-elon-musk-team-trees"
 date: "2020-01-17"
-description: Code Labs donerar till återplanterings-initiativet TeamTrees.org
-og_image: /assets/blogg/team-trees.png
+description: "Code Labs contributes to Team Trees - an initiative to plant 20 million trees."
+og_image: "/assets/blogg/team-trees.png"
 author: Tommy Malmqvist
 ---
 
-I maj 2019 startade den amerikanska YouTubern Jimmy Donaldson under sitt online-alias en kampanj för att nå 20 miljoner följare på sin Youtube-kanal. Kampanjen mynnade snart ut i att MrBeast startade initiativet TeamTrees.org(#teamtrees) där han uttalade målet att per 1 januari 2020 ha nått 20 miljoner amerikanska dollar i finansiering för att plantera 20 miljoner träd, som ett led i att bekämpa klimatförändringarna.
-Kampanjen ackompanjerades av Arbor Day Foundation och deras återplateringsprogram för amerikanska skogar.
+Code Labs has joined the global initiative **Team Trees** together with Elon
+Musk, MrBeast and many others to plant 20 million trees by 2020.
 
-Förutom YouTube-stjärnor som svenska PewDiePie, Jeffree Star och YouTubes egen VD Susan Wojcicki klev Tesla’s VD Elon Musk tidigt in som den största givaren till projektet – med 1 miljoner träd (motsvarande 9 473 000 svenska kronor. Den 1 november valde e-handelsplattformen Shopify’s VD Tobi Lütke att kliva på projektet och för att slå Elon Musk’s donation med 1 träd (1 USD) valde Lütke att skänka 1 000 001 USD (9 473 070 svenska kronor) – för att plantera 1 000 001 träd.
+For every dollar donated, one tree is planted. The trees are planted by the
+**Arbor Day Foundation** in forests that need restoration.
 
-Utöver företagsledare, YouTube-stjärnor och andra kändisar valde det svenska konsultbolaget Code Labs att donera till kampanjen och bidra till fler planterade träd på kritiska platser i världen.
+This is an important environmental initiative that we are proud to support.
+Every tree makes a difference for our planet's future.
 
-Vid årsskiftet hade kampanjen nått sitt mål och den kommer att pågå till och med år 2022. Eftersom donationerna nått en så pass mycket högre nivå än vad Arbor Day kunnat räkna med har man valt att utöka planteringen av träd till alla världens kontinenter, förutom Antarktis.
-
-Läs mer på: arborday.org och teamtrees.org
-
-Som ett led i Code Labs mål att Skapa positiva avtryckstödjer och driver vi aktiviteter och initiativ för att främja positiv utveckling för vårt samhälle, våra medmänniskor och vårt klimat. Under 2019 donerade Code Labs tillsammans med bl.a. Teslas Elon Musk, Shopifys Tobi Lütke och en rad YouTube-stjärnor däribland svenske PewDiePie till återplanterings-initiativet TeamTrees.org.
+You can read more and contribute at [teamtrees.org](https://teamtrees.org)

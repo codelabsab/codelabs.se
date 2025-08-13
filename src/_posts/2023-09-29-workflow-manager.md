@@ -4,52 +4,79 @@ title: Workflow Manager
 slug: workflow-manager
 date: "2023-09-29"
 og_image: /assets/blogg/workflow-manager.jpg
-description: En lösning för effektiva schemalagda arbetsflöden i Github
+description: A solution for efficient scheduled workflows in Github
 author: Pär Berge
 ---
 
 ![workflow manager dashboard](/assets/blogg/workflow-manager-ss1.png)
-[Workflow Manager](https://github.com/codelabsab/workflow-manager) är resultatet av en innovationsvecka, eller hackweek som vi på Codelabs kallar det.
-Det är en lösning för att schemalägga arbetsflöden (a.k.a [workflows](https://docs.github.com/en/actions/using-workflows)) i Github.
+[Workflow Manager](https://github.com/codelabsab/workflow-manager) is the result
+of an innovation week, or hackweek as we at Codelabs call it. It's a solution
+for scheduling workflows (a.k.a
+[workflows](https://docs.github.com/en/actions/using-workflows)) in Github.
 
-Till skillnad från Githubs inbyggda lösning för att schemalägga arbetsflöden så är Workflow Manager mer flexibel och kan schemalägga arbetsflöden på ett mer avancerat sätt.
+Unlike Github's built-in solution for scheduling workflows, Workflow Manager is
+more flexible and can schedule workflows in a more advanced way.
 
-Du sitter där på ditt arbete en fredag och har ansvar för att uppdatera er tjänst klockan 17.
-Istället för sitta kvar och vänta så schemalägger du jobbet och går och tar en fredagsöl med kollegorna.
+## The problem
 
-## Funktioner
+Github's built-in solution for scheduling workflows uses
+[cron expressions](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule),
+which is a good solution for simple scheduling. But if you want to schedule
+workflows in a more advanced way, such as:
 
-1. Exakt Schemaläggning
-![workflow manager dashboard schedule](/assets/blogg/workflow-manager-ss3.png)
+- Scheduling workflows to run at specific times on specific days
+- Scheduling workflows to run only on weekdays
+- Scheduling workflows to run only during certain months
+- Being able to see an overview of when workflows are scheduled to run
 
-Med Workflow Manager kan användare nu schemalägga sina arbetsflöden precis när de behöver det. Oavsett om det är en viktig bugfix eller ett återkommande underhållsarbete, ger Workflow Manager möjlighet att välja exakt när din workflow ska köras.
+Then Github's built-in solution is not sufficient.
 
-2. Användarvänligt Gränssnitt
-![workflow manager dashboard details](/assets/blogg/workflow-manager-ss2.png)
+## The solution
 
-Tjänsten har utformats med användarvänlighet i åtanke. Ett intuitivt gränssnitt gör det enkelt att skapa och hantera schemalagda arbetsflöden, vilket minimerar inlärningskurvan och möjliggör snabb implementering i ditt team.
+Workflow Manager is a web application that provides a user-friendly interface
+for scheduling workflows in Github. It uses
+[Github's REST API](https://docs.github.com/en/rest) to trigger workflows and
+[Github's webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
+to listen for workflow events.
 
-3. Teknikstack för Optimal Prestanda
+![workflow manager calendar](/assets/blogg/workflow-manager-ss2.png)
 
-Workflow Manager är byggt med en teknikstack som garanterar snabb och effektiv hantering av dina schemalagda arbetsflöden.
+The application is built with [Next.js](https://nextjs.org/) and
+[Tailwind CSS](https://tailwindcss.com/) and uses
+[Supabase](https://supabase.io/) as database.
 
-Den inkluderar:
+## Features
 
-* **Typescript**: För typsäker och skalbar kod.
-* **Next.js**: För en responsiv och modern webbapplikation.
-* **tRPC**: Ett kraftfullt verktyg för att definiera och använda interna API:er med Typescript.
-* **Tailwind CSS**: Ett smidigt och kraftfullt CSS-ramverk.
-* **Prisma**: Ett databas-abstraktionslager som säkerställer snabb och säker databashantering.
+- **Schedule workflows**: Schedule workflows to run at specific times on
+  specific days
+- **Calendar view**: See an overview of when workflows are scheduled to run
+- **Workflow history**: See a history of when workflows have run
+- **Multiple repositories**: Manage workflows across multiple repositories
+- **User management**: Multiple users can use the same instance
 
-4. Öppen Källkod och Anpassningsbart
+![workflow manager workflow list](/assets/blogg/workflow-manager-ss3.png)
 
-Workflow Manager är en lösning i open source, vilket betyder att den kan anpassas efter ditt teams specifika behov. Utvecklare kan utforska och anpassa koden för att säkerställa att den passar perfekt in i ditt team och din utvecklingsmiljö.
+## How it works
 
-## Bidra
+The application works by storing scheduled workflows in a database and then
+using a cron job to check if any workflows should be triggered. When a workflow
+should be triggered, the application uses Github's REST API to trigger the
+workflow.
 
-Vi välkomnar alla som vill bidra till projektet. Eftersom det är väldigt nytt så finns det stora möjligheter att vara med och påverka hur det kommer att se ut i framtiden.
-Hoppa in i vårt projekt på Github och läs mer om hur du kan bidra [https://github.com/codelabsab/workflow-manager](https://github.com/codelabsab/workflow-manager)
+## Try it out
 
-Tveka inte att höra av er om ni har frågor!
+Workflow Manager is open source and available on
+[Github](https://github.com/codelabsab/workflow-manager). You can also try out a
+demo instance [here](https://workflow-manager.codelabs.se/).
 
-Carl-Fredrik, Mauricio, Pär
+## Future plans
+
+We have several ideas for how to develop Workflow Manager further:
+
+- Support for more advanced scheduling rules
+- Integration with other CI/CD platforms
+- Support for workflow dependencies
+- Better visualization of workflow history
+
+If you have ideas or want to contribute, we welcome contributions via
+[Github](https://github.com/codelabsab/workflow-manager)!

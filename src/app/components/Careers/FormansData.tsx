@@ -1,51 +1,51 @@
 const formansData = [
     {
-        title: "Friskvård",
+        title: "Wellness Allowance",
         image: "https://img.icons8.com/ios-filled/50/000000/stretching.png",
         description:
-            "Motsvarande ett årskort på Sats"
+            "Equivalent to a yearly gym membership"
     },
     {
-        title: "Rikskortet",
+        title: "Meal Benefit",
         image: "https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/60/000000/external-credit-card-ecommerce-vitaliy-gorbachev-fill-vitaly-gorbachev-1.png",
         description:
-            "30% av 2200kr"
+            "30% of 2200 SEK"
     },
     {
-        title: "Semester",
+        title: "Vacation",
         image: "https://img.icons8.com/ios-filled/50/000000/sunbathe.png",
         description:
-            "Flexibelt"
+            "Flexible"
     },
     {
-        title: "Utrustning",
+        title: "Equipment",
         image: "https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-code-coding-kiranshastry-solid-kiranshastry-2.png",
         description:
-            "Ny dator och mobil var tredje år"
+            "New computer and phone every three years"
     },
     {
-        title: "Tjänstepension",
+        title: "Occupational Pension",
         image: "https://img.icons8.com/glyph-neue/64/000000/money-box.png",
-        description: "Enligt ITP 1"
+        description: "According to ITP 1"
     },
     {
-        title: "Löneväxlning Pension",
+        title: "Salary Exchange – Pension",
         image: "https://img.icons8.com/ios-filled/50/000000/cash-in-hand.png",
-        description: "Möjlighet att löneväxla mot pension"
+        description: "Possibility to salary-exchange for pension"
     },
     {
-        title: "Bruttolöneavdrag",
+        title: "Pre-Tax Deduction",
         image: "https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/60/000000/external-desk-support-vitaliy-gorbachev-fill-vitaly-gorbachev.png",
-        description: "Utrusta ditt hemkontor med bruttolöneavdrag"
+        description: "Equip your home office with pre-tax deduction"
     },
     {
-        title: "Konferenser",
+        title: "Conferences",
         image: "https://img.icons8.com/ios-filled/50/000000/conference.png",
-        description: "Budget för konferenser"
+        description: "Budget for conferences"
     }, {
-        title: "Utbildning",
+        title: "Education",
         image: "https://img.icons8.com/ios-filled/50/000000/laboratory.png",
-        description: "Utbildning och certifierings",
+        description: "Education and certifications",
     }
 ];
 
