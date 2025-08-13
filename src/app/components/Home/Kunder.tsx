@@ -74,11 +74,11 @@ export function Testimonials() {
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
                             <blockquote className="text-lg leading-8 text-gray-900 ">
                                 <p className={`mt-6 text-2xl ${roboto.className} font-light text-black`}>
-                                    "Code Labs consultant has been an asset when it comes to
+                                    &ldquo;Code Labs consultant has been an asset when it comes to
                                     driving technical work forward and getting new ideas for
                                     improvements. The consultant has been equally skilled at getting
                                     into existing solutions, developing them as well as starting
-                                    new projects. We can warmly recommend Code Labs to others!"
+                                    new projects. We can warmly recommend Code Labs to others!&rdquo;
                                 </p>
                             </blockquote>
                             <figcaption className="mt-10 flex items-center gap-x-6">
@@ -110,11 +110,11 @@ export function Testimonials() {
                         <figure className="mt-10 flex flex-auto flex-col justify-between">
                             <blockquote className="text-lg leading-8 text-gray-900 ">
                                 <p className={`mt-6 text-2xl ${roboto.className} font-light text-black`}>
-                                    "Code Labs consultant demonstrated adaptability,
+                                    &ldquo;Code Labs consultant demonstrated adaptability,
                                     stress resilience and an ability to juggle many balls in the air
                                     when involved in multiple projects simultaneously.
                                     I warmly recommend Code Labs and would gladly hire their
-                                    consultants in the future."
+                                    consultants in the future.&rdquo;
                                 </p>
                             </blockquote>
                             <figcaption className="mt-10 flex items-center gap-x-6">
