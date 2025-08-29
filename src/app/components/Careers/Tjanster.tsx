@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const stats = [
     { label: 'Founded', value: '2016' },
-    { label: 'Employees', value: '5' },
+    { label: 'Employees', value: '6' },
 ]
 const values = [
     {

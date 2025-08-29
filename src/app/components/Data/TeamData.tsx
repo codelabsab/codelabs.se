@@ -39,4 +39,11 @@ export const people = [
     imageUrl: "/assets/team/mauricio.jpeg",
     github_url: `https://github.com/marresgit`,
   },
+  {
+    name: "Angelica Törnros",
+    role: `Head of recruitment & HR`,
+    bio: `Angelica is the heart of the team. With a sharp eye for talent and a passion for people, she makes sure Code Labs continues to grow with the right colleagues. She brings energy, structure and warmth.`,
+    skills: ``,
+    imageUrl: "/assets/team/angelica.jpeg",
+  },
 ];
