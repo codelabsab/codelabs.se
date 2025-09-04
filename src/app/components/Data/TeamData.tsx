@@ -46,4 +46,11 @@ export const people = [
     skills: ``,
     imageUrl: "/assets/team/angelica.jpeg",
   },
+    {
+      name: "Mimmi & Penny",
+      role: "Our Beloved Mascots",
+      imageUrl: "/assets/team/mimmi-penny.jpg",
+      bio: `These two French Bulldogs are more than just office mascots.\nThey're charming conversationalists (even if it’s mostly snorts and snores), cuddle experts, and always ready to bring warmth and good vibes to anyone’s day.\nWhether they’re demanding belly rubs, joining meetings uninvited, or simply napping in style, they remind us daily of a cozy break.`,
+      skills: "mascot, cuddling, snoring, good vibes",
+    },
 ];
