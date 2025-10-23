@@ -17,8 +17,8 @@ I wanted to plan something fun for the team - something we hadn't done before. A
 Axe throwing!  
 I found a spot in the city that offered this unusual but surprisingly fun experience.
 
-After some quick safety instructions at [Max Axe](https://madaxe.se/), we were finally allowed to let loose and test our inner Vikings.  
-![max axe throwing club](/assets/blogg/yxkastning_entre.jpg)
+After some quick safety instructions at [Mad Axe](https://madaxe.se/), we were finally allowed to let loose and test our inner Vikings.  
+![mad axe throwing club](/assets/blogg/yxkastning_entre.jpg)
 
 It turned out to be *way* more satisfying than expected. We learned a few different throwing techniques - the underhand throw was definitely the crowd favorite - and before long, things got competitive.  
 ![axe throwers](/assets/blogg/axe-throwers.jpeg)
