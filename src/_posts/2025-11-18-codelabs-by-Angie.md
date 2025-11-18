@@ -11,7 +11,7 @@ author: Angelica Törnros
 ## MEGA MEGA fun!
 
 This was MEGA mega fun!
-I got five guys to try Megaformer Pilates, probably not something they would have tested on their own.
+I got four guys to try Megaformer Pilates, probably not something they would have tested on their own.
 We dared to try, experimented our way through it, and WOW was it fun!
 I don’t think I’ve ever laughed that much during a workout before.
 
