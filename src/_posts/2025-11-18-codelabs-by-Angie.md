@@ -24,7 +24,7 @@ There’s so much value in trying something new together, strengthening the grea
 
 
  We got a great Instructor at [The Place](https://www.theplacestockholm.se/signature-megaformer-class?gad_source=1&gad_campaignid=21026084539&gbraid=0AAAAA9S0e7WOZr892dD1OP1_VeeRpqQwR&gclid=CjwKCAiAz_DIBhBJEiwAVH2XwJRHuxSRshCaSjQpu-_rqaHk5e-13edUBLFAVKeAHowHoL71yjTTeRoCb0IQAvD_BwE). 
-![bild](/public/assets/blogg/mega_mega_fun.jpg)
+![bild](/assets/blogg/mega_mega_fun.jpg)
 
 
 There were lots of laughs and very sore muscles in the days after, totally WORTH it!
@@ -35,14 +35,14 @@ There were lots of laughs and very sore muscles in the days after, totally WORTH
 For dinner we went to a well-known steak restaurant [Teuf](https://teuf.se/)
 Meat, fries, and Béarnaise sauce always hit the spot.
 
-![bild](/public/assets/blogg/teuf_kött.webp)
+![bild](/assets/blogg/teuf_kött.webp)
 
 and a tasty chocolate dessert with a dash of olive oil and salt on top
 
-![bild](/public/assets/blogg/teuf_dessert.webp)
+![bild](/assets/blogg/teuf_dessert.webp)
 
 Tommy and Love are happy after that meal!
-![bild](/public/assets/blogg/teuf_tommy_love.webp)
+![bild](/assets/blogg/teuf_tommy_love.webp)
 
 
 Thanks again for a fantastic day together with the best team!
