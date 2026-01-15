@@ -17,7 +17,7 @@ export const people = [
   },
   {
     name: "Kami Gerami",
-    role: `Software Engineer`,
+    role: `Devops Engineer`,
     bio: `Kami is one of the founders of this amazing company, a visionary and AI fanatic of rank. From DevOps engineering to fullstack developer. Kami knows most things.`,
     skills: `python node js terraform k8s argocd cloud`,
     imageUrl: "/assets/team/kami.jpeg",
@@ -46,11 +46,18 @@ export const people = [
     skills: ``,
     imageUrl: "/assets/team/angelica.jpeg",
   },
-    {
-      name: "Mimmi & Penny",
-      role: "Our Beloved Mascots",
-      imageUrl: "/assets/team/mimmi-penny.jpg",
-      bio: `These two French Bulldogs are more than just office mascots.\nThey're charming conversationalists (even if it’s mostly snorts and snores), cuddle experts, and always ready to bring warmth and good vibes to anyone’s day.\nWhether they’re demanding belly rubs, joining meetings uninvited, or simply napping in style, they remind us daily of a cozy break.`,
-      skills: "mascot, cuddling, snoring, good vibes",
-    },
+  {
+    name: "Mimmi & Penny",
+    role: "Our Beloved Mascots",
+    imageUrl: "/assets/team/mimmi-penny.jpg",
+    bio: `These two French Bulldogs are more than just office mascots.\nThey're charming conversationalists (even if it’s mostly snorts and snores), cuddle experts, and always ready to bring warmth and good vibes to anyone’s day.\nWhether they’re demanding belly rubs, joining meetings uninvited, or simply napping in style, they remind us daily of a cozy break.`,
+    skills: "mascot, cuddling, snoring, good vibes",
+  },
+  {
+    name: "Andreas Andersson",
+    role: "Devops Engineer",
+    imageUrl: "/assets/team/andreas-andersson.jpeg",
+    bio: `Andreas spends a lot of his free time climbing. He prefers climbing outdoors in the summer and travels abroad once a year for the sport. To relax from the adrenaline, he goes to the forest to pick mushrooms and berries.\nIn his job, Andreas loves working with monitoring. He enjoys collaborating, especially with developers. He likes how they can learn from each other to find the best solutions and get the best results.`,
+    skills: "aws, azure, cloud, kubernetes, argocd, ci/cd",
+  },
 ];
