@@ -60,4 +60,9 @@ export const people = [
     bio: `Andreas spends a lot of his free time climbing. He prefers climbing outdoors in the summer and travels abroad once a year for the sport. To relax from the adrenaline, he goes to the forest to pick mushrooms and berries.\nIn his job, Andreas loves working with monitoring. He enjoys collaborating, especially with developers. He likes how they can learn from each other to find the best solutions and get the best results.`,
     skills: "aws, azure, cloud, kubernetes, argocd, ci/cd",
   },
-];
+  {
+    name: "Max Povalinsky",
+    role: "SRE",
+    imageUrl: "/assets/team/max profilbild.jpeg",
+    bio: `Max is an experienced Site Reliability Engineer who loves turning messy production reality into calm, reliable, boring systems. He’s at his best where observability, automation, and pragmatic incident response meet. Off-hours he’s fixing or acquiring bikes for a commons workshop, hosting a vegan fika, and building a planetary-care project together with humans and AIs`  
+  },
