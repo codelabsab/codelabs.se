@@ -63,7 +63,7 @@ export const people = [
   {
     name: "Max Povalinsky",
     role: "SRE",
-    imageUrl: "/assets/team/max profilbild.jpeg",
+    imageUrl: "/assets/team/max_povalinsky.jpg",
     bio: `Max is an experienced Site Reliability Engineer who loves turning messy production reality into calm, reliable, boring systems. He’s at his best where observability, automation, and pragmatic incident response meet. Off-hours he’s fixing or acquiring bikes for a commons workshop, hosting a vegan fika, and building a planetary-care project together with humans and AIs`,
     skills: "cloud, sre, kubernetes, monitoring",
   },
