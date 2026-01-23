@@ -1,5 +1,23 @@
 const formansData = [
     {
+        title: "Code Days",
+        image: "https://img.icons8.com/ios-filled/50/000000/source-code.png",
+        description:
+            "Your time to learn. Friday is for coding, not billing. Work on internal projects, learn new tech, or contribute to our green products."
+    },
+    {
+        title: "The Green Lab",
+        image: "https://img.icons8.com/ios-filled/50/000000/leaf.png",
+        description:
+            "Build products that matter. Contribute to our internal sustainability tech fighting climate change."
+    },
+    {
+        title: "Gear",
+        image: "https://img.icons8.com/ios-filled/50/000000/laptop.png",
+        description:
+            "Mac, Linux, or Windows? You choose your weapon. New computer and phone every three years."
+    },
+    {
         title: "Wellness Allowance",
         image: "https://img.icons8.com/ios-filled/50/000000/stretching.png",
         description:
@@ -16,12 +34,6 @@ const formansData = [
         image: "https://img.icons8.com/ios-filled/50/000000/sunbathe.png",
         description:
             "Flexible"
-    },
-    {
-        title: "Equipment",
-        image: "https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-code-coding-kiranshastry-solid-kiranshastry-2.png",
-        description:
-            "New computer and phone every three years"
     },
     {
         title: "Occupational Pension",
@@ -42,7 +54,8 @@ const formansData = [
         title: "Conferences",
         image: "https://img.icons8.com/ios-filled/50/000000/conference.png",
         description: "Budget for conferences"
-    }, {
+    },
+    {
         title: "Education",
         image: "https://img.icons8.com/ios-filled/50/000000/laboratory.png",
         description: "Education and certifications",

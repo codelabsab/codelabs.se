@@ -11,14 +11,14 @@ export const people = [
     name: "Pär Berge",
     role: `DevOps Engineer`,
     skills: `python terraform argo k8s cloud`,
-    bio: `Pär is a legendary DevOps engineer. A consultant of absolute top class. Pär is one of our most experienced consultants and has a great passion for developing and automating. He also likes to ride mountain bikes down very steep hills.`,
+    bio: `The Migrator. Pär's superpower is Cloud Transitions & Open Source Tooling. From architecting Mojang's AWS to Azure migration (yes, Minecraft) to moving TUI from Data Center to AWS and building GitLab CI/CD architecture at Toptracer. One of our most experienced consultants with a great passion for automation. He also likes to ride mountain bikes down very steep hills.`,
     imageUrl: "/assets/team/paer.jpeg",
     github_url: `https://github.com/parberge`,
   },
   {
     name: "Kami Gerami",
-    role: `Devops Engineer`,
-    bio: `Kami is one of the founders of this amazing company, a visionary and AI fanatic of rank. From DevOps engineering to fullstack developer. Kami knows most things.`,
+    role: `Software Engineer`,
+    bio: `The Architect. Kami's superpower is Multi-Cloud Kubernetes (AKS/GKE/EKS) & GitOps. Key projects include migrating 700 developers to GitHub Actions at ICA, setting up GKE + Terraform + ArgoCD at Pricer, and AWS + Nomad cost optimization at Dice. One of the founders of this amazing company, a visionary and AI fanatic.`,
     skills: `python node js terraform k8s argocd cloud`,
     imageUrl: "/assets/team/kami.jpeg",
     github_url: `https://github.com/kamigerami`,
@@ -53,18 +53,4 @@ export const people = [
     bio: `These two French Bulldogs are more than just office mascots.\nThey're charming conversationalists (even if it’s mostly snorts and snores), cuddle experts, and always ready to bring warmth and good vibes to anyone’s day.\nWhether they’re demanding belly rubs, joining meetings uninvited, or simply napping in style, they remind us daily of a cozy break.`,
     skills: "mascot, cuddling, snoring, good vibes",
   },
-  {
-    name: "Andreas Andersson",
-    role: "Devops Engineer",
-    imageUrl: "/assets/team/andreas-andersson.jpeg",
-    bio: `Andreas spends a lot of his free time climbing. He prefers climbing outdoors in the summer and travels abroad once a year for the sport. To relax from the adrenaline, he goes to the forest to pick mushrooms and berries.\nIn his job, Andreas loves working with monitoring. He enjoys collaborating, especially with developers. He likes how they can learn from each other to find the best solutions and get the best results.`,
-    skills: "aws, azure, cloud, kubernetes, argocd, ci/cd",
-  },
-  {
-    name: "Max Povalinsky",
-    role: "SRE",
-    imageUrl: "/assets/team/max_povalinsky.jpg",
-    bio: `Max is an experienced Site Reliability Engineer who loves turning messy production reality into calm, reliable, boring systems. He’s at his best where observability, automation, and pragmatic incident response meet. Off-hours he’s fixing or acquiring bikes for a commons workshop, hosting a vegan fika, and building a planetary-care project together with humans and AIs`,
-    skills: "cloud, sre, kubernetes, monitoring",
-  },
-]
+];

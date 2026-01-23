@@ -1,21 +1,37 @@
-import { LifebuoyIcon, NewspaperIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { ChatBubbleLeftRightIcon, LightBulbIcon, UserGroupIcon, DocumentCheckIcon, AcademicCapIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
 import Image from "next/image";
 
 const cards = [
     {
-        name: 'Interview',
-        description: 'Have a conversation with our fantastic recruiter, Honey, and get answers to all your questions.',
-        icon: PhoneIcon,
+        name: 'Hello',
+        description: 'Informal chat with our recruiter Angelica – a chemistry check to discuss values and what you\'re looking for.',
+        icon: ChatBubbleLeftRightIcon,
     },
     {
-        name: 'Technical Interview',
-        description: 'Show your skills and get a chance to ask us questions.',
-        icon: LifebuoyIcon,
+        name: 'Vision',
+        description: 'Tech talk with the Founders. We discuss engineering leadership and your technical ambitions.',
+        icon: LightBulbIcon,
     },
     {
-        name: 'Offer',
-        description: 'Woohoo! You got an offer from us. Let\'s go!',
-        icon: NewspaperIcon,
+        name: 'Tribe',
+        description: 'Meet your future colleagues – the "vibe check". Transparency is key at Code Labs.',
+        icon: UserGroupIcon,
+    },
+    {
+        name: 'Promise',
+        description: 'Contract & Offer. We commit to you before we have the assignment. Your stability is our priority.',
+        icon: DocumentCheckIcon,
+    },
+    {
+        name: 'Growth',
+        description: 'Upskilling & Certification. Missing a specific skill? We train you on our dime before you start.',
+        icon: AcademicCapIcon,
+        highlight: true,
+    },
+    {
+        name: 'Impact',
+        description: 'Deployment to your new assignment. Time to make a difference at one of Sweden\'s leading companies.',
+        icon: RocketLaunchIcon,
     },
 ]
 
@@ -81,17 +97,17 @@ export default function Header() {
             </svg>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Careers</h2>
+                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">How We Hire</h2>
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Your career at Code Labs
+                        A transparent, human-centric process. We commit to you before we have the assignment.
                     </p>
                 </div>
-                <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+                <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-6">
                     {cards.map((card) => (
-                        <div key={card.name} className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10">
-                            <card.icon className="h-7 w-5 flex-none text-indigo-400" aria-hidden="true" />
+                        <div key={card.name} className={`flex gap-x-4 rounded-xl p-6 ring-1 ring-inset ${card.highlight ? 'bg-indigo-600/20 ring-indigo-400/30' : 'bg-white/5 ring-white/10'}`}>
+                            <card.icon className={`h-7 w-5 flex-none ${card.highlight ? 'text-indigo-300' : 'text-indigo-400'}`} aria-hidden="true" />
                             <div className="text-base leading-7">
-                                <h3 className="font-semibold font-poppins text-white">{card.name}</h3>
+                                <h3 className={`font-semibold font-poppins ${card.highlight ? 'text-indigo-200' : 'text-white'}`}>{card.name}</h3>
                                 <p className="mt-2 text-gray-300 font-poppins">{card.description}</p>
                             </div>
                         </div>
