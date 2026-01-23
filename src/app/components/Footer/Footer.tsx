@@ -126,9 +126,9 @@ const Footer = () => {
             </div>
             <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
               <a
-                href="https://codelabs.se/careers/"
+                href="https://codelabs.se/team/"
                 rel="noreferrer noopener"
-              >Open Positions</a>
+              >Meet the Team</a>
             </div>
           </div>
         </div>

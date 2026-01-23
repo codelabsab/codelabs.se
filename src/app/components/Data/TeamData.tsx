@@ -53,4 +53,18 @@ export const people = [
     bio: `These two French Bulldogs are more than just office mascots.\nThey're charming conversationalists (even if it’s mostly snorts and snores), cuddle experts, and always ready to bring warmth and good vibes to anyone’s day.\nWhether they’re demanding belly rubs, joining meetings uninvited, or simply napping in style, they remind us daily of a cozy break.`,
     skills: "mascot, cuddling, snoring, good vibes",
   },
+  {
+    name: "Andreas Andersson",
+    role: "DevOps Engineer",
+    imageUrl: "/assets/team/andreas-andersson.jpeg",
+    bio: `Andreas spends a lot of his free time climbing. He prefers climbing outdoors in the summer and travels abroad once a year for the sport. To relax from the adrenaline, he goes to the forest to pick mushrooms and berries.\nIn his job, Andreas loves working with monitoring. He enjoys collaborating, especially with developers. He likes how they can learn from each other to find the best solutions and get the best results.`,
+    skills: "aws, azure, cloud, kubernetes, argocd, ci/cd",
+  },
+  {
+    name: "Max Povalinsky",
+    role: "SRE",
+    imageUrl: "/assets/team/max_povalinsky.jpg",
+    bio: `Max is an experienced Site Reliability Engineer who loves turning messy production reality into calm, reliable, boring systems. He's at his best where observability, automation, and pragmatic incident response meet. Off-hours he's fixing or acquiring bikes for a commons workshop, hosting a vegan fika, and building a planetary-care project together with humans and AIs`,
+    skills: "cloud, sre, kubernetes, monitoring",
+  },
 ];
