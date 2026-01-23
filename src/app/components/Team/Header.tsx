@@ -45,10 +45,10 @@ const Header = () => {
                             <div className="col-8">
                                 <div
                                     className="px-10 md:block">
-                                    <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 ">
+                                    <h1 className={`text-4xl md:text-7xl font-bold tracking-tight text-gray-900 sm:text-6xl py-4 ${monsterrat.className}`}>
                                         Meet the team.
                                     </h1>
-                                    <p className={`my-8 text-4xl font-extralight text-gray-600 ${roboto.className} `}>
+                                    <p className={`my-8 text-2xl font-light text-gray-600 ${monsterrat.className} leading-relaxed`}>
                                         Meet our superstars. We are a bunch of engaged colleagues
                                         and friends who love to deliver value.
                                     </p>
