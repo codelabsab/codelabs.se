@@ -51,12 +51,14 @@ export default function TeamTestimonials() {
 
                                 {/* Content */}
                                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                                    <h3 className={`text-2xl font-bold leading-tight ${montserrat.className}`}>
+                                    <h3 className={`text-2xl font-bold leading-tight mb-2 ${montserrat.className}`}>
                                         {person.name}
                                     </h3>
-                                    <p className="text-sm font-medium text-codelabs-primary2 uppercase tracking-wider mb-4">
-                                        {person.role}
-                                    </p>
+                                    <div className="mb-4">
+                                        <span className="inline-block px-3 py-1 rounded-full bg-codelabs-primary2 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+                                            {person.role}
+                                        </span>
+                                    </div>
 
                                     <div className="transform translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                                         <p className="text-sm leading-relaxed text-gray-200 line-clamp-4 mb-6">
