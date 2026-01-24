@@ -29,7 +29,7 @@ const caseStudies = [
 
 export default function WarStories() {
     return (
-        <section id="war-stories" className="bg-gray-900 py-24 sm:py-32 relative overflow-hidden">
+        <section id="success-stories" className="bg-gray-900 py-24 sm:py-32 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-[20%] left-[10%] w-[40rem] h-[40rem] bg-codelabs-primary1/10 rounded-full blur-3xl opacity-20 mix-blend-screen" />
@@ -39,7 +39,7 @@ export default function WarStories() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                     <h2 className={`text-4xl font-bold tracking-tight text-white sm:text-6xl ${montserrat.className}`}>
-                        War Stories
+                        Success Stories
                     </h2>
                     <p className={`mt-6 text-lg leading-8 text-gray-300 ${montserrat.className} max-w-2xl`}>
                         Real projects. Real impact. See how we&apos;ve helped Sweden&apos;s biggest brands modernize their infrastructure.

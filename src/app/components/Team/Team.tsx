@@ -8,7 +8,6 @@ const montserrat = Montserrat({
     subsets: ['latin']
 })
 
-
 export default function TeamTestimonials() {
     return (
         <section className="bg-white py-24 sm:py-32 relative overflow-hidden">
@@ -59,7 +58,7 @@ export default function TeamTestimonials() {
                                         {person.role}
                                     </p>
 
-                                    <div className="transform translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <div className="transform translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                                         <p className="text-sm leading-relaxed text-gray-200 line-clamp-4 mb-6">
                                             {person.bio}
                                         </p>

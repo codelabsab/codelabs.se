@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Montserrat, Roboto } from 'next/font/google'
 
 const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
     subsets: ['latin']
 })
 
@@ -30,7 +30,7 @@ const OmOss = () => {
             <div className="max-w-7xl mx-auto px-6 py-24 sm:py-32 lg:px-8 relative z-10">
                 <div className="max-w-4xl">
                     <h1 className={`text-6xl sm:text-8xl font-black tracking-tight text-black mb-8 ${montserrat.className}`}>
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-codelabs-primary1 to-codelabs-primary2">
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-codelabs-primary1 to-codelabs-primary2 animate-pulse-slow">
                             Architecting
                         </span>
                         <span>the Future.</span>
@@ -44,7 +44,7 @@ const OmOss = () => {
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-start mt-16">
                         <Link href="/careers">
-                            <button className={`group relative px-8 py-4 bg-black text-white text-xl font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-2xl ${montserrat.className}`}>
+                            <button className={`group relative px-8 py-4 bg-black text-white text-xl font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-codelabs-primary2 ${montserrat.className}`}>
                                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-codelabs-primary1 to-codelabs-primary2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                                 <span className="relative z-10 flex items-center gap-2">
                                     Join the Team
@@ -54,7 +54,7 @@ const OmOss = () => {
                                 </span>
                             </button>
                         </Link>
-                        <Link href="#war-stories">
+                        <Link href="#success-stories">
                             <button className={`px-8 py-4 bg-white text-black border-2 border-black text-xl font-bold rounded-full hover:bg-black hover:text-white transition-all duration-300 hover:shadow-xl ${montserrat.className}`}>
                                 See Our Work
                             </button>

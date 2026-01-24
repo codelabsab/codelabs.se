@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -43,6 +44,8 @@ const values = [
 ]
 
 export default function Tjanster() {
+    const posts = getPostMetadata().slice(0, 2);
+
     return (
         <section className="bg-white relative overflow-hidden">
             {/* Mission Section */}
@@ -100,26 +103,58 @@ export default function Tjanster() {
                             Life at Code Labs
                         </h2>
                         <p className="mt-4 text-lg text-gray-400">
-                            Work hard, have fun, and grow together.
+                            Work hard, have fun, and grow together. Read our stories.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+                        {/* Large Main Image */}
                         <div className="md:col-span-2 relative rounded-2xl overflow-hidden group">
                             <Image src="/assets/entourage.jpeg" alt="Team Entourage" fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
-                        </div>
-                        <div className="relative rounded-2xl overflow-hidden group bg-gray-800">
-                            <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                                <p className={`text-xl font-medium ${montserrat.className}`}>Code Days & Hackathons</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                            <div className="absolute bottom-6 left-6">
+                                <h3 className={`text-2xl font-bold text-white ${montserrat.className}`}>Code Days & Hackathons</h3>
                             </div>
                         </div>
-                        <div className="relative rounded-2xl overflow-hidden group">
-                            <Image src="/assets/team/paer.jpeg" alt="Pär" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                        </div>
+
+                        {/* Blog Post 1 */}
+                        {posts[0] && (
+                            <div className="relative rounded-2xl overflow-hidden group bg-gray-800 hover:ring-2 hover:ring-codelabs-primary2 transition-all">
+                                <Link href={`/blog/${posts[0].slug}`} className="block h-full w-full">
+                                    <Image src={posts[0].og_image} alt={posts[0].title} fill className="object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                        <span className="text-xs font-bold text-codelabs-primary2 mb-2 uppercase tracking-widest">Latest Story</span>
+                                        <h4 className={`text-lg font-bold text-white leading-tight line-clamp-3 ${montserrat.className}`}>{posts[0].title}</h4>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
+
+                        {/* Blog Post 2 */}
+                        {posts[1] && (
+                            <div className="relative rounded-2xl overflow-hidden group bg-gray-800 hover:ring-2 hover:ring-codelabs-primary2 transition-all">
+                                <Link href={`/blog/${posts[1].slug}`} className="block h-full w-full">
+                                    <Image src={posts[1].og_image} alt={posts[1].title} fill className="object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                        <span className="text-xs font-bold text-codelabs-primary2 mb-2 uppercase tracking-widest">Team Story</span>
+                                        <h4 className={`text-lg font-bold text-white leading-tight line-clamp-3 ${montserrat.className}`}>{posts[1].title}</h4>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
+
+                        {/* Video Tile */}
                         <div className="md:col-span-2 relative rounded-2xl overflow-hidden group">
                             <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100">
                                 <source src="/assets/video/rally.mp4" type="video/mp4" />
                             </video>
+                            <div className="absolute inset-0 pointer-events-none p-6 flex flex-col justify-end items-end">
+                                <div className="bg-white/10 backdrop-blur-md p-3 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

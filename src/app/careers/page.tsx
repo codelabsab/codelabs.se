@@ -5,8 +5,8 @@ import { BlogInlagg } from "@/app/components/Home/SenasteInlagg";
 export default function Career() {
     return (
         <main>
-            <Header />
             <Tjanster />
+            <Header />
             <BlogInlagg />
         </main>
     )
