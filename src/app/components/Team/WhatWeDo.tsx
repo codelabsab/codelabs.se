@@ -6,11 +6,11 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 const pillars = [
     {
         name: 'Platform Engineering',
-        description: 'Building self-service platforms using Kubernetes (AKS/EKS/GKE), Rancher, and OpenShift. We empower your teams to deploy with confidence.',
+        description: 'Building self-service platforms using Kubernetes (AKS/EKS/GKE), Rancher, and OpenShift.',
     },
     {
         name: 'Infrastructure as Code',
-        description: 'Moving clients from manual ops to fully automated Terraform/OpenTofu & Ansible workflows. GitOps as standard practice.',
+        description: 'Moving clients from manual ops to fully automated Terraform/OpenTofu & Ansible workflows.',
     },
     {
         name: 'Cloud Migration',
@@ -18,7 +18,7 @@ const pillars = [
     },
     {
         name: 'Modernization',
-        description: 'Refactoring legacy systems and monoliths into scalable microservices or serverless functions.',
+        description: 'Refactoring legacy systems (monoliths) into scalable microservices or serverless functions.',
     },
 ];
 
@@ -37,7 +37,7 @@ export default function WhatWeDo() {
                         </p>
                         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
                             {pillars.map((pillar) => (
-                                <div key={pillar.name} className="bg-gray-50 rounded-xl p-6">
+                                <div key={pillar.name} className="bg-gray-50 rounded-xl p-6 border-2 border-transparent hover:border-codelabs-primary2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                     <h3 className={`text-lg font-bold text-black ${montserrat.className}`}>{pillar.name}</h3>
                                     <p className="mt-2 text-sm text-gray-600">{pillar.description}</p>
                                 </div>

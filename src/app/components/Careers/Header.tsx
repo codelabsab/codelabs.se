@@ -103,8 +103,15 @@ export default function Header() {
                     </p>
                 </div>
                 <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-6">
-                    {cards.map((card) => (
-                        <div key={card.name} className={`flex gap-x-4 rounded-xl p-6 ring-1 ring-inset ${card.highlight ? 'bg-indigo-600/20 ring-indigo-400/30' : 'bg-white/5 ring-white/10'}`}>
+                    {cards.map((card, index) => (
+                        <div key={card.name} className={`relative flex gap-x-4 rounded-xl p-6 ring-1 ring-inset transition-all duration-300 hover:shadow-lg ${card.highlight ? 'bg-indigo-600/20 ring-indigo-400/30' : 'bg-white/5 ring-white/10 hover:bg-white/10'}`}>
+                            {/* Step Number Background */}
+                            <div className="absolute -top-3 -right-3 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700 shadow-md">
+                                <span className={`text-sm font-bold ${card.highlight ? 'text-indigo-400' : 'text-gray-500'}`}>
+                                    0{index + 1}
+                                </span>
+                            </div>
+
                             <card.icon className={`h-7 w-5 flex-none ${card.highlight ? 'text-indigo-300' : 'text-indigo-400'}`} aria-hidden="true" />
                             <div className="text-base leading-7">
                                 <h3 className={`font-semibold font-poppins ${card.highlight ? 'text-indigo-200' : 'text-white'}`}>{card.name}</h3>

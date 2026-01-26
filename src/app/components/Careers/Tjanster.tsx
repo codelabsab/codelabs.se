@@ -1,344 +1,197 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
+import getPostMetadata from "@/app/components/Blog/getPostMetadata";
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 const stats = [
     { label: 'Founded', value: '2016' },
     { label: 'Employees', value: '8' },
 ]
+
 const values = [
     {
         name: 'Attitude',
-        description:
-            'With a positive attitude, we create a good work environment. We are humble and responsive.',
+        description: 'With a positive attitude, we create a good work environment. We are humble and responsive.',
+        emoji: '🙌',
     },
     {
         name: 'Community',
-        description:
-            'It should feel natural to share our knowledge and experiences.',
+        description: 'It should feel natural to share our knowledge and experiences.',
+        emoji: '🤝',
     },
     {
-        name: 'Innovation and creativity',
-        description:
-            'We are curious and want to learn more. We encourage each other\'s creativity and innovative thinking at work.',
+        name: 'Innovation',
+        description: 'We are curious and want to learn more. We encourage creative and innovative thinking.',
+        emoji: '💡',
     },
     {
         name: 'Uplifting',
-        description:
-            'We support each other with learning, development and curiosity.',
+        description: 'We support each other with learning, development and curiosity.',
+        emoji: '🚀',
     },
     {
-        name: 'Open communication',
-        description:
-            'We have a low threshold and strive for straightforward communication with our colleagues.',
+        name: 'Openness',
+        description: 'We have a low threshold and strive for straightforward communication.',
+        emoji: '💬',
     },
     {
         name: 'Recovery',
-        description:
-            'We take time for recovery and make sure to take care of ourselves.',
+        description: 'We take time for recovery and make sure to take care of ourselves.',
+        emoji: '🧘',
     },
 ]
 
 export default function Tjanster() {
+    const posts = getPostMetadata().slice(0, 2);
+
     return (
-        <div className="bg-white ">
-            {/* Header */}
-            <main className="isolate">
-                {/* Hero section */}
-                <div className="relative isolate -z-10">
-                    <svg
-                        className="absolute inset-x-0 top-0 -z-10 h-256 w-full stroke-codelabs-primary5 mask-[radial-gradient(32rem_32rem_at_center,white,transparent)]"
-                        aria-hidden="true"
-                    >
-                        <defs>
-                            <pattern
-                                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                                width={200}
-                                height={200}
-                                x="50%"
-                                y={-1}
-                                patternUnits="userSpaceOnUse"
-                            >
-                                <path d="M.5 200V.5H200" fill="none" />
-                            </pattern>
-                        </defs>
-                        <svg x="50%" y={-1} className="overflow-visible fill-codelabs-primary5 " aria-hidden="true">
-                            <path
-                                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                                strokeWidth={0}
-                            />
-                        </svg>
-                        <rect width="100%" height="100%" strokeWidth={0}
-                            fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
-                    </svg>
+        <section className="bg-white relative overflow-hidden">
+            {/* Mission Section */}
+            <div className="relative isolate px-6 pt-14 lg:px-8">
+                <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
                     <div
-                        className="absolute top-0 left-1/2 right-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
-                        <svg viewBox="0 0 801 1036" aria-hidden="true" className="w-200.25">
-                            <path
-                                fill="url(#70656b7e-db44-4b9b-b7d2-1f06791bed52)"
-                                fillOpacity=".3"
-                                d="m282.279 843.371 32.285 192.609-313.61-25.32 281.325-167.289-58.145-346.888c94.5 92.652 277.002 213.246 251.009-45.597C442.651 127.331 248.072 10.369 449.268.891c160.956-7.583 301.235 116.434 351.256 179.39L507.001 307.557l270.983 241.04-495.705 294.774Z"
-                            />
-                            <defs>
-                                <linearGradient
-                                    id="70656b7e-db44-4b9b-b7d2-1f06791bed52"
-                                    x1="508.179"
-                                    x2="-28.677"
-                                    y1="-116.221"
-                                    y2="1091.63"
-                                    gradientUnits="userSpaceOnUse"
-                                >
-                                    <stop stopColor="#9089FC" />
-                                    <stop offset={1} stopColor="#8B00FF" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    {/*<div className="w-full absolute -z-10 overflow-hidden blur-xs">*/}
-                    {/*<Splash1/>*/}
-                    {/*</div>*/}
-                    <div className="overflow-hidden relative">
-                        <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
-                            <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                                <div className="mx-auto">
-                                    <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl">
-                                        What a teeeaaam
-                                    </h1>
-                                    <Image
-                                        className="h-16 w-auto"
-                                        src={"/assets/paint/arrow-15.svg"}
-                                        alt={"arrow"}
-                                        width={224}
-                                        height={224}
-                                    />
-                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        Code Labs is a place where you can develop, be challenged and work with a team of skilled
-                                        people.
-                                    </p>
-                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        As part of our team, you will get interesting and
-                                        challenging projects that help you grow both personally and professionally.
-                                    </p>
-                                    <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                        While working to achieve your goals, you will
-                                        enjoy fun experiences with your colleagues – everything from working together
-                                        at our office and
-                                        team-building activities to shared lunches and Code Labs by-events and
-                                        trips.
-                                    </p>
-                                </div>
-                                <div
-                                    className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                                    <div
-                                        className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                                        <div className="relative">
-                                            <Image
-                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                                src={"/assets/team/paer.jpeg"}
-                                                alt={"Team member Pär"}
-                                                width={224}
-                                                height={224}
-                                                priority={true}
-                                            />
-                                            <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                        </div>
-                                    </div>
-                                    <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                                        <div className="relative">
-                                            <Image
-                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                                src={"/assets/bg-career.jpeg"}
-                                                alt={"Decorative image"}
-                                                width={224}
-                                                height={224}
-                                                priority={true}
-                                            />
-                                            <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                        </div>
-                                        <div className="relative">
-                                            <video
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                            >
-                                                <source
-                                                    src="/assets/video/grill.mp4"
-                                                    type="video/mp4"
-                                                />
-                                            </video>
-                                            <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                        </div>
-                                    </div>
-                                    <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                                        <div className="relative">
-                                            <video
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                            >
-                                                <source
-                                                    src="/assets/video/waterfall.mp4"
-                                                    type="video/mp4"
-                                                />
-                                            </video>
-                                            <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                        </div>
-                                        <div className="relative">
-                                            <video
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                                            >
-                                                <source
-                                                    src="/assets/video/rally.mp4"
-                                                    type="video/mp4"
-                                                />
-                                            </video>
-                                            <div
-                                                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Content section */}
-                <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
-                    <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                        <div className="flex items-center">
-                            <h1 className="text-5xl font-bold tracking-tight text-black sm:text-8xl ">Mission
-                                &
-                                Vision</h1>
-                            <Image
-                                className="h-32 w-auto"
-                                src={"/assets/paint/misc-2.svg"}
-                                alt={"Decorative image"}
-                                width={224}
-                                height={224}
-                                priority={true}
-                            />
-                        </div>
-                        {/*<div*/}
-                        {/*    className="absolute inset-x-0 -z-10 h-256 w-full stroke-codelabs-primary5 overflow-hidden blur-xs">*/}
-                        {/*    <Splash4/>*/}
-                        {/*</div>*/}
-                        <div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
-                            <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                                <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                    Our mission and vision is to create an environment where we challenge and encourage
-                                    each other to think creatively and innovatively.
-                                    By having a culture that values innovation and creativity and by
-                                    offering education, resources and by inspiring each other to develop, we are
-                                    convinced that we create a good culture.
-                                </p>
-                                <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                                    We have a focus on developing our own products and services that we believe can
-                                    be useful for both ourselves and our customers. We have a strong belief that we
-                                    can create innovative solutions by combining our different competencies and
-                                    experiences and it’s very fun to work together with so many skilled people.
-                                </p>
-                            </div>
-                            <div className="lg:flex lg:flex-auto lg:justify-center">
-                                <dl className="w-64 space-y-8 xl:w-80">
-                                    {stats.map((stat) => (
-                                        <div key={stat.label} className="flex flex-col-reverse gap-y-4">
-                                            <dt className="text-base leading-7 text-gray-600 ">{stat.label}</dt>
-                                            <dd className="text-5xl font-semibold tracking-tight text-gray-900 ">{stat.value}</dd>
-                                        </div>
-                                    ))}
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-center max-w-5xl">
-                    <Image
-                        className="h-28 w-auto mt-20"
-                        src={"/assets/paint/misc-5.svg"}
-                        alt={"Decorative image"}
-                        width={224}
-                        height={224}
-                        priority={true}
-                    />
-
-                </div>
-
-                {/* Image section */}
-                <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-                    <Image
-                        src="/assets/entourage.jpeg"
-                        width={2832}
-                        height={1880}
-                        priority={true}
-                        alt="Team photo"
-                        className="aspect-5/2 w-full object-cover xl:rounded-3xl"
+                        className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                        style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }}
                     />
                 </div>
 
-                {/* Values section */}
-                <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-                    <div className="mx-auto max-w-2xl lg:mx-0">
-                        <div className="flex items-center">
-                            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-8xl ">
-                                Core Values
-                            </h2>
-                            <Image
-                                className="text-codelabs-primary1 h-32 w-auto"
-                                src={"/assets/paint/arrow-12.svg"}
-                                alt={"arrow"}
-                                width={224}
-                                height={224}
-                            />
+                <div className="mx-auto max-w-7xl py-24 sm:py-32">
+                    <div className="flex flex-col lg:flex-row gap-16 items-start">
+                        <div className="lg:w-1/2">
+                            <h1 className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-6 ${montserrat.className}`}>
+                                Mission & Vision
+                            </h1>
+                            <div className="h-1 w-20 bg-codelabs-primary2 mb-10" />
+                            <div className={`space-y-6 text-xl leading-8 text-gray-600 ${montserrat.className} font-light`}>
+                                <p>
+                                    Our mission is to create an environment where we challenge and encourage
+                                    each other to think creatively. We believe a culture representing innovation,
+                                    education, and inspiration is key to growth.
+                                </p>
+                                <p>
+                                    We focus on developing products that solve real problems. We believe
+                                    innovative solutions come from combining our diverse competencies
+                                    and experiences.
+                                </p>
+                            </div>
                         </div>
-                        <p className="relative mt-6 text-2xl leading-8 text-gray-600  sm:max-w-md lg:max-w-none">
-                            Creating a place where we can develop together and where we can be ourselves.
+
+                        <div className="lg:w-1/2 flex flex-col justify-between h-full bg-gray-50 rounded-3xl p-10 lg:p-14">
+                            <div className="grid grid-cols-2 gap-8">
+                                {stats.map((stat) => (
+                                    <div key={stat.label}>
+                                        <dt className="text-sm font-semibold leading-6 text-gray-600 uppercase tracking-widest">{stat.label}</dt>
+                                        <dd className={`order-first text-5xl font-semibold tracking-tight text-gray-900 ${montserrat.className}`}>{stat.value}</dd>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="mt-10 text-gray-500 italic">
+                                &ldquo;Creating a place where we can develop together and be ourselves.&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Gallery / Life Section */}
+            <div className="py-24 sm:py-32 bg-gray-900 text-white">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${montserrat.className}`}>
+                            Life at Code Labs
+                        </h2>
+                        <p className="mt-4 text-lg text-gray-400">
+                            Work hard, have fun, and grow together. Read our stories.
                         </p>
                     </div>
-                    <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+                        {/* Large Main Image */}
+                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden group">
+                            <Image src="/assets/entourage.jpeg" alt="Team Entourage" fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                            <div className="absolute bottom-6 left-6">
+                                <h3 className={`text-2xl font-bold text-white ${montserrat.className}`}>Code Days & Hackathons</h3>
+                            </div>
+                        </div>
+
+                        {/* Blog Post 1 */}
+                        {posts[0] && (
+                            <div className="relative rounded-2xl overflow-hidden group bg-gray-800 hover:ring-2 hover:ring-codelabs-primary2 transition-all">
+                                <Link href={`/blog/${posts[0].slug}`} className="block h-full w-full">
+                                    <Image src={posts[0].og_image} alt={posts[0].title} fill className="object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                        <span className="text-xs font-bold text-codelabs-primary2 mb-2 uppercase tracking-widest">Latest Story</span>
+                                        <h4 className={`text-lg font-bold text-white leading-tight line-clamp-3 ${montserrat.className}`}>{posts[0].title}</h4>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
+
+                        {/* Blog Post 2 */}
+                        {posts[1] && (
+                            <div className="relative rounded-2xl overflow-hidden group bg-gray-800 hover:ring-2 hover:ring-codelabs-primary2 transition-all">
+                                <Link href={`/blog/${posts[1].slug}`} className="block h-full w-full">
+                                    <Image src={posts[1].og_image} alt={posts[1].title} fill className="object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                        <span className="text-xs font-bold text-codelabs-primary2 mb-2 uppercase tracking-widest">Team Story</span>
+                                        <h4 className={`text-lg font-bold text-white leading-tight line-clamp-3 ${montserrat.className}`}>{posts[1].title}</h4>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
+
+                        {/* Video Tile */}
+                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden group">
+                            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100">
+                                <source src="/assets/video/rally.mp4" type="video/mp4" />
+                            </video>
+                            <div className="absolute inset-0 pointer-events-none p-6 flex flex-col justify-end items-end">
+                                <div className="bg-white/10 backdrop-blur-md p-3 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Values Section */}
+            <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:text-center mb-16">
+                    <h2 className={`text-base font-semibold leading-7 text-codelabs-primary2 uppercase tracking-widest ${montserrat.className}`}>Culture</h2>
+                    <p className={`mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ${montserrat.className}`}>
+                        Our Core Values
+                    </p>
+                </div>
+                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                         {values.map((value) => (
-                            <div key={value.name} className={``}>
-                                <dt className="font-bold text-gray-900 ">{value.name}</dt>
-                                <dd className="mt-1 text-gray-600">{value.description}</dd>
+                            <div key={value.name} className="flex flex-col items-start bg-gray-50 p-8 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                <div className="text-4xl mb-4">{value.emoji}</div>
+                                <dt className={`text-xl font-semibold leading-7 text-gray-900 ${montserrat.className}`}>
+                                    {value.name}
+                                </dt>
+                                <dd className="mt-4 flex-auto text-base leading-7 text-gray-600">
+                                    {value.description}
+                                </dd>
                             </div>
                         ))}
                     </dl>
-                    <Image
-                        className="mx-auto w-full h-16 mt-24"
-                        src={"/assets/paint/line-4.svg"}
-                        alt={"Decorative image"}
-                        width={224}
-                        height={224}
-                        priority={true}
-                    />
                 </div>
-                <div className={"flex justify-center py-24"}>
-                    <h1 className="md:text-7xl text-4xl font-extrabold">Ready to apply?</h1>
+
+                <div className="mt-24 flex justify-center">
+                    <Link href="mailto:application@codelabs.se">
+                        <button className={`bg-black text-white px-10 py-5 rounded-full text-xl font-bold transition-transform hover:scale-105 hover:bg-codelabs-primary2 shadow-xl ${montserrat.className}`}>
+                            Apply Now
+                        </button>
+                    </Link>
                 </div>
-                <div className={"flex justify-center py-4 mx-auto"}>
-                    <div className="flex justify-center md:justify-start py-12">
-                        <Link
-                            href="mailto:application@codelabs.se"
-                        >
-                            <button
-                                type="button"
-                                className="bg-codelabs-primary2 font-poppins font-medium px-4 text-white w-52 h-20 pt-2 pb-2 justify-center rounded-full flex items-center hover:bg-codelabs-primary5 hover:text-codelabs-primary2 hover:shadow-xl transform transition duration-100 hover:scale-110">
-                                Yes, I&apos;m ready!
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-            </main>
-        </div>
+            </div>
+        </section>
     )
 }
