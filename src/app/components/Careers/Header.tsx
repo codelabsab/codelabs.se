@@ -1,5 +1,8 @@
 import { ChatBubbleLeftRightIcon, LightBulbIcon, UserGroupIcon, DocumentCheckIcon, AcademicCapIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
 import Image from "next/image";
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 const cards = [
     {
@@ -97,8 +100,8 @@ export default function Header() {
             </svg>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">How We Hire</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-300">
+                    <h2 className={`text-4xl font-bold tracking-tight text-white sm:text-6xl ${montserrat.className}`}>How We Hire</h2>
+                    <p className={`mt-6 text-lg leading-8 text-gray-300 ${montserrat.className}`}>
                         A transparent, human-centric process. We commit to you before we have the assignment.
                     </p>
                 </div>
@@ -107,15 +110,15 @@ export default function Header() {
                         <div key={card.name} className={`relative flex gap-x-4 rounded-xl p-6 ring-1 ring-inset transition-all duration-300 hover:shadow-lg ${card.highlight ? 'bg-indigo-600/20 ring-indigo-400/30' : 'bg-white/5 ring-white/10 hover:bg-white/10'}`}>
                             {/* Step Number Background */}
                             <div className="absolute -top-3 -right-3 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700 shadow-md">
-                                <span className={`text-sm font-bold ${card.highlight ? 'text-indigo-400' : 'text-gray-500'}`}>
+                                <span className={`text-sm font-bold ${card.highlight ? 'text-indigo-400' : 'text-gray-500'} ${montserrat.className}`}>
                                     0{index + 1}
                                 </span>
                             </div>
 
                             <card.icon className={`h-7 w-5 flex-none ${card.highlight ? 'text-indigo-300' : 'text-indigo-400'}`} aria-hidden="true" />
                             <div className="text-base leading-7">
-                                <h3 className={`font-semibold font-poppins ${card.highlight ? 'text-indigo-200' : 'text-white'}`}>{card.name}</h3>
-                                <p className="mt-2 text-gray-300 font-poppins">{card.description}</p>
+                                <h3 className={`font-semibold ${montserrat.className} ${card.highlight ? 'text-indigo-200' : 'text-white'}`}>{card.name}</h3>
+                                <p className={`mt-2 text-gray-300 ${montserrat.className}`}>{card.description}</p>
                             </div>
                         </div>
                     ))}

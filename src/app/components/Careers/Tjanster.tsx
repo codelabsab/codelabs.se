@@ -160,34 +160,16 @@ export default function Tjanster() {
                 </div>
             </div>
 
-            {/* Values Section */}
             <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center mb-16">
-                    <h2 className={`text-base font-semibold leading-7 text-codelabs-primary2 uppercase tracking-widest ${montserrat.className}`}>Culture</h2>
-                    <p className={`mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ${montserrat.className}`}>
-                        Our Core Values
-                    </p>
-                </div>
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                        {values.map((value) => (
-                            <div key={value.name} className="flex flex-col items-start bg-gray-50 p-8 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                                <div className="text-4xl mb-4">{value.emoji}</div>
-                                <dt className={`text-xl font-semibold leading-7 text-gray-900 ${montserrat.className}`}>
-                                    {value.name}
-                                </dt>
-                                <dd className="mt-4 flex-auto text-base leading-7 text-gray-600">
-                                    {value.description}
-                                </dd>
-                            </div>
-                        ))}
-                    </dl>
-                </div>
-
-                <div className="mt-24 flex justify-center">
+                <div className="flex justify-center gap-6 flex-wrap">
                     <Link href="mailto:application@codelabs.se">
                         <button className={`bg-black text-white px-10 py-5 rounded-full text-xl font-bold transition-transform hover:scale-105 hover:bg-codelabs-primary2 shadow-xl ${montserrat.className}`}>
                             Apply Now
+                        </button>
+                    </Link>
+                    <Link href="/careers#salary-calculator">
+                        <button className={`bg-white text-black border-2 border-black px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white shadow-xl ${montserrat.className}`}>
+                            Calculate Your Salary
                         </button>
                     </Link>
                 </div>

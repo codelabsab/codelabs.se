@@ -1,5 +1,5 @@
 import { Montserrat } from "next/font/google";
-import { ServerStackIcon, CloudArrowUpIcon, BoltIcon } from '@heroicons/react/24/outline';
+import { ServerStackIcon, CloudArrowUpIcon, BoltIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -19,11 +19,11 @@ const caseStudies = [
         icon: CloudArrowUpIcon,
     },
     {
-        title: 'The Modernizer',
-        headline: 'From 17 seconds to 1 second – Fullstack optimization',
-        description: 'Dramatically improved performance for a public sector application. Through modern tech stack adoption and architecture optimization, we reduced response times by over 94%, transforming user experience.',
-        focus: ['Performance', 'Modern Tech Stack'],
-        icon: BoltIcon,
+        title: 'The AI Pioneer',
+        headline: 'Enterprise AI roll-out with governance and tracking',
+        description: 'Strategized and implemented Generative AI enterprise features for a large corporation. Delivered secure model selection, granular cost and adaptation tracking, and conducted specialized workshops to drive adoption of best practices.',
+        focus: ['Generative AI', 'Governance', 'Adoption'],
+        icon: SparklesIcon,
     },
 ];
 

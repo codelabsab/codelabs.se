@@ -1,4 +1,7 @@
-import {CalendarIcon, MapPinIcon} from '@heroicons/react/20/solid'
+import { CalendarIcon, MapPinIcon } from '@heroicons/react/20/solid'
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 const positions = [
     {
@@ -32,12 +35,12 @@ const positions = [
 
 export default function Jobb() {
     return (
-        <div className="overflow-hidden bg-white shadow-sm sm:rounded-md">
+        <div className={`overflow-hidden bg-white shadow-sm sm:rounded-md ${montserrat.className}`}>
             <ul role="list" className="divide-y divide-gray-200">
                 {positions.map((position) => (
                     <li key={position.id}>
                         <a href={`mailto:application@codelabs.se?subject=${position.title}`}
-                           className="block hover:bg-gray-50">
+                            className="block hover:bg-gray-50">
                             <div className="px-4 py-4 sm:px-6">
                                 <div className="flex items-center justify-between">
                                     <p className="truncate text-sm font-medium text-indigo-600">{position.title}</p>
@@ -55,13 +58,13 @@ export default function Jobb() {
                                         {/*</p>*/}
                                         <p className="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">
                                             <MapPinIcon className="mr-1.5 h-5 w-5 shrink-0 text-gray-400"
-                                                        aria-hidden="true"/>
+                                                aria-hidden="true" />
                                             {position.location}
                                         </p>
                                     </div>
                                     <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
                                         <CalendarIcon className="mr-1.5 h-5 w-5 shrink-0 text-gray-400"
-                                                      aria-hidden="true"/>
+                                            aria-hidden="true" />
                                         <p>
                                             <time dateTime={position.closeDate}>{position.closeDateFull}</time>
                                         </p>

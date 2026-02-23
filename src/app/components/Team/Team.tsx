@@ -25,8 +25,8 @@ export default function TeamTestimonials() {
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-3xl text-center mb-20">
-                    <h2 className={`text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl ${montserrat.className}`}>
-                        Meet the Makers
+                    <h2 className={`text-5xl font-black tracking-tight text-black sm:text-7xl mb-6 ${montserrat.className}`}>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-codelabs-primary1 to-codelabs-primary2">Meet</span> the Makers
                     </h2>
                     <p className={`mt-6 text-xl leading-8 text-gray-600 ${montserrat.className} font-light`}>
                         A wonderful team of individuals who all have different backgrounds and skills.
