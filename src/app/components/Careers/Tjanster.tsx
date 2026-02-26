@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 
 const stats = [
     { label: 'Founded', value: '2016' },
-    { label: 'Employees', value: '8' },
+    { label: 'Employees', value: '7' },
 ]
 
 const values = [
