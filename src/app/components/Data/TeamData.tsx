@@ -54,13 +54,6 @@ export const people = [
     skills: "mascot, cuddling, snoring, good vibes",
   },
   {
-    name: "Andreas Andersson",
-    role: "DevOps Engineer",
-    imageUrl: "/assets/team/andreas-andersson.jpeg",
-    bio: `Andreas spends a lot of his free time climbing. He prefers climbing outdoors in the summer and travels abroad once a year for the sport. To relax from the adrenaline, he goes to the forest to pick mushrooms and berries.\nIn his job, Andreas loves working with monitoring. He enjoys collaborating, especially with developers. He likes how they can learn from each other to find the best solutions and get the best results.`,
-    skills: "aws, azure, cloud, kubernetes, argocd, ci/cd",
-  },
-  {
     name: "Max Povalinsky",
     role: "SRE",
     imageUrl: "/assets/team/max_povalinsky.jpg",
