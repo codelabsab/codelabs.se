@@ -3,7 +3,7 @@ layout: post
 title: "Code Labs by Marre: Pickleball"
 slug: code-labs-by-marre-1
 date: "2026-02-12"
-og_image: /assets/blogg/pickeball-2.jpg
+og_image: /assets/blogg/pickleball-2.png
 description: An unlikely racket experience
 author: Mauricio Saez
 ---
