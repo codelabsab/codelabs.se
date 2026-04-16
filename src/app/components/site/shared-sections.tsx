@@ -71,7 +71,7 @@ export function LogoCloud() {
 
 export function BenefitsShowcase() {
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
+    <div className="grid gap-6 xl:grid-cols-[0.96fr_1.04fr]">
       <article className="stripe-card-dark stripe-sheen overflow-hidden p-8 text-white">
         <p className="stripe-kicker text-[var(--color-accent-soft)]">
           Offer snapshot
@@ -109,11 +109,15 @@ export function BenefitsShowcase() {
         </div>
       </article>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {benefitThemes.map((theme) => (
+      <div className="grid gap-4 md:grid-cols-2">
+        {benefitThemes.map((theme, index) => (
           <article
             key={theme.title}
-            className="stripe-card p-7"
+            className={`stripe-card p-7 ${
+              benefitThemes.length % 2 === 1 && index === benefitThemes.length - 1
+                ? "md:col-span-2"
+                : ""
+            }`}
           >
             <h3 className="font-display text-3xl leading-tight text-[var(--color-ink-900)]">
               {theme.title}
@@ -178,13 +182,13 @@ export function ProofPostsGrid({
   description?: string;
 }) {
   return (
-    <div className="stripe-card p-8">
-      <div className="flex flex-col gap-3 border-b border-[var(--color-line)] pb-6 md:flex-row md:items-end md:justify-between">
-        <div className="max-w-2xl">
+    <div className="stripe-card p-8 sm:p-10">
+      <div className="flex flex-col gap-4 border-b border-[var(--color-line)] pb-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">
             Blog + Code Labs by
           </p>
-          <h3 className="mt-3 font-display text-3xl text-[var(--color-ink-900)]">
+          <h3 className="mt-3 max-w-2xl font-display text-3xl text-[var(--color-ink-900)] sm:text-4xl">
             {title}
           </h3>
           <p className="mt-3 text-base leading-7 text-[var(--color-ink-700)]">
@@ -198,7 +202,7 @@ export function ProofPostsGrid({
           Visit the blog
         </Link>
       </div>
-      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
         {posts.map((post) => (
           <Link
             key={post.slug}

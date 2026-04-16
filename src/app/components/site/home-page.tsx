@@ -392,7 +392,7 @@ export default function HomePage() {
 
       <section className="border-y border-[var(--color-line)] bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <SectionHeading
                 eyebrow="Life at Code Labs"
@@ -464,12 +464,14 @@ export default function HomePage() {
                   Read the latest posts
                 </Link>
               </article>
-              <ProofPostsGrid
-                posts={lifePosts}
-                title="A few recent glimpses of life at Code Labs"
-                description="Conference notes, monthly Code Labs by activities, meals, trips, and shared moments make the company easier to picture."
-              />
             </div>
+          </div>
+          <div className="mt-10">
+            <ProofPostsGrid
+              posts={lifePosts}
+              title="A few recent glimpses of life at Code Labs"
+              description="Conference notes, monthly Code Labs by activities, meals, trips, and shared moments make the company easier to picture."
+            />
           </div>
         </div>
       </section>
