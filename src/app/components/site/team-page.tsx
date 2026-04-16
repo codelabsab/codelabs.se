@@ -13,30 +13,29 @@ export default function TeamPage() {
                 Team
               </p>
               <h1 className="mt-4 font-display text-4xl leading-tight text-[var(--color-ink-900)] sm:text-5xl">
-                The point is not the profiles.
+                A small team with different strengths,
                 <br />
-                The point is the kind of company this team creates.
+                building one kind of company together.
               </h1>
               <p className="mt-5 text-lg leading-8 text-[var(--color-ink-700)]">
-                Code Labs should feel like a small but technically credible
-                company where different strengths actually complement each other:
-                platform engineering, reliability, product breadth, recruiting,
-                and the human side that makes consulting feel sustainable.
+                Code Labs brings together platform engineering, reliability,
+                product breadth, recruiting, and the human side that makes a
+                consultancy feel sustainable over time.
               </p>
             </div>
 
             <div className="grid gap-5 md:grid-cols-2">
               {[
                 {
-                  title: "What exists here",
-                  text: "Platform, DevOps, cloud, reliability, internal tools, product breadth, and AI rollout thinking in one company.",
+                  title: "What the team covers",
+                  text: "Platform, DevOps, cloud, reliability, internal tools, product breadth, and practical AI rollout work in one company.",
                 },
                 {
-                  title: "Why it matters",
-                  text: "A good consultancy gets stronger when different types of engineers and people functions actually reinforce each other.",
+                  title: "Why that helps",
+                  text: "A good consultancy gets stronger when different kinds of engineering and people work reinforce each other.",
                 },
                 {
-                  title: "What that means for hires",
+                  title: "What it feels like",
                   text: "You join a company where the work is serious, the support is real, and the people around you are part of the reason to stay.",
                 },
               ].map((item, index) => (
@@ -120,15 +119,14 @@ export default function TeamPage() {
               Serious engineering does not need to feel sterile.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[var(--color-ink-700)]">
-              Mimmi and Penny are not here as full-value consultant cards. They
-              are here because they say something true about Code Labs: everyday
-              company life matters too, and warmth is part of the culture people
-              experience when they spend time here.
+              Mimmi and Penny are a small part of everyday life at Code Labs,
+              and they say something true about the company: it is serious about
+              the work, but it is still a warm place to spend your time.
             </p>
             <p className="mt-5 text-base leading-8 text-[var(--color-ink-700)]">
-              The team story should end there, not with a catalog feeling, but
-              with a better sense of what kind of company this group is trying to
-              build together.
+              That matters more than it sounds. People usually do their best work
+              in places where they trust each other, enjoy the company around
+              them, and actually want to be there.
             </p>
           </div>
           <div className="stripe-card-soft relative overflow-hidden">

@@ -81,8 +81,8 @@ export function BenefitsShowcase() {
           together.
         </h3>
         <p className="mt-5 text-base leading-8 text-white/78">
-          The offer should feel like a real long-term setup: security, everyday
-          support, flexibility, and room to keep developing rather than a single
+          It is meant to be a real long-term setup: security, everyday support,
+          flexibility, and room to keep developing rather than a single
           compensation gimmick.
         </p>
         <div className="mt-8 grid gap-4 border-t border-white/10 pt-6 sm:grid-cols-2">

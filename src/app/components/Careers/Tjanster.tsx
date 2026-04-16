@@ -18,7 +18,7 @@ const values = [
     },
     {
         name: 'Community',
-        description: 'It should feel natural to share our knowledge and experiences.',
+        description: 'We share our knowledge and experiences with each other.',
         emoji: '🤝',
     },
     {

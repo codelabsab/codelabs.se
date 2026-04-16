@@ -64,15 +64,14 @@ export default function CareersPage() {
             </div>
             <div className="stripe-card-dark stripe-sheen p-7 text-white">
               <p className="stripe-kicker text-[var(--color-accent-soft)]">
-                What changes when you join
+                What changes
               </p>
               <p className="mt-4 font-display text-3xl leading-tight">
                 More environments. More technical pattern recognition. More ways
                 to grow than one internal context can usually provide.
               </p>
               <p className="mt-4 text-sm leading-7 text-white/78">
-                That is the core recruiting pitch. The company around it is what
-                makes it sustainable.
+                The company around it is what makes that sustainable over time.
               </p>
             </div>
           </div>
@@ -84,8 +83,8 @@ export default function CareersPage() {
           <div>
             <SectionHeading
               eyebrow="Why join Code Labs"
-              title="The strongest parts of the offer should be obvious quickly."
-              description="This page should feel like a candidate experience, not a stack of neutral information blocks. These are the reasons someone should keep reading."
+              title="Why people join."
+              description="A few straightforward reasons this place suits engineers who want to keep growing."
             />
           </div>
           <div className="space-y-5">
@@ -107,14 +106,12 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Why consulting can be a strong career path"
-            title="The argument should feel confident, not defensive."
-            description="The point is not that product companies are wrong. The point is that many engineers stop seeing enough once they stay too long in one environment. Code Labs offers a faster loop of exposure, learning, and adaptability while still giving people a real company to belong to."
+            title="Why consulting works well for the right kind of engineer."
+            description="It is not about product companies being wrong. It is about seeing more, learning faster, and still belonging to a real company while you do it."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
             <article className="stripe-card-soft p-8">
-              <p className="stripe-kicker">
-                The simple version
-              </p>
+              <p className="stripe-kicker">In short</p>
               <p className="mt-5 font-display text-4xl leading-tight text-[var(--color-ink-900)]">
                 You grow by seeing more than one stack, one architecture, and
                 one engineering culture.
@@ -151,8 +148,8 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="What you might work on"
-            title="Concrete work types that candidates can picture themselves in."
-            description="Instead of a generic capability list, this section should help someone imagine the kinds of assignments and technical problems Code Labs already gets close to."
+            title="What you might actually work on."
+            description="The kinds of assignments and technical problems Code Labs already gets close to."
           />
           <div className="mt-14 grid gap-6 xl:grid-cols-[0.94fr_1.06fr]">
             <div className="space-y-4">
@@ -196,8 +193,8 @@ export default function CareersPage() {
           <div>
             <SectionHeading
               eyebrow="How we work together"
-              title="Support should feel built in, not improvised."
-              description="The onboarding and growth signals around Code Labs matter because they answer a candidate fear: will I only be sent out, or will I actually be supported here?"
+              title="Support is part of the job here."
+              description="Onboarding, goals, learning, and internal momentum are all there to make sure people are actually supported."
             />
           </div>
           <div className="space-y-5">
@@ -247,14 +244,14 @@ export default function CareersPage() {
           <div className="flex flex-col justify-center">
             <SectionHeading
               eyebrow="It's not only work"
-              title="People should be able to imagine both the engineering and the company life."
-              description="Code Labs takes engineering seriously, but it does not want work life to feel sterile. There is room for lunches, meetups, conference trips, internal ideas, sports support, and shared time together."
+              title="There is life around the work too."
+              description="Code Labs takes engineering seriously, but there is also room for lunches, meetups, conference trips, internal ideas, sports support, and shared time together."
             />
             <p className="mt-8 max-w-2xl text-base leading-8 text-[var(--color-ink-700)]">
               That is not a replacement for substance. It is part of why the
-              company feels worth joining in the first place. Strong candidates
-              usually want both: good technical work and people they would
-              actually enjoy spending time with.
+              company feels worth joining in the first place. Most people want
+              both: good technical work and people they would actually enjoy
+              spending time with.
             </p>
           </div>
         </div>
@@ -264,8 +261,8 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="What we offer"
-            title="Benefits should feel like proof of thoughtfulness, not just a list."
-            description="The offer is strongest when it reads as a sustainable setup for work, family life, health, learning, and long-term growth."
+            title="What we offer."
+            description="A setup for work, family life, health, learning, and long-term growth."
           />
           <div className="mt-14">
             <BenefitsShowcase />
@@ -275,7 +272,7 @@ export default function CareersPage() {
 
       <ContactCallout
         title="If you want broader engineering growth without becoming disconnected from a real team, write to us."
-        description="This is the right place for people who want more technical range, more learning loops, and a company that still feels close. If that sounds like what you are looking for, start with an email."
+        description="This is a good fit if you want more technical range, more learning, and a company that still feels close. If that sounds like what you are looking for, start with an email."
       />
     </main>
   );

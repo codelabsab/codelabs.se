@@ -114,18 +114,11 @@ export const servicePillars: ServicePillar[] = [
       "That can mean improving CI, maintaining build systems, helping developers in their daily flow, or creating better paths from code to production.",
   },
   {
-    title: "Full-stack Products",
+    title: "Product, Tools & Integrations",
     description:
-      "We are mainly platform and DevOps focused, but we also do product and full-stack work when it genuinely helps the team or the bigger picture around it.",
+      "We are mainly platform and DevOps focused, but we also do product work, internal tools, workflow layers, APIs, and integrations when that is where the real value is.",
     candidateFocus:
-      "That can include React, Next.js, Node.js, .NET, frontend architecture, and implementation work that connects product needs to the platform underneath.",
-  },
-  {
-    title: "Internal Tools & Integrations",
-    description:
-      "Some of the most valuable work happens behind the scenes: internal tools, automation layers, workflow management, APIs, and integrations that keep things running smoothly.",
-    candidateFocus:
-      "Future hires can expect work that improves delivery, visibility, and reliability for the people using these tools every day.",
+      "That can include React, Next.js, Node.js, .NET, frontend architecture, internal tooling, APIs, and the glue work that makes teams move faster.",
   },
   {
     title: "AI Rollout & Agentic Workflows",
@@ -141,11 +134,6 @@ export const consultingAdvantages: Principle[] = [
     title: "Broader exposure builds better engineers",
     description:
       "At one product company, you can spend years in the same stack, architecture, and decision culture. Consulting gives you exposure to more teams, more tools, and more ways of working.",
-  },
-  {
-    title: "Learning loops stay shorter",
-    description:
-      "Moving between client environments means you keep seeing new constraints, tradeoffs, and engineering patterns. That tends to accelerate learning in a practical, hands-on way.",
   },
   {
     title: "Breadth makes you more adaptable",
@@ -279,9 +267,9 @@ export const selectedWork: SelectedWorkItem[] = [
 
 export const howWeWorkPrinciples: Principle[] = [
   {
-    title: "Hands-on over abstract",
+    title: "Hands-on",
     description:
-      "Code Labs should feel like a place for engineers who want to build, modernize, automate, and improve real things rather than stay at the PowerPoint layer.",
+      "Code Labs is for engineers who want to build, modernize, automate, and improve real things rather than stay at the PowerPoint layer.",
   },
   {
     title: "Small-company closeness",
@@ -291,7 +279,7 @@ export const howWeWorkPrinciples: Principle[] = [
   {
     title: "Low-ego competence",
     description:
-      "You should be able to learn from senior colleagues, share problems early, and work in teams where practical competence matters more than performance.",
+      "You can learn from senior colleagues, share problems early, and work in teams where practical competence matters more than performance.",
   },
   {
     title: "Growth with structure",
@@ -304,22 +292,17 @@ export const growthSupport: Principle[] = [
   {
     title: "Onboarding and team introductions",
     description:
-      "People should get context, support, and real introductions rather than being dropped into an assignment and left to figure everything out alone.",
+      "People get context, support, and real introductions instead of being dropped into an assignment and left to figure everything out alone.",
   },
   {
-    title: "Career, assignment, and education goals",
+    title: "Goals, learning, and certifications",
     description:
-      "Growth is treated as something worth discussing explicitly: what you want to learn, what the assignment needs, and how those goals connect.",
+      "Growth is treated as something worth discussing explicitly: what you want to learn, what the assignment needs, and how that connects to certifications, focused learning, and practical experimentation.",
   },
   {
     title: "Internal projects and meetups",
     description:
       "Learning also happens between assignments through internal initiatives, demos, meetups, and shared problem solving.",
-  },
-  {
-    title: "Support for certifications and upskilling",
-    description:
-      "The company supports people who want to deepen their skills through certifications, focused learning, and practical experimentation.",
   },
 ];
 
@@ -335,14 +318,9 @@ export const lifeSignals: Principle[] = [
       "The company invests time in recruiting, outreach, and building a place people actually want to join.",
   },
   {
-    title: "Internal demos and side momentum",
-    description:
-      "Internal project work and demo momentum make the company feel alive between and around client assignments.",
-  },
-  {
     title: "Sports, dinners, and shared time together",
     description:
-      "There is room for activities, meals, conference trips, and sports support without pretending that culture is a substitute for good work.",
+      "There is room for activities, meals, internal ideas, and sports support without pretending that culture is a substitute for good work.",
   },
 ];
 
@@ -441,19 +419,14 @@ export const careerReasons: Principle[] = [
       "Work across different companies, stacks, domains, and engineering cultures instead of staying in one internal environment for years.",
   },
   {
-    title: "Stay close to real work",
+    title: "Do work that matters",
     description:
       "The work is grounded in cloud infrastructure, platform engineering, CI/CD, observability, tooling, and modernization work that actually matters in production.",
   },
   {
-    title: "Join a small but technically credible company",
+    title: "Join a small but strong team",
     description:
-      "Code Labs is small enough to feel close and practical, but broad enough to offer real variety and senior support.",
-  },
-  {
-    title: "Build a wider long-term career",
-    description:
-      "Consulting here is framed as a way to become more capable and adaptable over time, not as a short-term detour from engineering growth.",
+      "Code Labs is small enough to feel close and practical, but broad enough to offer real variety, senior support, and a career that keeps opening up.",
   },
 ];
 

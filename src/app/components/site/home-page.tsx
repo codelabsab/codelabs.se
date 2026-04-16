@@ -108,18 +108,14 @@ export default function HomePage() {
               </div>
               <div className="grid gap-6">
                 <article className="stripe-card p-7">
-                  <p className="stripe-kicker">
-                    Why people join
-                  </p>
+                  <p className="stripe-kicker">Why join</p>
                   <p className="mt-4 text-base leading-8 text-[var(--color-ink-700)]">
                     To work across different technical environments without losing
                     the support, identity, and energy of a real company.
                   </p>
                 </article>
                 <article className="stripe-card-dark stripe-sheen p-7 text-white">
-                  <p className="stripe-kicker text-[var(--color-accent-soft)]">
-                    Main offer
-                  </p>
+                  <p className="stripe-kicker text-[var(--color-accent-soft)]">What you get</p>
                   <p className="mt-4 text-base leading-8 text-white/78">
                     Broader engineering experience than one stack, one product,
                     and one internal culture can usually offer.
@@ -129,17 +125,15 @@ export default function HomePage() {
             </div>
 
             <div className="stripe-card-soft p-8">
-              <p className="stripe-kicker">
-                The memorable version
-              </p>
+              <p className="stripe-kicker">In one line</p>
               <p className="mt-4 font-display text-3xl leading-tight text-[var(--color-ink-900)]">
                 Join a place where you keep seeing new things, not the same
                 setup for five more years.
               </p>
               <p className="mt-4 text-sm leading-7 text-[var(--color-ink-700)]">
-                The point is not to chase novelty for its own sake. The point is
-                to build a wider, stronger engineering career by working across
-                real environments while still belonging to one team.
+                It is not about chasing change for its own sake. It is about
+                building a wider, stronger engineering career while still
+                belonging to one team.
               </p>
             </div>
           </div>
@@ -151,8 +145,8 @@ export default function HomePage() {
           <div>
             <SectionHeading
               eyebrow="What you could actually work on"
-              title="The work should feel concrete early, not hidden behind consultancy language."
-              description="A strong recruiting site needs to tell candidates what this can mean in practice. These are the kinds of assignments and technical situations Code Labs already works in."
+              title="What this can look like in practice."
+              description="These are the kinds of assignments and technical situations Code Labs already works in."
             />
           </div>
           <div className="space-y-4">
@@ -189,7 +183,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">
-                Proof belt
+                Where we have worked
               </p>
               <h2 className="mt-4 font-display text-4xl leading-tight text-[var(--color-ink-900)]">
                 Across gaming, retail, media, e-commerce, and larger engineering
@@ -213,13 +207,11 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Why consulting"
             title="A strong consulting path can make you broader without making you shallow."
-            description="This is the core recruiting argument for Code Labs. Staying too long in one product environment can narrow your exposure while technology and practices keep evolving elsewhere. Consulting gives you more teams, more tools, and more ways of working to learn from."
+            description="Staying too long in one product environment can narrow your exposure while technology and practices keep evolving elsewhere. Consulting gives you more teams, more tools, and more ways of working to learn from."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
             <article className="stripe-card-dark stripe-sheen p-8 text-white">
-              <p className="stripe-kicker text-[var(--color-accent-soft)]">
-                The real advantage
-              </p>
+              <p className="stripe-kicker text-[var(--color-accent-soft)]">Why it adds up</p>
               <blockquote className="mt-5 font-display text-4xl leading-tight">
                 You are not only changing clients.
                 <br />
@@ -253,8 +245,8 @@ export default function HomePage() {
           <div>
           <SectionHeading
             eyebrow="What we do"
-            title="A clear mix of work, not a pile of equal cards."
-            description="Code Labs should feel broad enough to offer variety, but still coherent enough that candidates understand what kind of company they are joining."
+            title="A clear mix of work."
+            description="Broad enough to offer real variety, but focused enough that you understand what kind of company you are joining."
           />
           </div>
           <div className="space-y-6">
@@ -288,7 +280,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Environments"
             title="Different domains, different engineering situations, different ways to grow."
-            description="The point is not only variety as a list of logos. It is the kind of range that changes how quickly someone learns and how adaptable they become."
+            description="It is not just a list of logos. It is the kind of range that changes how quickly someone learns and how adaptable they become."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
             {environments.map((environment) => (
@@ -326,8 +318,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Selected work"
-            title="Short proof moments that show what future hires can recognize."
-            description="These are not full case studies. They are stronger, faster signals about what Code Labs gets close to and what kind of work someone could imagine themselves doing here."
+            title="A few good examples of the kind of work we get close to."
+            description="Not full case studies. Just enough to make the work feel real."
           />
           <div className="mt-14 space-y-8">
             {selectedWork.map((item) => (
@@ -362,7 +354,7 @@ export default function HomePage() {
                     </p>
                     <p>
                       <span className="font-medium text-[var(--color-ink-900)]">
-                        Why this matters to hires:
+                        What it means if you join:
                       </span>{" "}
                       {item.candidateAngle}
                     </p>
@@ -377,11 +369,11 @@ export default function HomePage() {
       <section id="how-we-work" className="py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <SectionHeading
-              eyebrow="How we work"
-              title="A consultancy that still feels like a company."
-              description="One of the most important parts of the recruiting story is that Code Labs should not feel like a place where people are only rented out. The work is real, and the company around it should be real too."
-            />
+          <SectionHeading
+            eyebrow="How we work"
+            title="A consultancy that still feels like a company."
+            description="The work matters, and the company around it should matter too."
+          />
           </div>
           <div className="space-y-5">
             {howWeWorkPrinciples.map((principle) => (
@@ -404,8 +396,8 @@ export default function HomePage() {
             <div>
               <SectionHeading
                 eyebrow="Life at Code Labs"
-                title="The company should feel active, warm, and a little hard to reduce to work alone."
-                description="Conference trips, recruiting lunches, internal demos, sports, meals, meetups, and shared projects all help answer the same candidate question: would it feel good to belong here?"
+                title="Good work, good people, and a life around it."
+                description="Conference trips, recruiting lunches, activities, meals, meetups, and shared projects all help answer the same question: would it feel good to belong here?"
               />
               <div className="mt-10 space-y-5">
                 {lifeSignals.map((signal) => (
@@ -458,13 +450,12 @@ export default function HomePage() {
                   Blog and Code Labs by
                 </p>
                 <h3 className="mt-4 font-display text-3xl leading-tight">
-                  This is where the company becomes visible between assignments.
+                  This is where you get a feel for the company between assignments.
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-white/78">
-                  The blog is not filler. It is where candidates can see conference
-                  trips, monthly Code Labs by activities, team dinners, meetups,
-                  and the kind of shared energy that makes consulting here feel
-                  like belonging to an actual company.
+                  You can see conference trips, monthly Code Labs by activities,
+                  team dinners, meetups, and the kind of shared energy that makes
+                  consulting here feel like belonging to an actual company.
                 </p>
                 <Link
                   href="/blog"
@@ -475,8 +466,8 @@ export default function HomePage() {
               </article>
               <ProofPostsGrid
                 posts={lifePosts}
-                title="Proof that the company has a life between the projects"
-                description="Conference notes, monthly Code Labs by activities, meals, trips, and shared moments give candidates a better feel for what Code Labs is actually like."
+                title="A few recent glimpses of life at Code Labs"
+                description="Conference notes, monthly Code Labs by activities, meals, trips, and shared moments make the company easier to picture."
               />
             </div>
           </div>
@@ -487,8 +478,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="What we offer"
-            title="Benefits presented as a life setup, not a row of admin boxes."
-            description="The offer should feel like something a thoughtful company has built around long-term work, wellbeing, family life, learning, and flexibility."
+            title="A setup built for the long run."
+            description="The offer is meant to support work, wellbeing, family life, learning, and flexibility."
           />
           <div className="mt-14">
             <BenefitsShowcase />
