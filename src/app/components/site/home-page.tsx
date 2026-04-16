@@ -47,11 +47,11 @@ export default function HomePage() {
               Code Labs
             </p>
             <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[0.93] text-[var(--color-ink-900)] sm:text-7xl">
-              Build real systems.
+              Build real things.
               <br />
-              See more worlds.
+              Meet new teams.
               <br />
-              Grow faster.
+              Keep growing.
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--color-ink-700)]">
               Code Labs is a Swedish consultancy for engineers who want more than
@@ -80,7 +80,7 @@ export default function HomePage() {
                 "CI/CD and developer tooling",
                 "Kubernetes and cloud operations",
                 "Observability and reliability",
-                "Internal systems and integrations",
+                "Internal tools and integrations",
               ].map((item) => (
                 <span
                   key={item}
@@ -133,8 +133,8 @@ export default function HomePage() {
                 The memorable version
               </p>
               <p className="mt-4 font-display text-3xl leading-tight text-[var(--color-ink-900)]">
-                Join a place where you keep seeing new systems, not the same
-                story for five more years.
+                Join a place where you keep seeing new things, not the same
+                setup for five more years.
               </p>
               <p className="mt-4 text-sm leading-7 text-[var(--color-ink-700)]">
                 The point is not to chase novelty for its own sake. The point is
@@ -196,7 +196,7 @@ export default function HomePage() {
                 organizations.
               </h2>
               <p className="mt-4 text-base leading-8 text-[var(--color-ink-700)]">
-                Code Labs has worked in environments where build systems, cloud
+                Code Labs has worked in environments where build pipelines, cloud
                 platforms, observability, modernization, and internal engineering
                 all matter in practice.
               </p>
@@ -213,7 +213,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Why consulting"
             title="A strong consulting path can make you broader without making you shallow."
-            description="This is the core recruiting argument for Code Labs. Staying too long in one product environment can narrow your exposure while technology and practices keep evolving elsewhere. Consulting gives you more systems, more tools, and more engineering cultures to learn from."
+            description="This is the core recruiting argument for Code Labs. Staying too long in one product environment can narrow your exposure while technology and practices keep evolving elsewhere. Consulting gives you more teams, more tools, and more ways of working to learn from."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
             <article className="stripe-card-dark stripe-sheen p-8 text-white">
@@ -251,11 +251,11 @@ export default function HomePage() {
       <section className="border-y border-[var(--color-line)] bg-white py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
           <div>
-            <SectionHeading
-              eyebrow="What we do"
-              title="Company capability presented as a system, not a pile of equal cards."
-              description="Code Labs should feel broad enough to offer variety, but still coherent enough that candidates understand what kind of company they are joining."
-            />
+          <SectionHeading
+            eyebrow="What we do"
+            title="A clear mix of work, not a pile of equal cards."
+            description="Code Labs should feel broad enough to offer variety, but still coherent enough that candidates understand what kind of company they are joining."
+          />
           </div>
           <div className="space-y-6">
             {servicePillars.map((pillar, index) => (

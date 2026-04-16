@@ -29,7 +29,7 @@ export default function CareersPage() {
             <p className="mt-8 text-xl leading-9 text-[var(--color-ink-700)]">
               Code Labs is for people who want broader technical exposure,
               hands-on work, and a company that still feels close. You get more
-              systems, more teams, and more ways to grow without losing the
+              contexts, more teams, and more ways to grow without losing the
               support, learning, and shared context that make a consultancy worth
               joining.
             </p>
@@ -121,7 +121,7 @@ export default function CareersPage() {
               </p>
               <p className="mt-5 text-base leading-8 text-[var(--color-ink-700)]">
                 Consulting here is about compounding real engineering experience:
-                different domains, different delivery habits, different systems,
+                different domains, different delivery habits, different setups,
                 and different ways teams succeed or fail in practice.
               </p>
             </article>

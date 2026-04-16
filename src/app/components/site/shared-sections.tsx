@@ -48,7 +48,7 @@ export function LogoCloud() {
         <div className="stripe-card-soft flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-7">
           <p className="max-w-2xl text-sm leading-7 text-[var(--color-ink-600)]">
             Code Labs has worked across client environments where cloud platforms,
-            build systems, modernization, reliability, and internal engineering
+            build pipelines, modernization, reliability, and internal engineering
             all matter in practice.
           </p>
           <div className="flex max-w-3xl flex-wrap items-center gap-x-10 gap-y-5 opacity-75">

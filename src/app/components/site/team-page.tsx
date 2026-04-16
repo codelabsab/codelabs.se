@@ -29,7 +29,7 @@ export default function TeamPage() {
               {[
                 {
                   title: "What exists here",
-                  text: "Platform, DevOps, cloud, reliability, internal systems, product breadth, and AI rollout thinking in one company.",
+                  text: "Platform, DevOps, cloud, reliability, internal tools, product breadth, and AI rollout thinking in one company.",
                 },
                 {
                   title: "Why it matters",

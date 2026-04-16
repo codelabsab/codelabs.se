@@ -78,7 +78,7 @@ export const contactEmail = "contact@codelabs.se";
 export const contactHref = `mailto:${contactEmail}`;
 
 export const primaryNavItems = [
-  { label: "Services", href: "/#services" },
+  { label: "What We Do", href: "/#services" },
   { label: "Selected Work", href: "/#selected-work" },
   { label: "How We Work", href: "/#how-we-work" },
   { label: "Careers", href: "/careers" },
@@ -102,9 +102,9 @@ export const servicePillars: ServicePillar[] = [
   {
     title: "Platform & Cloud",
     description:
-      "We help teams build and improve the cloud foundations their products depend on, across Azure, GCP, Kubernetes, infrastructure as code, and day-to-day platform operations.",
+      "We help teams build and improve the cloud foundations they rely on, across Azure, GCP, Kubernetes, infrastructure as code, and day-to-day platform work.",
     candidateFocus:
-      "You might work with cloud migration, Kubernetes, delivery pipelines, observability, or the internal platform work that makes other engineers faster.",
+      "You might work with cloud migration, Kubernetes, delivery pipelines, observability, or the kind of platform work that makes life easier for other engineers.",
   },
   {
     title: "DevOps & Developer Experience",
@@ -116,23 +116,23 @@ export const servicePillars: ServicePillar[] = [
   {
     title: "Full-stack Products",
     description:
-      "We are mainly platform and DevOps focused, but we also have product and full-stack capability where it strengthens the whole system around a team or internal initiative.",
+      "We are mainly platform and DevOps focused, but we also do product and full-stack work when it genuinely helps the team or the bigger picture around it.",
     candidateFocus:
-      "That can include React, Next.js, Node.js, .NET, frontend architecture, and implementation work that connects product needs to the underlying platform.",
+      "That can include React, Next.js, Node.js, .NET, frontend architecture, and implementation work that connects product needs to the platform underneath.",
   },
   {
     title: "Internal Tools & Integrations",
     description:
-      "Some of the most valuable work happens behind the scenes: internal tools, automation layers, workflow management, APIs, and the integrations that hold enterprise environments together.",
+      "Some of the most valuable work happens behind the scenes: internal tools, automation layers, workflow management, APIs, and integrations that keep things running smoothly.",
     candidateFocus:
-      "Future hires can expect work that improves delivery, visibility, and reliability for the people using the systems every day.",
+      "Future hires can expect work that improves delivery, visibility, and reliability for the people using these tools every day.",
   },
   {
     title: "AI Rollout & Agentic Workflows",
     description:
       "We also work with practical enterprise AI adoption, from rollout and governance to automation and agentic workflows that fit real operating environments.",
     candidateFocus:
-      "This is not AI as theatre. It is about making new capabilities work inside existing systems, teams, and delivery constraints.",
+      "This is not AI as theatre. It is about making new capabilities work in real teams, with real constraints.",
   },
 ];
 
@@ -140,7 +140,7 @@ export const consultingAdvantages: Principle[] = [
   {
     title: "Broader exposure builds better engineers",
     description:
-      "At one product company, you can spend years in the same stack, architecture, and decision culture. Consulting gives you exposure to more systems, more tools, and more ways of working.",
+      "At one product company, you can spend years in the same stack, architecture, and decision culture. Consulting gives you exposure to more teams, more tools, and more ways of working.",
   },
   {
     title: "Learning loops stay shorter",
@@ -176,7 +176,7 @@ export const environments: EnvironmentCard[] = [
   {
     title: "Media and larger public systems",
     description:
-      "The team also brings experience from larger organizations and critical systems where reliability, observability, and modernization work need to hold up in practice.",
+      "The team also brings experience from larger organizations and critical environments where reliability, observability, and modernization work need to hold up in practice.",
     contexts: ["SVT", "ICA", "Reliability", "Observability"],
   },
   {
@@ -191,7 +191,7 @@ export const workScenarios: WorkScenario[] = [
   {
     title: "Modernizing delivery in established organizations",
     summary:
-      "Helping teams move from fragile manual flows to repeatable systems through CI/CD, automation, testing, code quality work, and better internal delivery foundations.",
+      "Helping teams move from fragile manual flows to smoother, more repeatable delivery through CI/CD, automation, testing, code quality work, and better internal foundations.",
     examples: ["CI/CD", "Pipelines", "Testing automation"],
   },
   {
@@ -201,15 +201,15 @@ export const workScenarios: WorkScenario[] = [
     examples: ["Azure", "GCP", "Kubernetes"],
   },
   {
-    title: "Developer tooling and internal systems that make teams faster",
+    title: "Developer tooling and internal tools that make teams faster",
     summary:
-      "Working close to build systems, workflow tooling, APIs, integrations, and developer experience in environments where engineering leverage matters.",
+      "Working close to build systems, workflow tooling, APIs, integrations, and developer experience in places where engineering leverage really matters.",
     examples: ["Build systems", "Internal tools", "Integrations"],
   },
   {
     title: "Selective product, frontend, and AI-adjacent delivery",
     summary:
-      "Contributing in modern web and product contexts, plus enterprise AI rollout and automation work where new capabilities have to fit into real teams and systems.",
+      "Contributing in modern web and product contexts, plus enterprise AI rollout and automation work where new capabilities have to fit into real teams.",
     examples: ["React / Next.js", "Full-stack", "AI rollout"],
   },
 ];
@@ -235,19 +235,19 @@ export const selectedWork: SelectedWorkItem[] = [
     challenge:
       "The recurring challenge is to help teams move faster with better infrastructure foundations, clearer automation, and more dependable delivery pipelines.",
     contribution:
-      "That includes cloud-native systems, infrastructure as code, Kubernetes, migration work, and the operational pieces that keep modern platforms healthy.",
+      "That includes cloud-native setups, infrastructure as code, Kubernetes, migration work, and the operational pieces that keep modern platforms healthy.",
     candidateAngle:
       "For future hires, this means exposure to real platform engineering rather than slideware or advisory work detached from implementation.",
   },
   {
     eyebrow: "Internal platforms",
-    title: "Delivery acceleration inside internal engineering systems",
+    title: "Delivery acceleration inside internal engineering teams",
     context:
       "Some assignments sit inside internal platform teams working on CI/CD, pipelines, worker node optimization, Docker, Kubernetes, test automation, and code-quality tooling.",
     challenge:
       "The goal is usually to reduce friction for product teams, improve reliability, and create a more scalable delivery setup across the organization.",
     contribution:
-      "Code Labs contributes hands-on engineering: building the systems, tuning the workflows, and improving how engineering organizations ship software.",
+      "Code Labs contributes hands-on engineering: building the tooling, tuning the workflows, and improving how engineering organizations ship software.",
     candidateAngle:
       "This is attractive for engineers who enjoy making whole organizations better, not only delivering isolated features.",
   },
@@ -255,7 +255,7 @@ export const selectedWork: SelectedWorkItem[] = [
     eyebrow: "AI rollout",
     title: "Enterprise AI adoption grounded in real operations",
     context:
-      "The team also works with AI rollout, automation, and agentic workflows inside larger organizations where new capabilities have to fit existing systems and delivery realities.",
+      "The team also works with AI rollout, automation, and agentic workflows inside larger organizations where new capabilities have to fit existing setups and delivery realities.",
     challenge:
       "The challenge is not only model capability, but governance, integration, developer workflows, and making AI useful inside real engineering environments.",
     contribution:
@@ -281,7 +281,7 @@ export const howWeWorkPrinciples: Principle[] = [
   {
     title: "Hands-on over abstract",
     description:
-      "Code Labs should feel like a place for engineers who want to build, modernize, automate, and improve real systems rather than stay at the PowerPoint layer.",
+      "Code Labs should feel like a place for engineers who want to build, modernize, automate, and improve real things rather than stay at the PowerPoint layer.",
   },
   {
     title: "Small-company closeness",
@@ -441,9 +441,9 @@ export const careerReasons: Principle[] = [
       "Work across different companies, stacks, domains, and engineering cultures instead of staying in one internal environment for years.",
   },
   {
-    title: "Stay close to real systems",
+    title: "Stay close to real work",
     description:
-      "The work is grounded in cloud infrastructure, platform engineering, CI/CD, observability, tooling, and modernization work that matters in production.",
+      "The work is grounded in cloud infrastructure, platform engineering, CI/CD, observability, tooling, and modernization work that actually matters in production.",
   },
   {
     title: "Join a small but technically credible company",
@@ -461,7 +461,7 @@ export const careerAreas: CareerArea[] = [
   {
     title: "Cloud platforms and Kubernetes",
     description:
-      "Azure, GCP, cloud-native systems, Kubernetes, migrations, and the operational pieces around them.",
+      "Azure, GCP, cloud-native platforms, Kubernetes, migrations, and the operational pieces around them.",
   },
   {
     title: "CI/CD and delivery engineering",
@@ -471,7 +471,7 @@ export const careerAreas: CareerArea[] = [
   {
     title: "Internal tooling and integrations",
     description:
-      "Workflow tooling, APIs, integration layers, platform glue, and automation that makes larger systems easier to operate.",
+      "Workflow tooling, APIs, integration layers, platform glue, and automation that makes larger environments easier to work in.",
   },
   {
     title: "Reliability and observability",
@@ -481,7 +481,7 @@ export const careerAreas: CareerArea[] = [
   {
     title: "Modernization and full-stack breadth",
     description:
-      "Selective frontend and product delivery, .NET and web application work, and modernization across existing systems.",
+      "Selective frontend and product delivery, .NET and web application work, and modernization across existing platforms.",
   },
   {
     title: "AI and agentic workflows",
@@ -496,7 +496,7 @@ export const teamMembers: TeamMemberSummary[] = [
     role: "Platform, cloud, and AI enablement",
     summary:
       "Kami brings platform and DevOps leadership together with hands-on cloud, automation, internal tooling, training, and AI rollout experience.",
-    humanDetail: "Open-source contributions, practical automation, and systems thinking run through his work.",
+    humanDetail: "Open-source contributions and practical automation run through his work.",
     imageUrl: "/assets/team/kami.jpeg",
     profileUrl: "https://github.com/kamigerami",
   },
@@ -531,7 +531,7 @@ export const teamMembers: TeamMemberSummary[] = [
     name: "Max Povalinsky",
     role: "Senior SRE and observability",
     summary:
-      "Max brings heavy SRE focus from observability-rich environments and helps turn production complexity into calmer, more reliable systems.",
+      "Max brings heavy SRE focus from observability-rich environments and helps turn production complexity into calmer, more reliable setups.",
     humanDetail: "He is strongest where automation, observability, and pragmatic incident response meet.",
     imageUrl: "/assets/team/max_povalinsky.jpg",
   },
@@ -557,7 +557,7 @@ export const teamMembers: TeamMemberSummary[] = [
     role: "Office morale",
     summary:
       "The mascots are not the point of the company, but they say something true about it: Code Labs wants serious engineering without turning everyday work into something sterile.",
-    humanDetail: "Good systems and good company are both part of the offer.",
+    humanDetail: "Good work and good company are both part of the offer.",
     imageUrl: "/assets/team/mimmi-penny.jpg",
   },
 ];
@@ -566,7 +566,7 @@ export const teamGroups: TeamGroup[] = [
   {
     title: "Platform, cloud, and modernization",
     description:
-      "This is the part of Code Labs that lives close to platform foundations, infrastructure, migration work, automation, and the systems that let larger engineering organizations move faster with less friction.",
+      "This is the part of Code Labs that lives close to platform foundations, infrastructure, migration work, automation, and the tooling that helps larger engineering organizations move faster with less friction.",
     members: [
       {
         name: "Kami Gerami",
@@ -594,13 +594,13 @@ export const teamGroups: TeamGroup[] = [
   {
     title: "Reliability, delivery, and calmer production systems",
     description:
-      "Another important part of the company is the work that makes production less chaotic: observability, incident-minded engineering, collaboration, and the practical delivery habits that keep systems dependable.",
+      "Another important part of the company is the work that makes production less chaotic: observability, incident-minded engineering, collaboration, and the delivery habits that keep things dependable.",
     members: [
       {
         name: "Max Povalinsky",
         role: "Senior SRE and observability",
         summary:
-          "Strong where automation, observability, incident response, and reliable production systems meet.",
+          "Strong where automation, observability, incident response, and reliable production work meet.",
         imageUrl: "/assets/team/max_povalinsky.jpg",
       },
       {
