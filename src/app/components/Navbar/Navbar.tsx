@@ -8,13 +8,13 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[rgba(255,255,255,0.88)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[rgba(226,232,240,0.72)] bg-[rgba(252,253,255,0.78)] backdrop-blur-xl">
       <div className="block md:hidden">
         <MobileMenu />
       </div>
 
       <div className="hidden md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-4 lg:px-8">
+        <div className="site-container flex items-center justify-between gap-8 py-4">
           <Link href="/" aria-label="Code Labs home">
             <Image
               className="h-9 w-auto"
@@ -28,20 +28,20 @@ const Navbar = () => {
 
           <nav
             aria-label="Primary navigation"
-            className="flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[rgba(241,244,247,0.84)] px-3 py-2 shadow-[0_12px_24px_-18px_rgba(0,0,0,0.18)]"
+            className="flex items-center gap-2 rounded-full border border-[rgba(226,232,240,0.92)] bg-[rgba(255,255,255,0.72)] px-3 py-2 shadow-[0_12px_24px_rgba(15,23,42,0.05)]"
           >
             {primaryNavItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-[var(--color-ink-800)] transition hover:bg-white hover:text-[var(--color-accent)]"
+                className="rounded-full px-4 py-2 text-sm font-medium text-[var(--color-ink-700)] transition hover:bg-[rgba(243,247,255,0.95)] hover:text-[var(--color-brand-blue)]"
               >
                 {item.label}
               </Link>
             ))}
             <a
               href={contactHref}
-              className="stripe-button-primary inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium transition"
+              className="site-button-primary inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium"
             >
               Contact
             </a>

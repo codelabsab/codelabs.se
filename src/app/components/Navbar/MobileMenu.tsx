@@ -11,8 +11,8 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border-b border-[var(--color-line)] bg-[rgba(255,255,255,0.92)] px-4 py-4 backdrop-blur-xl">
-      <div className="flex items-center justify-between">
+    <div className="border-b border-[rgba(226,232,240,0.72)] bg-[rgba(252,253,255,0.82)] px-4 py-4 backdrop-blur-xl">
+      <div className="site-container flex items-center justify-between px-0">
         <Link href="/" aria-label="Code Labs home">
           <Image
             className="h-9 w-auto"
@@ -28,7 +28,7 @@ const MobileMenu = () => {
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsOpen((current) => !current)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-[var(--color-surface-2)] text-[var(--color-ink-900)] shadow-[0_12px_24px_-18px_rgba(0,0,0,0.18)]"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(226,232,240,0.92)] bg-[rgba(255,255,255,0.9)] text-[var(--color-ink-900)] shadow-[0_12px_24px_rgba(15,23,42,0.08)]"
         >
           <Image
             src="/assets/icons/hamburger.svg"
@@ -45,7 +45,7 @@ const MobileMenu = () => {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="mt-4 rounded-[24px] border border-[var(--color-line)] bg-white p-5 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.24),0_10px_18px_-10px_rgba(0,0,0,0.18)]"
+          className="site-card mt-4 rounded-[24px] p-5 shadow-[0_24px_48px_rgba(15,23,42,0.12)]"
         >
           <nav aria-label="Mobile navigation">
             <ul className="space-y-2">
@@ -54,7 +54,7 @@ const MobileMenu = () => {
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block rounded-full px-4 py-3 text-base font-medium text-[var(--color-ink-800)] transition hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]"
+                    className="block rounded-full px-4 py-3 text-base font-medium text-[var(--color-ink-700)] transition hover:bg-[rgba(243,247,255,0.95)] hover:text-[var(--color-brand-blue)]"
                   >
                     {item.label}
                   </Link>
@@ -66,7 +66,7 @@ const MobileMenu = () => {
           <div className="mt-5 border-t border-[var(--color-line)] pt-5">
             <a
               href={contactHref}
-              className="stripe-button-primary inline-flex w-full items-center justify-center px-5 py-3 text-sm font-medium transition"
+              className="site-button-primary inline-flex w-full items-center justify-center px-5 py-3 text-sm font-medium"
             >
               Contact
             </a>
@@ -75,7 +75,7 @@ const MobileMenu = () => {
                 href="https://www.linkedin.com/company/code-labs-ab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3"
+                className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-3"
               >
                 <Image
                   src="/assets/social/linkedin.svg"
@@ -89,7 +89,7 @@ const MobileMenu = () => {
                 href="https://www.instagram.com/codelabsab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3"
+                className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-3"
               >
                 <Image
                   src="/assets/social/instagram.svg"
@@ -103,7 +103,7 @@ const MobileMenu = () => {
                 href="https://github.com/codelabsab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3"
+                className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-3"
               >
                 <Image
                   src="/assets/social/github.svg"

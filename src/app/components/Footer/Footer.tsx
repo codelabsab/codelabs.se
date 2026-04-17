@@ -8,9 +8,9 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="border-t border-[var(--color-line)] bg-[linear-gradient(180deg,#ffffff_0%,#f7f8fa_100%)]">
-      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-        <div className="stripe-card-soft grid gap-10 p-8 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
+    <footer className="border-t border-[var(--color-line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.72)_0%,rgba(247,244,255,0.28)_100%)]">
+      <div className="site-container py-14">
+        <div className="site-card-tint grid gap-10 border-[rgba(91,91,214,0.08)] p-8 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
           <div className="max-w-md">
             <Link href="/" aria-label="Code Labs home">
               <Image
@@ -34,14 +34,14 @@ const Footer = () => {
             </p>
             <a
               href={contactHref}
-              className="mt-6 inline-flex items-center text-sm font-medium text-[var(--color-accent)] transition hover:text-[var(--color-ink-900)]"
+              className="site-link mt-6 inline-flex items-center text-sm font-medium"
             >
               {contactEmail}
             </a>
           </div>
 
           <div>
-            <h2 className="text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-ink-500)]">
+            <h2 className="site-kicker text-[var(--color-brand-violet)]">
               Explore
             </h2>
             <ul className="mt-5 space-y-3">
@@ -49,7 +49,7 @@ const Footer = () => {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm text-[var(--color-ink-700)] transition hover:text-[var(--color-accent)]"
+                    className="text-sm text-[var(--color-ink-700)] transition hover:text-[var(--color-brand-blue)]"
                   >
                     {item.label}
                   </Link>
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h2 className="text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-ink-500)]">
+            <h2 className="site-kicker text-[var(--color-brand-coral)]">
               Follow
             </h2>
             <div className="mt-5 flex items-center gap-4">
@@ -67,7 +67,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/code-labs-ab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+                className="rounded-full border border-[var(--color-line)] bg-white p-3 transition hover:border-[rgba(37,99,235,0.18)]"
               >
                 <Image
                   src="/assets/social/linkedin.svg"
@@ -81,7 +81,7 @@ const Footer = () => {
                 href="https://www.instagram.com/codelabsab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+                className="rounded-full border border-[var(--color-line)] bg-white p-3 transition hover:border-[rgba(249,115,96,0.18)]"
               >
                 <Image
                   src="/assets/social/instagram.svg"
@@ -95,7 +95,7 @@ const Footer = () => {
                 href="https://github.com/codelabsab/"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+                className="rounded-full border border-[var(--color-line)] bg-white p-3 transition hover:border-[rgba(91,91,214,0.18)]"
               >
                 <Image
                   src="/assets/social/github.svg"

@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
@@ -9,16 +9,24 @@ export const metadata = {
     "Code Labs is a Swedish consultancy focused on platform engineering, DevOps, cloud infrastructure, internal tooling, reliability, and modern delivery work.",
 };
 
-const sans = Plus_Jakarta_Sans({
-  weight: ["300", "400", "500", "600", "700"],
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const display = Inter_Tight({
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
 });
 
 const mono = IBM_Plex_Mono({
   weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -28,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${mono.variable}`}>
+      <body className={`${sans.variable} ${display.variable} ${mono.variable}`}>
         <Navbar />
         {children}
         <Footer />
