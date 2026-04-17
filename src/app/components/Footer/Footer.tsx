@@ -1,173 +1,119 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Open_Sans } from "next/font/google";
-
-const open_sans = Open_Sans({
-  weight: ['300', '400', '500', '700', '800'],
-  subsets: ['latin']
-})
+import {
+  contactEmail,
+  contactHref,
+  primaryNavItems,
+} from "@/app/components/site/site-data";
 
 const Footer = () => {
   return (
-    <div className="bg-codelabs-primary5 pb-8">
-      <div className="max-w-7xl mx-auto my-auto">
-        <div className="pb-12"></div>
-        <div className="flex flex-col md:flex-row justify-center md:justify-between pl-24 pr-24">
-          {/* quick links */}
-          <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-3">
-            <div className="col-12">
-              <h2 className="text-l font-poppins font-medium pb-4">
-                Quick Links
-              </h2>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
-              <a
-                href="https://codelabs.se/careers/"
-              >Careers</a>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
-              <a
-                href="https://codelabs.se/team/"
-              >Team</a>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
-              <a
-                href="https://codelabs.se/blog/"
-              >Blog</a>
-            </div>
+    <footer className="border-t border-[var(--color-line)] bg-[linear-gradient(180deg,#ffffff_0%,#f7f8fa_100%)]">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="stripe-card-soft grid gap-10 p-8 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
+          <div className="max-w-md">
+            <Link href="/" aria-label="Code Labs home">
+              <Image
+                className="h-10 w-auto"
+                src="/assets/logo/codelabs.svg"
+                alt="Code Labs"
+                width={640}
+                height={480}
+                priority
+              />
+            </Link>
+            <p className="mt-5 text-sm leading-7 text-[var(--color-ink-700)]">
+              Code Labs is a Swedish consultancy focused on platform engineering,
+              DevOps, cloud infrastructure, internal tooling, reliability, and the
+              kind of hands-on systems work that helps engineers keep growing.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-ink-600)]">
+              The blog and the monthly Code Labs by series make the company
+              visible between projects: conferences, activities, experiments,
+              and the things we actually do together.
+            </p>
+            <a
+              href={contactHref}
+              className="mt-6 inline-flex items-center text-sm font-medium text-[var(--color-accent)] transition hover:text-[var(--color-ink-900)]"
+            >
+              {contactEmail}
+            </a>
           </div>
 
-          {/* follow us */}
-          <div className="flex flex-col px-3 py-3 col-3">
-            <div className="col-12">
-              <h2 className="font-poppins font-medium pb-4 ">
-                Follow us
-              </h2>
-            </div>
-            <div className="col-12">
-              <ul className="flex">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/code-labs-ab/"
-                    target="_blank"
-                    rel="noreferrer noopener"
+          <div>
+            <h2 className="text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-ink-500)]">
+              Explore
+            </h2>
+            <ul className="mt-5 space-y-3">
+              {primaryNavItems.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-[var(--color-ink-700)] transition hover:text-[var(--color-accent)]"
                   >
-                    <Image
-                      src="/assets/social/linkedin.svg"
-                      alt="LinkedIn"
-                      width={20}
-                      height={20}
-                      priority={true}
-                      className="w-5 h-5 "
-                    />
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
-                <li className="px-3">
-                  <a
-                    href="https://www.instagram.com/codelabsab/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <Image
-                      src="/assets/social/instagram.svg"
-                      alt="Instagram"
-                      width={20}
-                      height={20}
-                      priority={true}
-                      className="w-5 h-5 "
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/codelabsab/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <Image
-                      src="/assets/social/github.svg"
-                      alt="GitHub"
-                      width={20}
-                      height={20}
-                      priority={true}
-                      className="w-5 h-5 "
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
 
-          {/* contact us */}
-          <div className="flex flex-col px-3 py-3 col-3">
-            <div className="col-12">
-              <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
-                Contact us
-              </h2>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm ">
-              Tel: 08 - 128 164 00
-            </div>
-          </div>
-
-
-          {/* work with us */}
-          <div className="flex flex-col px-3 py-3 col-3">
-            <div className="col-12">
-              <h2 className={`text-l ${open_sans.className} font-medium pb-4`}>
-                Work with us
-              </h2>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
+          <div>
+            <h2 className="text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-ink-500)]">
+              Follow
+            </h2>
+            <div className="mt-5 flex items-center gap-4">
               <a
-                href="https://codelabs.se/careers/"
+                href="https://www.linkedin.com/company/code-labs-ab/"
+                target="_blank"
                 rel="noreferrer noopener"
-              >Careers</a>
-            </div>
-            <div className="col-12 font-poppins font-normal text-sm hover:font-semibold ">
+                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+              >
+                <Image
+                  src="/assets/social/linkedin.svg"
+                  alt="LinkedIn"
+                  width={18}
+                  height={18}
+                  priority
+                />
+              </a>
               <a
-                href="https://codelabs.se/team/"
+                href="https://www.instagram.com/codelabsab/"
+                target="_blank"
                 rel="noreferrer noopener"
-              >Meet the Team</a>
+                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+              >
+                <Image
+                  src="/assets/social/instagram.svg"
+                  alt="Instagram"
+                  width={18}
+                  height={18}
+                  priority
+                />
+              </a>
+              <a
+                href="https://github.com/codelabsab/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="rounded-full border border-[var(--color-line)] p-3 transition hover:border-[var(--color-accent)]"
+              >
+                <Image
+                  src="/assets/social/github.svg"
+                  alt="GitHub"
+                  width={18}
+                  height={18}
+                  priority
+                />
+              </a>
             </div>
-          </div>
-        </div>
-        {/* bottom */}
-        <div>
-          <div className="flex flex-col md:flex-row justify-center md:justify-between">
-            {/*left*/}
-            <div className="col-4"></div>
-            {/* mid */}
-            <div className="flex flex-col justify-center md:justify-center px-3 py-3 col-4 divide-y divide-purple-400 ">
-              <div className="col-4"></div>
-              <div className="col-8 pt-4">
-                <div className="flex flex-col justify-center">
-                  <div className="col-12 text-center pb-4">
-                    <p className="font-poppins font-light text-sm ">Code Labs AB</p>
-                    <p className="font-poppins font-light text-sm ">Org.nr: 559064-2442</p>
-                    {/*<p className="font-poppins font-light">Integritetspolicy</p>*/}
-                  </div>
-                  <div className="mx-auto">
-                    <Link href="/" >
-                      <Image
-                        className="w-28"
-                        src="/assets/logo/codelabs.svg"
-                        alt="codelabs"
-                        width={640}
-                        height={480}
-                        priority={true}
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-6 text-sm leading-7 text-[var(--color-ink-600)]">
+              <p>Code Labs AB</p>
+              <p>Org.nr: 559064-2442</p>
             </div>
-            {/* right*/}
-            <div className="col-4"></div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
