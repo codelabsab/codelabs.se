@@ -43,28 +43,24 @@ export default function HomePage() {
   return (
     <main className="site-shell overflow-hidden">
       <section className="hero-surface relative overflow-hidden border-b border-[var(--color-line)]">
-        <div className="site-orb-blue left-[-5rem] top-10 h-44 w-44" />
-        <div className="site-orb-violet right-[-4rem] top-16 h-40 w-40" />
-        <div className="site-orb-coral bottom-10 left-[42%] h-28 w-28" />
-        <div className="site-container grid gap-14 py-20 lg:grid-cols-[1.04fr_0.96fr] lg:py-28">
-          <div className="relative max-w-3xl">
+        <div className="site-orb-blue left-[-4rem] top-0 h-56 w-56" />
+        <div className="site-orb-violet right-[4%] top-16 h-48 w-48" />
+        <div className="site-orb-coral bottom-10 left-[46%] h-36 w-36" />
+        <div className="site-container grid min-h-[100dvh] gap-14 py-28 lg:grid-cols-[1.06fr_0.94fr] lg:items-center">
+          <div className="relative max-w-3xl site-reveal">
             <div className="flex flex-wrap gap-3">
-              <span className="site-pill border-[rgba(37,99,235,0.18)] bg-[rgba(255,255,255,0.82)] px-4 py-2 text-sm font-medium text-[var(--color-ink-800)]">
+              <span className="site-pill border-[rgba(29,107,87,0.14)] bg-[rgba(255,253,248,0.82)] px-4 py-2 text-sm font-medium text-[var(--color-ink-800)]">
                 Engineering consultancy, Stockholm
               </span>
-              <span className="site-pill border-[rgba(249,115,96,0.16)] bg-[rgba(249,115,96,0.08)] px-4 py-2 text-sm font-medium text-[var(--color-brand-coral)]">
-                Serious work, human tone
+              <span className="site-pill border-[rgba(29,107,87,0.14)] bg-[rgba(29,107,87,0.08)] px-4 py-2 text-sm font-medium text-[var(--color-brand-blue)]">
+                Serious work, human company
               </span>
             </div>
-            <p className="site-kicker mt-8">Code Labs</p>
-            <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.92] text-[var(--color-ink-900)] sm:text-7xl">
-              Build real things.
-              <br />
-              Join new teams.
-              <br />
-              Keep growing.
+            <p className="site-kicker mt-10">Code Labs</p>
+            <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.9] tracking-[-0.06em] text-[var(--color-ink-900)] sm:text-6xl lg:text-[5.6rem]">
+              Build wider engineering judgment without disappearing into a giant consultancy.
             </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--color-ink-700)]">
+            <p className="mt-8 max-w-[60ch] text-lg leading-9 text-[var(--color-ink-700)] sm:text-xl">
               Code Labs is a Swedish consultancy for engineers who want more than
               one long stay in the same environment. The work is grounded in
               platform engineering, DevOps, cloud infrastructure, reliability,
@@ -76,23 +72,99 @@ export default function HomePage() {
                 href="/#selected-work"
                 className="site-button-primary inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium"
               >
-                See what you could work on
+                See the work shape
               </Link>
               <a
                 href={contactHref}
                 className="site-button-secondary inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium"
               >
-                Talk to us
+                Start a conversation
               </a>
             </div>
-            <div className="mt-12 grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
-              <article className="site-card-tint border-[rgba(37,99,235,0.12)] bg-[linear-gradient(180deg,rgba(243,247,255,0.78)_0%,rgba(255,255,255,0.98)_100%)] p-6">
-                <p className="site-kicker text-[var(--color-brand-blue)]">
-                  Core themes
+            <div className="mt-14 grid gap-8 border-t border-[var(--color-line-strong)] pt-8 sm:grid-cols-3">
+              {[
+                {
+                  label: "Work shape",
+                  text: "Platform, cloud, delivery, and tooling work close to production.",
+                },
+                {
+                  label: "Career upside",
+                  text: "More environments means stronger pattern recognition and broader technical judgment.",
+                },
+                {
+                  label: "Company feel",
+                  text: "A small team with support, continuity, and real life between assignments.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.label}
+                  className={`site-reveal ${
+                    index === 0
+                      ? "site-reveal-delay-1"
+                      : index === 1
+                        ? "site-reveal-delay-2"
+                        : "site-reveal-delay-3"
+                  }`}
+                >
+                  <p className="site-kicker text-[var(--color-brand-coral)]">{item.label}</p>
+                  <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative grid gap-5 lg:pl-8">
+            <article className="site-card site-reveal site-reveal-delay-1 overflow-hidden p-3">
+              <div className="relative min-h-[24rem] overflow-hidden rounded-[20px] sm:min-h-[34rem]">
+                <div className="absolute left-4 top-4 z-10 rounded-full border border-white/18 bg-[rgba(17,21,18,0.7)] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+                  Close support, wide exposure
+                </div>
+                <Image
+                  src="/assets/entourage.jpeg"
+                  alt="Code Labs team gathering together"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,21,18,0.18)_0%,rgba(17,21,18,0.34)_38%,rgba(17,21,18,0.78)_100%)]" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <div className="max-w-lg rounded-[24px] border border-white/10 bg-[rgba(17,21,18,0.34)] p-5 backdrop-blur-[6px] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <p className="site-kicker text-white/88">
+                      Life between assignments
+                    </p>
+                    <p className="mt-3 max-w-md text-base leading-7 text-white/92">
+                      Conferences, dinners, meetups, and shared momentum are
+                      part of what makes the company feel human instead of
+                      transactional.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div className="grid gap-5 sm:grid-cols-[1.04fr_0.96fr]">
+              <article className="site-card-dark stripe-sheen site-reveal site-reveal-delay-2 p-7 text-white">
+                <p className="site-kicker text-[var(--color-brand-sky)]">Why people join</p>
+                <p className="mt-4 font-display text-3xl leading-[1.02] tracking-[-0.04em] text-white">
+                  To keep seeing new systems, new teams, and new ways of
+                  working without losing the feeling of belonging somewhere.
                 </p>
-                <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--color-ink-700)]">
-                  The kinds of engineering exposure people usually come here for,
-                  not random consulting noise.
+                <p className="mt-4 text-sm leading-7 text-white/72">
+                  The point is not change for its own sake. It is compounding
+                  real engineering judgment faster.
+                </p>
+              </article>
+
+              <article className="site-card-tint site-reveal site-reveal-delay-3 border-[rgba(29,107,87,0.14)] bg-[linear-gradient(180deg,rgba(255,253,248,0.9)_0%,rgba(244,250,247,0.98)_100%)] p-7">
+                <p className="site-kicker text-[var(--color-brand-blue)]">
+                  Typical exposure
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
+                  The kinds of engineering work people usually come here for, not
+                  consulting theatre or abstract advisory work.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   {([
@@ -114,73 +186,6 @@ export default function HomePage() {
                   })}
                 </div>
               </article>
-              <article className="site-card overflow-hidden p-3">
-                <div className="relative min-h-[15rem] overflow-hidden rounded-[14px]">
-                  <Image
-                    src="/assets/blogg/kubecon26/evening_drink.webp"
-                    alt="Code Labs team at a conference evening event"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 18vw"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.08)_0%,rgba(11,18,32,0.52)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="site-kicker text-[var(--color-brand-sky)]">
-                      Life between assignments
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-white/90">
-                      Conferences, meetups, dinners, and real team energy are
-                      part of what keeps the company feeling human.
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div className="relative grid gap-6">
-            <div className="grid gap-6 sm:grid-cols-[1.08fr_0.92fr]">
-              <div className="site-card overflow-hidden p-3 sm:h-full">
-                <div className="relative h-full min-h-[22rem] overflow-hidden rounded-[12px] sm:min-h-[30rem]">
-                  <Image
-                    src="/assets/entourage.jpeg"
-                    alt="Code Labs team gathering together"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 30vw"
-                  />
-                </div>
-              </div>
-              <div className="grid gap-6">
-                <article className="site-card p-7">
-                  <p className="site-kicker text-[var(--color-brand-blue)]">Why join</p>
-                  <p className="mt-4 text-base leading-8 text-[var(--color-ink-700)]">
-                    To work across different technical environments without
-                    losing the support, identity, and energy of a real company.
-                  </p>
-                </article>
-                <article className="site-card-dark stripe-sheen p-7 text-white">
-                  <p className="site-kicker text-[var(--color-brand-sky)]">What you get</p>
-                  <p className="mt-4 text-base leading-8 text-slate-200">
-                    Broader engineering experience than one stack, one product,
-                    and one internal culture can usually offer.
-                  </p>
-                </article>
-              </div>
-            </div>
-
-            <div className="site-card-tint border-[rgba(91,91,214,0.12)] bg-[linear-gradient(180deg,rgba(247,244,255,0.78)_0%,rgba(255,255,255,0.98)_100%)] p-8">
-              <p className="site-kicker text-[var(--color-brand-violet)]">In one line</p>
-              <p className="mt-4 font-display text-3xl leading-tight text-[var(--color-ink-900)]">
-                Join a place where you keep seeing new things, not the same
-                setup for five more years.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-[var(--color-ink-700)]">
-                It is not about chasing change for its own sake. It is about
-                building a wider, stronger engineering career while still
-                belonging to one team.
-              </p>
             </div>
           </div>
         </div>
@@ -499,22 +504,24 @@ export default function HomePage() {
               <div className="grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
                 <div className="relative min-h-[20rem] overflow-hidden rounded-[14px] sm:min-h-[28rem]">
                   <Image
-                    src="/assets/blogg/kubecon26/love_paer_tommy.webp"
-                    alt="Code Labs team together at a conference"
+                    src="/assets/blogg/kubecon26/love_kami.webp"
+                    alt="Code Labs team members together at KubeCon Europe"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 28vw"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.06)_0%,rgba(11,18,32,0.5)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.18)_0%,rgba(11,18,32,0.72)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="site-kicker text-[var(--color-brand-sky)]">
+                    <div className="max-w-md rounded-[20px] border border-white/10 bg-[rgba(11,18,32,0.28)] p-4 backdrop-blur-[6px] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                      <p className="site-kicker text-white/90">
                       What support looks like
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-white/88">
-                      Senior people close by, problems surfaced early, and a
-                      company that still feels like a real team between
-                      assignments.
-                    </p>
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-white/92">
+                        Senior people close by, problems surfaced early, and a
+                        company that still feels like a real team between
+                        assignments.
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="grid gap-3">
@@ -530,8 +537,8 @@ export default function HomePage() {
                   </article>
                   <div className="relative min-h-[12rem] overflow-hidden rounded-[14px]">
                     <Image
-                      src="/assets/blogg/codelabsby-kami-paer-pingpong.webp"
-                      alt="Code Labs team activity together"
+                      src="/assets/blogg/kubecon26/paer_beer.webp"
+                      alt="Code Labs team social moment together"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 18vw"
@@ -614,7 +621,7 @@ export default function HomePage() {
                 <div className="site-card overflow-hidden p-3">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[14px]">
                     <Image
-                      src="/assets/blogg/kubecon26/love_paer_tommy.webp"
+                      src="/assets/blogg/kubecon26/evening_drink.webp"
                       alt="Code Labs at KubeCon Europe 2026"
                       fill
                       className="object-cover"

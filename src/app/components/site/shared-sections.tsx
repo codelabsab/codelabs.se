@@ -44,10 +44,10 @@ export function SectionHeading({
   return (
     <div className={`max-w-4xl ${alignment} ${className}`.trim()}>
       <p className={`site-kicker ${toneStyle.eyebrow}`}>{eyebrow}</p>
-      <h2 className="mt-4 max-w-4xl text-balance font-display text-4xl leading-[1.02] text-[var(--color-ink-900)] sm:text-5xl">
+      <h2 className="mt-4 max-w-4xl text-balance font-display text-4xl leading-[0.96] tracking-[-0.05em] text-[var(--color-ink-900)] sm:text-[3.35rem]">
         {title}
       </h2>
-      <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--color-ink-700)]">
+      <p className="mt-5 max-w-[62ch] text-base leading-8 text-[var(--color-ink-700)] sm:text-lg">
         {description}
       </p>
     </div>
@@ -58,7 +58,7 @@ export function LogoCloud() {
   return (
     <section aria-label="Selected client environments" className="bg-transparent">
       <div className="site-container py-6">
-        <div className="site-card-tint flex flex-col gap-6 border-[rgba(37,99,235,0.08)] p-6 md:flex-row md:items-center md:justify-between md:p-7">
+        <div className="site-card-tint flex flex-col gap-8 border-[rgba(29,107,87,0.08)] p-7 md:flex-row md:items-center md:justify-between md:p-8">
           <div className="max-w-2xl">
             <p className="site-kicker">Trusted in real delivery environments</p>
             <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
@@ -67,7 +67,7 @@ export function LogoCloud() {
               tooling, and reliability all matter in day-to-day engineering.
             </p>
           </div>
-          <div className="flex max-w-3xl flex-wrap items-center gap-x-10 gap-y-6 opacity-80">
+          <div className="flex max-w-3xl flex-wrap items-center gap-x-10 gap-y-6 opacity-75">
             {clientLogos.map((logo) => (
               <Image
                 key={logo.name}
@@ -90,7 +90,7 @@ export function BenefitsShowcase() {
     <div className="grid gap-6 xl:grid-cols-[0.98fr_1.02fr]">
       <article className="site-card-dark stripe-sheen overflow-hidden p-8 text-white md:p-10">
         <p className="site-kicker text-[var(--color-brand-sky)]">Offer snapshot</p>
-        <h3 className="mt-4 max-w-xl font-display text-4xl leading-tight text-white">
+        <h3 className="mt-4 max-w-xl font-display text-4xl leading-[0.98] tracking-[-0.04em] text-white">
           Built for engineers who want both meaningful work and a life that holds
           together.
         </h3>
@@ -166,7 +166,7 @@ export function BenefitsShowcase() {
               <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
                 {theme.intro}
               </p>
-              <ul className="mt-5 space-y-3 border-t border-[rgba(226,232,240,0.8)] pt-5">
+              <ul className="mt-5 space-y-3 border-t border-[rgba(24,25,23,0.08)] pt-5">
                 {theme.items.map((item) => (
                   <li
                     key={item}
@@ -198,11 +198,11 @@ export function ProofPostsGrid({
   description?: string;
 }) {
   return (
-    <div className="site-card border-[rgba(91,91,214,0.12)] p-8 sm:p-10">
+    <div className="site-card border-[rgba(29,107,87,0.12)] p-8 sm:p-10">
       <div className="flex flex-col gap-4 border-b border-[var(--color-line)] pb-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
           <p className="site-kicker text-[var(--color-brand-coral)]">Blog + Code Labs by</p>
-          <h3 className="mt-3 max-w-2xl font-display text-3xl text-[var(--color-ink-900)] sm:text-4xl">
+          <h3 className="mt-3 max-w-2xl font-display text-3xl tracking-[-0.04em] text-[var(--color-ink-900)] sm:text-4xl">
             {title}
           </h3>
           <p className="mt-3 text-base leading-7 text-[var(--color-ink-700)]">
@@ -225,7 +225,7 @@ export function ProofPostsGrid({
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className={`group site-card-tint ${toneStyle.card} ${toneStyle.border} overflow-hidden border transition`}
+              className={`group site-card-tint ${toneStyle.card} ${toneStyle.border} overflow-hidden border transition duration-300 hover:-translate-y-1`}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -277,14 +277,14 @@ export function ContactCallout({
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="relative max-w-3xl">
               <p className="site-kicker text-[var(--color-brand-sky)]">Contact</p>
-              <h2 className="mt-4 max-w-3xl text-balance font-display text-4xl leading-tight text-white sm:text-5xl">
+              <h2 className="mt-4 max-w-3xl text-balance font-display text-4xl leading-[0.96] tracking-[-0.05em] text-white sm:text-5xl">
                 {title}
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
                 {description}
               </p>
             </div>
-            <div className="relative rounded-[20px] border border-white/12 bg-white/8 p-6 backdrop-blur-sm">
+            <div className="relative rounded-[24px] border border-white/12 bg-white/8 p-6 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
               <p className="text-xs font-medium uppercase tracking-[0.28em] text-slate-300">
                 Reach out directly
               </p>

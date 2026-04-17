@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Inter, Inter_Tight } from "next/font/google";
+import { IBM_Plex_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
@@ -9,13 +9,14 @@ export const metadata = {
     "Code Labs is a Swedish consultancy focused on platform engineering, DevOps, cloud infrastructure, internal tooling, reliability, and modern delivery work.",
 };
 
-const sans = Inter({
+const sans = Plus_Jakarta_Sans({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const display = Inter_Tight({
+const display = Outfit({
   weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-display",
