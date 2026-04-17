@@ -9,7 +9,6 @@ import {
   howWeWorkPrinciples,
   lifeSignals,
   selectedWork,
-  servicePillars,
   workScenarios,
 } from "@/app/components/site/site-data";
 import {
@@ -86,31 +85,63 @@ export default function HomePage() {
                 Talk to us
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap gap-3">
-              {([
-                { label: "Platform engineering", tone: "blue" },
-                { label: "AI delivery", tone: "violet" },
-                { label: "Developer tooling", tone: "mint" },
-                { label: "Cloud operations", tone: "blue" },
-                { label: "Team scaling", tone: "coral" },
-              ] as const).map((item) => {
-                const toneStyle = accentStyles[item.tone];
-                return (
-                  <span
-                    key={item.label}
-                    className={`site-pill px-4 py-2 text-sm font-medium ${toneStyle.pill}`}
-                  >
-                    {item.label}
-                  </span>
-                );
-              })}
+            <div className="mt-12 grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
+              <article className="site-card-tint border-[rgba(37,99,235,0.12)] bg-[linear-gradient(180deg,rgba(243,247,255,0.78)_0%,rgba(255,255,255,0.98)_100%)] p-6">
+                <p className="site-kicker text-[var(--color-brand-blue)]">
+                  Core themes
+                </p>
+                <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--color-ink-700)]">
+                  The kinds of engineering exposure people usually come here for,
+                  not random consulting noise.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {([
+                    { label: "Platform engineering", tone: "blue" },
+                    { label: "AI delivery", tone: "violet" },
+                    { label: "Developer tooling", tone: "mint" },
+                    { label: "Cloud operations", tone: "blue" },
+                    { label: "Team scaling", tone: "coral" },
+                  ] as const).map((item) => {
+                    const toneStyle = accentStyles[item.tone];
+                    return (
+                      <span
+                        key={item.label}
+                        className={`site-pill px-4 py-2 text-sm font-medium ${toneStyle.pill}`}
+                      >
+                        {item.label}
+                      </span>
+                    );
+                  })}
+                </div>
+              </article>
+              <article className="site-card overflow-hidden p-3">
+                <div className="relative min-h-[15rem] overflow-hidden rounded-[14px]">
+                  <Image
+                    src="/assets/blogg/kubecon26/evening_drink.webp"
+                    alt="Code Labs team at a conference evening event"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 18vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.08)_0%,rgba(11,18,32,0.52)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="site-kicker text-[var(--color-brand-sky)]">
+                      Life between assignments
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/90">
+                      Conferences, meetups, dinners, and real team energy are
+                      part of what keeps the company feeling human.
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
           <div className="relative grid gap-6">
             <div className="grid gap-6 sm:grid-cols-[1.08fr_0.92fr]">
-              <div className="site-card overflow-hidden p-3">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[12px]">
+              <div className="site-card overflow-hidden p-3 sm:h-full">
+                <div className="relative h-full min-h-[22rem] overflow-hidden rounded-[12px] sm:min-h-[30rem]">
                   <Image
                     src="/assets/entourage.jpeg"
                     alt="Code Labs team gathering together"
@@ -156,14 +187,78 @@ export default function HomePage() {
       </section>
 
       <section id="services" className="section-white py-24 sm:py-32">
-        <div className="site-container grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
-          <div>
+        <div className="site-container grid gap-12 lg:items-start lg:grid-cols-[0.82fr_1.18fr]">
+          <div className="space-y-8 self-start">
             <SectionHeading
               eyebrow="What you could actually work on"
               title="What this can look like in practice."
               description="These are the kinds of assignments and technical situations Code Labs already works in."
               tone="blue"
             />
+            <article className="site-card overflow-hidden p-3">
+              <div className="grid gap-3 sm:grid-cols-[1.08fr_0.92fr]">
+                <div className="relative min-h-[20rem] overflow-hidden rounded-[14px] sm:min-h-[28rem]">
+                  <Image
+                    src="/assets/blogg/kubecon26/nvidia_kubecon.webp"
+                    alt="Code Labs team at KubeCon Europe"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 28vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.08)_0%,rgba(11,18,32,0.54)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="site-kicker text-[var(--color-brand-sky)]">
+                      Exposure in practice
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/88">
+                      The value is not variety for its own sake. It is seeing
+                      more real systems, delivery habits, and engineering
+                      constraints while still belonging to one team.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid gap-3">
+                  <div className="relative min-h-[11rem] overflow-hidden rounded-[14px]">
+                    <Image
+                      src="/assets/blogg/kubecon26/tommy_kubecon.webp"
+                      alt="Code Labs team member at KubeCon"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 18vw"
+                    />
+                  </div>
+                  <div className="relative min-h-[11rem] overflow-hidden rounded-[14px]">
+                    <Image
+                      src="/assets/blogg/codelabsby-kami-paer-pingpong.webp"
+                      alt="Code Labs team in a social activity together"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 18vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.04)_0%,rgba(11,18,32,0.38)_100%)]" />
+                  </div>
+                  <article className="site-card-tint border-[rgba(20,184,166,0.14)] bg-[linear-gradient(180deg,rgba(241,252,250,0.84)_0%,rgba(255,255,255,0.98)_100%)] p-5">
+                    <p className="site-kicker text-[var(--color-brand-mint)]">
+                      The point
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
+                      Different domains sharpen technical judgment faster than
+                      staying too long in one internal setup.
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Clients", "Platforms", "Teams"].map((item) => (
+                        <span
+                          key={item}
+                          className="site-pill border-[rgba(20,184,166,0.12)] bg-[rgba(20,184,166,0.08)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-brand-mint)]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </article>
           </div>
           <div className="space-y-4">
             {workScenarios.map((scenario, index) => {
@@ -280,50 +375,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-violet border-y border-[var(--color-line)] py-24 sm:py-32">
-        <div className="site-container grid gap-12 lg:grid-cols-[0.88fr_1.12fr]">
-          <div>
-            <SectionHeading
-              eyebrow="What we do"
-              title="A clear mix of work."
-              description="Broad enough to offer real variety, but focused enough that you understand what kind of company you are joining."
-              tone="violet"
-            />
-          </div>
-          <div className="space-y-6">
-            {servicePillars.map((pillar, index) => {
-              const tone = getToneByIndex(index);
-              const toneStyle = accentStyles[tone];
-
-              return (
-                <article
-                  key={pillar.title}
-                  className="site-card border-l-4 p-6"
-                  style={{ borderLeftColor: toneStyle.accent }}
-                >
-                  <div className="grid gap-4 md:grid-cols-[70px_1fr]">
-                    <div className={`text-sm font-semibold uppercase tracking-[0.22em] ${toneStyle.eyebrow}`}>
-                      0{index + 1}
-                    </div>
-                    <div>
-                      <h3 className="font-display text-3xl leading-tight text-[var(--color-ink-900)]">
-                        {pillar.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
-                        {pillar.description}
-                      </p>
-                      <p className="mt-4 text-sm leading-7 text-[var(--color-ink-600)]">
-                        {pillar.candidateFocus}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       <section className="section-white py-24 sm:py-32">
         <div className="site-container">
           <SectionHeading
@@ -436,14 +487,69 @@ export default function HomePage() {
       </section>
 
       <section id="how-we-work" className="section-white py-24 sm:py-32">
-        <div className="site-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="site-container grid gap-12 lg:items-start lg:grid-cols-[0.96fr_1.04fr]">
+          <div className="space-y-8 self-start">
             <SectionHeading
               eyebrow="How we work"
               title="A consultancy that still feels like a company."
               description="The work matters, and the company around it should matter too."
               tone="coral"
             />
+            <article className="site-card overflow-hidden p-3">
+              <div className="grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
+                <div className="relative min-h-[20rem] overflow-hidden rounded-[14px] sm:min-h-[28rem]">
+                  <Image
+                    src="/assets/blogg/kubecon26/love_paer_tommy.webp"
+                    alt="Code Labs team together at a conference"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 28vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.06)_0%,rgba(11,18,32,0.5)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="site-kicker text-[var(--color-brand-sky)]">
+                      What support looks like
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/88">
+                      Senior people close by, problems surfaced early, and a
+                      company that still feels like a real team between
+                      assignments.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid gap-3">
+                  <article className="site-card-tint border-[rgba(249,115,96,0.14)] bg-[linear-gradient(180deg,rgba(255,247,244,0.88)_0%,rgba(255,255,255,0.98)_100%)] p-5">
+                    <p className="site-kicker text-[var(--color-brand-coral)]">
+                      In practice
+                    </p>
+                    <ul className="mt-3 space-y-3 text-sm leading-7 text-[var(--color-ink-700)]">
+                      <li>Onboarding and introductions instead of “figure it out”.</li>
+                      <li>Assignment goals and learning goals discussed openly.</li>
+                      <li>A small-company culture where people know each other.</li>
+                    </ul>
+                  </article>
+                  <div className="relative min-h-[12rem] overflow-hidden rounded-[14px]">
+                    <Image
+                      src="/assets/blogg/codelabsby-kami-paer-pingpong.webp"
+                      alt="Code Labs team activity together"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 18vw"
+                    />
+                  </div>
+                  <article className="site-card-tint border-[rgba(37,99,235,0.14)] bg-[linear-gradient(180deg,rgba(243,247,255,0.82)_0%,rgba(255,255,255,0.98)_100%)] p-5">
+                    <p className="site-kicker text-[var(--color-brand-blue)]">
+                      Why it works
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-ink-700)]">
+                      The consulting part gives breadth. The company part gives
+                      continuity, support, and people who stay connected between
+                      projects.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </article>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {howWeWorkPrinciples.map((principle, index) => {

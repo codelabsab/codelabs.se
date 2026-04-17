@@ -112,6 +112,26 @@ export function BenefitsShowcase() {
           </div>
           <div className="rounded-[20px] border border-white/10 bg-white/6 p-5">
             <p className="text-xs uppercase tracking-[0.22em] text-slate-300">
+              Study + conference
+            </p>
+            <p className="mt-3 font-display text-4xl text-white">~SEK 20k</p>
+            <p className="mt-2 text-sm leading-7 text-slate-200">
+              Conference and study budget for certifications, events, and the
+              kind of learning that keeps your edge moving.
+            </p>
+          </div>
+          <div className="rounded-[20px] border border-white/10 bg-white/6 p-5">
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-300">
+              Edenred / Rikskortet
+            </p>
+            <p className="mt-3 font-display text-4xl text-white">SEK 2,900</p>
+            <p className="mt-2 text-sm leading-7 text-slate-200">
+              Food benefit support through Edenred so everyday work life feels a
+              bit more supported, not just the headline perks.
+            </p>
+          </div>
+          <div className="rounded-[20px] border border-white/10 bg-white/6 p-5">
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-300">
               Learning
             </p>
             <p className="mt-3 font-display text-4xl text-white">Ongoing</p>
