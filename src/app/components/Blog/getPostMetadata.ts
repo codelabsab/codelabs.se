@@ -16,8 +16,9 @@ const getPostMetadata = (): PostMetadata[] => {
             description: matterResult.data.description,
             date: matterResult.data.date,
             og_image: matterResult.data.og_image,
-            slug: fileName.replace(".md", ""),
+            slug: matterResult.data.slug ?? fileName.replace(".md", ""),
             author: matterResult.data.author,
+            sourceFile: fileName,
         };
     });
 
@@ -33,6 +34,23 @@ const getPostMetadata = (): PostMetadata[] => {
     });
 
     return posts;
+};
+
+export const getPostBySlug = (slug: string) => {
+    const posts = getPostMetadata();
+    const post = posts.find((entry) => entry.slug === slug);
+
+    if (!post) {
+        return null;
+    }
+
+    const fileContents = fs.readFileSync(`src/_posts/${post.sourceFile}`, "utf-8");
+    const matterResult = matter(fileContents);
+
+    return {
+        ...post,
+        content: matterResult.content,
+    };
 };
 
 export default getPostMetadata;
