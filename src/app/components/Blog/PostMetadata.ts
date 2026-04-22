@@ -5,4 +5,5 @@ export interface PostMetadata {
     date: string
     og_image: string
     slug: string
+    sourceFile: string
 }

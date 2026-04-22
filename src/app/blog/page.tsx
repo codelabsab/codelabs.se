@@ -1,14 +1,52 @@
+import type { Metadata } from "next";
 import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 import Image from "next/image";
 import Link from "next/link";
 import { accentStyles, getToneByIndex } from "@/app/components/site/design";
+import { absoluteUrl, buildPageMetadata, siteConfig } from "@/app/seo";
+
+const posts = getPostMetadata();
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Blog",
+  description:
+    "Read Code Labs notes from projects, conferences, team life, and the engineering work around it.",
+  path: "/blog",
+  image: posts[0]?.og_image ?? siteConfig.defaultOgImage,
+});
 
 
 export default function BlogInlagg() {
-  const posts = getPostMetadata();
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${siteConfig.url}/blog#blog`,
+    name: "Code Labs Blog",
+    description:
+      "Notes from projects, conferences, team life, and the engineering work around it.",
+    url: absoluteUrl("/blog"),
+    publisher: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      datePublished: post.date,
+      author: {
+        "@type": "Person",
+        name: post.author,
+      },
+      url: absoluteUrl(`/blog/${post.slug}`),
+      image: absoluteUrl(post.og_image),
+    })),
+  };
 
   return (
     <main className="site-shell overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <section className="hero-surface relative overflow-hidden border-b border-[var(--color-line)]">
         <div className="site-orb-blue left-[-4rem] top-10 h-40 w-40" />
         <div className="site-orb-violet right-[-4rem] top-16 h-40 w-40" />
