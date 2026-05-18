@@ -343,7 +343,7 @@ export const benefits: Benefit[] = [
   {
     title: "Wellness allowance",
     description:
-      "A wellness allowance of SEK 7,000 per year supports training and everyday wellbeing.",
+      "A wellness allowance of SEK 5,000 per year supports training and everyday wellbeing.",
   },
   {
     title: "Food benefit",

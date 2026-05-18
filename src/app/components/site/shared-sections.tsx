@@ -104,7 +104,7 @@ export function BenefitsShowcase() {
             <p className="text-xs uppercase tracking-[0.22em] text-slate-300">
               Wellness
             </p>
-            <p className="mt-3 font-display text-4xl text-white">SEK 7,000</p>
+            <p className="mt-3 font-display text-4xl text-white">SEK 5,000</p>
             <p className="mt-2 text-sm leading-7 text-slate-200">
               Annual wellness allowance together with support for sports and
               endurance goals outside work.
