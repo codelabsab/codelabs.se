@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Code labs ❤️ Fotboll"
-slug: code-labs-fotboll
+title: "Code labs ❤️ Football"
+slug: code-labs-football
 date: "2026-08-20"
 og_image: /assets/blogg/BP_01_low.jpg
 description: Why Code Labs is sponsoring a junior football team
