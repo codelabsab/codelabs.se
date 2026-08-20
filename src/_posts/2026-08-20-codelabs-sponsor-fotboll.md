@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Code labs ❤️ Football"
+title: "Code Labs ❤️ Football"
 slug: code-labs-football
 date: "2026-08-20"
 og_image: /assets/blogg/BP_01_low.jpg
