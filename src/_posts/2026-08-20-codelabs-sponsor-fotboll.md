@@ -14,4 +14,4 @@ We are strong believers in the power of sports to bring people together, teach v
 
 Our own experience when working with others has shown us that teamwork, communication, and perseverance are essential for success. These are the same values that football tries to teach young players, and we want to support them in their journey to become not only better athletes but also better individuals.
 
-!(/assets/blogg/BP_05low.jpg)
+![](/assets/blogg/BP_05low.jpg)
