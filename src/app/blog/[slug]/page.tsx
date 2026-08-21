@@ -48,6 +48,7 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
     }
 
     const authorSlug = post.author?.split(" ")[0]?.toLowerCase();
+    const isCodeLabsBy = post.title.toLowerCase().includes("code labs by");
     const articleJsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -98,9 +99,11 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
                                 >
                                     {post.date}
                                 </time>
-                                <span className="site-pill border-[rgba(91,91,214,0.14)] bg-[rgba(255,255,255,0.78)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-brand-violet)]">
-                                    Code Labs by
-                                </span>
+                                {isCodeLabsBy && (
+                                    <span className="site-pill border-[rgba(91,91,214,0.14)] bg-[rgba(255,255,255,0.78)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-brand-violet)]">
+                                        Code Labs by
+                                    </span>
+                                )}
                             </div>
                             <h1 className="mt-6 text-balance font-display text-5xl leading-[0.94] text-[var(--color-ink-900)] sm:text-6xl">
                                 {post.title}
