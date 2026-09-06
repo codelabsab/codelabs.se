@@ -21,7 +21,7 @@
     "eslint-config-next": "^15.4.6",
     "gray-matter": "^4.0.3",
     "markdown-to-jsx": "^7.7.6",
-    "next": "15.4.10",
+    "next": "16.1.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-modern-drawer": "^1.4.0",
