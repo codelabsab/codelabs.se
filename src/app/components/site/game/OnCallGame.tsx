@@ -40,9 +40,8 @@ export default function OnCallGame() {
   }, [done]);
 
   if (done) {
-    const answered = Math.max(index, 1);
     // A game score dressed up as an SLO. Not a real availability figure.
-    const slo = (99 + 0.9 * (correct / Math.max(answered, rounds.length))).toFixed(2);
+    const slo = (99 + 0.9 * (correct / rounds.length)).toFixed(2);
     return (
       <div className="terminal-body" aria-live="polite">
         <p className="text-ok">RESOLVED · shift over</p>

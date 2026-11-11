@@ -538,6 +538,12 @@
     .marquee [data-dup] {
       display: none;
     }
+
+    /* The news ticker stays on one line and scrolls by hand instead. */
+    .marquee.ticker {
+      width: max-content;
+      flex-wrap: nowrap;
+    }
   }
 
   /* ---------- article prose ---------- */

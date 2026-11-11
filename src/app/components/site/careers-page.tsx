@@ -40,7 +40,7 @@ export default function CareersPage() {
             Now hiring · Stockholm
           </p>
           <p className="script mt-6 -rotate-2 text-4xl sm:text-5xl">Careers at Code Labs</p>
-          <h1 className="display mt-2 text-[clamp(3.6rem,12vw,9rem)] leading-[0.88]">
+          <h1 className="display mt-5 text-[clamp(3.6rem,12vw,9rem)] leading-[0.88]">
             Join the crew<span className="text-sunset-pink">.</span>
           </h1>
           <p className="lede mt-6 max-w-2xl">

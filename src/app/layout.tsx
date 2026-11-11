@@ -82,9 +82,14 @@ const organizationJsonLd = {
   ],
 };
 
+// Subset choice: å/ä/ö/é are all in `latin`, which covers every name and post
+// on the site. Adding `latin-ext` made next/font preload a second file per
+// family and pushed mobile LCP past budget (Lighthouse 87 on /blog), so it is
+// left out; characters beyond Latin-1 fall back to the system font.
+// The mono and script fonts are not preloaded: they never render the LCP element.
 const display = Anton({
   weight: "400",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-anton",
   display: "swap",
 });
@@ -98,16 +103,17 @@ const script = Yellowtail({
 });
 
 const sans = Manrope({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-manrope",
   display: "swap",
 });
 
 const mono = JetBrains_Mono({
   weight: ["400", "500", "700"],
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
+  preload: false,
 });
 
 export default function RootLayout({
@@ -116,8 +122,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${sans.variable} ${display.variable} ${script.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${display.variable} ${script.variable} ${mono.variable}`}>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

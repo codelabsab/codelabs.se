@@ -114,10 +114,10 @@ export default function OpsHud() {
             type="button"
             className="btn-hud btn-sm lg:hidden"
             aria-haspopup="dialog"
-            aria-label="Open pause menu"
+            data-menu-button
             onClick={() => emit("cl:menu")}
           >
-            <span aria-hidden="true">II</span> Menu
+            <span aria-hidden="true">II</span> Menu<span className="sr-only">: open pause menu</span>
           </button>
         </div>
       </div>

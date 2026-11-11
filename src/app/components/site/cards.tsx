@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { PostMetadata } from "@/app/components/Blog/PostMetadata";
 import {
   caseFileOutcomeNote,
+  teamMembers,
   type CaseFile,
   type CrewMember,
   type Mission,
@@ -184,7 +185,10 @@ export function PerkCard({ perk }: { perk: Perk }) {
 
 /* ---------- Newswire cards ---------- */
 
-const authorAvatar = (author: string) => `/assets/team/${author.split(" ")[0]?.toLowerCase()}.jpeg`;
+/** Current crew use their team photo; former authors fall back to the file named after them. */
+export const authorAvatar = (author: string) =>
+  teamMembers.find((member) => member.name === author)?.imageUrl ??
+  `/assets/team/${author.split(" ")[0]?.toLowerCase()}.jpeg`;
 
 export function Tags({ tags }: { tags: string[] }) {
   return (

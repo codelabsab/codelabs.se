@@ -64,7 +64,7 @@ export default function BlogInlagg() {
             Live · The Code Labs blog
           </p>
           <p className="script mt-5 -rotate-2 text-4xl sm:text-5xl">Stockholm on-call</p>
-          <h1 className="display mt-1 text-[clamp(3.6rem,12vw,9rem)] leading-[0.88]">Newswire</h1>
+          <h1 className="display mt-5 text-[clamp(3.6rem,12vw,9rem)] leading-[0.88]">Newswire</h1>
           <p className="lede mt-5 max-w-2xl">
             Notes from projects, conferences, team life, and the work around it. Tech posts from the desk, crew
             life from the feed.
@@ -75,8 +75,8 @@ export default function BlogInlagg() {
           <span className="mono z-10 shrink-0 bg-crit px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-night-900">
             Latest
           </span>
-          <div className="overflow-hidden">
-            <ul className="marquee py-2.5">
+          <div className="overflow-hidden motion-reduce:overflow-x-auto">
+            <ul className="marquee ticker py-2.5">
               {[0, 1].map((copy) =>
                 latest.map((post) => (
                   <li key={`${copy}-${post.slug}`} data-dup={copy ? "" : undefined} aria-hidden={copy ? true : undefined} className="mono shrink-0 px-6 text-xs text-sand-50">

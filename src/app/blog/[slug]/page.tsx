@@ -5,7 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import getPostMetadata, { getPostBySlug } from "@/app/components/Blog/getPostMetadata";
 import { isValidElement, type ReactNode } from "react";
-import { Tags } from "@/app/components/site/cards";
+import { authorAvatar, Tags } from "@/app/components/site/cards";
 import { TerminalFrame } from "@/app/components/site/ui";
 import { absoluteUrl, buildPageMetadata, siteConfig } from "@/app/seo";
 
@@ -61,7 +61,6 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
         notFound();
     }
 
-    const authorSlug = post.author?.split(" ")[0]?.toLowerCase();
     const isCodeLabsBy = post.title.toLowerCase().includes("code labs by");
     const articleJsonLd = {
         "@context": "https://schema.org",
@@ -116,7 +115,7 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
                                 </div>
                                 <div className="mt-8 flex items-center gap-3 text-sm text-ink-100">
                                     <Image
-                                        src={`/assets/team/${authorSlug}.jpeg`}
+                                        src={authorAvatar(post.author)}
                                         width={40}
                                         height={40}
                                         alt=""

@@ -46,7 +46,7 @@ export default function Hero() {
         })}
       </div>
       {/* Light leak + readability gradients */}
-      <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-night-900 from-[38%] via-night-900/70 via-[52%] to-transparent lg:block" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-night-900 from-[40%] via-night-900/40 via-[47%] to-transparent to-[56%] lg:block" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sunset-orange/30 mix-blend-screen blur-3xl" aria-hidden="true" />
 
       <div className="site-container relative bg-night-900 pb-16 pt-10 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:bg-transparent lg:py-20">

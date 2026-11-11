@@ -50,7 +50,14 @@ const getPostMetadata = (): PostMetadata[] => {
 
 export const getPostBySlug = (slug: string) => {
     const posts = getPostMetadata();
-    const post = posts.find((entry) => entry.slug === slug);
+    // Slugs with non-ASCII characters (e.g. "pär") arrive percent-encoded.
+    let decoded = slug;
+    try {
+        decoded = decodeURIComponent(slug);
+    } catch {
+        // Malformed escape sequence: fall through with the raw slug.
+    }
+    const post = posts.find((entry) => entry.slug === slug || entry.slug === decoded);
 
     if (!post) {
         return null;
