@@ -1,13 +1,12 @@
 # Stockholm On-Call: image prompts
 
-**Status.** Final art is in place for: all crew portraits and squares except
-Angelica, `key-art-grid.webp`, `hero-city.webp` (a crop of the key art, used as
+**Status.** Final art is in place for: all crew portraits and squares,
+`key-art-grid.webp`, `hero-city.webp` (a crop of the key art, used as
 the hero's city panel) and `careers-hero.webp`. Those names are listed in
 `FINAL` in `scripts/generate-placeholders.mjs` and are never overwritten.
 
 Everything else is still a **labelled placeholder** produced by
-`node scripts/generate-placeholders.mjs` (procedural SVG scenes, and Angelica's
-existing photo with a colour grade): `crew-angelica*.webp`,
+`node scripts/generate-placeholders.mjs` (procedural SVG scenes):
 `key-art-grid-mobile.webp`, `city-*.webp`, `mission-*.webp`, `loading-*.webp`,
 `newswire-header.webp`, `error-404.webp`.
 
@@ -19,7 +18,8 @@ never regenerated. No code changes are needed. Keep source PNGs out of
 the repo.
 
 **Before any crew portrait is published, the person in it approves the image
-and consents to being shown this way.** See the checklist at the end.
+and consents to being shown this way.** The current set is approved; see the
+checklist at the end. A new or replaced portrait needs approval again.
 
 ## Style anchor (prefix every prompt)
 
@@ -60,7 +60,6 @@ the whole set: a 4:5 portrait (1600×2000) and a 1:1 crop (1000×1000, `-square`
 | `crew-love.webp`, `crew-love-square.webp` | `public/assets/team/love.jpeg` | Full-Stack Engineer | Portrait of the referenced man in a neon-lit Gamla Stan alley, holding a tablet with an abstract UI, API connection lines drawn in light around him. |
 | `crew-max.webp`, `crew-max-square.webp` | `public/assets/team/max_povalinsky.jpg` | SRE / Observability | Portrait of the referenced man in a night control room with walls of abstract latency and heatmap graphs, headset on, phone buzzing with a pager alert, completely unbothered. |
 | `crew-mauricio.webp`, `crew-mauricio-square.webp` | `public/assets/team/mauricio.jpeg` | DevOps Engineer | Portrait of the referenced man at the container harbor at sunset, conveyor pipelines of glowing build artifacts, green checkmark lights along the line, open collaborative pose. |
-| `crew-angelica.webp`, `crew-angelica-square.webp` | `public/assets/team/angelica.jpeg` | People Lead / Recruiter | Portrait of the referenced woman on an archipelago speedboat at golden hour, holding a tablet showing an abstract crew roster, "assembling the team" energy. |
 | `crew-mimmi-penny.webp`, `crew-mimmi-penny-square.webp` | `public/assets/team/mimmi-penny.jpg` | Morale Officers (secret characters) | The two referenced office dogs in tiny sunglasses sitting on a server cabinet, one wearing an on-call pager on its collar. Comic-relief panel. |
 
 ## Key art and scenes
@@ -105,11 +104,13 @@ monitoring graphs."* Update it if a final scene differs from the prompt.
 
 ## Portrait approval checklist
 
-- [ ] Kami Gerami
-- [ ] Pär Berge
-- [ ] Tommy Malmqvist
-- [ ] Love Kempe Lundin
-- [ ] Max Povalinsky
-- [ ] Mauricio Saez
-- [ ] Angelica Törnros
-- [ ] Mimmi & Penny (owner approval)
+All current portraits were approved by the team on 2026-11-11. Untick a name
+whenever that person's portrait is replaced.
+
+- [x] Kami Gerami
+- [x] Pär Berge
+- [x] Tommy Malmqvist
+- [x] Love Kempe Lundin
+- [x] Max Povalinsky
+- [x] Mauricio Saez
+- [x] Mimmi & Penny (owner approval)

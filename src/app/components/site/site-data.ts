@@ -520,14 +520,6 @@ export const teamMembers: TeamMemberSummary[] = [
     imageUrl: "/assets/team/max_povalinsky.jpg",
   },
   {
-    name: "Angelica Törnros",
-    role: "Recruitment and people",
-    summary:
-      "Angelica represents the part of Code Labs that makes growth, hiring, and the human side of the company feel intentional rather than accidental.",
-    humanDetail: "She helps keep recruiting warm, structured, and grounded in what people are actually looking for.",
-    imageUrl: "/assets/team/angelica.jpeg",
-  },
-  {
     name: "Mauricio Saez",
     role: "DevOps and collaborative delivery",
     summary:
@@ -607,13 +599,6 @@ export const teamGroups: TeamGroup[] = [
         summary:
           "Adds product and frontend breadth through React, Next.js, Node.js, .NET, and implementation from design to code.",
         imageUrl: "/assets/team/love.jpeg",
-      },
-      {
-        name: "Angelica Törnros",
-        role: "Recruitment and people",
-        summary:
-          "Helps make growth, hiring, and the human side of Code Labs feel intentional, warm, and grounded.",
-        imageUrl: "/assets/team/angelica.jpeg",
       },
     ],
   },
@@ -954,26 +939,6 @@ const crewExtras: Record<string, CrewExtra> = {
     portraitAlt:
       "Illustrated portrait of Max Povalinsky, SRE, in a control room full of monitoring graphs.",
     tone: "pink",
-  },
-  "Angelica Törnros": {
-    slug: "angelica-tornros",
-    class: "People Lead",
-    classSlug: "people",
-    kind: "PeopleLead",
-    faction: "product-people",
-    skills: [
-      { name: "Recruiting", stars: 5 },
-      { name: "Crew assembly", stars: 5 },
-      { name: "Structure & warmth", stars: 5 },
-    ],
-    focus: ["recruiting", "growth", "people"],
-    specialAbility: "Crew Assembly: finds the people who actually fit.",
-    onCall: false,
-    portraitUrl: `${assetBase}/crew-angelica.webp`,
-    squareUrl: `${assetBase}/crew-angelica-square.webp`,
-    portraitAlt:
-      "Illustrated portrait of Angelica Törnros, people lead, on an archipelago speedboat at golden hour.",
-    tone: "orange",
   },
   "Mauricio Saez": {
     slug: "mauricio-saez",

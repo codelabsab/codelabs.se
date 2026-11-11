@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/app/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Team",
   description:
-    "Meet the Code Labs team in Stockholm: platform, SRE, DevOps, AI and full-stack engineers, plus the recruiting and people side that makes the consultancy sustainable over time.",
+    "Meet the Code Labs team in Stockholm: platform, SRE, DevOps, AI and full-stack engineers in a small consultancy built to be sustainable over time.",
   path: "/team",
 });
 

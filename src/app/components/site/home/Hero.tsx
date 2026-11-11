@@ -11,12 +11,11 @@ const panels = [
   { member: bySlug("max-povalinsky"), area: "col-start-1 row-start-1 row-span-2", priority: true },
   { member: bySlug("tommy-malmqvist"), area: "col-start-2 row-start-1" },
   { member: null, area: "col-start-3 col-span-2 row-start-1", priority: true },
-  { member: bySlug("par-berge"), area: "col-start-2 row-start-2" },
+  { member: bySlug("mimmi-penny"), area: "col-start-2 row-start-2" },
   { member: bySlug("kami-gerami"), area: "col-start-3 row-start-2 row-span-2" },
-  { member: bySlug("angelica-tornros"), area: "col-start-4 row-start-2" },
   { member: bySlug("love-kempe-lundin"), area: "col-start-1 row-start-3" },
   { member: bySlug("mauricio-saez"), area: "col-start-2 row-start-3" },
-  { member: bySlug("mimmi-penny"), area: "col-start-4 row-start-3" },
+  { member: bySlug("par-berge"), area: "col-start-4 row-start-2 row-span-2" },
 ];
 
 export default function Hero() {

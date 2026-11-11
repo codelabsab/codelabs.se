@@ -360,7 +360,6 @@ const crewFiles = [
   ["love", "love.jpeg"],
   ["max", "max_povalinsky.jpg"],
   ["mauricio", "mauricio.jpeg"],
-  ["angelica", "angelica.jpeg"],
   ["mimmi-penny", "mimmi-penny.jpg"],
 ];
 

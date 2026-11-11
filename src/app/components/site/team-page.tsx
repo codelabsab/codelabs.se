@@ -15,7 +15,7 @@ export default function TeamPage() {
             kicker="Team · the people behind Code Labs"
             script="Select your"
             title="Character"
-            description="A small team with different strengths: platform engineering, reliability, product breadth, recruiting, and the human side that makes a consultancy sustainable over time."
+            description="A small team with different strengths: platform engineering, reliability, product breadth, and the human side that makes a consultancy sustainable over time."
           />
           <div className="mt-12 hidden md:block">
             <CharacterSelect />

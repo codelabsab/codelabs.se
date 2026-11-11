@@ -25,7 +25,8 @@ These are mandatory. Check them before every release.
    screens, character select.
 2. **All characters are original** stylized portraits of the real Code Labs
    team, made from their own photos. Each person approves their portrait and
-   consents to being shown this way before it is published.
+   consents to being shown this way before it is published. The current set
+   is approved; any new or replaced portrait needs approval again.
 3. **Client logos stay unaltered and legible**, in a neutral "Trusted by"
    strip. Plain white monochrome is the only treatment. Never place them in a
    "crime" or "incident" context.
@@ -72,7 +73,7 @@ These are mandatory. Check them before every release.
 | Mission briefing | Problem, loadout (stack), objective, reward (what you grow) | Mission cards |
 | "MISSION PASSED" | Deploy succeeded / page acknowledged | Toast on CTAs and game end |
 | Error screens | `404 Route not found` with a kubectl NotFound error; `500 CrashLoopBackOff` | `not-found.tsx`, `error.tsx` |
-| Character classes | SRE, Platform, DevOps, AI, Full-Stack, People Lead | `/team` |
+| Character classes | SRE, Platform, DevOps, AI, Full-Stack | `/team` |
 | `kubectl describe` view | The same profile as valid YAML | `/team` |
 | Skill trees | Real tool progressions | `/careers` |
 | Perks | The real benefits | `/careers` |
@@ -242,5 +243,6 @@ checklist live in `public/assets/stockholm-oncall/PROMPTS.md`.
 - Alt text says the image is an illustration and names what it shows.
 - Real event photos are never regenerated; they only get a CSS grade.
 
-The files currently in the folder are **labelled placeholders** from
-`scripts/generate-placeholders.mjs`.
+Crew portraits, the key art and the careers hero are final. The remaining
+scene art is still **labelled placeholders** from
+`scripts/generate-placeholders.mjs`; `PROMPTS.md` lists which is which.
