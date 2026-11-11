@@ -9,10 +9,10 @@ const bySlug = (slug: string) => crew.find((member) => member.slug === slug)!;
 // Asymmetric poster grid: 4 columns × 3 rows, thin black gutters.
 const panels = [
   { member: bySlug("max-povalinsky"), area: "col-start-1 row-start-1 row-span-2", priority: true },
-  { member: bySlug("kami-gerami"), area: "col-start-2 row-start-1" },
+  { member: bySlug("tommy-malmqvist"), area: "col-start-2 row-start-1" },
   { member: null, area: "col-start-3 col-span-2 row-start-1", priority: true },
   { member: bySlug("par-berge"), area: "col-start-2 row-start-2" },
-  { member: bySlug("tommy-malmqvist"), area: "col-start-3 row-start-2 row-span-2" },
+  { member: bySlug("kami-gerami"), area: "col-start-3 row-start-2 row-span-2" },
   { member: bySlug("angelica-tornros"), area: "col-start-4 row-start-2" },
   { member: bySlug("love-kempe-lundin"), area: "col-start-1 row-start-3" },
   { member: bySlug("mauricio-saez"), area: "col-start-2 row-start-3" },
@@ -29,11 +29,11 @@ export default function Hero() {
           return (
             <div key={index} className={`relative overflow-hidden ${panel.area}`}>
               <Image
-                src={panel.member ? (tall ? panel.member.portraitUrl : panel.member.squareUrl) : `${assetBase}/city-sunset.webp`}
+                src={panel.member ? (tall ? panel.member.portraitUrl : panel.member.squareUrl) : `${assetBase}/hero-city.webp`}
                 alt={
                   panel.member
                     ? panel.member.portraitAlt
-                    : "Illustration of the Stockholm skyline at sunset with its windows glowing like dashboard tiles."
+                    : "Illustration of the gabled houses of Gamla Stan at sunset, windows lit, with the two office dogs in sunglasses out front."
                 }
                 fill
                 priority={panel.priority}

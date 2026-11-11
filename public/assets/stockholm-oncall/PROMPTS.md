@@ -1,13 +1,21 @@
 # Stockholm On-Call: image prompts
 
-Every image in this folder is currently a **labelled placeholder** produced by
-`node scripts/generate-placeholders.mjs` (procedural SVG scenes, and the team's
-existing photos with a colour grade for the crew). None of it is AI generated.
+**Status.** Final art is in place for: all crew portraits and squares except
+Angelica, `key-art-grid.webp`, `hero-city.webp` (a crop of the key art, used as
+the hero's city panel) and `careers-hero.webp`. Those names are listed in
+`FINAL` in `scripts/generate-placeholders.mjs` and are never overwritten.
 
-To ship final art: generate each file with an image model that supports
+Everything else is still a **labelled placeholder** produced by
+`node scripts/generate-placeholders.mjs` (procedural SVG scenes, and Angelica's
+existing photo with a colour grade): `crew-angelica*.webp`,
+`key-art-grid-mobile.webp`, `city-*.webp`, `mission-*.webp`, `loading-*.webp`,
+`newswire-header.webp`, `error-404.webp`.
+
+To ship more final art: generate each file with an image model that supports
 **image reference / character consistency** (GPT-image, Midjourney `--cref`,
 Flux + IP-Adapter/LoRA), export **WebP** at the listed size and overwrite the
-file with the same name. No code changes are needed. Keep source PNGs out of
+file with the same name, then add that name to `FINAL` in the script so it is
+never regenerated. No code changes are needed. Keep source PNGs out of
 the repo.
 
 **Before any crew portrait is published, the person in it approves the image

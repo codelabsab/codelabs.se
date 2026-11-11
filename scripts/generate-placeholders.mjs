@@ -10,6 +10,10 @@
  *
  * Crew placeholders are the team's existing photos with a colour grade.
  * Scene placeholders are procedural SVG. Nothing here is AI generated.
+ *
+ * Files listed in FINAL are finished art and are never overwritten. Add a
+ * file name there when its final version lands. The OG image is always
+ * rebuilt from the current key-art-grid.webp plus the real logo.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -18,6 +22,16 @@ import sharp from "sharp";
 const OUT = "public/assets/stockholm-oncall";
 const TEAM = "public/assets/team";
 fs.mkdirSync(OUT, { recursive: true });
+
+const FINAL = new Set([
+  "key-art-grid.webp",
+  "hero-city.webp",
+  "careers-hero.webp",
+  ...["kami", "paer", "tommy", "love", "max", "mauricio", "mimmi-penny"].flatMap((id) => [
+    `crew-${id}.webp`,
+    `crew-${id}-square.webp`,
+  ]),
+]);
 
 const C = {
   night: "#0B0714",
@@ -380,66 +394,46 @@ async function crewImage(src, w, h, name) {
 
 async function main() {
   for (const s of scenes) {
+    if (FINAL.has(s.name)) continue;
     await webp(sharp(Buffer.from(scene(s))), s.name, 70);
     console.log("scene", s.name);
   }
 
-  const squares = {};
   for (const [id, src] of crewFiles) {
-    await webp(await crewImage(src, 1600, 2000, `crew-${id}.webp`), `crew-${id}.webp`, 72);
-    const sq = await crewImage(src, 1000, 1000, `crew-${id}-square.webp`);
-    await webp(sq, `crew-${id}-square.webp`, 72);
-    squares[id] = await (await crewImage(src, 1000, 1000, "")).png().toBuffer();
-    console.log("crew", id);
-  }
-
-  // Hero poster: 7 crew panels + skyline panel, headline area left empty.
-  const city = await sharp(path.join(OUT, "city-sunset.webp")).png().toBuffer();
-  async function poster(w, h, panels, name) {
-    const layers = [];
-    for (const [id, x, y, pw, ph] of panels) {
-      const src = id === "city" ? city : squares[id];
-      layers.push({
-        input: await sharp(src).resize(Math.round(pw), Math.round(ph), { fit: "cover", position: "top" }).png().toBuffer(),
-        left: Math.round(x),
-        top: Math.round(y),
-      });
+    for (const [suffix, w, h] of [["", 1600, 2000], ["-square", 1000, 1000]]) {
+      const name = `crew-${id}${suffix}.webp`;
+      if (FINAL.has(name)) continue;
+      await webp(await crewImage(src, w, h, name), name, 72);
+      console.log("crew", name);
     }
-    layers.push({ input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${label(w, h, name)}</svg>`) });
-    return sharp({ create: { width: w, height: h, channels: 3, background: "#000000" } }).composite(layers).png().toBuffer();
   }
-  const g = 10;
-  const W = 2880;
-  const H = 1620;
-  const x0 = W * 0.44;
-  const cw = (W - x0 - g * 4) / 4;
-  const rh = (H - g * 4) / 3;
-  const P = (id, c, r_, cs = 1, rs = 1) => [id, x0 + g + c * (cw + g) - g, g + r_ * (rh + g), cw * cs + g * (cs - 1), rh * rs + g * (rs - 1)];
-  const desktop = await poster(
-    W,
-    H,
-    [P("max", 0, 0, 1, 2), P("kami", 1, 0), P("city", 2, 0, 2, 1), P("paer", 1, 1), P("tommy", 2, 1, 1, 2), P("angelica", 3, 1), P("love", 0, 2), P("mauricio", 1, 2), P("mimmi-penny", 3, 2)],
-    "key-art-grid.webp",
-  );
-  await webp(sharp(desktop), "key-art-grid.webp", 72);
 
+  // Mobile poster placeholder, assembled from whatever crew squares are on disk.
+  const g = 10;
   const MW = 1080;
   const MH = 1920;
   const my0 = MH * 0.36;
   const mcw = (MW - g * 4) / 3;
   const mrh = (MH - my0 - g * 4) / 3;
-  const M = (id, c, r_, cs = 1, rs = 1) => [id, g + c * (mcw + g), my0 + g + r_ * (mrh + g), mcw * cs + g * (cs - 1), mrh * rs + g * (rs - 1)];
-  const mobile = await poster(
-    MW,
-    MH,
-    [M("city", 0, 0, 2, 1), M("max", 2, 0, 1, 2), M("kami", 0, 1), M("paer", 1, 1), M("tommy", 0, 2), M("angelica", 1, 2), M("mauricio", 2, 2)],
-    "key-art-grid-mobile.webp",
-  );
-  await webp(sharp(mobile), "key-art-grid-mobile.webp", 70);
+  const M = (file, c, r_, cs = 1, rs = 1) => [file, g + c * (mcw + g), my0 + g + r_ * (mrh + g), mcw * cs + g * (cs - 1), mrh * rs + g * (rs - 1)];
+  const sq = (id) => `crew-${id}-square.webp`;
+  const layers = [];
+  for (const [file, x, y, pw, ph] of [M("hero-city.webp", 0, 0, 2, 1), M("crew-max.webp", 2, 0, 1, 2), M(sq("kami"), 0, 1), M(sq("paer"), 1, 1), M(sq("tommy"), 0, 2), M(sq("love"), 1, 2), M(sq("mauricio"), 2, 2)]) {
+    layers.push({
+      input: await sharp(path.join(OUT, file)).resize(Math.round(pw), Math.round(ph), { fit: "cover", position: "top" }).png().toBuffer(),
+      left: Math.round(x),
+      top: Math.round(y),
+    });
+  }
+  layers.push({ input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${MW}" height="${MH}">${label(MW, MH, "key-art-grid-mobile.webp")}</svg>`) });
+  await webp(sharp({ create: { width: MW, height: MH, channels: 3, background: "#000000" } }).composite(layers), "key-art-grid-mobile.webp", 70);
 
   // OG image: poster crop with the REAL logo + title composited in code.
   const logo = await sharp("public/assets/logo/codelabs_white.svg", { density: 300 }).resize({ width: 300 }).png().toBuffer();
-  const ogCrop = await sharp(desktop).extract({ left: Math.round(x0), top: 0, width: W - Math.round(x0), height: H }).resize(640, 630, { fit: "cover" }).png().toBuffer();
+  const art = sharp(path.join(OUT, "key-art-grid.webp"));
+  const { width: aw, height: ah } = await art.metadata();
+  const ax = Math.round(aw * 0.42);
+  const ogCrop = await art.extract({ left: ax, top: 0, width: aw - ax, height: ah }).resize(640, 630, { fit: "cover" }).png().toBuffer();
   const ogText = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
     <linearGradient id="f" x1="0" x2="1"><stop offset=".42" stop-color="${C.night}"/><stop offset=".62" stop-color="${C.night}" stop-opacity="0"/></linearGradient>
     <rect width="1200" height="630" fill="url(#f)"/>
