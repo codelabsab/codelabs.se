@@ -18,6 +18,8 @@ The look we're after: **open‑world action‑game loading‑screen art**. Think
 
 **Output:** 4:5 → upscale and export as **1600×2000 WebP**. 1:1 → **1000×1000 WebP** with the `-square` suffix. Drop the files into `public/assets/stockholm-oncall/`, overwriting the placeholders.
 
+**Framing for the website grid:** in every portrait, keep the face horizontally centered with the eyes about 25–30% from the top, and keep the bottom 20% unimportant. The site crops the portraits into narrow poster panels (see section 8).
+
 **Consistency tip:** generate Kami first. When you're happy with it, attach it as a **style reference** (Midjourney `--sref`, or "match the style of image 2" in GPT‑image) for everyone else. Only ever use **our own generated images** as style references, never game art.
 
 ### Copyright guardrails (why the prompts are written this way)
@@ -280,39 +282,43 @@ The crew is **six people plus the two dogs**:
 | 6 | Mauricio | DevOps Engineer | Thick dark swept‑back hair, big smile, navy knit sweater |
 | – | Mimmi & Penny | Morale Officers | Two fawn French bulldogs, dark masks, tiny sunglasses |
 
-### Recommended: composite the posters, don't generate them
-Image models are bad at keeping **six specific faces** right in one image: faces swap, merge or drift. The reliable way is:
-1. Generate and approve the six portraits (and the dogs) with the prompts above.
-2. Generate **only the backgrounds** with the prompts in 8.1 below (no people).
-3. Place the approved portraits into the panels in Figma, Photoshop or code. Add the black gutters, and apply a shared grain and color grade on top so everything sits together.
+### How the faces end up in the grid (no manual compositing needed)
+**The hero poster on the website is not one image.** It's built in code (`src/app/components/site/home/Hero.tsx` on the site branch) as a CSS grid of 4 columns × 3 rows with thin black gutters. Each panel loads **that person's own portrait file**:
+- **Tall panels** (spanning 2 rows) use `crew-<name>.webp` (4:5).
+- **Single panels** use `crew-<name>-square.webp` (1:1).
+- The skyline panel uses `city-sunset.webp`.
 
-This keeps the likeness every person approved. Use the all‑in‑one prompts in 8.2 only if you want a single‑shot version, and still check every face.
+Each image is cropped into its panel with `object-cover object-top`, and each panel gets its own slow Ken Burns pan. So when you drop an approved portrait into `public/assets/stockholm-oncall/` with the right file name, it shows up in its panel automatically. Every face is exactly the one the person approved.
 
-### 8.1 Background plates (no people), for compositing
+**Proposed panel layout for six people plus the dogs** (the current code still has a slot for Angelica and must be updated):
 
-#### `key-art-grid` background plate (16:9, 2880×1620)
 ```
-Original video-game key-art poster layout in the style of modern open-world action-game marketing, NO people: a dark empty dusky-sky area on the left 40% for a headline. On the right 60%, an asymmetric grid of 7 rectangular panels separated by thin black gutters: one tall panel on the left of the grid spanning the full height, a top row of three small panels, a wide middle panel, and a bottom row of two panels. Each panel holds an empty Stockholm backdrop rendered with bold clean ink outlines, cel shading, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain and halftone: tall panel a Södermalm rooftop at dusk with a floating holographic node graph; top row a night control room wall of abstract graphs, a neon Gamla Stan alley, and a container harbor at sunset with green checkmark lights; the wide middle panel the Stockholm skyline at sunset with every window glowing like a dashboard tile; bottom row Slussen waterfront with a white car without logos, and a pink-and-cyan lit server aisle. Empty foreground space in every character panel for a person to be placed. No text, letters, numbers or logos anywhere.
+        col 1        col 2        col 3        col 4
+row 1 | Kami     | Max      | Stockholm skyline       |
+row 2 | (tall)   | Pär      | Tommy    | Love     |
+row 3 | Mauricio | Mimmi &  | (tall)   | (tall)   |
+      |          | Penny    |          |          |
+```
+That's three tall panels (Kami, Tommy, Love), four single panels (Max, Pär, Mauricio, the dogs) and one wide skyline panel, filling all 12 cells.
+
+**Framing rules so the crop works.** These are already in the portrait prompts; check them when you pick outputs.
+1. **Face in the upper third and horizontally centered.** The crop keeps the top of the image, and a tall panel on desktop is very narrow (around 1:2.7). A 4:5 portrait therefore loses roughly the outer 30% on each side, so nothing important should sit at the edges.
+2. **Single panels are about 3:4 on desktop and wider on tablet**, so the square image loses a little on the sides or bottom. Keep the head centered with some headroom.
+3. **Same eye line across the set.** Put the eyes at roughly 25–30% from the top in every portrait so that neighboring panels line up.
+4. **No important detail in the bottom 20%.** It may be cropped, and the hero puts a dark gradient there.
+
+### Where a baked single image is still used
+`key-art-grid.webp` and `key-art-grid-mobile.webp` are **generated by a script, not drawn**. `scripts/generate-placeholders.mjs` uses `sharp` to paste the approved square portraits into the same grid (black gutters plus the skyline) and saves the result. These files feed the **OG/social share image** (`og-default.jpg`, which also adds the real logo). After the final portraits land, re‑run:
+
+```bash
+node scripts/generate-placeholders.mjs
 ```
 
-#### `key-art-grid-mobile` background plate (9:16, 1080×1920)
-```
-Original vertical video-game key-art poster layout in the style of modern open-world action-game marketing, NO people: the top third is one dark, low-detail dusky sky panel left empty for a headline. The lower two thirds is a grid of 2 columns by 3 rows (6 panels) separated by thin black gutters, each an empty Stockholm backdrop with bold ink outlines, cel shading, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain: a Södermalm rooftop at dusk with a floating node graph; a Slussen waterfront at sunset; a pink-and-cyan server aisle; a neon Gamla Stan alley; a night control room with abstract graph screens; a container harbor at sunset with green checkmark lights. Empty foreground space in every panel for a person to be placed. No text, letters, numbers or logos anywhere.
-```
+On the site branch, the script's crew list and panel map must be updated to the six‑person layout above. It still lists Angelica, and it currently also overwrites the crew files with color‑graded photos, so the final‑art step should skip those.
 
-**Placement map** (which portrait goes in which panel):
+**Use the prompts in 8.1 only if you want a hand‑painted single poster** (e.g. for print or social media). The website doesn't need them.
 
-| Panel (desktop) | Person | Panel (mobile, row by row, left → right) | Person |
-|---|---|---|---|
-| Tall left panel | Kami | Row 1 left | Kami |
-| Top row 1 | Max | Row 1 right | Pär |
-| Top row 2 | Love | Row 2 left | Tommy |
-| Top row 3 | Mauricio | Row 2 right | Love |
-| Wide middle (skyline) | Mimmi & Penny in the bottom corner | Row 3 left | Max |
-| Bottom row 1 | Pär | Row 3 right | Mauricio, with Mimmi & Penny peeking in at the bottom corner |
-| Bottom row 2 | Tommy | | |
-
-### 8.2 All‑in‑one prompts (attach all six approved portraits plus the dog portrait)
+### 8.1 Optional: single painted posters (print or social only; attach all six approved portraits plus the dogs)
 
 #### `key-art-grid.webp` (16:9, export 2880×1620)
 ```
