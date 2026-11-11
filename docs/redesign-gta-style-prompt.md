@@ -1,25 +1,41 @@
-# Prompt: Remake codelabs.se in a cinematic "open‑world crime‑drama" style
+# Prompt: Remake codelabs.se as a cinematic open‑world game, built around AI Engineering, SRE, DevOps and Platform work
 
 > Copy everything below the line into the executing LLM. It is self‑contained.
 
 ---
 
-## 0. Your role
+## 0. Your role and the core idea
 
-You are a senior creative technologist: part art director, part Next.js/Tailwind engineer. You are redesigning **codelabs.se**, the site of Code Labs AB, a small Stockholm engineering consultancy (platform engineering, DevOps, cloud, Kubernetes, internal tooling, reliability, AI enablement). The new look borrows the **mood of modern open‑world crime‑drama game marketing**, the style people link to the GTA VI trailers and key art: sun‑soaked painted poster art, neon nights, saturated sunset gradients, grid collages of bold illustrated characters, a game‑UI HUD feel, a cinematic "loading screen" pace.
+You are a senior creative technologist: part art director, part Next.js/Tailwind engineer, and someone who has actually been on call. You are redesigning **codelabs.se**, the site of Code Labs AB, a small Stockholm engineering consultancy. Its work is **AI engineering and agentic workflows, SRE and observability, DevOps and CI/CD, platform engineering, cloud (Azure/GCP), Kubernetes, infrastructure as code, internal tooling and developer experience**.
 
-The site still has to work as a **real recruiting and sales site**. Under the costume it is a credible consultancy. Engineers should want to join, and clients should still trust it.
+The new look borrows the **mood of modern open‑world crime‑drama game marketing**, the style people link to the GTA VI trailers and key art: sun‑soaked painted posters, neon nights, saturated sunset gradients, grid collages of bold illustrated characters, a game‑UI HUD feel, a cinematic trailer pace.
+
+**The key rule of this redesign: the game is the costume, engineering is the body.** Every game mechanic on the site maps to a real engineering concept:
+- The HUD is an observability dashboard.
+- Missions are incidents, migrations and rollouts.
+- Character classes are engineering roles.
+- The skill trees list real tools.
+- "Wanted stars" become on‑call severity levels.
+
+A senior SRE should scroll the site, grin at the in‑jokes and think *"these people actually know the craft"*. If a game element doesn't carry engineering meaning, cut it or make it carry some.
+
+The site still has to work as a **real recruiting and sales site**. It targets two audiences:
+1. **Senior engineers** (SRE, platform, DevOps, AI engineers) who are thinking about consulting.
+2. **Engineering leaders** buying platform, reliability, delivery or AI‑adoption help.
 
 ## 1. Hard guardrails (read first)
 
-This is a **style homage, not a copy**. These rules are mandatory:
+**Intellectual property and tone**
+1. **This is a style homage, not a copy.** Do not use the words "Grand Theft Auto", "GTA", "Rockstar", "Vice City", "Leonida" or "Los Santos". Do not use the "VI" logo treatment, the Rockstar star, the Pricedown font or lookalikes of the GTA wordmark. Do not use real game characters (e.g. Lucia, Jason), screenshots, trailer frames or the game's music.
+2. **All characters are original.** They are stylized portraits of the **real Code Labs team**, made from their own photos in `public/assets/team/`. Each person approves their portrait (and consents to being shown this way) before it's published.
+3. **Client logos** (Mojang, DICE, Klarna, SVT, ICA, TUI, NetEnt, Pricer, PriceRunner, Kindred, H&M, Zebware) stay **unaltered and legible**, in a neutral "Trusted by" strip (monochrome white is OK). Never put them in a "crime" or "incident" context.
+4. **Tone:** playful and cinematic, never glorifying crime. Use "missions", "crew", "case files", "operations", "on call" and "the city". Avoid "heist", "steal", "rob" and "gang".
 
-1. **No Rockstar or GTA intellectual property.** Do not use the words "Grand Theft Auto", "GTA", "Rockstar", "Vice City", "Leonida" or "Los Santos". Do not use the Roman numeral "VI" logo treatment, the Rockstar "R" star, the "Pricedown" font or lookalikes of the GTA wordmark. Do not use real game characters (e.g. Lucia, Jason), screenshots, trailer frames or the game's music.
-2. **All characters are original.** They are stylized portraits of the **real Code Labs team**, made from their own team photos in `public/assets/team/`. Before publishing, the team approves each portrait (and consents to being shown this way).
-3. **Generic genre vocabulary is fine and encouraged:** poster grid collage, painted realism, neon, palm silhouettes, sunset gradients, "wanted"‑style stars, HUD, minimap, phone UI, "mission" framing, loading screens, character‑select screens.
-4. **Client logos** (Mojang, DICE, Klarna, SVT, ICA, TUI, NetEnt, Pricer, PriceRunner, Kindred, H&M, Zebware) must stay **unaltered and legible**. Never stylize, recolor in a misleading way or put them in "crime" contexts. Show them in a neutral "Known associates / Trusted by" strip with plain treatment (monochrome white is OK).
-5. **Tone:** playful and cinematic, never glorifying crime. Use "missions", "crew", "case files", "operations" and "the city". Avoid "heist", "steal", "rob" and "gang", especially near client names.
-6. **All factual content stays true.** Services, benefits, team roles, blog posts and the contact email (`contact@codelabs.se`) keep their current meaning. You restyle and re‑voice them. You do not invent claims, numbers, clients or testimonials.
+**Technical credibility**
+
+5. **No fake facts.** Services, benefits, roles, posts and `contact@codelabs.se` keep their current meaning. Don't invent clients, numbers, uptime figures, MTTR improvements, certifications or testimonials. Any decorative metric (the HUD, dashboards, the terminal) is **clearly decorative**: make it obviously playful (e.g. `coffee_level 87%`, `pager_noise: low`) or label it `demo`. It must never look like a claimed result.
+6. **Technical details must be correct.** Commands, YAML, PromQL, Terraform, log lines and Kubernetes objects shown anywhere must be **syntactically valid and plausible**. Senior engineers notice mistakes. No buzzword soup like "AI‑powered blockchain DevOps". No "10x engineer" clichés.
+7. **AI is shown honestly.** Present it as engineering: evals, guardrails, observability, cost and latency, human‑in‑the‑loop, governance. Don't show it as magic. Keep the existing line *"This is not AI as theatre."* and make it a visible motto.
 
 ## 2. What exists today (analysis of the repo)
 
@@ -38,187 +54,273 @@ This is a **style homage, not a copy**. These rules are mandatory:
 **Layout:** `src/app/layout.tsx` (fonts, JSON‑LD Organization/WebSite, `<Navbar/>`, `<Footer/>`).
 
 **Design layer**
-- `src/app/globals.css`: CSS variables for a calm, warm‑beige, muted‑green "Scandinavian editorial" look (`--color-page #f3f0e8`, `--color-brand-blue #1d6b57`, etc.) and utility classes (`site-card`, `site-card-dark`, `site-pill`, `site-kicker`, `site-button-primary/secondary`, `site-reveal*`, `section-white/blue/dark/mint`, `site-orb-*`, `stripe-sheen`, `hero-surface`).
-- `src/app/components/site/design.ts`: `accentStyles` keyed by `AccentTone = "blue" | "violet" | "mint" | "coral"`, rotated via `getToneByIndex`.
-- `DESIGN.md`: a leftover "Meta Store" design doc that does not match the site. **Replace it** with the new design system doc.
+- `globals.css`: CSS variables for a calm, warm‑beige, muted‑green editorial look, plus utility classes (`site-card`, `site-card-dark`, `site-pill`, `site-kicker`, `site-button-primary/secondary`, `site-reveal*`, `section-white/blue/dark/mint`, `site-orb-*`, `stripe-sheen`, `hero-surface`).
+- `components/site/design.ts`: `accentStyles` keyed by `AccentTone = "blue" | "violet" | "mint" | "coral"`.
+- `DESIGN.md`: a leftover "Meta Store" design doc that does not match the site. **Replace it.**
 
-**Content source of truth:** `src/app/components/site/site-data.ts`. It holds the nav items, client logos, `servicePillars` (Platform & Cloud, DevOps & DX, Product/Tools/Integrations, AI Rollout & Agentic Workflows), `environments`, `workScenarios`, selected work, principles (Hands‑on, Small‑company closeness, Low‑ego competence, Growth with structure), culture items, benefits (wellness allowance, food, healthcare, pension, car leasing, certifications…), career areas and team members:
-- Kami Gerami: Platform, cloud, and AI enablement
-- Pär Berge: Platform engineering and cloud migration
-- Tommy Malmqvist: Infrastructure, reliability, and modernization
-- Love Kempe Lundin: Full‑stack delivery and product implementation
-- Max Povalinsky: Senior SRE and observability
-- Angelica Törnros: Recruitment and people
-- Mauricio Saez: DevOps and collaborative delivery
-- Mimmi & Penny: Office morale (the office dogs)
+**Content source of truth:** `src/app/components/site/site-data.ts`
+- `servicePillars`: **Platform & Cloud** (Azure, GCP, Kubernetes, IaC), **DevOps & Developer Experience** (build systems, CI/CD, automation, testing, code quality), **Product, Tools & Integrations** (React, Next.js, Node.js, .NET, APIs, internal tools), **AI Rollout & Agentic Workflows** (enterprise AI adoption, governance, automation, agentic workflows: *"This is not AI as theatre."*).
+- `environments`: Gaming and developer enablement (Mojang, DICE, build systems); Retail/e‑commerce/SaaS (Pricer, Adlibris, PriceRunner, Topgolf); Enterprise platform engineering (Tele2/TDC, NetEnt, Azure, Kubernetes, worker‑node optimization, pipelines); Media and public systems (SVT, ICA, reliability, observability); Product and web (Finflow, Nordiska Galleriet, Tupi).
+- `workScenarios` and selected work: modernizing delivery, platform and cloud with real operational stakes, developer tooling, AI‑adjacent delivery, hackathon‑born projects.
+- Principles: Hands‑on, Small‑company closeness, Low‑ego competence, Growth with structure. Plus culture items, benefits, career areas (Cloud platforms & Kubernetes, CI/CD & delivery engineering, Internal tooling & integrations, Reliability & observability, Modernization & full‑stack, AI & agentic workflows).
+- Team:
+  - Kami Gerami: Platform, cloud, and AI enablement
+  - Pär Berge: Platform engineering and cloud migration
+  - Tommy Malmqvist: Infrastructure, reliability, and modernization
+  - Love Kempe Lundin: Full‑stack delivery and product implementation
+  - Max Povalinsky: Senior SRE and observability
+  - Angelica Törnros: Recruitment and people
+  - Mauricio Saez: DevOps and collaborative delivery
+  - Mimmi & Penny: Office morale (the office dogs)
 
-Team groups for `/team`: "Platform, cloud, and modernization", "Reliability, delivery, and calmer production systems", "Product breadth and the human side of the company".
+**Relevant blog content to surface:** KubeCon Amsterdam 2026, Workflow Manager, Rust OCPP, Elixir posts, Ansible/Docker orchestration, Foodify with ChatGPT, hackathons. These are proof of real engineering activity; feature them.
 
-**Home sections today:** hero (headline "Build wider engineering judgment without disappearing into a giant consultancy." with the `entourage.jpeg` team photo), services (`#services`), client logo strip, dark "environments" block, consulting advantages, selected work (`#selected-work`), how we work (`#how-we-work`), culture/life section with recent "life" blog posts, closing CTA.
+**Assets:** team photos, ≈130 event photos in `public/assets/blogg/`, videos in `public/assets/video/`, customer logos, `public/assets/logo/codelabs.svg` and `codelabs_white.svg`.
 
-**Assets:** `public/assets/team/*` (team photos), `public/assets/blogg/*` (≈130 event photos: KubeCon Amsterdam 2026, Iceland, bowling, ping‑pong, shuffleboard, dinners, Ghana donation…), `public/assets/video/*.mp4` (grill, rally, iceland, waterfall), customer logos and testimonials, `public/assets/paint/*` (splash SVGs), `public/assets/logo/codelabs.svg` and `codelabs_white.svg`.
-
-**Legacy/dead code:** `src/app/components/{Home,Team,Careers,Intro,Graphics,Data}/*` and `/TeamData.tsx` at the repo root seem to be pre‑redesign components. Verify with a grep for imports. Delete what's unused, or leave it alone, but don't build on it.
+**Legacy code:** `src/app/components/{Home,Team,Careers,Intro,Graphics,Data}/*` and the root `/TeamData.tsx` appear unused. Verify with an import grep. Remove what's dead; don't build on it.
 
 ## 3. Creative direction
 
-### 3.1 Concept: "CODE LABS: STOCKHOLM NIGHTS"
-Present the company as the cast of an original open‑world game set in a stylized, sun‑and‑neon version of **Stockholm**: Slussen and Södermalm cliffs at golden hour, Gamla Stan under neon, the archipelago (skärgården) with speedboats at sunset, server‑room glow, rooftop dinners. This is our own world, not a fake Miami. The Stockholm twist makes it original and on‑brand. You can add a few palm trees for the vibe ("palms in Stockholm" is a fun, self‑aware joke), but keep the city recognizably Nordic.
+### 3.1 Concept: "CODE LABS: STOCKHOLM ON‑CALL"
+The concept is an original open‑world game set in a neon‑and‑sunset **Stockholm that runs on infrastructure**. The city *is* a production system:
+- The bridges are network links.
+- The harbor is a container port (Kubernetes jokes write themselves).
+- The metro map is a CI/CD pipeline.
+- The skyline's lit windows are dashboards.
+- The archipelago is a multi‑region cloud.
 
-The visitor should feel like they're watching a **game trailer, then browsing the in‑game menu**:
-- Home = trailer and key art.
-- Services = mission select.
-- Selected work = case files.
-- Team = character select.
-- Careers = "Join the crew", with the benefits shown as character perks.
-- Blog = in‑game news site / social feed ("Stockholm Nights Newswire").
+The crew are the engineers who keep the city running, ship new districts and bring AI into it without burning it down.
 
-### 3.2 Visual language
-- **Key art style:** painted semi‑realistic illustration, the "airbrushed poster" look: strong rim light, saturated warm skin tones, teal shadows, film grain, slight halftone in the darks. Characters are confident, mid‑action, cropped tight in a **multi‑panel poster grid** (3×3 or asymmetric 5–7 panels separated by thin black gutters).
-- **Palette (define as CSS tokens):**
-  - `--sunset-pink #FF3E8A`, `--sunset-orange #FF8A3D`, `--sunset-gold #FFC94A`
-  - `--neon-cyan #2EE6F0`, `--neon-violet #8B5CF6`, `--ocean-teal #0E7C86`
-  - `--night-900 #0B0714` (base background), `--night-800 #150D24`, `--night-700 #23163A`
-  - `--sand-50 #FFF4E6` (light text and paper), `--ink-100 #E9E3F5` (muted text)
-  - Signature gradient: `linear-gradient(180deg, #2B0F4C 0%, #B5247A 45%, #FF8A3D 75%, #FFC94A 100%)` (the sunset sky)
-  - Keep **WCAG AA**. Body text on `--night-900` uses `--sand-50` / `--ink-100`. Neon colors are for accents and display text only, never small body text.
-- **Typography (Google Fonts via `next/font`):**
-  - Display: **Anton** or **Bebas Neue**, condensed uppercase, tight tracking. Use it for the poster titles.
-  - Script accent: **Yellowtail** or **Mr Dafoe**, for one or two words per section only (e.g. *Stockholm*, *crew*), in neon pink with a glow.
+Tagline options (pick one; A/B test later):
+- **"Keep the city running."**
+- **"Stockholm never goes down. We make sure of it."**
+- **"Production is the open world."**
+
+### 3.2 The game‑to‑engineering mapping (use it everywhere)
+| Game element | Engineering meaning | Where it appears |
+|---|---|---|
+| **HUD** (health, armor, minimap) | Observability: **Health = SLO compliance, Armor = error budget remaining**, minimap = service topology / site map | Navbar and hero |
+| **Wanted stars ★–★★★★★** | **Incident severity / pager level** (SEV‑1 = five stars) | Mission cards and case files |
+| **Missions** | Real engagement types: migration, incident response, platform build, pipeline rescue, AI rollout | Services |
+| **Mission briefing** | Problem statement, constraints, "loadout" (stack), success criteria | Service and case pages |
+| **"MISSION PASSED"** | Deploy succeeded / postmortem closed / SLO restored | Micro‑interactions |
+| **"WASTED" / "BUSTED"** screens | 404 page = `HTTP 404 · Route not found · kubectl get page → NotFound`, 500 page = "Pod CrashLoopBackOff, our on‑call has been paged" | Error pages |
+| **Character classes** | **SRE, Platform Engineer, DevOps Engineer, AI Engineer, Full‑Stack Engineer, People Lead** | Team page |
+| **Skill trees** | Real tool progressions, e.g. `Docker → Kubernetes → Operators/CRDs → Multi‑cluster`, `Prompting → RAG → Evals → Agent orchestration → Governance` | Careers |
+| **Perks** | Real benefits from `site-data.ts` | Careers |
+| **Radio stations** | Optional playful ambient "stations": *Pager FM*, *Kube Radio*, *Lo‑Fi Logs* (UI only, no copyrighted audio) | Footer easter egg |
+| **Cheat codes** | A hidden terminal: type `kubectl get crew` or `sudo join` | Easter egg |
+| **Loading‑screen tips** | Real, useful engineering tips | Route transitions |
+| **Districts on the map** | Industries and environments (Gaming District, Retail Strip, Enterprise Harbor, Media Quarter, Product Row) | Home "The city" section |
+| **Newswire / in‑game social feed** | The blog: tech posts and crew life | Blog |
+
+### 3.3 Visual language
+- **Key art:** painted semi‑realistic illustration, the "airbrushed poster" look: strong rim light, saturated warm skin tones, teal shadows, film grain, halftone in the darks. Characters are confident, mid‑action, in a **multi‑panel poster grid** with thin black gutters. **Every panel holds a real engineering prop or scene:** terminal glow on faces, server racks, Grafana‑like dashboards (no real logos), on‑call phone with a pager alert, whiteboard with an architecture diagram, mechanical keyboard, laptop stickers made of generic shapes (no real brand stickers).
+- **Palette (CSS tokens):**
+  - Sunset: `--sunset-pink #FF3E8A`, `--sunset-orange #FF8A3D`, `--sunset-gold #FFC94A`
+  - Neon: `--neon-cyan #2EE6F0`, `--neon-violet #8B5CF6`, `--ocean-teal #0E7C86`
+  - Night: `--night-900 #0B0714` (base), `--night-800 #150D24`, `--night-700 #23163A`
+  - Light: `--sand-50 #FFF4E6`, `--ink-100 #E9E3F5`
+  - Signal colors that **double as observability semantics**: `--ok #3DDC97` (healthy), `--warn #FFC94A` (degraded), `--crit #FF3E5F` (paging), `--info #2EE6F0`. Use them consistently, like a dashboard.
+  - Sunset gradient: `linear-gradient(180deg, #2B0F4C 0%, #B5247A 45%, #FF8A3D 75%, #FFC94A 100%)`
+  - Keep WCAG AA. Neon is for accents and display text, never small body text.
+- **Typography (`next/font/google`):**
+  - Display: **Anton** or **Bebas Neue**, uppercase poster titles.
+  - Script accent: **Yellowtail** or **Mr Dafoe**, one or two words per section.
   - Body: **Inter** or **Manrope**.
-  - HUD/mono: **JetBrains Mono** or **IBM Plex Mono**, for labels, stats and "mission" metadata.
-- **Textures:** subtle film grain overlay (an SVG noise filter, not a big PNG), scanline or VHS shimmer on hover for cards, halftone dots on section edges, light leaks on the hero.
-- **Motifs:**
-  - "Wanted"‑style **star ratings**, reused as *seniority/skill stars* on character cards (playful, e.g. "Kubernetes ★★★★★").
-  - A **minimap**: a circular stylized Stockholm map in the corner of the nav that highlights the current section/page.
-  - A **phone UI**: the contact CTA opens an in‑game smartphone overlay with "Contacts → Code Labs" and the mailto link, LinkedIn, Instagram and GitHub.
-  - **Loading screens**: route transitions show a full‑bleed key‑art panel, a tip line ("TIP: Pair programming doubles your stamina.") and a spinner. Max 600 ms, skipped under `prefers-reduced-motion`.
-  - **"MISSION PASSED"** toast: a fun micro‑interaction on CTA clicks or at the bottom of a case file ("Respect +").
-  - Big **tilted ribbon titles** and poster‑style **release badges** ("Now hiring · Stockholm · 2026").
+  - HUD/terminal: **JetBrains Mono**. Used a lot, because terminals and dashboards are our "game UI".
+- **Textures:** SVG‑noise film grain, scanlines on hover, halftone section edges, light leaks on the hero, and a faint **log‑stream rain** (scrolling, dimmed, real‑looking structured log lines) behind dark sections.
 
-### 3.3 Copy voice
-Short, punchy, trailer‑like headlines. Underneath, keep the existing sincere, concrete explanation (reuse the current `site-data.ts` text, lightly tightened). Examples:
-- Hero: **"WELCOME TO STOCKHOLM NIGHTS."** / Sub: *"A small crew of engineers taking on platform, cloud and DevOps missions across the city's biggest systems."* / CTAs: **"Join the crew"** (→ `/careers`) and **"Call the crew"** (opens the phone UI / `mailto:contact@codelabs.se`).
-- Services → **"Choose your mission"**: four mission cards (one per `servicePillars` item). Each has a difficulty, a "loadout" (tech tags) and a "Reward" line (the `candidateFocus` text).
-- Selected work → **"Case files"**: dossier cards with a redacted‑bar style, "Location: Gaming / Retail / Media…", "Objective" (challenge) and "Outcome" (contribution).
-- How we work → **"Crew code"**: the four principles as tarot/poster cards.
-- Client logos → **"Known associates"** (neutral treatment, see guardrail 4).
-- Team → **"Select your character"**.
-- Careers → **"Join the crew"**, with benefits as **"Perks"** and career areas as **"Skill trees"**.
-- Blog → **"Newswire"**: post previews styled as an in‑game news site and social feed.
+### 3.4 Engineering‑native UI components (build these)
+1. **Ops HUD (navbar):**
+   - Left: the white Code Labs logo.
+   - Center: nav items in mono uppercase.
+   - Right: a **circular minimap** drawn as a service‑topology graph of the site's pages (nodes light up for the current route), plus two small bars, **SLO** (health, green) and **Error budget** (armor, cyan). They are decorative but hint at the meaning in a tooltip ("Our job: keep yours full").
+   - CTA: **"Page the crew"**, which opens the phone UI.
+2. **Phone UI (contact):** an in‑game smartphone overlay with apps:
+   - **Contacts**: `contact@codelabs.se` via mailto.
+   - **Pager**: a fake incoming alert, `SEV‑3 · Your platform needs love · Ack?` → leads to mailto.
+   - **Jobs**: links to `/careers`.
+   - **Social**: LinkedIn, Instagram, GitHub.
+3. **Mission card:** title, severity stars, **briefing** (problem), **loadout** (tech tags), **objective**, **reward** (what you grow as an engineer), and a mono footer like `region: eu-north-1 · on-call: shared`.
+4. **Case‑file dossier:** a postmortem‑style layout with **Context → Problem → What we did → Outcome → What we learned**. Use a blameless‑postmortem tone and redacted‑bar styling for anything confidential. Only qualitative outcomes unless real numbers exist in `site-data.ts`.
+5. **Character card / character select:** portrait, name, class (role), skill stars per real competency, a "Special ability" line and a "Main quest" (role description), plus a **`kubectl describe` view** toggle that shows the same profile as YAML:
+   ```yaml
+   apiVersion: crew.codelabs.se/v1
+   kind: Engineer
+   metadata:
+     name: max-povalinsky
+     labels: { class: sre, city: stockholm }
+   spec:
+     focus: [observability, reliability, incident-response]
+     onCall: true
+   ```
+   (Generate it from `site-data.ts`; it must be valid YAML.)
+6. **Terminal easter egg:** press `` ` `` or `~` to open a game‑console‑style terminal. Supported commands:
+   - `help`
+   - `kubectl get crew` (lists the team as a table)
+   - `kubectl get missions`
+   - `kubectl logs careers`
+   - `sudo join` (opens careers)
+   - `ping codelabs` (opens contact)
+   - `uptime` (a joke answer)
+   - `exit`
+   
+   Make it keyboard accessible, keep it out of the tab order until opened, and lazy‑load it.
+7. **Loading screens:** full‑bleed key art plus one **real tip**, e.g.:
+   - "TIP: Alert on symptoms, not causes."
+   - "TIP: Your error budget is a feature, spend it."
+   - "TIP: Pin your base images."
+   - "TIP: Evals before vibes. Measure your LLM pipeline."
+   - "TIP: Runbooks are love letters to future you."
+   - "TIP: If it isn't in Git, it doesn't exist."
+   - "TIP: Rollbacks should be boring."
+   
+   Max 600 ms. Skipped under reduced motion.
+8. **Incident mini‑game (optional, phase 6):** "Can you survive on‑call?", a 60‑second in‑browser game. Alerts pop up (`HighLatencyP99`, `PodOOMKilled`, `CertExpiringSoon`, `LLMTokenCostSpike`, `DiskPressure`) and you pick the right first action from three options. The score is shown as "SLO kept: 99.x%". The finish screen says: **"MISSION PASSED — want to do this for real? Join the crew."** Every answer must be technically sound. Keep it under 30 KB of JS, lazy‑loaded.
+9. **Error pages:** a stylized "WASTED"‑like screen, but with our own wording: `404 · ROUTE NOT FOUND` with `Error from server (NotFound): pages "<path>" not found`, and a "Respawn at home" button. The 500 page: `CrashLoopBackOff — on-call has been paged`.
+
+### 3.5 Copy voice
+The voice is short, punchy and trailer‑like on top, with a sincere, concrete engineering explanation underneath (reuse the `site-data.ts` text, tightened). Use engineer‑native humor; never mock clients.
+
+- **Hero:**
+  - Headline: **"KEEP THE CITY RUNNING."**
+  - Script accent: *Stockholm on‑call.*
+  - Sub: *"Code Labs is a small crew of platform, SRE, DevOps and AI engineers. We build the cloud foundations, delivery pipelines and AI workflows that Stockholm's busiest systems run on."*
+  - CTAs: **"Join the crew"** and **"Page the crew"**.
+- **Services → "Choose your mission":**
+  - **Platform & Cloud** → *Mission: Build the City* (Kubernetes, Azure, GCP, Terraform/IaC, GitOps).
+  - **DevOps & DX** → *Mission: Ship Faster, Sleep Better* (CI/CD, build systems, test automation, code quality, developer flow).
+  - **SRE & Observability** → *Mission: Keep the Lights On* (SLOs, alerting, incident response, observability, capacity, postmortems). Surface this as its own mission: it already exists in `environments`, the reliability career area and Max/Tommy's roles. Base its text on that existing content.
+  - **AI Rollout & Agentic Workflows** → *Mission: Bring AI to the City, Safely* (rollout, governance, evals, agentic workflows, LLM observability and cost control; "not AI as theatre").
+  - **Product, Tools & Integrations** → *Side quests that matter* (internal tools, APIs, React/Next.js, .NET, integrations).
+- **Environments → "The city":** districts with context tags.
+- **Selected work → "Case files"** (postmortem format).
+- **Principles → "Crew code"**, plus a **"Runbook"** section on how an engagement works: *Recon → Briefing → Deploy → Operate → Handover*.
+- **Careers → "Join the crew"**, with skill trees and perks.
+- **Blog → "Newswire"**, with tech posts tagged `#kubernetes #elixir #rust #ai #devops` and life posts tagged `#crewlife`.
 
 ## 4. Image and character production plan
 
-Generate assets with an image model that supports **image reference / character consistency** (e.g. GPT‑image, Midjourney `--cref`, Flux + IP‑Adapter/LoRA). Save the outputs as **WebP** (and AVIF if possible) under `public/assets/stockholm-nights/`, with file names exactly as listed. Keep the source PNGs out of the repo.
+Use an image model that supports **image reference / character consistency** (GPT‑image, Midjourney `--cref`, Flux + IP‑Adapter/LoRA). Output WebP (plus AVIF if possible) to `public/assets/stockholm-oncall/` with the exact file names below. Keep source PNGs out of the repo.
 
-### 4.1 Global style anchor (prefix every prompt)
-> *Original painted key‑art illustration for an open‑world crime‑drama video game poster, semi‑realistic airbrushed style, dramatic golden‑hour rim lighting, saturated sunset palette of magenta, orange and gold with teal shadows, subtle film grain and halftone, cinematic composition, confident expressions, high detail, 2020s game marketing aesthetic, set in a stylized Stockholm, Sweden.*
+### 4.1 Style anchor (prefix every prompt)
+> *Original painted key‑art illustration for an open‑world crime‑drama video game poster, reimagined around software engineers keeping a city's infrastructure running. Semi‑realistic airbrushed style, dramatic golden‑hour rim lighting, saturated magenta/orange/gold sunset palette with teal shadows, neon cyan accents from screens and dashboards, subtle film grain and halftone, cinematic composition, confident expressions, high detail, set in a stylized Stockholm, Sweden.*
 
-**Negative / avoid:** *logos, brand names, text, watermarks, real game characters, Roman numerals, weapons, guns, blood, drugs, police violence, money piles, sexualized poses, deformed hands.*
+**Negative / avoid:** *logos, brand names, readable text, watermarks, real game characters, Roman numerals, weapons, guns, blood, drugs, police, money piles, sexualized poses, deformed hands, nonsense code glyphs on screens.* Screens show **abstract** dashboards, graphs and terminal blocks. Never fake readable code; add real readable UI in HTML on top if it's needed.
 
-Engineering props replace the usual crime props: laptops, mechanical keyboards, server racks, terminal glow on faces, coffee cups, conference lanyards, headsets, a Tesla (Pär's), speedboats, electric scooters.
+**Props library:** laptops with terminal glow, server racks with blinking LEDs, observability dashboards (latency graphs, heatmaps), on‑call phones showing an alert, whiteboards with architecture boxes and arrows, shipping containers at the harbor (the Kubernetes pun), cable bundles, headsets, coffee, conference lanyards, a GPU rig glowing for AI work, a "rubber duck" on a desk.
 
-### 4.2 Character portraits (one per team member)
-For each person in `site-data.ts` → `teamMembers`, use their photo in `public/assets/team/` as the face/identity reference. Keep the likeness recognizable and flattering.
+### 4.2 Crew portraits (one per team member)
+Use each person's photo in `public/assets/team/` as the identity reference. Keep the likeness flattering and recognizable.
 
-| File | Reference | Scene / prop idea |
-|---|---|---|
-| `crew-kami.webp` | `team/kami.jpeg` | Rooftop over Södermalm at dusk, laptop with glowing AI/agent graphs, wind in jacket |
-| `crew-paer.webp` | `team/paer.jpeg` | Leaning on a white electric SUV (no logos) at Slussen, cloud‑migration architecture projected in neon |
-| `crew-tommy.webp` | `team/tommy.jpeg` | Server room lit pink and cyan, cables over shoulder, calm "I fixed prod" smile |
-| `crew-love.webp` | `team/love.jpeg` | Neon‑lit Gamla Stan alley, holding a phone showing a slick React UI |
-| `crew-max.webp` | `team/max_povalinsky.jpg` | Night control room full of observability dashboards, headset on |
-| `crew-angelica.webp` | `team/angelica.jpeg` | Archipelago speedboat at sunset, clipboard/tablet, "recruiter" boss energy |
-| `crew-mauricio.webp` | `team/mauricio.jpeg` | Pipeline conveyor of glowing containers at the harbor, collaborative pose |
-| `crew-mimmi-penny.webp` | `team/mimmi-penny.jpg` | The two office dogs in tiny sunglasses on the back seat of a convertible: the comic‑relief panel |
+| File | Ref | Class | Scene |
+|---|---|---|---|
+| `crew-kami.webp` | `team/kami.jpeg` | **AI & Platform Engineer** | Rooftop over Södermalm at dusk. A holographic agent‑workflow graph (nodes and arrows) floats beside him, a laptop with a GPU‑cluster dashboard |
+| `crew-paer.webp` | `team/paer.jpeg` | **Platform Engineer / Cloud Migration** | At Slussen beside a white electric SUV (no logos). Behind him, a stream of glowing containers moves from an old data center across a bridge into a cloud |
+| `crew-tommy.webp` | `team/tommy.jpeg` | **Infrastructure & Modernization** | In a server aisle lit pink and cyan, cables over his shoulder, calm "prod is fixed" smile, a legacy rack being retired behind him |
+| `crew-love.webp` | `team/love.jpeg` | **Full‑Stack Engineer** | In a neon Gamla Stan alley, holding a tablet with an abstract UI, API connection lines drawn in light around him |
+| `crew-max.webp` | `team/max_povalinsky.jpg` | **SRE / Observability** | In a night control room with walls of latency and heatmap graphs, headset on, phone buzzing with a pager alert, unbothered |
+| `crew-mauricio.webp` | `team/mauricio.jpeg` | **DevOps Engineer** | At the container harbor at sunset, conveyor pipelines of glowing build artifacts, green checkmark lights along the line |
+| `crew-angelica.webp` | `team/angelica.jpeg` | **People Lead / Recruiter** | Archipelago speedboat at golden hour with a tablet showing an abstract "crew roster", "assembling the team" energy |
+| `crew-mimmi-penny.webp` | `team/mimmi-penny.jpg` | **Morale Officers** (secret characters) | The two office dogs in tiny sunglasses on a server cabinet, one wearing an on‑call pager collar |
 
-Outputs per person: **portrait 4:5 (1600×2000)** for character select, plus a **square crop 1:1 (1000×1000)** for cards. Keep lighting, grain and color grade identical across the set so they read as one cast.
+For each person, output a **4:5 portrait (1600×2000)** and a **1:1 crop (1000×1000)**. The whole set uses identical grading so it reads as one cast.
 
 ### 4.3 Key art and scenes
-| File | Ratio / size | Description |
+| File | Size | Description |
 |---|---|---|
-| `key-art-grid.webp` | 16:9, 2880×1620 | **Hero poster**: asymmetric 7‑panel grid with the crew portraits plus a Stockholm skyline panel, thin black gutters, a large empty area for the headline |
-| `key-art-grid-mobile.webp` | 9:16, 1080×1920 | Vertical version of the poster for mobile |
-| `city-sunset.webp` | 21:9, 3360×1440 | Stockholm skyline (Stadshuset, Riddarholmen, Söder cliffs) at sunset with a few cheeky palms in the foreground, water reflections |
-| `city-night-neon.webp` | 21:9 | Same view at night, neon signage (no readable brand text), light trails |
-| `mission-platform.webp` | 3:2 | Glowing Kubernetes‑like hex clusters floating over the harbor |
-| `mission-devops.webp` | 3:2 | Neon CI/CD pipeline as a highway interchange at night |
-| `mission-product.webp` | 3:2 | Giant holographic UI panels over Sergels torg |
-| `mission-ai.webp` | 3:2 | An agent swarm as fireflies over the archipelago at dusk |
-| `loading-1..4.webp` | 16:9 | Four loading‑screen paintings: archipelago boat, rooftop dinner, KubeCon‑style conference hall, server room |
-| `careers-hero.webp` | 16:9 | The crew walking toward the camera on Skeppsbron at golden hour (the "squad walk") |
-| `newswire-header.webp` | 21:9 | TV‑news studio set with a "Newswire" vibe (no readable text) |
-| `og-default.webp` | 1200×630 | OG/Twitter image: poster grid plus space for the Code Labs logo (composite the real logo in code or Figma, not with AI) |
-| `minimap.svg` | vector | Hand‑drawn simplified Stockholm map (islands, water), made in SVG by hand or by tracing, not AI |
+| `key-art-grid.webp` | 2880×1620 | **Hero poster:** a 7‑panel grid of crew portraits plus a panel of Stockholm's skyline with every window glowing like dashboard tiles, and a big empty area for the headline |
+| `key-art-grid-mobile.webp` | 1080×1920 | Vertical version |
+| `city-sunset.webp` | 3360×1440 | Stockholm skyline at sunset, cheeky palms in the foreground, faint light lines connecting buildings like a network topology |
+| `city-night-neon.webp` | 3360×1440 | The same view at night, light trails on the bridges styled like data packets |
+| `mission-platform.webp` | 3:2 | The harbor as a container platform: cranes stacking glowing containers into neat clusters |
+| `mission-devops.webp` | 3:2 | A highway interchange at night as a CI/CD pipeline: lanes labeled with shapes (no text), green and red lights like build status |
+| `mission-sre.webp` | 3:2 | A lighthouse in the archipelago at night sweeping a beam over a dark sea of graphs; an engineer on watch |
+| `mission-ai.webp` | 3:2 | An agent swarm of fireflies over the archipelago at dusk, flowing through a glowing gate (guardrails/evals) before reaching the city |
+| `mission-tools.webp` | 3:2 | A neon workshop where engineers assemble tools from glowing modular blocks |
+| `loading-1..5.webp` | 16:9 | Loading paintings: on‑call at 3 AM with city lights, KubeCon‑style conference hall, rooftop crew dinner, hackathon night, archipelago boat trip |
+| `careers-hero.webp` | 16:9 | The crew squad‑walking toward the camera on Skeppsbron at golden hour, laptops and coffee, with the city's lights booting up behind them |
+| `newswire-header.webp` | 21:9 | A news‑studio set with a wall of abstract dashboards (no readable text) |
+| `error-404.webp` | 16:9 | A lone engineer on an empty bridge at night, lost, a map hologram glitching |
+| `og-default.webp` | 1200×630 | A poster‑grid crop. The real Code Labs logo and title are composited in code, not by AI |
+| `minimap.svg` | vector | A hand‑built simple Stockholm islands map in SVG, used as the base for the topology minimap |
 
-### 4.4 Blog and event photos
-Don't regenerate the real event photos. Give them a consistent **CSS/treatment pass** instead: duotone or sunset color grade on hover, film grain, a "polaroid / phone camera" frame for the social‑feed look. Keep the originals viewable at full color in the post body.
+### 4.4 Real photos
+Don't regenerate event photos (KubeCon, hackathons, dinners). Give them a consistent CSS treatment instead: a sunset duotone on hover, grain, and a "phone camera" frame in the feed. They stay full color in post bodies. These are our **proof of life**, so show them proudly.
 
 ### 4.5 Alt text
-Every generated image gets descriptive alt text that says it's an illustration, e.g. *"Illustrated portrait of Tommy Malmqvist in a neon‑lit server room."*
+Every image is described as an illustration and names its content, e.g. *"Illustrated portrait of Max Povalinsky, SRE, in a control room full of monitoring graphs."*
 
 ## 5. Page‑by‑page spec
 
 ### Global
-- **Navbar:** a dark translucent HUD bar with the white Code Labs logo on the left; nav items in mono uppercase; a small **minimap** circle that highlights the current section; the **"Call the crew"** button opens the phone UI. Mobile: a full‑screen "pause menu" overlay (Resume / Missions / Case files / Crew / Join / Newswire / Contact).
-- **Footer:** a "credits roll" style: "A Code Labs production · Stockholm", socials, email, sitemap links, a small "Press START to join" CTA.
-- **Background:** `--night-900` with the grain overlay. Sections alternate between night scenes and sunset gradients.
-- **Motion:** scroll‑reveal (keep the existing `site-reveal` idea and restyle it), parallax on the hero panels, glitch/scanline on card hover. **Everything respects `prefers-reduced-motion`.**
+- **Ops HUD navbar** (§3.4.1).
+- Mobile **pause menu**: Resume / Missions / Case files / Crew / Join / Newswire / Page us.
+- **Footer as a credits roll:** "A Code Labs production · Stockholm · Built with Next.js, deployed with care". Include the socials, email, links, the "Pager FM" radio easter egg and a terminal hint ("Press ~ for console").
+- **Background:** `--night-900` with grain and the faint log‑stream rain on dark sections. Sections alternate between night scenes and sunset gradients.
+- **Motion:** scroll‑reveal, hero parallax, scanline/glitch on card hover. All of it respects `prefers-reduced-motion`.
 
-### `/` Home
-1. **Trailer hero:** full‑viewport `key-art-grid` with a slow Ken Burns pan per panel. Huge Anton headline "WELCOME TO STOCKHOLM NIGHTS", a script accent "*Code Labs presents*", a sub line, two CTAs, and a poster‑style badge ("Now recruiting · Stockholm"). Optional: a muted autoplay loop built from `video/*.mp4` with a sunset color grade, behind a "Watch the trailer" button (lazy‑loaded; never blocks LCP).
-2. **Known associates:** client logos marquee (neutral).
-3. **Choose your mission:** the 4 service pillars as mission cards with scene image, difficulty stars, loadout tags and reward text.
-4. **The city (environments):** horizontally scrolling "districts" (Gaming District, Retail Strip, Enterprise Harbor, Media Quarter, Product Row), each with its context tags.
-5. **Case files:** selected work as dossiers.
-6. **Crew code:** the principles plus consulting advantages.
-7. **Meet the crew teaser:** 4 character cards linking to `/team`.
-8. **Life in the city:** recent "life" blog posts in the Newswire/social‑feed style.
-9. **Final CTA:** sunset panel, "Ready for your next mission?" with Join / Call.
+### `/`: Trailer and mission select
+1. **Trailer hero:** `key-art-grid` with a slow Ken Burns pan per panel, the headline, the script accent, the sub line, two CTAs and a badge ("Now recruiting · SRE · Platform · AI engineers"). Optional: a muted loop from `video/*.mp4` with a sunset grade, lazy‑loaded and never blocking LCP.
+2. **Trusted by:** the neutral client logo marquee.
+3. **Choose your mission:** the five mission cards (§3.5).
+4. **The city:** horizontal district map built from `environments`, styled like a game map with a topology overlay.
+5. **Case files:** dossiers in postmortem format.
+6. **Runbook:** how an engagement works (*Recon → Briefing → Deploy → Operate → Handover*), drawn as a pipeline with stage status lights.
+7. **Crew code:** the principles plus consulting advantages ("more environments = better pattern recognition", framed as "XP from many maps").
+8. **Meet the crew:** a teaser of four character cards → `/team`.
+9. **Survive on‑call?** The optional incident mini‑game teaser.
+10. **From the Newswire:** latest tech and life posts.
+11. **Final CTA:** sunset panel. "Your next mission is waiting." Join the crew / Page the crew.
 
 ### `/team`: Character select
-- A full‑screen character‑select UI: a row of portrait thumbnails; the selected one shows a big portrait with name, role (class), a short bio (`summary` / `humanDetail`), skill stars and a "Special ability" line. Keyboard navigable (arrow keys plus focus states) and a plain grid fallback on mobile.
-- Group sections from `teamGroups` become "Factions".
-- Mimmi & Penny get a special "Secret characters unlocked" card.
+- A full‑screen select UI with thumbnails. The active character shows the big portrait, name, class, bio, skill stars, special ability and the **`kubectl describe` YAML toggle**. Keyboard navigable, with a grid fallback on mobile.
+- `teamGroups` become **Factions**: *Platform & Cloud*, *Reliability & Delivery*, *Product & People*.
+- Mimmi & Penny appear as **"Secret characters unlocked"**.
+- Closing line: *"Serious engineering does not need to feel sterile."* (existing copy).
 
 ### `/careers`: Join the crew
-- Hero with `careers-hero` (the squad walk).
-- "Why this city": consulting advantages.
-- **Skill trees**: career areas as connected node diagrams (SVG).
-- **Perks**: the benefits grid as perk icons with short descriptions. All benefit facts stay exactly as in `site-data.ts`.
-- If the salary calculator exists in the current careers flow, restyle it as an in‑game "Earnings" screen with the same logic.
-- Open roles / application CTA → mailto. End with "MISSION PASSED" when the CTA is clicked.
+- `careers-hero` squad walk. Headline: **"JOIN THE CREW."** Sub based on the existing *"A consulting career for engineers who want more range."*
+- **Choose your class:** the career areas as classes (SRE, Platform, DevOps, AI Engineer, Full‑Stack/Modernization, Internal Tooling).
+- **Skill trees:** an interactive SVG tree per class with real progressions (e.g. SRE: `Monitoring → SLOs & error budgets → Incident command → Chaos/resilience → Capacity & cost`; AI: `LLM APIs → RAG → Evals & guardrails → Agentic workflows → AI governance & rollout`). Node labels only; don't claim certifications we don't offer.
+- **Perks:** the benefits grid with perk icons, facts exactly as in `site-data.ts` (wellness allowance, food benefit, pension, healthcare, parental pay, car leasing, upskilling and certifications…).
+- **Side quests:** conferences (KubeCon), meetups, hackathons and internal projects, linked to the real blog posts.
+- If a salary calculator exists, restyle it as the **"Earnings" screen** with the same logic.
+- CTA → mailto, followed by a "MISSION PASSED · Application sent?" toast.
 
 ### `/blog`: Newswire
-- Header `newswire-header`, a breaking‑news ticker with the latest post titles, posts as a mixed feed of news articles and social posts (based on whether the post has an image), filters by year/tag if cheap.
-- `/blog/[slug]`: readable article layout. Prose on a dark surface with the `@tailwindcss/typography` `prose-invert` variant, restyled headings, images framed. **Readability beats theme here.**
+- `newswire-header` plus a **ticker** of the latest titles in a mono font.
+- Filter chips: `#all #tech #ai #kubernetes #devops #crewlife`. Derive tags from frontmatter if it exists; otherwise classify by a slug/keyword map in code.
+- Tech posts render as "news articles"; life posts render as "social posts" with photo frames.
+- `/blog/[slug]`: readable dark article with `prose-invert`. Code blocks get a terminal‑window frame with traffic‑light dots and a filename tab. **Readability wins over the theme.**
 
 ## 6. Engineering requirements
-- Keep Next.js App Router, TypeScript and Tailwind v4. Put all new tokens as CSS variables and `@theme` in `globals.css`. Rewrite `design.ts` so `AccentTone` becomes e.g. `"pink" | "orange" | "cyan" | "violet"`, and update all call sites.
-- Keep `site-data.ts` as the single content source. Add fields (e.g. `stars`, `specialAbility`, `portraitUrl`, `missionImage`) instead of hard‑coding copy in components. Split `home-page.tsx` into section components under `components/site/home/`.
-- Use `next/image` for everything, with `priority` only on the hero and correct `sizes`. Hero LCP image under 250 KB on mobile.
-- Load fonts via `next/font/google` with `display: swap`, subset `latin` (plus `latin-ext` for å/ä/ö in names and Swedish posts).
-- Build the phone UI, pause menu and character select as accessible client components: Headless UI Dialog / Tabs, focus trap, Esc to close, ARIA labels.
-- Respect `prefers-reduced-motion` everywhere (no Ken Burns, no glitch, no loading screens).
-- Accessibility: AA contrast, visible focus rings (neon outline), semantic headings (one h1 per page), alt text.
-- SEO: keep `buildPageMetadata`, JSON‑LD, `sitemap.ts` and `robots.ts`. Update titles and descriptions so they still say "engineering consultancy in Stockholm" (the theme must not hurt search). Set `siteConfig.defaultOgImage` to the new OG image.
-- Performance budget: Lighthouse mobile ≥ 90 for Performance, Accessibility, Best Practices and SEO on `/`, `/team`, `/careers` and `/blog`. No layout shift from fonts or images.
-- Don't add heavy dependencies. Framer Motion (or `motion`) is acceptable for the character select and transitions; otherwise use CSS. No WebGL unless it's lazy‑loaded and optional.
-- Remove unused legacy components (verify by import graph) and replace `DESIGN.md` with the new "Stockholm Nights" design system (tokens, type scale, components, motion rules, image style guide, guardrails from §1).
+- Keep Next.js App Router, TypeScript and Tailwind v4. Tokens go in `globals.css` (`@theme`). Rewrite `design.ts` with new tones (`"pink" | "orange" | "cyan" | "violet"`) plus status tones (`ok | warn | crit | info`), and update all call sites.
+- **`site-data.ts` remains the single content source.** Extend the types: `class`, `skills: {name, stars}[]`, `specialAbility`, `portraitUrl`, `missionImage`, `severity`, `loadout`, `briefing`, `reward`, `skillTree`. Add an **SRE & Observability** pillar built only from existing facts. Split `home-page.tsx` into `components/site/home/*`.
+- Build the terminal, phone UI, character select, pause menu and mini‑game as accessible client components (Headless UI Dialog/Tabs, focus trap, Esc to close, ARIA). Lazy‑load them with `next/dynamic`.
+- `next/image` everywhere, with `priority` only on the hero. Hero LCP image under 250 KB on mobile.
+- Fonts via `next/font/google`, `display: swap`, subsets `latin` and `latin-ext` (å/ä/ö).
+- `prefers-reduced-motion`: no Ken Burns, glitch, log rain or loading screens.
+- Accessibility: AA contrast, neon focus rings, one h1 per page, alt text, and decorative HUD elements marked `aria-hidden`.
+- **SEO:** keep `buildPageMetadata`, JSON‑LD, `sitemap.ts` and `robots.ts`. Titles and descriptions stay keyword‑rich and *non‑game*: "Platform engineering, SRE, DevOps and AI engineering consultancy in Stockholm". Add `Service` JSON‑LD entries for each pillar. Set the new OG image. The game copy lives in headings and visuals, never in place of searchable descriptions.
+- **Performance budget:** Lighthouse mobile ≥ 90 for all four categories on `/`, `/team`, `/careers` and `/blog`. No CLS from fonts or images. JS added for the eggs and mini‑game stays lazy and out of the initial bundle.
+- Dependencies: `motion` (Framer Motion) is OK. Don't add others without a reason. No WebGL unless it's optional and lazy.
+- Custom `not-found.tsx` and `error.tsx` per §3.4.9.
+- Remove dead legacy components. Replace `DESIGN.md` with the **"Stockholm On‑Call" design system**: tokens, type scale, components, the mapping table from §3.2, motion rules, the image style guide and the guardrails from §1.
 - `npm run build` and `npm run lint` must pass.
 
-## 7. Execution phases (do them in order, commit after each)
-1. **Audit:** confirm the analysis in §2, map every content field in `site-data.ts` to its new section, and list the dead code.
-2. **Design system:** tokens, fonts, grain/halftone utilities, buttons (neon pill and "HUD" button), cards (mission, dossier, character, perk, news), star rating, ribbon title, badge. Build a hidden `/styleguide` route to review them (exclude it from the sitemap and set `noindex`).
-3. **Assets:** generate images per §4 (or, if you can't generate images, create **clearly labeled placeholders** at the exact file names and sizes, plus a `public/assets/stockholm-nights/PROMPTS.md` with the full prompt for each file so a human can generate them).
-4. **Global chrome:** navbar with minimap, pause menu, phone UI, footer credits, loading‑screen transition.
-5. **Pages:** Home → Team → Careers → Blog list → Blog post.
-6. **Polish:** motion, reduced‑motion, a11y pass, Lighthouse, OG images, metadata, `DESIGN.md`.
-7. **QA:** screenshots at 390 px, 768 px, 1280 px and 1920 px for every page. Check the guardrails in §1 one by one and report each as pass/fail.
+## 7. Execution phases (commit after each)
+1. **Audit:** confirm §2, map every `site-data.ts` field to its new section, list dead code, and draft the extended data types.
+2. **Design system:** tokens, fonts, textures, buttons, mission/dossier/character/perk/news cards, stars, HUD bars, terminal frame. Add a hidden `/styleguide` route (`noindex`, not in the sitemap).
+3. **Content and copy:** extend `site-data.ts`, write the mission/case‑file/skill‑tree/tip copy, then do a **technical accuracy review** of every command, YAML block, alert name and tip.
+4. **Assets:** generate images per §4. If you can't generate images, create **clearly labeled placeholders** at the exact names and sizes, plus `public/assets/stockholm-oncall/PROMPTS.md` with the full prompt for each file.
+5. **Global chrome:** Ops HUD, pause menu, phone UI, terminal, footer credits, loading screens, error pages.
+6. **Pages:** Home → Team → Careers → Blog list → Blog post. Then the optional incident mini‑game.
+7. **Polish and QA:** reduced motion, an a11y pass, Lighthouse, metadata and JSON‑LD, `DESIGN.md`. Take screenshots at 390, 768, 1280 and 1920 px for every page. Report pass/fail for each guardrail in §1, including the credibility rules (no fake metrics, valid code).
 
 ## 8. Deliverables
-- The code changes, committed per phase with clear messages.
-- `public/assets/stockholm-nights/` with images (or labeled placeholders) and `PROMPTS.md`.
+- Code changes, committed per phase with clear messages.
+- `public/assets/stockholm-oncall/` with images (or labeled placeholders) and `PROMPTS.md`.
 - The new `DESIGN.md`.
-- A short report: what changed, screenshots, Lighthouse scores, guardrail checklist results, and an open list of portraits waiting for team approval.
-
+- A short report: what changed, screenshots, Lighthouse scores, the guardrail checklist, a list of every decorative/demo metric and where it's labeled, and the portraits awaiting team approval.
