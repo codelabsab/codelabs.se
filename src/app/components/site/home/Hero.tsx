@@ -50,13 +50,14 @@ export default function Hero() {
       <div className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sunset-orange/30 mix-blend-screen blur-3xl" aria-hidden="true" />
 
       <div className="site-container relative bg-night-900 pb-16 pt-10 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:bg-transparent lg:py-20">
-        <div className="max-w-2xl">
+        {/* Stay inside the dark area left of the poster at every desktop width. */}
+        <div className="max-w-2xl lg:max-w-[23rem] xl:max-w-md">
           <p className="badge">
             <span className="status-dot blink" />
             Now recruiting · SRE · Platform · AI engineers
           </p>
           <p className="script mt-8 -rotate-3 text-4xl sm:text-5xl">Stockholm on-call.</p>
-          <h1 className="display mt-2 text-[clamp(3.6rem,11vw,8.5rem)] leading-[0.88]">
+          <h1 className="display mt-2 text-[clamp(3.6rem,11vw,8.5rem)] leading-[0.88] lg:text-[clamp(5rem,9vw,8rem)]">
             {tagline.replace(".", "")}
             <span className="text-sunset-pink">.</span>
           </h1>
