@@ -1,14 +1,18 @@
-import type { Metadata } from "next";
-import { IBM_Plex_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Anton, JetBrains_Mono, Manrope, Yellowtail } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/components/Navbar/Navbar";
-import Footer from "@/app/components/Footer/Footer";
+import OpsHud from "@/app/components/site/chrome/OpsHud";
+import Footer from "@/app/components/site/chrome/Footer";
+import Overlays from "@/app/components/site/chrome/Overlays";
+import { missions } from "@/app/components/site/site-data";
 import { absoluteUrl, siteConfig } from "@/app/seo";
+
+const defaultTitle = "Code Labs | Platform engineering, SRE, DevOps and AI engineering consultancy in Stockholm";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Code Labs | Engineering consulting for people who want to keep growing",
+    default: defaultTitle,
     template: "%s | Code Labs",
   },
   description: siteConfig.description,
@@ -16,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Code Labs | Engineering consulting for people who want to keep growing",
+    title: defaultTitle,
     description: siteConfig.description,
     url: "/",
     siteName: siteConfig.siteName,
@@ -25,15 +29,22 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.defaultOgImage,
+        width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Code Labs | Engineering consulting for people who want to keep growing",
+    title: defaultTitle,
     description: siteConfig.description,
     images: [siteConfig.defaultOgImage],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0714",
+  colorScheme: "dark",
 };
 
 const organizationJsonLd = {
@@ -57,27 +68,45 @@ const organizationJsonLd = {
         "@id": `${siteConfig.url}/#organization`,
       },
     },
+    ...missions.map((mission) => ({
+      "@type": "Service",
+      "@id": `${siteConfig.url}/#service-${mission.id}`,
+      name: mission.title,
+      serviceType: mission.title,
+      description: mission.briefing,
+      areaServed: "Stockholm, Sweden",
+      provider: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+    })),
   ],
 };
 
-const sans = Plus_Jakarta_Sans({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-sans",
+const display = Anton({
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-anton",
   display: "swap",
 });
 
-const display = Outfit({
-  weight: ["500", "600", "700"],
+const script = Yellowtail({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-yellowtail",
+  display: "swap",
+  preload: false,
+});
+
+const sans = Manrope({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
-const mono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-mono",
+const mono = JetBrains_Mono({
+  weight: ["400", "500", "700"],
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -88,14 +117,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${display.variable} ${mono.variable}`}>
+      <body className={`${sans.variable} ${display.variable} ${script.variable} ${mono.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <Navbar />
-        {children}
+        <OpsHud />
+        <div id="main" className="pt-16">
+          {children}
+        </div>
         <Footer />
+        <Overlays />
       </body>
     </html>
   );

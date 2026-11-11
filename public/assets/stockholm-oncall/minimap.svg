@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Simplified map of central Stockholm's islands">
+  <!-- Hand-drawn, not AI generated. Shapes are mirrored in src/app/components/site/chrome/Minimap.tsx -->
+  <rect width="100" height="100" fill="#0a1a2b"/>
+  <g fill="#1d2f4a" stroke="#35557a" stroke-width="1">
+    <path d="M8 38q10-8 24-4q6 4 2 10q-12 6-24 2q-6-3-2-8z"><title>Kungsholmen</title></path>
+    <path d="M34 4h40q6 10-2 24q-14 8-30 4q-10-8-8-28z"><title>Norrmalm</title></path>
+    <path d="M48 44q6-3 10 1q2 6-4 8q-7 1-8-4q0-3 2-5z"><title>Gamla Stan</title></path>
+    <path d="M20 62q22-10 52-4q10 6 4 18q-26 14-54 4q-8-8-2-18z"><title>Södermalm</title></path>
+    <path d="M72 34q12-6 24 0q4 8-4 12q-12 4-22-2q-2-6 2-10z"><title>Djurgården</title></path>
+    <path d="M63 44q4-2 6 1q0 4-4 4q-3-1-2-5z"><title>Skeppsholmen</title></path>
+  </g>
+</svg>
