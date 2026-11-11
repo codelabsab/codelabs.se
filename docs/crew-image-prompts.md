@@ -232,41 +232,7 @@ logos, brand names, readable text, letters, numbers, watermark, signature, exist
 
 ---
 
-## 7. Angelica Törnros: People Lead / Recruiter
-
-**Reference:** `public/assets/team/angelica.jpeg`. She's far away and wearing a riding helmet, so **get a clear, recent, front‑facing photo first** and fill in hair details from it. The prompt keeps hair generic for that reason.
-
-### `crew-angelica.webp` (4:5)
-```
-Original character key-art illustration in the style of modern open-world action-game loading-screen art: bold clean black ink outlines, cel-shaded semi-realistic rendering, smooth airbrushed gradients, posterized shadows, hyper-saturated colors, subtle film grain and halftone texture. Golden-hour rim light in gold, orange and magenta, teal shadows, sea spray sparkle.
-
-Subject: the woman in the reference photo, keep her face, skin tone, hairstyle and hair color exactly as in the reference, clearly recognizable and flattering, bright confident smile. Outfit: tailored dark navy jacket over a white top, slim trousers, sunglasses, smart and sporty.
-
-Pose: three-quarter body, standing at the helm of a small open speedboat, one hand on the windshield frame, the other holding a tablet, wind in her hair, "assembling the team" boss energy.
-Scene: the Stockholm archipelago at golden hour, red wooden cottages and pine islands, white wake behind the boat. The tablet shows an abstract crew roster of portrait circles and glowing cards (no readable text). A riding crop rests on the dashboard as a small personal detail.
-Role vibe: People Lead and Recruiter, the one who builds the crew.
-
-Vertical 4:5 composition, character fills about 75% of the frame height, face in the upper third. No text anywhere.
-```
-
-### `crew-angelica-square.webp` (1:1)
-```
-Original character portrait illustration in the style of modern open-world action-game loading-screen art: bold clean black ink outlines, cel-shaded semi-realistic rendering, airbrushed gradients, hyper-saturated colors, subtle film grain. Golden-hour gold and magenta rim light, teal shadows.
-
-Subject: the woman in the reference photo, hairstyle and hair color as in the reference, recognizable and flattering, bright confident smile, navy tailored jacket, wind in her hair. Chest-up, three-quarter view.
-Background: blurred archipelago water and islands at golden hour.
-
-Square 1:1, face centered, head and shoulders, generous headroom. No text anywhere.
-```
-
-**Negative / `--no`:**
-```
-logos, brand names, readable text, letters, numbers, watermark, signature, existing video game characters, Roman numerals, weapons, guns, knives, blood, drugs, police, money, cigarettes, sexualized pose, revealing clothing, extra fingers, deformed hands, distorted face, nonsense UI text, photorealistic photo
-```
-
----
-
-## 8. Mimmi & Penny: Morale Officers (secret characters)
+## 7. Mimmi & Penny: Morale Officers (secret characters)
 
 **Reference:** `public/assets/team/mimmi-penny.jpg`. Get the owner's OK before publishing.
 
@@ -300,36 +266,94 @@ logos, brand names, readable text, letters, numbers, watermark, signature, exist
 
 ---
 
-## 9. Group images that use the crew
+## 8. Group images that use the crew
 
-Generate these **after** the eight portraits are approved. Attach the approved portraits as references so the faces match.
+The crew is **six people plus the two dogs**:
 
-### `key-art-grid.webp` (16:9, export 2880×1620)
+| # | Person | Class | Signature look (keep it identical to their approved portrait) |
+|---|---|---|---|
+| 1 | Kami | AI & Platform Engineer | Shaved head, full dark beard, light denim jacket, grey tee |
+| 2 | Pär | Platform Engineer / Cloud Migration | Short tousled light‑brown hair, stubble, navy checked flannel |
+| 3 | Tommy | Infrastructure & Modernization | Short dark tousled hair, stubble, charcoal hoodie, cables over shoulder |
+| 4 | Love | Full‑Stack Engineer | Swept‑back light‑brown hair, short beard, aviators, white open shirt |
+| 5 | Max | SRE / Observability | Long dark hair in a low bun, mustard‑yellow scarf, black jacket, headset |
+| 6 | Mauricio | DevOps Engineer | Thick dark swept‑back hair, big smile, navy knit sweater |
+| – | Mimmi & Penny | Morale Officers | Two fawn French bulldogs, dark masks, tiny sunglasses |
+
+### Recommended: composite the posters, don't generate them
+Image models are bad at keeping **six specific faces** right in one image: faces swap, merge or drift. The reliable way is:
+1. Generate and approve the six portraits (and the dogs) with the prompts above.
+2. Generate **only the backgrounds** with the prompts in 8.1 below (no people).
+3. Place the approved portraits into the panels in Figma, Photoshop or code. Add the black gutters, and apply a shared grain and color grade on top so everything sits together.
+
+This keeps the likeness every person approved. Use the all‑in‑one prompts in 8.2 only if you want a single‑shot version, and still check every face.
+
+### 8.1 Background plates (no people), for compositing
+
+#### `key-art-grid` background plate (16:9, 2880×1620)
 ```
-Original video-game key-art poster in the style of modern open-world action-game marketing: an asymmetric grid of 7 rectangular illustrated panels separated by thin black gutters, each panel a bold cel-shaded character illustration with clean black ink outlines, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, subtle film grain and halftone.
-
-Panels (use the attached character illustrations as the exact likeness for each person): the AI & Platform Engineer in a denim jacket on a rooftop; the Platform Engineer in a flannel shirt by a white car; the SRE with long hair in a bun and a mustard scarf in front of monitoring screens; the DevOps Engineer smiling at a sunset harbor; the Full-Stack Engineer with aviators in a neon alley; the People Lead on a speedboat; and one panel of the Stockholm skyline at sunset with every window glowing like a dashboard tile, two French bulldogs in sunglasses tucked into the corner of one panel.
-
-Layout: keep the left 40% of the whole image as one large dark, low-detail panel of a dusky sky, empty for a headline. Panels sit on the right 60%. No text, letters, numbers or logos anywhere.
+Original video-game key-art poster layout in the style of modern open-world action-game marketing, NO people: a dark empty dusky-sky area on the left 40% for a headline. On the right 60%, an asymmetric grid of 7 rectangular panels separated by thin black gutters: one tall panel on the left of the grid spanning the full height, a top row of three small panels, a wide middle panel, and a bottom row of two panels. Each panel holds an empty Stockholm backdrop rendered with bold clean ink outlines, cel shading, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain and halftone: tall panel a Södermalm rooftop at dusk with a floating holographic node graph; top row a night control room wall of abstract graphs, a neon Gamla Stan alley, and a container harbor at sunset with green checkmark lights; the wide middle panel the Stockholm skyline at sunset with every window glowing like a dashboard tile; bottom row Slussen waterfront with a white car without logos, and a pink-and-cyan lit server aisle. Empty foreground space in every character panel for a person to be placed. No text, letters, numbers or logos anywhere.
 ```
 
-### `key-art-grid-mobile.webp` (9:16, export 1080×1920)
+#### `key-art-grid-mobile` background plate (9:16, 1080×1920)
 ```
-Original video-game key-art poster in the style of modern open-world action-game marketing, vertical: an asymmetric grid of 6 rectangular illustrated panels separated by thin black gutters, bold cel-shaded characters with clean black ink outlines, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain and halftone.
-
-Use the attached character illustrations as the exact likeness for each person: AI & Platform Engineer in denim jacket, Platform Engineer in flannel, SRE with hair bun and mustard scarf, DevOps Engineer at a harbor, Full-Stack Engineer with aviators, People Lead on a speedboat; two French bulldogs in sunglasses in one corner.
-
-Layout: keep the top third as one dark, low-detail dusky sky panel, empty for a headline. Panels fill the lower two thirds. No text, letters, numbers or logos anywhere.
+Original vertical video-game key-art poster layout in the style of modern open-world action-game marketing, NO people: the top third is one dark, low-detail dusky sky panel left empty for a headline. The lower two thirds is a grid of 2 columns by 3 rows (6 panels) separated by thin black gutters, each an empty Stockholm backdrop with bold ink outlines, cel shading, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain: a Södermalm rooftop at dusk with a floating node graph; a Slussen waterfront at sunset; a pink-and-cyan server aisle; a neon Gamla Stan alley; a night control room with abstract graph screens; a container harbor at sunset with green checkmark lights. Empty foreground space in every panel for a person to be placed. No text, letters, numbers or logos anywhere.
 ```
 
-### `careers-hero.webp` (16:9, export 1920×1080)
+**Placement map** (which portrait goes in which panel):
+
+| Panel (desktop) | Person | Panel (mobile, row by row, left → right) | Person |
+|---|---|---|---|
+| Tall left panel | Kami | Row 1 left | Kami |
+| Top row 1 | Max | Row 1 right | Pär |
+| Top row 2 | Love | Row 2 left | Tommy |
+| Top row 3 | Mauricio | Row 2 right | Love |
+| Wide middle (skyline) | Mimmi & Penny in the bottom corner | Row 3 left | Max |
+| Bottom row 1 | Pär | Row 3 right | Mauricio, with Mimmi & Penny peeking in at the bottom corner |
+| Bottom row 2 | Tommy | | |
+
+### 8.2 All‑in‑one prompts (attach all six approved portraits plus the dog portrait)
+
+#### `key-art-grid.webp` (16:9, export 2880×1620)
+```
+Original video-game key-art poster in the style of modern open-world action-game marketing: an asymmetric grid of 7 rectangular illustrated panels separated by thin black gutters, bold cel-shaded semi-realistic illustration with clean black ink outlines, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, subtle film grain and halftone.
+
+There are exactly six people and two dogs. Use the attached character illustrations as the exact likeness of each one; every person appears exactly once, never duplicated, never merged.
+
+Layout: the left 40% of the image is one large dark, low-detail dusky sky panel left empty for a headline. On the right 60%:
+- Tall panel spanning the full height: the AI & Platform Engineer, shaved head, full dark beard, light denim jacket, striding on a Södermalm rooftop at dusk beside a floating holographic node graph.
+- Top row, three small panels: the SRE with long dark hair in a low bun, mustard-yellow scarf and headset in front of walls of abstract monitoring graphs; the Full-Stack Engineer with swept-back light-brown hair, short beard, aviators and white shirt in a neon Gamla Stan alley; the DevOps Engineer with thick dark swept-back hair, big smile and navy knit sweater at a sunset container harbor with green checkmark lights.
+- Wide middle panel: the Stockholm skyline at sunset with every window glowing like a dashboard tile, two fawn French bulldogs in tiny sunglasses sitting in the bottom corner.
+- Bottom row, two panels: the Platform Engineer with short tousled light-brown hair, stubble and navy flannel shirt leaning on a white car without logos at Slussen; the Infrastructure Engineer with short dark tousled hair, stubble, charcoal hoodie and network cables over his shoulder in a pink-and-cyan server aisle.
+
+No text, letters, numbers or logos anywhere.
+```
+
+#### `key-art-grid-mobile.webp` (9:16, export 1080×1920)
+```
+Original vertical video-game key-art poster in the style of modern open-world action-game marketing: bold cel-shaded semi-realistic illustration with clean black ink outlines, airbrushed gradients, hyper-saturated sunset magenta, orange and gold with teal shadows, neon cyan accents, film grain and halftone.
+
+There are exactly six people and two dogs. Use the attached character illustrations as the exact likeness of each one; every person appears exactly once, never duplicated, never merged.
+
+Layout: the top third is one dark, low-detail dusky sky panel left empty for a headline. The lower two thirds is a grid of 2 columns by 3 rows separated by thin black gutters:
+- Row 1: the AI & Platform Engineer (shaved head, dark beard, denim jacket) on a dusk rooftop | the Platform Engineer (tousled light-brown hair, stubble, navy flannel) on the Slussen waterfront.
+- Row 2: the Infrastructure Engineer (short dark hair, stubble, charcoal hoodie, cables over shoulder) in a pink-and-cyan server aisle | the Full-Stack Engineer (swept-back light-brown hair, short beard, aviators, white shirt) in a neon Gamla Stan alley.
+- Row 3: the SRE (long dark hair in a low bun, mustard scarf, headset) in front of abstract monitoring screens | the DevOps Engineer (thick dark swept-back hair, big smile, navy sweater) at a sunset harbor, with two fawn French bulldogs in tiny sunglasses peeking in at the bottom corner.
+
+No text, letters, numbers or logos anywhere.
+```
+
+#### `careers-hero.webp` (16:9, export 1920×1080)
 ```
 Original cinematic key-art illustration in the style of modern open-world action-game loading-screen art: bold clean black ink outlines, cel-shaded semi-realistic rendering, airbrushed gradients, hyper-saturated golden-hour magenta, orange and gold, teal shadows, film grain.
 
-Use the attached character illustrations as the exact likeness of each person. The whole crew walks side by side toward the camera in slow-motion "squad walk" formation along the Skeppsbron waterfront in Stockholm at golden hour: the AI & Platform Engineer in the center in his denim jacket, the others around him carrying laptops, coffee cups and a headset, confident and smiling, two French bulldogs in sunglasses trotting in front. Behind them, the windows of Gamla Stan light up one by one like a city booting up, with light trails on the water.
+There are exactly six people and two dogs. Use the attached character illustrations as the exact likeness of each one; every person appears exactly once.
 
-Wide 16:9, low camera angle, characters fill the lower two thirds, a clear calm area of sky in the top left for a headline. No text, letters, numbers or logos anywhere.
+The six walk side by side toward the camera in a slow-motion "squad walk" along the Skeppsbron waterfront in Stockholm at golden hour. Left to right: the Infrastructure Engineer in a charcoal hoodie with cables over his shoulder; the Full-Stack Engineer in aviators and a white shirt holding a tablet; the Platform Engineer in a navy flannel shirt holding a coffee; in the center, the AI & Platform Engineer with shaved head, dark beard and denim jacket carrying a black laptop bag; the SRE with long hair in a bun, mustard scarf and headset around his neck; the DevOps Engineer in a navy sweater, laughing. Two fawn French bulldogs in tiny sunglasses trot in front of them. Behind them the windows of Gamla Stan light up one by one like a city booting up, light trails on the water.
+
+Wide 16:9, low camera angle, characters fill the lower two thirds, a calm area of sky in the top left for a headline. No text, letters, numbers or logos anywhere.
 ```
+For the careers hero the same rule applies: if the faces drift, composite instead. Generate the background with the "NO people" wording, then place the six approved full‑body portraits on top.
 
 **Negative for all group images:**
 ```
@@ -348,7 +372,6 @@ logos, brand names, readable text, letters, numbers, Roman numerals, watermark, 
 | Love | `love.jpeg` (good) | OK as is |
 | Max | `max_povalinsky.jpg` is a side profile | Add a front‑facing photo |
 | Mauricio | `mauricio.jpeg` (good) | Confirm glasses or no glasses |
-| Angelica | `angelica.jpeg` is far away with a helmet | **Needs** a close, front‑facing photo |
 | Mimmi & Penny | `mimmi-penny.jpg` (good) | OK as is |
 
 ## Approval checklist
@@ -358,5 +381,4 @@ logos, brand names, readable text, letters, numbers, Roman numerals, watermark, 
 - [ ] Love Kempe Lundin
 - [ ] Max Povalinsky
 - [ ] Mauricio Saez
-- [ ] Angelica Törnros
 - [ ] Mimmi & Penny (owner approval)

@@ -63,13 +63,12 @@ The site still has to work as a **real recruiting and sales site**. It targets t
 - `environments`: Gaming and developer enablement (Mojang, DICE, build systems); Retail/e‑commerce/SaaS (Pricer, Adlibris, PriceRunner, Topgolf); Enterprise platform engineering (Tele2/TDC, NetEnt, Azure, Kubernetes, worker‑node optimization, pipelines); Media and public systems (SVT, ICA, reliability, observability); Product and web (Finflow, Nordiska Galleriet, Tupi).
 - `workScenarios` and selected work: modernizing delivery, platform and cloud with real operational stakes, developer tooling, AI‑adjacent delivery, hackathon‑born projects.
 - Principles: Hands‑on, Small‑company closeness, Low‑ego competence, Growth with structure. Plus culture items, benefits, career areas (Cloud platforms & Kubernetes, CI/CD & delivery engineering, Internal tooling & integrations, Reliability & observability, Modernization & full‑stack, AI & agentic workflows).
-- Team:
+- Team (six people plus the office dogs; Angelica Törnros has left Code Labs, so remove her from `site-data.ts` and don't create a portrait):
   - Kami Gerami: Platform, cloud, and AI enablement
   - Pär Berge: Platform engineering and cloud migration
   - Tommy Malmqvist: Infrastructure, reliability, and modernization
   - Love Kempe Lundin: Full‑stack delivery and product implementation
   - Max Povalinsky: Senior SRE and observability
-  - Angelica Törnros: Recruitment and people
   - Mauricio Saez: DevOps and collaborative delivery
   - Mimmi & Penny: Office morale (the office dogs)
 
@@ -105,7 +104,7 @@ Tagline options (pick one; A/B test later):
 | **Mission briefing** | Problem statement, constraints, "loadout" (stack), success criteria | Service and case pages |
 | **"MISSION PASSED"** | Deploy succeeded / postmortem closed / SLO restored | Micro‑interactions |
 | **"WASTED" / "BUSTED"** screens | 404 page = `HTTP 404 · Route not found · kubectl get page → NotFound`, 500 page = "Pod CrashLoopBackOff, our on‑call has been paged" | Error pages |
-| **Character classes** | **SRE, Platform Engineer, DevOps Engineer, AI Engineer, Full‑Stack Engineer, People Lead** | Team page |
+| **Character classes** | **SRE, Platform Engineer, DevOps Engineer, AI Engineer, Full‑Stack Engineer, Infrastructure Engineer** | Team page |
 | **Skill trees** | Real tool progressions, e.g. `Docker → Kubernetes → Operators/CRDs → Multi‑cluster`, `Prompting → RAG → Evals → Agent orchestration → Governance` | Careers |
 | **Perks** | Real benefits from `site-data.ts` | Careers |
 | **Radio stations** | Optional playful ambient "stations": *Pager FM*, *Kube Radio*, *Lo‑Fi Logs* (UI only, no copyrighted audio) | Footer easter egg |
@@ -222,7 +221,6 @@ Use each person's photo in `public/assets/team/` as the identity reference. Keep
 | `crew-love.webp` | `team/love.jpeg` | **Full‑Stack Engineer** | In a neon Gamla Stan alley, holding a tablet with an abstract UI, API connection lines drawn in light around him |
 | `crew-max.webp` | `team/max_povalinsky.jpg` | **SRE / Observability** | In a night control room with walls of latency and heatmap graphs, headset on, phone buzzing with a pager alert, unbothered |
 | `crew-mauricio.webp` | `team/mauricio.jpeg` | **DevOps Engineer** | At the container harbor at sunset, conveyor pipelines of glowing build artifacts, green checkmark lights along the line |
-| `crew-angelica.webp` | `team/angelica.jpeg` | **People Lead / Recruiter** | Archipelago speedboat at golden hour with a tablet showing an abstract "crew roster", "assembling the team" energy |
 | `crew-mimmi-penny.webp` | `team/mimmi-penny.jpg` | **Morale Officers** (secret characters) | The two office dogs in tiny sunglasses on a server cabinet, one wearing an on‑call pager collar |
 
 For each person, output a **4:5 portrait (1600×2000)** and a **1:1 crop (1000×1000)**. The whole set uses identical grading so it reads as one cast.
@@ -230,7 +228,7 @@ For each person, output a **4:5 portrait (1600×2000)** and a **1:1 crop (1000×
 ### 4.3 Key art and scenes
 | File | Size | Description |
 |---|---|---|
-| `key-art-grid.webp` | 2880×1620 | **Hero poster:** a 7‑panel grid of crew portraits plus a panel of Stockholm's skyline with every window glowing like dashboard tiles, and a big empty area for the headline |
+| `key-art-grid.webp` | 2880×1620 | **Hero poster:** a 7‑panel grid: the six crew portraits plus a panel of Stockholm's skyline with every window glowing like dashboard tiles, and a big empty area for the headline |
 | `key-art-grid-mobile.webp` | 1080×1920 | Vertical version |
 | `city-sunset.webp` | 3360×1440 | Stockholm skyline at sunset, cheeky palms in the foreground, faint light lines connecting buildings like a network topology |
 | `city-night-neon.webp` | 3360×1440 | The same view at night, light trails on the bridges styled like data packets |
@@ -276,7 +274,7 @@ Every image is described as an illustration and names its content, e.g. *"Illust
 
 ### `/team`: Character select
 - A full‑screen select UI with thumbnails. The active character shows the big portrait, name, class, bio, skill stars, special ability and the **`kubectl describe` YAML toggle**. Keyboard navigable, with a grid fallback on mobile.
-- `teamGroups` become **Factions**: *Platform & Cloud*, *Reliability & Delivery*, *Product & People*.
+- `teamGroups` become **Factions**: *Platform & Cloud*, *Reliability & Delivery*, *Product & Crew Life* (Mimmi & Penny live here).
 - Mimmi & Penny appear as **"Secret characters unlocked"**.
 - Closing line: *"Serious engineering does not need to feel sterile."* (existing copy).
 
