@@ -5,7 +5,7 @@ import OpsHud from "@/app/components/site/chrome/OpsHud";
 import Footer from "@/app/components/site/chrome/Footer";
 import Overlays from "@/app/components/site/chrome/Overlays";
 import { missions } from "@/app/components/site/site-data";
-import { absoluteUrl, siteConfig } from "@/app/seo";
+import { absoluteUrl, siteConfig, jsonLdScript } from "@/app/seo";
 
 const defaultTitle = "Code Labs | Platform engineering, SRE, DevOps and AI engineering consultancy in Stockholm";
 
@@ -126,7 +126,7 @@ export default function RootLayout({
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={jsonLdScript(organizationJsonLd)}
         />
         <OpsHud />
         <div id="main" className="pt-16">

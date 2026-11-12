@@ -4,7 +4,7 @@ import Link from "next/link";
 import getPostMetadata from "@/app/components/Blog/getPostMetadata";
 import NewswireFeed from "@/app/components/site/NewswireFeed";
 import { assetBase } from "@/app/components/site/site-data";
-import { absoluteUrl, buildPageMetadata, siteConfig } from "@/app/seo";
+import { absoluteUrl, buildPageMetadata, siteConfig, jsonLdScript } from "@/app/seo";
 
 const posts = getPostMetadata();
 
@@ -46,7 +46,7 @@ export default function BlogInlagg() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+        dangerouslySetInnerHTML={jsonLdScript(blogJsonLd)}
       />
       <section className="relative isolate overflow-hidden">
         <Image

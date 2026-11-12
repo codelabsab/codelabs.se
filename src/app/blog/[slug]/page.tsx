@@ -7,7 +7,7 @@ import getPostMetadata, { getPostBySlug } from "@/app/components/Blog/getPostMet
 import { isValidElement, type ReactNode } from "react";
 import { authorAvatar, Tags } from "@/app/components/site/cards";
 import { TerminalFrame } from "@/app/components/site/ui";
-import { absoluteUrl, buildPageMetadata, siteConfig } from "@/app/seo";
+import { absoluteUrl, buildPageMetadata, siteConfig, jsonLdScript } from "@/app/seo";
 
 /** Fenced code blocks get a terminal-window frame; the tab shows the language. */
 function CodeBlock({ children }: { children?: ReactNode }) {
@@ -91,7 +91,7 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
         <main>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+                dangerouslySetInnerHTML={jsonLdScript(articleJsonLd)}
             />
             <article>
                 <header className="section-glow border-b border-white/10">
