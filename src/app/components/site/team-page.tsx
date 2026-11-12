@@ -29,7 +29,7 @@ export default function TeamPage() {
           <section key={faction.slug} className={`section ${index % 2 ? "section-night" : "section-dusk"} !py-16`}>
             <div className="site-container">
               <div className="reveal max-w-3xl">
-                <p className="kicker">Faction {index + 1}</p>
+                <p className="kicker">{faction.slug === "morale" ? "Bonus" : `Faction ${index + 1}`}</p>
                 <h2 className="display mt-2 text-4xl sm:text-5xl">{faction.title}</h2>
                 <p className="mt-4 leading-relaxed text-ink-100">{faction.description}</p>
               </div>

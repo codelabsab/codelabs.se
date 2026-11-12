@@ -589,9 +589,9 @@ export const teamGroups: TeamGroup[] = [
     ],
   },
   {
-    title: "Product breadth and the human side of the company",
+    title: "Product and full-stack delivery",
     description:
-      "Code Labs is mainly platform and DevOps focused, but product delivery, recruiting, and the people side of the company are also part of what makes the whole place work.",
+      "Alongside the main platform focus, Code Labs also builds in product and full-stack environments, where frontend architecture and implementation matter to the overall delivery.",
     members: [
       {
         name: "Love Kempe Lundin",
@@ -837,7 +837,13 @@ export type CrewMember = TeamMemberSummary & {
 export const factions = [
   { slug: "platform-cloud", title: "Platform & Cloud", description: teamGroups[0].description },
   { slug: "reliability-delivery", title: "Reliability & Delivery", description: teamGroups[1].description },
-  { slug: "product-people", title: "Product & People", description: teamGroups[2].description },
+  { slug: "product-web", title: "Product & Full-Stack", description: teamGroups[2].description },
+  {
+    slug: "morale",
+    title: "Secret characters",
+    description:
+      "The mascots are not the point of the company, but good work and good company are both part of the offer.",
+  },
 ] as const;
 
 type CrewExtra = Omit<CrewMember, keyof TeamMemberSummary>;
@@ -908,7 +914,7 @@ const crewExtras: Record<string, CrewExtra> = {
     class: "Full-Stack Engineer",
     classSlug: "full-stack",
     kind: "Engineer",
-    faction: "product-people",
+    faction: "product-web",
     skills: [
       { name: "React & Next.js", stars: 5 },
       { name: "Node.js & .NET", stars: 4 },
@@ -968,7 +974,7 @@ const crewExtras: Record<string, CrewExtra> = {
     class: "Morale Officers",
     classSlug: "morale",
     kind: "MoraleOfficer",
-    faction: "product-people",
+    faction: "morale",
     skills: [
       { name: "Office morale", stars: 5 },
       { name: "Snack detection", stars: 5 },

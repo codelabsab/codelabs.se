@@ -3,8 +3,6 @@ import { CharacterCard } from "@/app/components/site/cards";
 import { crew } from "@/app/components/site/site-data";
 import { SectionHeading } from "@/app/components/site/ui";
 
-const featured = ["kami-gerami", "par-berge", "max-povalinsky", "mauricio-saez"];
-
 export default function CrewTeaser() {
   return (
     <section className="section section-night halftone-top">
@@ -15,9 +13,9 @@ export default function CrewTeaser() {
             Select your character
           </Link>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {crew
-            .filter((member) => featured.includes(member.slug))
+            .filter((member) => !member.secret)
             .map((member) => (
               <CharacterCard key={member.slug} member={member} />
             ))}

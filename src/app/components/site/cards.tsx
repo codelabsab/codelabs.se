@@ -143,7 +143,7 @@ export function CharacterCard({ member, detailed = false }: { member: CrewMember
           src={member.portraitUrl}
           alt={member.portraitAlt}
           fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-night-800 via-night-800/10 to-transparent" />
