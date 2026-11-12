@@ -1,6 +1,16 @@
 import { PostMetadata } from "@/app/components/Blog/PostMetadata";
 import fs from "fs";
 import matter from "gray-matter";
+import { techPostTags } from "@/app/components/site/site-data";
+
+const slugify = (value: string) => value.toLowerCase().trim().replace(/\s+/g, "-");
+
+function classify(slug: string, frontmatterTags: unknown): Pick<PostMetadata, "tags" | "kind"> {
+    const mapped = techPostTags[slug];
+    const own = Array.isArray(frontmatterTags) ? frontmatterTags.map((tag) => slugify(String(tag))) : [];
+    const tags = Array.from(new Set([...(mapped ?? ["crewlife"]), ...own]));
+    return { tags, kind: tags.includes("tech") ? "tech" : "life" };
+}
 
 const getPostMetadata = (): PostMetadata[] => {
     const folder = "src/_posts/";
@@ -8,15 +18,17 @@ const getPostMetadata = (): PostMetadata[] => {
     const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
     // Get gray-matter data from each post
-    const posts = markdownPosts.map((fileName) => {
+    const posts: PostMetadata[] = markdownPosts.map((fileName) => {
         const fileContents = fs.readFileSync(`${folder}/${fileName}`, "utf-8");
         const matterResult = matter(fileContents);
+        const slug = matterResult.data.slug ?? fileName.replace(".md", "");
         return {
+            ...classify(slug, matterResult.data.tags),
             title: matterResult.data.title,
             description: matterResult.data.description,
             date: matterResult.data.date,
             og_image: matterResult.data.og_image,
-            slug: matterResult.data.slug ?? fileName.replace(".md", ""),
+            slug,
             author: matterResult.data.author,
             sourceFile: fileName,
         };
@@ -38,7 +50,14 @@ const getPostMetadata = (): PostMetadata[] => {
 
 export const getPostBySlug = (slug: string) => {
     const posts = getPostMetadata();
-    const post = posts.find((entry) => entry.slug === slug);
+    // Slugs with non-ASCII characters (e.g. "pär") arrive percent-encoded.
+    let decoded = slug;
+    try {
+        decoded = decodeURIComponent(slug);
+    } catch {
+        // Malformed escape sequence: fall through with the raw slug.
+    }
+    const post = posts.find((entry) => entry.slug === slug || entry.slug === decoded);
 
     if (!post) {
         return null;

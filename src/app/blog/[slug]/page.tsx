@@ -4,7 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import getPostMetadata, { getPostBySlug } from "@/app/components/Blog/getPostMetadata";
-import { absoluteUrl, buildPageMetadata, siteConfig } from "@/app/seo";
+import { isValidElement, type ReactNode } from "react";
+import { authorAvatar, Tags } from "@/app/components/site/cards";
+import { TerminalFrame } from "@/app/components/site/ui";
+import { absoluteUrl, buildPageMetadata, siteConfig, jsonLdScript } from "@/app/seo";
+
+/** Fenced code blocks get a terminal-window frame; the tab shows the language. */
+function CodeBlock({ children }: { children?: ReactNode }) {
+    const className = isValidElement<{ className?: string }>(children) ? children.props.className ?? "" : "";
+    const language = /lang(?:uage)?-([\w-]+)/.exec(className)?.[1] ?? "code";
+    return (
+        <TerminalFrame title={language} className="my-8">
+            <pre>{children}</pre>
+        </TerminalFrame>
+    );
+}
 
 export async function generateStaticParams() {
     const posts = getPostMetadata();
@@ -47,7 +61,6 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
         notFound();
     }
 
-    const authorSlug = post.author?.split(" ")[0]?.toLowerCase();
     const isCodeLabsBy = post.title.toLowerCase().includes("code labs by");
     const articleJsonLd = {
         "@context": "https://schema.org",
@@ -75,58 +88,46 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
     };
 
     return (
-        <main className="site-shell overflow-hidden">
+        <main>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+                dangerouslySetInnerHTML={jsonLdScript(articleJsonLd)}
             />
-            <section className="hero-surface relative overflow-hidden border-b border-[var(--color-line)]">
-                <div className="site-orb-blue left-[-4rem] top-10 h-44 w-44" />
-                <div className="site-orb-violet right-[-4rem] top-16 h-44 w-44" />
-                <div className="site-container py-14 sm:py-20">
-                    <Link
-                        href="/blog"
-                        className="site-link inline-flex text-sm font-medium"
-                    >
-                        Back to blog
-                    </Link>
-                    <div className="mt-8 grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-end">
-                        <div className="max-w-3xl">
-                            <div className="flex flex-wrap items-center gap-3">
-                                <time
-                                    dateTime={post.date}
-                                    className="site-pill border-[rgba(37,99,235,0.16)] bg-[rgba(255,255,255,0.78)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-brand-blue)]"
-                                >
-                                    {post.date}
-                                </time>
-                                {isCodeLabsBy && (
-                                    <span className="site-pill border-[rgba(91,91,214,0.14)] bg-[rgba(255,255,255,0.78)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-brand-violet)]">
-                                        Code Labs by
-                                    </span>
-                                )}
-                            </div>
-                            <h1 className="mt-6 text-balance font-display text-5xl leading-[0.94] text-[var(--color-ink-900)] sm:text-6xl">
-                                {post.title}
-                            </h1>
-                            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-ink-700)]">
-                                {post.description}
-                            </p>
-                            <div className="mt-8 flex items-center gap-3 text-sm text-[var(--color-ink-600)]">
-                                <Image
-                                    src={`/assets/team/${authorSlug}.jpeg`}
-                                    width={40}
-                                    height={40}
-                                    alt={`${post.author} profile photo`}
-                                    className="h-10 w-10 rounded-full border border-white/70 object-cover"
-                                />
-                                <div>
-                                    <p className="font-medium text-[var(--color-ink-900)]">{post.author}</p>
-                                    <p>Code Labs</p>
+            <article>
+                <header className="section-glow border-b border-white/10">
+                    <div className="site-container py-12 sm:py-16">
+                        <Link href="/blog" className="link-neon mono text-xs uppercase tracking-[0.14em]">
+                            ← Back to the Newswire
+                        </Link>
+                        <div className="mt-8 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                            <div>
+                                <p className="mono flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-300">
+                                    <time dateTime={post.date} className="text-sunset-gold">{post.date}</time>
+                                    <span>{post.kind === "tech" ? "Tech desk" : "Crew life"}</span>
+                                    {isCodeLabsBy && <span>Code Labs by</span>}
+                                </p>
+                                <h1 className="mt-4 text-4xl font-extrabold leading-[1.08] tracking-tight text-sand-50 sm:text-5xl">
+                                    {post.title}
+                                </h1>
+                                <p className="lede mt-5 max-w-2xl">{post.description}</p>
+                                <div className="mt-4">
+                                    <Tags tags={post.tags} />
+                                </div>
+                                <div className="mt-8 flex items-center gap-3 text-sm text-ink-100">
+                                    <Image
+                                        src={authorAvatar(post.author)}
+                                        width={40}
+                                        height={40}
+                                        alt=""
+                                        className="h-10 w-10 rounded-full border border-sunset-pink/60 object-cover"
+                                    />
+                                    <div>
+                                        <p className="font-bold text-sand-50">{post.author}</p>
+                                        <p className="mono text-xs text-ink-300">Code Labs</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="site-card overflow-hidden p-3">
-                            <div className="relative aspect-[5/4] overflow-hidden rounded-[14px]">
+                            <div className="relative aspect-[5/4] overflow-hidden border border-white/15 bg-night-800">
                                 <Image
                                     src={post.og_image}
                                     alt={post.title}
@@ -138,18 +139,20 @@ const PostPage = async (props: { params: Promise<{ slug: string }> }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </header>
 
-            <section className="section-white py-16 sm:py-20">
-                <div className="site-container">
-                    <div className="site-card mx-auto max-w-5xl p-6 sm:p-8">
-                        <article className="site-prose mx-auto">
-                            <Markdown>{post.content}</Markdown>
-                        </article>
+                {/* Readability beats theme here: plain dark surface, generous measure. */}
+                <div className="bg-night-900 py-14 sm:py-20">
+                    <div className="site-container">
+                        <div className="prose prose-invert prose-night mx-auto">
+                            <Markdown options={{ overrides: { pre: { component: CodeBlock } } }}>{post.content}</Markdown>
+                        </div>
+                        <p className="mx-auto mt-14 max-w-[68ch] border-t border-white/10 pt-6">
+                            <Link href="/blog" className="btn-hud btn-sm">More from the Newswire</Link>
+                        </p>
                     </div>
                 </div>
-            </section>
+            </article>
         </main>
     )
 };

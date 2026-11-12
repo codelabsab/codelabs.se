@@ -1,74 +1,81 @@
-export type AccentTone = "blue" | "violet" | "mint" | "coral";
+export type AccentTone = "pink" | "orange" | "cyan" | "violet";
+export type StatusTone = "ok" | "warn" | "crit" | "info";
+export type Tone = AccentTone | StatusTone;
 
-type AccentStyle = {
-  accent: string;
-  eyebrow: string;
-  pill: string;
-  pillSoft: string;
-  badge: string;
-  icon: string;
-  card: string;
+type ToneStyle = {
+  /** Raw CSS colour, for `style={{ "--tone": ... }}` and SVG strokes. */
+  color: string;
+  /** Text utility that keeps AA contrast on the night backgrounds. */
+  text: string;
   border: string;
-  link: string;
+  bg: string;
 };
 
-export const accentStyles: Record<AccentTone, AccentStyle> = {
-  blue: {
-    accent: "var(--color-brand-blue)",
-    eyebrow: "text-[var(--color-brand-blue)]",
-    pill: "border-[rgba(29,107,87,0.16)] bg-[rgba(29,107,87,0.08)] text-[var(--color-brand-blue)]",
-    pillSoft:
-      "border-[rgba(29,107,87,0.12)] bg-[rgba(29,107,87,0.06)] text-[var(--color-brand-blue)]",
-    badge:
-      "border-[rgba(29,107,87,0.12)] bg-[rgba(255,253,248,0.78)] text-[var(--color-ink-900)]",
-    icon: "bg-[rgba(29,107,87,0.1)] text-[var(--color-brand-blue)]",
-    card: "bg-[linear-gradient(180deg,rgba(255,253,248,0.94)_0%,rgba(250,248,242,0.98)_100%)]",
-    border: "border-[rgba(29,107,87,0.14)]",
-    link: "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-indigo)]",
+export const toneStyles: Record<Tone, ToneStyle> = {
+  pink: {
+    color: "var(--color-sunset-pink)",
+    text: "text-sunset-pink",
+    border: "border-sunset-pink/50",
+    bg: "bg-sunset-pink/10",
+  },
+  orange: {
+    color: "var(--color-sunset-orange)",
+    text: "text-sunset-orange",
+    border: "border-sunset-orange/50",
+    bg: "bg-sunset-orange/10",
+  },
+  cyan: {
+    color: "var(--color-neon-cyan)",
+    text: "text-neon-cyan",
+    border: "border-neon-cyan/50",
+    bg: "bg-neon-cyan/10",
   },
   violet: {
-    accent: "var(--color-brand-indigo)",
-    eyebrow: "text-[var(--color-brand-indigo)]",
-    pill: "border-[rgba(53,95,84,0.18)] bg-[rgba(53,95,84,0.08)] text-[var(--color-brand-indigo)]",
-    pillSoft:
-      "border-[rgba(53,95,84,0.12)] bg-[rgba(53,95,84,0.06)] text-[var(--color-brand-indigo)]",
-    badge:
-      "border-[rgba(53,95,84,0.12)] bg-[rgba(248,246,240,0.82)] text-[var(--color-ink-900)]",
-    icon: "bg-[rgba(53,95,84,0.1)] text-[var(--color-brand-indigo)]",
-    card: "bg-[linear-gradient(180deg,rgba(248,246,240,0.94)_0%,rgba(255,253,248,0.98)_100%)]",
-    border: "border-[rgba(53,95,84,0.14)]",
-    link: "text-[var(--color-brand-indigo)] hover:text-[var(--color-brand-blue)]",
+    color: "var(--color-neon-violet)",
+    // The raw violet is too dark for text on night-900; use the soft variant.
+    text: "text-violet-soft",
+    border: "border-neon-violet/60",
+    bg: "bg-neon-violet/15",
   },
-  mint: {
-    accent: "var(--color-brand-mint)",
-    eyebrow: "text-[var(--color-brand-mint)]",
-    pill: "border-[rgba(47,138,116,0.18)] bg-[rgba(47,138,116,0.08)] text-[var(--color-brand-mint)]",
-    pillSoft:
-      "border-[rgba(47,138,116,0.12)] bg-[rgba(47,138,116,0.06)] text-[var(--color-brand-mint)]",
-    badge:
-      "border-[rgba(47,138,116,0.12)] bg-[rgba(252,254,251,0.86)] text-[var(--color-ink-900)]",
-    icon: "bg-[rgba(47,138,116,0.12)] text-[var(--color-brand-mint)]",
-    card: "bg-[linear-gradient(180deg,rgba(247,252,249,0.96)_0%,rgba(255,253,248,0.98)_100%)]",
-    border: "border-[rgba(47,138,116,0.16)]",
-    link: "text-[var(--color-brand-mint)] hover:text-[var(--color-brand-blue)]",
+  ok: {
+    color: "var(--color-ok)",
+    text: "text-ok",
+    border: "border-ok/50",
+    bg: "bg-ok/10",
   },
-  coral: {
-    accent: "var(--color-brand-coral)",
-    eyebrow: "text-[var(--color-brand-coral)]",
-    pill: "border-[rgba(154,109,70,0.18)] bg-[rgba(154,109,70,0.08)] text-[var(--color-brand-coral)]",
-    pillSoft:
-      "border-[rgba(154,109,70,0.12)] bg-[rgba(154,109,70,0.06)] text-[var(--color-brand-coral)]",
-    badge:
-      "border-[rgba(154,109,70,0.12)] bg-[rgba(252,248,242,0.84)] text-[var(--color-ink-900)]",
-    icon: "bg-[rgba(154,109,70,0.12)] text-[var(--color-brand-coral)]",
-    card: "bg-[linear-gradient(180deg,rgba(252,248,242,0.96)_0%,rgba(255,253,248,0.98)_100%)]",
-    border: "border-[rgba(154,109,70,0.16)]",
-    link: "text-[var(--color-brand-coral)] hover:text-[var(--color-brand-blue)]",
+  warn: {
+    color: "var(--color-warn)",
+    text: "text-warn",
+    border: "border-warn/50",
+    bg: "bg-warn/10",
+  },
+  crit: {
+    color: "var(--color-crit)",
+    text: "text-crit",
+    border: "border-crit/50",
+    bg: "bg-crit/10",
+  },
+  info: {
+    color: "var(--color-info)",
+    text: "text-info",
+    border: "border-info/50",
+    bg: "bg-info/10",
   },
 };
 
-export const defaultToneOrder: AccentTone[] = ["blue", "violet", "mint", "coral"];
+const accentCycle: AccentTone[] = ["pink", "cyan", "orange", "violet"];
 
-export function getToneByIndex(index: number, tones = defaultToneOrder): AccentTone {
-  return tones[index % tones.length] ?? "blue";
+export function getToneByIndex(index: number, tones: Tone[] = accentCycle): Tone {
+  return tones[index % tones.length];
+}
+
+/** Severity (1–5 stars) mapped onto dashboard semantics. */
+export function severityTone(stars: number): StatusTone {
+  if (stars >= 5) return "crit";
+  if (stars >= 3) return "warn";
+  return "ok";
+}
+
+export function toneVar(tone: Tone): React.CSSProperties {
+  return { "--tone": toneStyles[tone].color } as React.CSSProperties;
 }

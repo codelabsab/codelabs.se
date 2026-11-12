@@ -3,9 +3,9 @@ import HomePage from "@/app/components/site/home-page";
 import { buildPageMetadata } from "@/app/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Engineering consultancy in Stockholm",
+  title: "Code Labs | Platform engineering, SRE, DevOps and AI engineering consultancy in Stockholm",
   description:
-    "Code Labs is a Swedish engineering consultancy in Stockholm focused on platform engineering, DevOps, cloud infrastructure, internal tooling, reliability, and modern delivery work.",
+    "Code Labs is a Swedish engineering consultancy in Stockholm focused on platform engineering, SRE and observability, DevOps, cloud infrastructure, internal tooling, and practical AI engineering.",
   path: "/",
 });
 

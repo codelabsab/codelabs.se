@@ -1,3 +1,5 @@
+import type { AccentTone } from "@/app/components/site/design";
+
 export type ServicePillar = {
   title: string;
   description: string;
@@ -78,12 +80,18 @@ export const contactEmail = "contact@codelabs.se";
 export const contactHref = `mailto:${contactEmail}`;
 
 export const primaryNavItems = [
-  { label: "What We Do", href: "/#services" },
-  { label: "Selected Work", href: "/#selected-work" },
-  { label: "How We Work", href: "/#how-we-work" },
-  { label: "Careers", href: "/careers" },
-  { label: "Team", href: "/team" },
-  { label: "Blog", href: "/blog" },
+  { label: "Missions", href: "/#services", node: "missions" },
+  { label: "Case files", href: "/#selected-work", node: "cases" },
+  { label: "Runbook", href: "/#how-we-work", node: "runbook" },
+  { label: "Crew", href: "/team", node: "team" },
+  { label: "Join", href: "/careers", node: "careers" },
+  { label: "Newswire", href: "/blog", node: "blog" },
+] as const;
+
+export const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/code-labs-ab/" },
+  { label: "Instagram", href: "https://www.instagram.com/codelabsab/" },
+  { label: "GitHub", href: "https://github.com/codelabsab/" },
 ] as const;
 
 export const clientLogos: ClientLogo[] = [
@@ -93,9 +101,12 @@ export const clientLogos: ClientLogo[] = [
   { name: "PriceRunner", src: "/assets/customer/logo/pricerunner.svg", width: 110, height: 24 },
   { name: "TUI", src: "/assets/customer/logo/tui.svg", width: 70, height: 24 },
   { name: "NetEnt", src: "/assets/customer/logo/netent.svg", width: 96, height: 24 },
-  { name: "Klarna", src: "/assets/customer/logo/klarna.png", width: 96, height: 28, className: "h-6" },
+  { name: "Klarna", src: "/assets/customer/logo/klarna.svg", width: 96, height: 24 },
   { name: "SVT", src: "/assets/customer/logo/svt.svg", width: 70, height: 24 },
   { name: "ICA", src: "/assets/customer/logo/ica.svg", width: 70, height: 24 },
+  { name: "Kindred", src: "/assets/customer/logo/kindred.svg", width: 96, height: 24 },
+  { name: "H&M", src: "/assets/customer/logo/hm.svg", width: 48, height: 24 },
+  { name: "Zebware", src: "/assets/customer/logo/zebware.svg", width: 96, height: 24 },
 ];
 
 export const servicePillars: ServicePillar[] = [
@@ -395,7 +406,7 @@ export const benefitThemes: BenefitTheme[] = [
       "The basics around work, wellbeing, and daily life are treated as part of the offer rather than afterthoughts.",
     items: [
       "Budget for work tools such as computer and phone.",
-      "SEK 7,000 per year in wellness allowance.",
+      "SEK 5,000 per year in wellness allowance.",
       "Food benefit support through Edenred / Rikskuponger with employer subsidy.",
       "Support for sports goals such as triathlon, marathon, Vasaloppet, and similar activities.",
     ],
@@ -509,14 +520,6 @@ export const teamMembers: TeamMemberSummary[] = [
     imageUrl: "/assets/team/max_povalinsky.jpg",
   },
   {
-    name: "Angelica Törnros",
-    role: "Recruitment and people",
-    summary:
-      "Angelica represents the part of Code Labs that makes growth, hiring, and the human side of the company feel intentional rather than accidental.",
-    humanDetail: "She helps keep recruiting warm, structured, and grounded in what people are actually looking for.",
-    imageUrl: "/assets/team/angelica.jpeg",
-  },
-  {
     name: "Mauricio Saez",
     role: "DevOps and collaborative delivery",
     summary:
@@ -586,9 +589,9 @@ export const teamGroups: TeamGroup[] = [
     ],
   },
   {
-    title: "Product breadth and the human side of the company",
+    title: "Product and full-stack delivery",
     description:
-      "Code Labs is mainly platform and DevOps focused, but product delivery, recruiting, and the people side of the company are also part of what makes the whole place work.",
+      "Alongside the main platform focus, Code Labs also builds in product and full-stack environments, where frontend architecture and implementation matter to the overall delivery.",
     members: [
       {
         name: "Love Kempe Lundin",
@@ -597,13 +600,717 @@ export const teamGroups: TeamGroup[] = [
           "Adds product and frontend breadth through React, Next.js, Node.js, .NET, and implementation from design to code.",
         imageUrl: "/assets/team/love.jpeg",
       },
-      {
-        name: "Angelica Törnros",
-        role: "Recruitment and people",
-        summary:
-          "Helps make growth, hiring, and the human side of Code Labs feel intentional, warm, and grounded.",
-        imageUrl: "/assets/team/angelica.jpeg",
-      },
     ],
+  },
+];
+
+/* ==================================================================
+   STOCKHOLM ON-CALL
+   Game-layer content. Everything below re-voices the facts above;
+   it does not add clients, numbers or claims. Stars, HUD values and
+   severities are playful decoration and are labelled as such in the UI.
+   ================================================================== */
+
+
+export const assetBase = "/assets/stockholm-oncall";
+
+export const tagline = "Keep the city running.";
+export const motto = "This is not AI as theatre.";
+
+/* ---------- Missions (services) ---------- */
+
+export type Mission = {
+  id: string;
+  /** Plain, searchable service name. */
+  title: string;
+  /** Game-voice mission name. */
+  missionTitle: string;
+  /** Pager level, 1–5. Decorative difficulty, not a claim. */
+  severity: 1 | 2 | 3 | 4 | 5;
+  briefing: string;
+  loadout: string[];
+  objective: string;
+  reward: string;
+  missionImage: string;
+  /** CSS object-position for the cropped views of the portrait art. */
+  imageFocus?: string;
+  imageAlt: string;
+  meta: string;
+  tone: AccentTone;
+  sideQuest?: boolean;
+};
+
+const [platformPillar, devopsPillar, productPillar, aiPillar] = servicePillars;
+
+const reliabilityArea = careerAreas[3];
+const reliabilityEnvironment = environments[3];
+
+export const missions: Mission[] = [
+  {
+    id: "platform",
+    title: platformPillar.title,
+    missionTitle: "Build the City",
+    severity: 3,
+    briefing: platformPillar.description,
+    loadout: ["Kubernetes", "Azure", "GCP", "Terraform / IaC", "GitOps"],
+    objective: workScenarios[1].summary,
+    reward: platformPillar.candidateFocus,
+    missionImage: `${assetBase}/mission-platform.webp`,
+    imageAlt:
+      "Illustration of Stockholm's harbor at sunset where gantry cranes stack glowing containers into neat clusters.",
+    meta: "kind: platform · scope: cloud-foundations",
+    tone: "cyan",
+  },
+  {
+    id: "devops",
+    title: devopsPillar.title,
+    missionTitle: "Ship Faster, Sleep Better",
+    severity: 2,
+    briefing: devopsPillar.description,
+    loadout: ["CI/CD", "Build systems", "Test automation", "Code quality", "Developer flow"],
+    objective: workScenarios[0].summary,
+    reward: devopsPillar.candidateFocus,
+    missionImage: `${assetBase}/mission-devops.webp`,
+    imageAlt:
+      "Illustration of a night-time highway interchange drawn as a delivery pipeline, with green gates along the lanes and one red.",
+    meta: "kind: delivery · scope: code-to-production",
+    tone: "orange",
+  },
+  {
+    // Built only from existing facts: the reliability career area, the
+    // media/public-systems environment and the SRE roles on the team.
+    id: "sre",
+    title: "SRE & Observability",
+    missionTitle: "Keep the Lights On",
+    severity: 5,
+    briefing: `${reliabilityArea.description} ${reliabilityEnvironment.description}`,
+    loadout: ["SLOs", "Alerting", "Observability", "Incident response", "Postmortems"],
+    objective:
+      "Turn production complexity into calmer, more reliable setups, with reliability that holds up in practice.",
+    reward:
+      "You work where automation, observability, and pragmatic incident response meet, alongside senior SRE colleagues.",
+    missionImage: `${assetBase}/mission-sre.webp`,
+    imageAlt:
+      "Illustration of a lighthouse in the archipelago at night sweeping its beam over a dark sea of graphs.",
+    meta: "kind: reliability · scope: production",
+    tone: "pink",
+  },
+  {
+    id: "ai",
+    title: aiPillar.title,
+    missionTitle: "Bring AI to the City, Safely",
+    severity: 4,
+    briefing: aiPillar.description,
+    loadout: ["Rollout", "Governance", "Evals & guardrails", "Agentic workflows", "LLM observability & cost"],
+    objective: selectedWork[3].challenge,
+    reward: aiPillar.candidateFocus,
+    missionImage: `${assetBase}/mission-ai.webp`,
+    imageAlt:
+      "Illustration of a swarm of fireflies over the archipelago at dusk passing through a glowing gate and leaving in ordered lines toward the city.",
+    meta: "kind: ai-rollout · human-in-the-loop: true",
+    tone: "violet",
+  },
+  {
+    id: "tools",
+    title: productPillar.title,
+    missionTitle: "Side Quests That Matter",
+    severity: 1,
+    briefing: productPillar.description,
+    loadout: ["React", "Next.js", "Node.js", ".NET", "APIs", "Internal tools"],
+    objective: workScenarios[2].summary,
+    reward: productPillar.candidateFocus,
+    missionImage: `${assetBase}/mission-tools.webp`,
+    imageFocus: "center 72%",
+    imageAlt:
+      "Illustration of a neon workshop where engineers assemble tools from glowing modular blocks.",
+    meta: "kind: side-quest · scope: tools-and-integrations",
+    tone: "cyan",
+    sideQuest: true,
+  },
+];
+
+/* ---------- The city (environments) ---------- */
+
+export type District = EnvironmentCard & {
+  district: string;
+  /** Position on the 0–100 map canvas. */
+  x: number;
+  y: number;
+  tone: AccentTone;
+};
+
+const districtMeta: Array<Pick<District, "district" | "x" | "y" | "tone">> = [
+  { district: "Gaming District", x: 18, y: 62, tone: "pink" },
+  { district: "Retail Strip", x: 38, y: 30, tone: "orange" },
+  { district: "Enterprise Harbor", x: 57, y: 68, tone: "cyan" },
+  { district: "Media Quarter", x: 74, y: 34, tone: "violet" },
+  { district: "Product Row", x: 88, y: 64, tone: "orange" },
+];
+
+export const districts: District[] = environments.map((environment, index) => ({
+  ...environment,
+  ...districtMeta[index],
+}));
+
+/* ---------- Case files (selected work, postmortem format) ---------- */
+
+export type CaseFile = SelectedWorkItem & {
+  id: string;
+  location: string;
+  severity: 1 | 2 | 3 | 4 | 5;
+};
+
+const caseMeta: Array<Pick<CaseFile, "id" | "location" | "severity">> = [
+  { id: "CF-001", location: "Gaming District", severity: 3 },
+  { id: "CF-002", location: "Retail Strip", severity: 4 },
+  { id: "CF-003", location: "Enterprise Harbor", severity: 3 },
+  { id: "CF-004", location: "City-wide", severity: 4 },
+  { id: "CF-005", location: "Crew HQ", severity: 1 },
+];
+
+export const caseFiles: CaseFile[] = selectedWork.map((item, index) => ({
+  ...item,
+  ...caseMeta[index],
+}));
+
+export const caseFileOutcomeNote =
+  "Client confidential. We do not publish client numbers, so outcomes here stay qualitative.";
+
+/* ---------- Runbook (how an engagement works) ---------- */
+
+export type RunbookStage = {
+  stage: string;
+  summary: string;
+};
+
+export const runbook: RunbookStage[] = [
+  {
+    stage: "Recon",
+    summary:
+      "We start with the environment as it actually is: the stack, the delivery flow, the teams, and the constraints.",
+  },
+  {
+    stage: "Briefing",
+    summary:
+      "Goals are made explicit: what the assignment needs, and how the work connects to the people doing it.",
+  },
+  {
+    stage: "Deploy",
+    summary:
+      "Hands-on engineering inside your team: building the tooling, tuning the workflows, and improving how software ships.",
+  },
+  {
+    stage: "Operate",
+    summary:
+      "The work has to hold up in practice, so reliability, observability, and automation are part of the job from the start.",
+  },
+  {
+    stage: "Handover",
+    summary:
+      "Problems and knowledge are shared early, so your team owns what was built when we step back.",
+  },
+];
+
+/* ---------- Crew ---------- */
+
+export type CrewSkill = { name: string; stars: 1 | 2 | 3 | 4 | 5 };
+
+export type CrewMember = TeamMemberSummary & {
+  slug: string;
+  /** Character class: the engineering role. */
+  class: string;
+  classSlug: string;
+  /** `kind` in the kubectl-describe YAML view. */
+  kind: string;
+  faction: string;
+  skills: CrewSkill[];
+  focus: string[];
+  specialAbility: string;
+  onCall: boolean;
+  portraitUrl: string;
+  squareUrl: string;
+  portraitAlt: string;
+  tone: AccentTone;
+  secret?: boolean;
+};
+
+export const factions = [
+  { slug: "platform-cloud", title: "Platform & Cloud", description: teamGroups[0].description },
+  { slug: "reliability-delivery", title: "Reliability & Delivery", description: teamGroups[1].description },
+  { slug: "product-web", title: "Product & Full-Stack", description: teamGroups[2].description },
+  {
+    slug: "morale",
+    title: "Secret characters",
+    description:
+      "The mascots are not the point of the company, but good work and good company are both part of the offer.",
+  },
+] as const;
+
+type CrewExtra = Omit<CrewMember, keyof TeamMemberSummary>;
+
+const crewExtras: Record<string, CrewExtra> = {
+  "Kami Gerami": {
+    slug: "kami-gerami",
+    class: "AI & Platform Engineer",
+    classSlug: "ai-platform",
+    kind: "Engineer",
+    faction: "platform-cloud",
+    skills: [
+      { name: "AI rollout", stars: 5 },
+      { name: "Platform & cloud", stars: 5 },
+      { name: "Internal tooling", stars: 4 },
+    ],
+    focus: ["platform", "cloud-automation", "internal-tooling", "ai-rollout"],
+    specialAbility: "Rollout Mode: takes AI from pilot to something real teams can run.",
+    onCall: true,
+    portraitUrl: `${assetBase}/crew-kami.webp`,
+    squareUrl: `${assetBase}/crew-kami-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Kami Gerami, AI and platform engineer, on a rooftop over Södermalm at dusk.",
+    tone: "violet",
+  },
+  "Pär Berge": {
+    slug: "par-berge",
+    class: "Platform Engineer",
+    classSlug: "platform",
+    kind: "Engineer",
+    faction: "platform-cloud",
+    skills: [
+      { name: "Kubernetes", stars: 5 },
+      { name: "Terraform & Ansible", stars: 5 },
+      { name: "Cloud migration", stars: 5 },
+    ],
+    focus: ["kubernetes", "terraform", "argo", "ci-cd", "cloud-migration"],
+    specialAbility: "Migration Day: keeps a cloud move boring, the way it should be.",
+    onCall: true,
+    portraitUrl: `${assetBase}/crew-paer.webp`,
+    squareUrl: `${assetBase}/crew-paer-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Pär Berge, platform engineer, at Slussen with containers streaming toward a cloud.",
+    tone: "cyan",
+  },
+  "Tommy Malmqvist": {
+    slug: "tommy-malmqvist",
+    class: "Infrastructure & Modernization Engineer",
+    classSlug: "infrastructure",
+    kind: "Engineer",
+    faction: "platform-cloud",
+    skills: [
+      { name: "Infrastructure", stars: 5 },
+      { name: "Modernization", stars: 5 },
+      { name: "Automation", stars: 4 },
+    ],
+    focus: ["operations", "critical-systems", "automation", "modernization"],
+    specialAbility: "Legacy Whisperer: modernizes critical systems while they keep running.",
+    onCall: true,
+    portraitUrl: `${assetBase}/crew-tommy.webp`,
+    squareUrl: `${assetBase}/crew-tommy-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Tommy Malmqvist, infrastructure engineer, in a server aisle lit pink and cyan.",
+    tone: "pink",
+  },
+  "Love Kempe Lundin": {
+    slug: "love-kempe-lundin",
+    class: "Full-Stack Engineer",
+    classSlug: "full-stack",
+    kind: "Engineer",
+    faction: "product-web",
+    skills: [
+      { name: "React & Next.js", stars: 5 },
+      { name: "Node.js & .NET", stars: 4 },
+      { name: "Design to code", stars: 5 },
+    ],
+    focus: ["react", "nextjs", "nodejs", "dotnet"],
+    specialAbility: "Design-to-Code: ships the interface the mockup promised.",
+    onCall: false,
+    portraitUrl: `${assetBase}/crew-love.webp`,
+    squareUrl: `${assetBase}/crew-love-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Love Kempe Lundin, full-stack engineer, in a neon-lit Gamla Stan alley.",
+    tone: "orange",
+  },
+  "Max Povalinsky": {
+    slug: "max-povalinsky",
+    class: "Site Reliability Engineer",
+    classSlug: "sre",
+    kind: "Engineer",
+    faction: "reliability-delivery",
+    skills: [
+      { name: "Observability", stars: 5 },
+      { name: "Incident response", stars: 5 },
+      { name: "Automation", stars: 5 },
+    ],
+    focus: ["observability", "reliability", "incident-response"],
+    specialAbility: "Calm Under Page: turns alert noise into signal.",
+    onCall: true,
+    portraitUrl: `${assetBase}/crew-max.webp`,
+    squareUrl: `${assetBase}/crew-max-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Max Povalinsky, SRE, in a control room full of monitoring graphs.",
+    tone: "pink",
+  },
+  "Mauricio Saez": {
+    slug: "mauricio-saez",
+    class: "DevOps Engineer",
+    classSlug: "devops",
+    kind: "Engineer",
+    faction: "reliability-delivery",
+    skills: [
+      { name: "DevOps", stars: 5 },
+      { name: "Collaboration", stars: 5 },
+      { name: "Knowledge sharing", stars: 5 },
+    ],
+    focus: ["devops", "delivery", "knowledge-sharing"],
+    specialAbility: "Green Pipeline: makes knowledge sharing part of the build.",
+    onCall: true,
+    portraitUrl: `${assetBase}/crew-mauricio.webp`,
+    squareUrl: `${assetBase}/crew-mauricio-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Mauricio Saez, DevOps engineer, at the container harbor at sunset.",
+    tone: "cyan",
+  },
+  "Mimmi & Penny": {
+    slug: "mimmi-penny",
+    class: "Morale Officers",
+    classSlug: "morale",
+    kind: "MoraleOfficer",
+    faction: "morale",
+    skills: [
+      { name: "Office morale", stars: 5 },
+      { name: "Snack detection", stars: 5 },
+      { name: "Code review", stars: 1 },
+    ],
+    focus: ["morale", "naps", "snacks"],
+    specialAbility: "Morale Boost: lifts team spirit within petting range.",
+    onCall: false,
+    portraitUrl: `${assetBase}/crew-mimmi-penny.webp`,
+    squareUrl: `${assetBase}/crew-mimmi-penny-square.webp`,
+    portraitAlt:
+      "Illustrated portrait of Mimmi and Penny, the office dogs, in tiny sunglasses on a server cabinet.",
+    tone: "violet",
+    secret: true,
+  },
+};
+
+export const crew: CrewMember[] = teamMembers.map((member) => ({
+  ...member,
+  ...crewExtras[member.name],
+}));
+
+const yamlString = (value: string) => JSON.stringify(value);
+
+/** The `kubectl describe`-style view of a crew member. Always valid YAML. */
+export function crewYaml(member: CrewMember): string {
+  return [
+    "apiVersion: crew.codelabs.se/v1",
+    `kind: ${member.kind}`,
+    "metadata:",
+    `  name: ${member.slug}`,
+    "  labels:",
+    `    class: ${member.classSlug}`,
+    `    faction: ${member.faction}`,
+    "    city: stockholm",
+    "spec:",
+    `  role: ${yamlString(member.role)}`,
+    "  focus:",
+    ...member.focus.map((item) => `    - ${item}`),
+    `  onCall: ${member.onCall}`,
+    `  specialAbility: ${yamlString(member.specialAbility)}`,
+  ].join("\n");
+}
+
+export const crewClosingLine = "Serious engineering does not need to feel sterile.";
+
+/* ---------- Careers: classes and skill trees ---------- */
+
+export type CareerClass = CareerArea & {
+  id: string;
+  className: string;
+  tone: AccentTone;
+  /** Two branches of real tool progressions. Labels only, not certifications. */
+  skillTree: [string[], string[]];
+};
+
+const classMeta: Array<Omit<CareerClass, keyof CareerArea>> = [
+  {
+    id: "platform",
+    className: "Platform Engineer",
+    tone: "cyan",
+    skillTree: [
+      ["Linux & networking", "Docker", "Kubernetes", "Operators & CRDs", "Multi-cluster"],
+      ["Azure / GCP", "Terraform", "GitOps", "Policy as code", "Platform as a product"],
+    ],
+  },
+  {
+    id: "devops",
+    className: "DevOps Engineer",
+    tone: "orange",
+    skillTree: [
+      ["Git workflows", "CI pipelines", "Build caching", "Release automation", "Progressive delivery"],
+      ["Unit tests", "Test automation", "Quality gates", "Supply-chain security", "Developer enablement"],
+    ],
+  },
+  {
+    id: "tooling",
+    className: "Internal Tooling Engineer",
+    tone: "violet",
+    skillTree: [
+      ["Scripting", "CLIs", "APIs", "Workflow tooling", "Internal platforms"],
+      ["Webhooks", "Integrations", "Event-driven glue", "Automation", "Self-service"],
+    ],
+  },
+  {
+    id: "sre",
+    className: "Site Reliability Engineer",
+    tone: "pink",
+    skillTree: [
+      ["Monitoring", "SLOs & error budgets", "Incident command", "Chaos & resilience", "Capacity & cost"],
+      ["Logs", "Metrics", "Traces", "Alert design", "Blameless postmortems"],
+    ],
+  },
+  {
+    id: "full-stack",
+    className: "Full-Stack & Modernization Engineer",
+    tone: "orange",
+    skillTree: [
+      ["TypeScript", "React", "Next.js", "Frontend architecture", "Design systems"],
+      [".NET / Node.js", "APIs", "Auth", "Legacy modernization", "Cloud-native apps"],
+    ],
+  },
+  {
+    id: "ai",
+    className: "AI Engineer",
+    tone: "violet",
+    skillTree: [
+      ["LLM APIs", "RAG", "Evals & guardrails", "Agentic workflows", "AI governance & rollout"],
+      ["Prompting", "Tool use", "LLM observability", "Cost & latency tuning", "Human-in-the-loop"],
+    ],
+  },
+];
+
+export const careerClasses: CareerClass[] = careerAreas.map((area, index) => ({
+  ...area,
+  ...classMeta[index],
+}));
+
+export type Perk = Benefit & { icon: string };
+
+const perkIcons = ["sliders", "piggy", "laptop", "heart", "fork", "shield", "stroller", "medal", "car", "book"];
+
+export const perks: Perk[] = benefits.map((benefit, index) => ({
+  ...benefit,
+  icon: perkIcons[index],
+}));
+
+/** Side quests link to real posts in src/_posts. */
+export const sideQuests = [
+  {
+    title: "KubeCon Europe 2026",
+    kind: "Conference",
+    href: "/blog/code-labs-kubecon-amsterdam-2026",
+    summary: lifeSignals[0].description,
+  },
+  {
+    title: "Hackathon, VR & dinner",
+    kind: "Hackathon",
+    href: "/blog/hackaton-vr-middag",
+    summary: selectedWork[4].contribution,
+  },
+  {
+    title: "Workflow Manager",
+    kind: "Internal project",
+    href: "/blog/workflow-manager",
+    summary: growthSupport[2].description,
+  },
+  {
+    title: "Rust & OCPP, open sourced",
+    kind: "Open source",
+    href: "/blog/rust-ocpp",
+    summary: "We open source our lib written in Rust for the OCPP standard.",
+  },
+] as const;
+
+/* ---------- Newswire (blog) ---------- */
+
+export const newswireFilters = ["all", "tech", "ai", "kubernetes", "devops", "crewlife"] as const;
+export type NewswireTag = (typeof newswireFilters)[number];
+
+/** Slug → tags for tech posts. Anything not listed is #crewlife. */
+export const techPostTags: Record<string, string[]> = {
+  "orchestrate-docker-containers-with-ansible": ["tech", "devops", "ansible", "docker"],
+  "elixir-and-why-you-should-use-it": ["tech", "elixir"],
+  "elixir-adding-support-in-app": ["tech", "elixir"],
+  "rust-ocpp": ["tech", "rust"],
+  "meal-planning-with-chatgpt": ["tech", "ai"],
+  "workflow-manager": ["tech", "devops"],
+  "code-labs-kubecon-amsterdam-2026": ["tech", "kubernetes"],
+  "hackaton-vr-middag": ["crewlife", "hackathon"],
+};
+
+/* ---------- Loading-screen tips (real advice) ---------- */
+
+export const loadingTips = [
+  "Alert on symptoms, not causes.",
+  "Your error budget is a feature. Spend it.",
+  "Pin your base images.",
+  "Evals before vibes. Measure your LLM pipeline.",
+  "Runbooks are love letters to future you.",
+  "If it isn't in Git, it doesn't exist.",
+  "Rollbacks should be boring.",
+  "Every page should be actionable. Delete the ones that aren't.",
+  "Mitigate first. Root-cause after the bleeding stops.",
+] as const;
+
+export const loadingScreens = [1, 2, 3, 4, 5].map((n) => `${assetBase}/loading-${n}.webp`);
+
+/* ---------- Decorative HUD + log stream ---------- */
+
+/** Obviously playful, labelled `demo` wherever shown. Never a claimed result. */
+export const hudChips = [
+  { key: "coffee_level", value: "87%", tone: "ok" },
+  { key: "pager_noise", value: "low", tone: "ok" },
+  { key: "fika_slo", value: "met", tone: "info" },
+  { key: "yaml_indent", value: "2 spaces", tone: "warn" },
+] as const;
+
+/** Decorative background log lines (logfmt). Not real telemetry. */
+export const logRainLines = [
+  'ts=03:14:07Z level=info msg="reconcile complete" controller=deployment namespace=city',
+  'ts=03:14:09Z level=info msg="scaled up" hpa=newswire replicas=4 reason=cpu',
+  'ts=03:14:12Z level=warn msg="certificate renews in 29d" issuer=letsencrypt-prod',
+  'ts=03:14:15Z level=info msg="pipeline succeeded" stage=deploy env=production duration=4m12s',
+  'ts=03:14:21Z level=info msg="eval suite passed" suite=regression cases=128',
+  'ts=03:14:26Z level=info msg="probe ok" probe=readiness path=/healthz status=200',
+  'ts=03:14:31Z level=warn msg="node pressure" node=harbor-3 condition=DiskPressure',
+  'ts=03:14:33Z level=info msg="pod evicted and rescheduled" pod=ferry-7d9f node=harbor-4',
+  'ts=03:14:40Z level=info msg="terraform plan" add=2 change=1 destroy=0',
+  'ts=03:14:44Z level=info msg="sync ok" app=city-platform revision=HEAD status=Healthy',
+  'ts=03:14:52Z level=info msg="alert resolved" alertname=HighLatencyP99 service=metro',
+  'ts=03:14:58Z level=info msg="coffee refilled" office=stockholm demo=true',
+] as const;
+
+/* ---------- Terminal easter egg ---------- */
+
+export const terminalHelp = [
+  ["help", "show this list"],
+  ["kubectl get crew", "list the team"],
+  ["kubectl describe crew <name>", "one crew member as YAML"],
+  ["kubectl get missions", "list what we do"],
+  ["kubectl logs careers", "why people join"],
+  ["sudo join", "open careers"],
+  ["ping codelabs", "open contact"],
+  ["uptime", "ask a silly question"],
+  ["clear", "clear the screen"],
+  ["exit", "close the console"],
+] as const;
+
+/* ---------- Incident mini-game ---------- */
+
+export type IncidentRound = {
+  alert: string;
+  severity: "SEV-1" | "SEV-2" | "SEV-3";
+  detail: string;
+  options: string[];
+  /** Index into `options`. */
+  answer: number;
+  why: string;
+};
+
+export const incidentRounds: IncidentRound[] = [
+  {
+    alert: "HighLatencyP99",
+    severity: "SEV-2",
+    detail: "p99 latency on checkout crossed the SLO threshold 10 minutes after a deploy.",
+    options: [
+      "Check what changed and roll back the deploy that lines up with the spike",
+      "Restart every pod in the namespace",
+      "Raise the latency threshold so the alert clears",
+    ],
+    answer: 0,
+    why: "Most incidents follow a change. Correlate with recent deploys and mitigate with a rollback before digging into root cause.",
+  },
+  {
+    alert: "PodOOMKilled",
+    severity: "SEV-3",
+    detail: "A container keeps getting OOMKilled and its restart count is climbing.",
+    options: [
+      "Remove the memory limit entirely",
+      "Compare actual memory usage with the limit to tell a leak from a limit that is too low",
+      "Delete the pod until it stays up",
+    ],
+    answer: 1,
+    why: "OOMKilled means the container hit its limit. Look at usage over time first: a steady climb is a leak, a flat line near the limit is a sizing problem. Removing limits just moves the risk to the node.",
+  },
+  {
+    alert: "CertExpiringSoon",
+    severity: "SEV-3",
+    detail: "The TLS certificate for the public API expires in 6 days. Auto-renewal should have run already.",
+    options: [
+      "Silence the alert for a week",
+      "Wait for expiry to confirm the alert is real",
+      "Renew it now, then find out why auto-renewal did not fire",
+    ],
+    answer: 2,
+    why: "Fix the symptom while there is still margin, then fix the automation so it does not come back.",
+  },
+  {
+    alert: "LLMTokenCostSpike",
+    severity: "SEV-3",
+    detail: "Token spend is at four times the usual hourly baseline.",
+    options: [
+      "Break spend down by caller to find the source, then rate-limit or cap that caller",
+      "Move all traffic to a larger model",
+      "Turn off usage logging to save overhead",
+    ],
+    answer: 0,
+    why: "Treat LLM cost like any other resource: attribute it per caller, find the outlier (often a retry loop or runaway agent) and put a budget on it.",
+  },
+  {
+    alert: "DiskPressure",
+    severity: "SEV-2",
+    detail: "A node reports DiskPressure and the kubelet has started evicting pods.",
+    options: [
+      "Force-delete the evicted pods and move on",
+      "Find what is filling the disk (images, logs, emptyDir) and free space, or cordon and drain the node",
+      "Disable eviction on the kubelet",
+    ],
+    answer: 1,
+    why: "Eviction is the kubelet protecting the node. Find what is using the disk, and take the node out of rotation if you cannot fix it quickly.",
+  },
+  {
+    alert: "ErrorBudgetFastBurn",
+    severity: "SEV-1",
+    detail: "The availability SLO is burning error budget far faster than the window allows.",
+    options: [
+      "Lower the SLO target",
+      "Wait for the rolling window to reset",
+      "Declare an incident and mitigate first: roll back or fail over",
+    ],
+    answer: 2,
+    why: "A fast burn means users are hurting right now. Stop the bleeding first; the postmortem can find the root cause.",
+  },
+  {
+    alert: "CrashLoopBackOff",
+    severity: "SEV-2",
+    detail: "A deployment went into CrashLoopBackOff right after a config change.",
+    options: [
+      "Read the logs of the crashed container with kubectl logs <pod> --previous",
+      "Scale the deployment to more replicas",
+      "Keep deleting the pod until it starts",
+    ],
+    answer: 0,
+    why: "The previous container's logs usually say exactly why it exited. More replicas of a crashing pod just crash more.",
+  },
+  {
+    alert: "PagerNoise",
+    severity: "SEV-3",
+    detail: "The same alert paged on-call repeatedly overnight and nobody could act on it.",
+    options: [
+      "Mute the pager at night",
+      "Fix or delete the alert so every page is actionable",
+      "Add a second person to share the pages",
+    ],
+    answer: 1,
+    why: "Pages that need no action train people to ignore the pager. Alert on user-facing symptoms and remove the rest.",
   },
 ];
