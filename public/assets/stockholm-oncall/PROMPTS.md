@@ -10,6 +10,10 @@ Everything else is still a **labelled placeholder** produced by
 `key-art-grid-mobile.webp`, `city-*.webp`, `mission-*.webp`, `loading-*.webp`,
 `newswire-header.webp`, `error-404.webp`.
 
+**Copy-paste prompts for every remaining placeholder are in
+`docs/scene-image-prompts.md`** (one self-contained block per file, written for
+how each image is cropped and overlaid on the site).
+
 To ship more final art: generate each file with an image model that supports
 **image reference / character consistency** (GPT-image, Midjourney `--cref`,
 Flux + IP-Adapter/LoRA), export **WebP** at the listed size and overwrite the
