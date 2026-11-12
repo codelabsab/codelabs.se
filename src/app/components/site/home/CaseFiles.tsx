@@ -1,5 +1,4 @@
-import { CaseFileCard } from "@/app/components/site/cards";
-import { caseFiles } from "@/app/components/site/site-data";
+import CaseFileSelect from "@/app/components/site/home/CaseFileSelect";
 import { LogRain, SectionHeading } from "@/app/components/site/ui";
 
 export default function CaseFiles() {
@@ -12,10 +11,8 @@ export default function CaseFiles() {
           title="Case files"
           description="Written the way we write postmortems: blameless, concrete, and honest about what stays confidential. No invented numbers."
         />
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          {caseFiles.map((file) => (
-            <CaseFileCard key={file.id} file={file} />
-          ))}
+        <div className="reveal mt-12 min-w-0">
+          <CaseFileSelect />
         </div>
       </div>
     </section>

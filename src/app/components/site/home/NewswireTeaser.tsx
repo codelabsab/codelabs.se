@@ -8,7 +8,7 @@ export default function NewswireTeaser() {
   const tech = posts.filter((post) => post.kind === "tech").slice(0, 2);
   const life = posts.filter((post) => post.kind === "life").slice(0, 2);
   return (
-    <section className="section section-night">
+    <section id="newswire" className="section section-night">
       <div className="site-container">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading

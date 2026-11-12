@@ -8,11 +8,13 @@ import Missions from "@/app/components/site/home/Missions";
 import NewswireTeaser from "@/app/components/site/home/NewswireTeaser";
 import OnCallTeaser from "@/app/components/site/home/OnCallTeaser";
 import Runbook from "@/app/components/site/home/Runbook";
+import StageNav from "@/app/components/site/home/StageNav";
 import TrustedBy from "@/app/components/site/home/TrustedBy";
 
 export default function HomePage() {
   return (
     <main>
+      <StageNav />
       <Hero />
       <TrustedBy />
       <Missions />
@@ -23,7 +25,9 @@ export default function HomePage() {
       <CrewTeaser />
       <OnCallTeaser />
       <NewswireTeaser />
-      <FinalCta />
+      <div id="join">
+        <FinalCta />
+      </div>
     </main>
   );
 }

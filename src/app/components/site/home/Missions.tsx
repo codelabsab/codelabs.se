@@ -1,5 +1,5 @@
-import { MissionCard } from "@/app/components/site/cards";
-import { missions, motto } from "@/app/components/site/site-data";
+import MissionSelect from "@/app/components/site/home/MissionSelect";
+import { motto } from "@/app/components/site/site-data";
 import { LogRain, SectionHeading } from "@/app/components/site/ui";
 
 export default function Missions() {
@@ -13,10 +13,8 @@ export default function Missions() {
           title="Mission"
           description="Platform engineering, DevOps, SRE and practical AI rollout. Every mission below is a kind of engagement we actually take on, with the stack you would work in and what you would get better at."
         />
-        <div className="mt-14 space-y-6">
-          {missions.map((mission, index) => (
-            <MissionCard key={mission.id} mission={mission} reverse={index % 2 === 1} />
-          ))}
+        <div className="reveal mt-12 min-w-0">
+          <MissionSelect />
         </div>
         <p className="reveal mt-12 text-center">
           <span className="ribbon text-2xl sm:text-4xl">{motto}</span>

@@ -5,7 +5,7 @@ import { SectionHeading } from "@/app/components/site/ui";
 
 export default function City() {
   return (
-    <section className="section section-dusk overflow-hidden">
+    <section id="city" className="section section-dusk overflow-hidden">
       <div className="site-container">
         <SectionHeading
           kicker="Where we have worked · the map"
@@ -43,6 +43,7 @@ export default function City() {
         <ul
           className="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-color:var(--color-sunset-pink)_transparent]"
           tabIndex={0}
+          data-arrow-scroll
           aria-label="Districts, scroll horizontally"
         >
           {districts.map((district) => {

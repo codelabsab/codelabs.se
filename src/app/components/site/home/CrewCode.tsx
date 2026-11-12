@@ -4,7 +4,7 @@ import { SectionHeading } from "@/app/components/site/ui";
 
 export default function CrewCode() {
   return (
-    <section className="section section-glow">
+    <section id="crew-code" className="section section-glow">
       <div className="site-container">
         <SectionHeading
           kicker="Principles"

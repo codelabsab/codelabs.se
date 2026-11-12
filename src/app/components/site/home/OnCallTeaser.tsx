@@ -13,7 +13,7 @@ const OnCallGame = dynamic(() => import("@/app/components/site/game/OnCallGame")
 export default function OnCallTeaser() {
   const [started, setStarted] = useState(false);
   return (
-    <section className="section section-dusk">
+    <section id="on-call" className="section section-dusk">
       <div className="site-container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="reveal">
           <p className="kicker">Mini-game · 60 seconds</p>

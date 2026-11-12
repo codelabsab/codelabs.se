@@ -20,7 +20,7 @@ const panels = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-black lg:min-h-[calc(100svh-4rem)]">
+    <section id="top" className="relative isolate overflow-hidden bg-black lg:min-h-[calc(100svh-4rem)]">
       {/* Key-art poster */}
       <div className="grid aspect-[4/3] grid-cols-4 grid-rows-3 gap-1 bg-black p-1 sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%] lg:gap-1.5 lg:p-1.5">
         {panels.map((panel, index) => {
