@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
- * Generates the LABELLED PLACEHOLDER art in public/assets/stockholm-oncall/.
+ * Rebuilds the OG image, and regenerates a LABELLED PLACEHOLDER for any asset
+ * in public/assets/stockholm-oncall/ that is not listed in FINAL below.
+ * All art is currently final, so today this script only rebuilds the OG image.
  *
  * These are stand-ins at the exact file names and sizes the site expects.
  * Final art is produced with an image model from the prompts in
@@ -25,8 +27,15 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const FINAL = new Set([
   "key-art-grid.webp",
+  "key-art-grid-mobile.webp",
   "hero-city.webp",
   "careers-hero.webp",
+  "city-sunset.webp",
+  "city-night-neon.webp",
+  "newswire-header.webp",
+  "error-404.webp",
+  ...["platform", "devops", "sre", "ai", "tools"].map((id) => `mission-${id}.webp`),
+  ...[1, 2, 3, 4, 5].map((n) => `loading-${n}.webp`),
   ...["kami", "paer", "tommy", "love", "max", "mauricio", "mimmi-penny"].flatMap((id) => [
     `crew-${id}.webp`,
     `crew-${id}-square.webp`,
@@ -407,6 +416,7 @@ async function main() {
     }
   }
 
+  if (!FINAL.has("key-art-grid-mobile.webp")) {
   // Mobile poster placeholder, assembled from whatever crew squares are on disk.
   const g = 10;
   const MW = 1080;
@@ -426,6 +436,7 @@ async function main() {
   }
   layers.push({ input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${MW}" height="${MH}">${label(MW, MH, "key-art-grid-mobile.webp")}</svg>`) });
   await webp(sharp({ create: { width: MW, height: MH, channels: 3, background: "#000000" } }).composite(layers), "key-art-grid-mobile.webp", 70);
+  }
 
   // OG image: poster crop with the REAL logo + title composited in code.
   const logo = await sharp("public/assets/logo/codelabs_white.svg", { density: 300 }).resize({ width: 300 }).png().toBuffer();

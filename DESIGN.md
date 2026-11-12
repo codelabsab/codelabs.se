@@ -243,6 +243,6 @@ checklist live in `public/assets/stockholm-oncall/PROMPTS.md`.
 - Alt text says the image is an illustration and names what it shows.
 - Real event photos are never regenerated; they only get a CSS grade.
 
-Crew portraits, the key art and the careers hero are final. The remaining
-scene art is still **labelled placeholders** from
-`scripts/generate-placeholders.mjs`; `PROMPTS.md` lists which is which.
+All art is final. `scripts/generate-placeholders.mjs` lists every file in
+`FINAL` and now only rebuilds the OG image; `PROMPTS.md` and
+`docs/scene-image-prompts.md` hold the prompts for replacing one.

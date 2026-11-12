@@ -1,6 +1,11 @@
-# Stockholm On-Call: copy-paste prompts for the remaining placeholders
+# Stockholm On-Call: copy-paste prompts for the scene art
 
-These are the images on this branch that are still labelled placeholders. Each
+**All of these images have now been generated and are in place.** The prompts
+are kept for regenerating or replacing one. The mission images were delivered
+in portrait (3:4) and the cards are built for that, so ask for 3:4 there, not
+the 3:2 written in the blocks.
+
+These were the images on this branch that were labelled placeholders. Each
 block is **complete on its own**: paste one block into the image model
 (Gemini, GPT-image, Midjourney, Flux) and generate. Do not mix blocks.
 
@@ -36,21 +41,21 @@ game character, regenerate it.
 
 | Done | File | Ratio | Size |
 |---|---|---|---|
-| [ ] | `mission-platform.webp` | 3:2 | 1800×1200 |
-| [ ] | `mission-devops.webp` | 3:2 | 1800×1200 |
-| [ ] | `mission-sre.webp` | 3:2 | 1800×1200 |
-| [ ] | `mission-ai.webp` | 3:2 | 1800×1200 |
-| [ ] | `mission-tools.webp` | 3:2 | 1800×1200 |
-| [ ] | `city-sunset.webp` | 21:9 | 3360×1440 |
-| [ ] | `city-night-neon.webp` | 21:9 | 3360×1440 |
-| [ ] | `loading-1.webp` | 16:9 | 1920×1080 |
-| [ ] | `loading-2.webp` | 16:9 | 1920×1080 |
-| [ ] | `loading-3.webp` | 16:9 | 1920×1080 |
-| [ ] | `loading-4.webp` | 16:9 | 1920×1080 |
-| [ ] | `loading-5.webp` | 16:9 | 1920×1080 |
-| [ ] | `newswire-header.webp` | 21:9 | 2520×1080 |
-| [ ] | `error-404.webp` | 16:9 | 1920×1080 |
-| [ ] | `key-art-grid-mobile.webp` (optional) | 9:16 | 1080×1920 |
+| [x] | `mission-platform.webp` | 3:2 | 1800×1200 |
+| [x] | `mission-devops.webp` | 3:2 | 1800×1200 |
+| [x] | `mission-sre.webp` | 3:2 | 1800×1200 |
+| [x] | `mission-ai.webp` | 3:2 | 1800×1200 |
+| [x] | `mission-tools.webp` | 3:2 | 1800×1200 |
+| [x] | `city-sunset.webp` | 21:9 | 3360×1440 |
+| [x] | `city-night-neon.webp` | 21:9 | 3360×1440 |
+| [x] | `loading-1.webp` | 16:9 | 1920×1080 |
+| [x] | `loading-2.webp` | 16:9 | 1920×1080 |
+| [x] | `loading-3.webp` | 16:9 | 1920×1080 |
+| [x] | `loading-4.webp` | 16:9 | 1920×1080 |
+| [x] | `loading-5.webp` | 16:9 | 1920×1080 |
+| [x] | `newswire-header.webp` | 21:9 | 2520×1080 |
+| [x] | `error-404.webp` | 16:9 | 1920×1080 |
+| [x] | `key-art-grid-mobile.webp` (optional) | 9:16 | 1080×1920 |
 
 ---
 

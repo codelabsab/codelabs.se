@@ -632,6 +632,8 @@ export type Mission = {
   objective: string;
   reward: string;
   missionImage: string;
+  /** CSS object-position for the cropped views of the portrait art. */
+  imageFocus?: string;
   imageAlt: string;
   meta: string;
   tone: AccentTone;
@@ -655,7 +657,7 @@ export const missions: Mission[] = [
     reward: platformPillar.candidateFocus,
     missionImage: `${assetBase}/mission-platform.webp`,
     imageAlt:
-      "Illustration of a harbor at dusk where cranes stack glowing containers into neat clusters.",
+      "Illustration of Stockholm's harbor at sunset where gantry cranes stack glowing containers into neat clusters.",
     meta: "kind: platform · scope: cloud-foundations",
     tone: "cyan",
   },
@@ -670,7 +672,7 @@ export const missions: Mission[] = [
     reward: devopsPillar.candidateFocus,
     missionImage: `${assetBase}/mission-devops.webp`,
     imageAlt:
-      "Illustration of a night-time highway interchange drawn as a delivery pipeline with green and red status lights.",
+      "Illustration of a night-time highway interchange drawn as a delivery pipeline, with green gates along the lanes and one red.",
     meta: "kind: delivery · scope: code-to-production",
     tone: "orange",
   },
@@ -704,7 +706,7 @@ export const missions: Mission[] = [
     reward: aiPillar.candidateFocus,
     missionImage: `${assetBase}/mission-ai.webp`,
     imageAlt:
-      "Illustration of fireflies over the archipelago at dusk flowing through a glowing gate before reaching the city.",
+      "Illustration of a swarm of fireflies over the archipelago at dusk passing through a glowing gate and leaving in ordered lines toward the city.",
     meta: "kind: ai-rollout · human-in-the-loop: true",
     tone: "violet",
   },
@@ -718,6 +720,7 @@ export const missions: Mission[] = [
     objective: workScenarios[2].summary,
     reward: productPillar.candidateFocus,
     missionImage: `${assetBase}/mission-tools.webp`,
+    imageFocus: "center 72%",
     imageAlt:
       "Illustration of a neon workshop where engineers assemble tools from glowing modular blocks.",
     meta: "kind: side-quest · scope: tools-and-integrations",

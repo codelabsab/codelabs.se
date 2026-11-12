@@ -1,20 +1,20 @@
 # Stockholm On-Call: image prompts
 
-**Status.** Final art is in place for: all crew portraits and squares,
-`key-art-grid.webp`, `hero-city.webp` (a crop of the key art, used as
-the hero's city panel) and `careers-hero.webp`. Those names are listed in
-`FINAL` in `scripts/generate-placeholders.mjs` and are never overwritten.
+**Status: all art in this folder is final.** Every file name is listed in
+`FINAL` in `scripts/generate-placeholders.mjs`, so that script no longer
+overwrites anything; it only rebuilds the OG image from the key art and the
+real logo. Remove a name from `FINAL` only if you want a labelled placeholder
+back.
 
-Everything else is still a **labelled placeholder** produced by
-`node scripts/generate-placeholders.mjs` (procedural SVG scenes):
-`key-art-grid-mobile.webp`, `city-*.webp`, `mission-*.webp`, `loading-*.webp`,
-`newswire-header.webp`, `error-404.webp`.
+Files are stored at the size the site serves, not at export size. The mission
+images were delivered in portrait (3:4) and the mission cards are laid out for
+that, so keep replacements portrait.
 
-**Copy-paste prompts for every remaining placeholder are in
+**The copy-paste prompts used for the scenes are in
 `docs/scene-image-prompts.md`** (one self-contained block per file, written for
 how each image is cropped and overlaid on the site).
 
-To ship more final art: generate each file with an image model that supports
+To replace an image: generate each file with an image model that supports
 **image reference / character consistency** (GPT-image, Midjourney `--cref`,
 Flux + IP-Adapter/LoRA), export **WebP** at the listed size and overwrite the
 file with the same name, then add that name to `FINAL` in the script so it is

@@ -120,9 +120,9 @@ export default function Styleguide() {
       </Block>
 
       <Block title="Mission card">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="space-y-6">
           <MissionCard mission={missions[2]} />
-          <MissionCard mission={missions[3]} />
+          <MissionCard mission={missions[3]} reverse />
         </div>
       </Block>
 

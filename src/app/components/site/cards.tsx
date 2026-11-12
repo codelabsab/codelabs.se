@@ -23,27 +23,32 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-export function MissionCard({ mission, wide = false }: { mission: Mission; wide?: boolean }) {
+/**
+ * Mission art is portrait (3:4). On desktop the image runs down one side of
+ * the card at full height; on small screens it is a 4:3 crop above the text.
+ */
+export function MissionCard({ mission, reverse = false }: { mission: Mission; reverse?: boolean }) {
   const tone = toneStyles[mission.tone];
   return (
     <article
-      className={`card card-hover scanlines reveal flex flex-col ${wide ? "lg:flex-row" : ""}`}
+      className={`card card-hover scanlines reveal flex flex-col lg:min-h-[30rem] ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
       style={toneVar(mission.tone)}
     >
-      <div className={`relative shrink-0 overflow-hidden ${wide ? "aspect-[3/2] lg:aspect-auto lg:w-2/5" : "aspect-[3/2]"}`}>
+      <div className="relative aspect-[4/3] shrink-0 overflow-hidden lg:aspect-auto lg:w-[36%]">
         <Image
           src={mission.missionImage}
           alt={mission.imageAlt}
           fill
-          sizes={wide ? "(min-width: 1024px) 34vw, 100vw" : "(min-width: 1024px) 40vw, 100vw"}
+          sizes="(min-width: 1024px) 36vw, 100vw"
           className="object-cover"
+          style={{ objectPosition: mission.imageFocus ?? "center 58%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-night-800 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night-800 via-transparent to-transparent lg:hidden" />
         <span className={`mono absolute left-3 top-3 border bg-night-900/80 px-2 py-1 text-[10px] uppercase tracking-[0.14em] ${tone.text} ${tone.border}`}>
           {mission.sideQuest ? "Side quest" : "Mission"}
         </span>
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-6 lg:p-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className={`mono text-xs uppercase tracking-[0.14em] ${tone.text}`}>{mission.title}</p>
           <span className="flex items-center gap-2" title="Pager level: a playful difficulty rating, not a measured figure.">
@@ -51,7 +56,7 @@ export function MissionCard({ mission, wide = false }: { mission: Mission; wide?
             <Stars value={mission.severity} label={`Pager level ${mission.severity} of 5`} />
           </span>
         </div>
-        <h3 className="display mt-3 text-3xl sm:text-4xl">{mission.missionTitle}</h3>
+        <h3 className="display mt-3 text-3xl sm:text-4xl lg:text-5xl">{mission.missionTitle}</h3>
         <dl className="mt-5 flex-1 space-y-4">
           <Field label="Briefing">{mission.briefing}</Field>
           <div>
