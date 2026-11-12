@@ -1,5 +1,4 @@
 import MissionSelect from "@/app/components/site/home/MissionSelect";
-import { motto } from "@/app/components/site/site-data";
 import { LogRain, SectionHeading } from "@/app/components/site/ui";
 
 export default function Missions() {
@@ -16,9 +15,6 @@ export default function Missions() {
         <div className="reveal mt-12 min-w-0">
           <MissionSelect />
         </div>
-        <p className="reveal mt-12 text-center">
-          <span className="ribbon text-2xl sm:text-4xl">{motto}</span>
-        </p>
       </div>
     </section>
   );

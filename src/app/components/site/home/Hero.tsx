@@ -20,7 +20,7 @@ const panels = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-black lg:min-h-[calc(100svh-4rem)]">
+    <section id="top" className="hero relative isolate overflow-hidden bg-black lg:min-h-[calc(100svh-4rem)]">
       {/* Key-art poster */}
       <div className="grid aspect-[4/3] grid-cols-4 grid-rows-3 gap-1 bg-black p-1 sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%] lg:gap-1.5 lg:p-1.5">
         {panels.map((panel, index) => {
@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-night-900 from-[40%] via-night-900/40 via-[47%] to-transparent to-[56%] lg:block" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sunset-orange/30 mix-blend-screen blur-3xl" aria-hidden="true" />
 
-      <div className="site-container relative bg-night-900 pb-16 pt-10 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:bg-transparent lg:py-20">
+      <div className="hero-inner site-container relative bg-night-900 pb-16 pt-10 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-center lg:bg-transparent lg:py-20">
         {/* Stay inside the dark area left of the poster at every desktop width. */}
         <div className="max-w-2xl lg:max-w-[23rem] xl:max-w-md">
           <p className="badge">
@@ -70,7 +70,7 @@ export default function Hero() {
             </Link>
             <PageCrewButton />
           </div>
-          <ul className="mt-10 flex flex-wrap gap-2" aria-hidden="true" title="Decorative demo values. Not real metrics.">
+          <ul className="hud-chips mt-10 flex flex-wrap gap-2" aria-hidden="true" title="Decorative demo values. Not real metrics.">
             <li className="mono border border-white/20 px-2 py-1 text-[10px] uppercase tracking-[0.14em] text-ink-300">demo hud</li>
             {hudChips.map((chip) => (
               <li key={chip.key} className="mono border border-white/10 bg-night-800/80 px-2 py-1 text-[11px] text-ink-100">

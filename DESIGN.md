@@ -218,6 +218,23 @@ marquee scrolling (it wraps instead), reveals and loading screens.
 
 ---
 
+### Home page: stage select
+
+On desktop the home page is a pager (`home/HomePager.tsx`): one stage fills
+the screen, and the wheel, ← →, PageUp/PageDown and the rail on the right
+switch stages. After the last stage the page scrolls on to the footer.
+
+- Active only with a mouse or trackpad, at least 1024 px wide and 640 px tall.
+  Phones, tablets and short windows get the normal scrolling page.
+- Every stage stays in the DOM, so content is indexable and `/#services`-style
+  links open the right stage.
+- A stage that does not fit scrolls inside itself before the pager moves on.
+  Design new stages to fit 836 px of height (a 900 px screen minus the navbar).
+- ← → belong to a tab list, dialog, input or the district scroller while one
+  of those has focus.
+- The layout rules are the unlayered `.pager` block at the end of
+  `globals.css`; its media query must match `PAGED_QUERY` in the component.
+
 ## 7. Accessibility
 
 - AA contrast on all text. One `h1` per page.

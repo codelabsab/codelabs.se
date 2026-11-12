@@ -50,14 +50,16 @@ export function SectionHeading({
   as?: "h1" | "h2";
 }) {
   return (
-    <div className={`reveal max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
-      <p className="kicker">{kicker}</p>
-      {script ? (
-        <p aria-hidden="true" className="script mt-4 -mb-2 -rotate-2 text-4xl sm:text-5xl">
-          {script}
-        </p>
-      ) : null}
-      <Tag className="display mt-3 text-5xl sm:text-6xl lg:text-7xl">{title}</Tag>
+    <div className={`section-head reveal max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
+      <div>
+        <p className="kicker">{kicker}</p>
+        {script ? (
+          <p aria-hidden="true" className="script mt-4 -mb-2 -rotate-2 text-4xl sm:text-5xl">
+            {script}
+          </p>
+        ) : null}
+        <Tag className="display mt-3 text-5xl sm:text-6xl lg:text-7xl">{title}</Tag>
+      </div>
       {description ? <p className="lede mt-6">{description}</p> : null}
     </div>
   );

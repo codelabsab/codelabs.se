@@ -670,3 +670,179 @@
     opacity: 1;
   }
 }
+
+/* ------------------------------------------------------------------
+   Home pager: one stage per screen on desktop.
+   Unlayered on purpose so it wins over Tailwind utilities.
+   The media query must match PAGED_QUERY in home/HomePager.tsx.
+   ------------------------------------------------------------------ */
+@media (min-width: 1024px) and (min-height: 640px) and (hover: hover) and (pointer: fine) {
+  .pager {
+    height: calc(100svh - 4rem);
+    overflow: hidden;
+  }
+
+  .pager > .stage {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-night-600) transparent;
+  }
+
+  .pager > .stage[data-active] {
+    display: flex;
+    flex-direction: column;
+    animation: stage-in 320ms ease both;
+  }
+
+  .pager > .stage > * {
+    flex-shrink: 0;
+  }
+
+  /* Each section fills the stage and centres its content. */
+  .pager > .stage > .section,
+  .pager .join-stage {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 2.25rem;
+  }
+
+  .pager .join-stage {
+    padding-block: 0;
+  }
+
+  .pager .join-stage > section {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    padding-block: 3rem;
+  }
+
+  /* Compact heading: title on the left, description on the right. */
+  .pager .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: none;
+    padding-right: 3rem;
+  }
+
+  .pager .section-head .display {
+    font-size: 3.5rem;
+  }
+
+  .pager .section-head .script {
+    font-size: 2.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .pager .section-head .lede {
+    max-width: 30rem;
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .pager .section-head + *,
+  .pager .section .site-container > .mt-10,
+  .pager .section .site-container > .mt-12,
+  .pager .section .site-container > .mt-14 {
+    margin-top: 1.75rem;
+  }
+
+  /* Stage 1: hero takes the room left above the logo strip. */
+  .pager .stage-fill {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pager .hero {
+    flex: 1 0 auto;
+    min-height: 0;
+    display: flex;
+  }
+
+  .pager .hero-inner {
+    min-height: 0;
+    width: 100%;
+    padding-block: 1.25rem;
+  }
+
+  .pager .hero h1 {
+    font-size: clamp(3.5rem, 6.2vw, 6.25rem);
+  }
+
+  .pager .hero .script {
+    margin-top: 1rem;
+  }
+
+  .pager .hero .hud-chips {
+    margin-top: 1.5rem;
+  }
+
+  .pager .trusted {
+    padding-block: 1rem;
+  }
+
+  .pager .trusted ul {
+    margin-top: 0;
+  }
+
+  .pager .trusted > div {
+    margin-top: 0.75rem;
+  }
+
+  .pager .city-map {
+    aspect-ratio: 21 / 4.2;
+  }
+
+  /* Short laptop screens: drop decoration before content. */
+  @media (max-height: 820px) {
+    .pager > .stage > .section {
+      padding-block: 1.5rem;
+    }
+
+    .pager .hero h1 {
+      font-size: clamp(3.25rem, 5.4vw, 4.75rem);
+    }
+
+    .pager .hud-chips,
+    .pager .city-map,
+    .pager .pager-extra,
+    .pager .pager-hint {
+      display: none;
+    }
+
+    .pager .section-head .display {
+      font-size: 2.75rem;
+    }
+
+    .pager .section-head .script {
+      font-size: 1.75rem;
+    }
+
+    .pager [role='tablist'] > [role='tab'] {
+      padding-block: 0.4rem;
+    }
+
+    .pager article.card {
+      min-height: 0;
+    }
+  }
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -14,7 +14,7 @@ export default function City() {
         />
 
         {/* Game map with a topology overlay. Decorative: the cards below carry the content. */}
-        <div className="reveal relative mt-12 hidden aspect-[21/7] overflow-hidden border border-white/15 md:block" aria-hidden="true">
+        <div className="reveal relative mt-12 hidden city-map aspect-[21/7] overflow-hidden border border-white/15 md:block" aria-hidden="true">
           <Image src={`${assetBase}/city-night-neon.webp`} alt="" fill sizes="(min-width: 1280px) 1250px, 100vw" className="object-cover opacity-60" />
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
             <polyline

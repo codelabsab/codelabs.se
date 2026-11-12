@@ -4,7 +4,7 @@ import { clientLogos } from "@/app/components/site/site-data";
 /** Neutral client strip. Logos are unaltered apart from a plain white monochrome. */
 export default function TrustedBy() {
   return (
-    <section aria-labelledby="trusted-by" className="border-y border-white/10 bg-night-800 py-8">
+    <section aria-labelledby="trusted-by" className="trusted border-y border-white/10 bg-night-800 py-8">
       <h2 id="trusted-by" className="kicker text-center !text-ink-100">
         Trusted by
       </h2>
